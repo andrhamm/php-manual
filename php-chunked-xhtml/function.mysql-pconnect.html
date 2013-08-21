@@ -17,18 +17,18 @@
 
  </div>
 
- <div id="function.mysql-pconnect-soft-deprecation-notice" class="soft-deprecation-notice">
-  <blockquote class="sidebar">
-   <h1 class="title">Suggested alternatives</h1>
-<p class="para">Use of this extension is discouraged. Instead, the <a href="book.mysqli.html" class="link">MySQLi</a> or 
-<a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> extension should be used. See also <a href="mysqlinfo.api.choosing.html" class="link">MySQL: 
-choosing an API</a> guide and <a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">related FAQ</a> for more information. 
+ <div id="function.mysql-pconnect-refsynopsisdiv">
+  <div class="warning"><strong class="warning">Warning</strong>
+   <p class="para">This extension is deprecated as of PHP 5.5.0, and will be removed in the future.
+Instead, the <a href="book.mysqli.html" class="link">MySQLi</a> or <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> extension should be used.
+See also <a href="mysqlinfo.api.choosing.html" class="link">MySQL: choosing an API</a> guide and
+<a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">related FAQ</a> for more information. 
 Alternatives to this function include:</p>
    <ul class="simplelist">
     <li class="member"> <span class="function"><a href="function.mysqli-connect.html" class="function">mysqli_connect()</a></span> with <em>p:</em> host prefix</li>
     <li class="member"> <span class="methodname"><a href="pdo.construct.html" class="methodname">PDO::__construct()</a></span> with <strong><code>PDO::ATTR_PERSISTENT</code></strong> as a driver option</li>
    </ul>
-  </blockquote>
+  </div>
  </div>
 
  <div class="refsect1 description" id="refsect1-function.mysql-pconnect-description">
@@ -164,6 +164,14 @@ Alternatives to this function include:</p>
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        This function will generate an <strong><code>E_DEPRECATED</code></strong>
+        error.
+       </td>
+      </tr>
+
       <tr>
        <td>4.3.0</td>
        <td>

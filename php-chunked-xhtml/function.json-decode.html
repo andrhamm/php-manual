@@ -114,7 +114,7 @@
  <div class="refsect1 examples" id="refsect1-function.json-decode-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3492">
+   <div class="example" id="example-3715">
     <p><strong>Example #1  <span class="function"><strong>json_decode()</strong></span> examples</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -144,7 +144,7 @@ array(5) {
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-3493">
+   <div class="example" id="example-3716">
     <p><strong>Example #2 Accessing invalid object properties</strong></p>
     <div class="example-contents"><p>
      Accessing elements within an object that contain characters not
@@ -159,7 +159,7 @@ array(5) {
     </div>
 
    </div>
-   <div class="example" id="example-3494">
+   <div class="example" id="example-3717">
     <p><strong>Example #3 common mistakes using  <span class="function"><strong>json_decode()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -169,7 +169,7 @@ array(5) {
     </div>
 
    </div>
-   <div class="example" id="example-3495">
+   <div class="example" id="example-3718">
     <p><strong>Example #4 <em><code class="parameter">depth</code></em> errors</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -207,11 +207,11 @@ Last error: JSON_ERROR_DEPTH
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-3496">
+   <div class="example" id="example-3719">
     <p><strong>Example #5  <span class="function"><strong>json_decode()</strong></span> of large integers</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$json&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'12345678901234567890'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">json_decode</span><span style="color: #007700">(</span><span style="color: #0000BB">$json</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">json_decode</span><span style="color: #007700">(</span><span style="color: #0000BB">$json</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">512</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_BIGINT_AS_STRING</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$json&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'{"number":&nbsp;12345678901234567890}'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">json_decode</span><span style="color: #007700">(</span><span style="color: #0000BB">$json</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">json_decode</span><span style="color: #007700">(</span><span style="color: #0000BB">$json</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">512</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_BIGINT_AS_STRING</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -219,8 +219,14 @@ Last error: JSON_ERROR_DEPTH
     <div class="example-contents"><p>The above example will output:</p></div>
     <div class="example-contents screen">
 <div class="cdata"><pre>
-float(1.2345678901235E+19)
-string(20) &quot;12345678901234567890&quot;
+object(stdClass)#1 (1) {
+  [&quot;number&quot;]=&gt;
+  float(1.2345678901235E+19)
+}
+object(stdClass)#1 (1) {
+  [&quot;number&quot;]=&gt;
+  string(20) &quot;12345678901234567890&quot;
+}
 </pre></div>
     </div>
    </div>

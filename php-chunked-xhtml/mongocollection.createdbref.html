@@ -21,7 +21,7 @@
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><strong>MongoCollection::createDBRef</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$a</code></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$document_or_id</code></span>
    )</div>
 
  </div>
@@ -35,12 +35,14 @@
     <dt>
 
      <span class="term">
-      <em><code class="parameter">a</code></em>
+      <em><code class="parameter">document_or_id</code></em>
      </span>
      <dd>
 
       <p class="para">
-       Object to which to create a reference.
+       If an array or object is given, its <em>_id</em> field will be
+       used as the reference ID. If a <a href="class.mongoid.html" class="classname">MongoId</a> or scalar
+       is given, it will be used as the reference ID.
       </p>
      </dd>
 
@@ -57,12 +59,16 @@
   <p class="para">
    Returns a database reference array.
   </p>
+  <p class="para">
+   If an array without an <em>_id</em> field was provided as the
+   <em>document_or_id</em> parameter, <strong><code>NULL</code></strong> will be returned.
+  </p>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-mongocollection.createdbref-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-1440">
+  <div class="example" id="example-1510">
    <p><strong>Example #1  <span class="methodname"><strong>MongoCollection::createDBRef()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

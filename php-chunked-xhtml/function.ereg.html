@@ -145,7 +145,7 @@ highly discouraged.</p></div>
  <div class="refsect1 examples" id="refsect1-function.ereg-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4484">
+   <div class="example" id="example-4758">
     <p><strong>Example #1  <span class="function"><strong>ereg()</strong></span> example</strong></p>
     <div class="example-contents"><p>
      The following code snippet takes a date in ISO format (YYYY-MM-DD) and
@@ -170,13 +170,12 @@ regex extension is deprecated in favor of the
 <a href="book.pcre.html" class="link">PCRE extension</a>. Calling this function
 will issue an <strong><code>E_DEPRECATED</code></strong> notice. See <a href="reference.pcre.pattern.posix.html" class="link">the list of
 differences</a> for help on converting to PCRE.</p></p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
+  <div class="tip"><strong class="tip">Tip</strong>
    <p class="para">
-     <span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span>, which uses a Perl-compatible
-    regular expression syntax, is often a faster alternative to
-     <span class="function"><strong>ereg()</strong></span>.
+     <span class="function"><strong>ereg()</strong></span> is deprecated as of PHP 5.3.0.  <span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span> 
+    is the suggested alternative to this function.
    </p>
-  </p></blockquote>
+  </div>
  </div>
 
 

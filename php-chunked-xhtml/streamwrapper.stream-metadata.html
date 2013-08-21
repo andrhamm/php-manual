@@ -21,9 +21,9 @@
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><strong>streamWrapper::stream_metadata</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$path</code></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$option</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$var</code></span>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -68,12 +68,12 @@
       <p class="para">
        One of:
        <ul class="simplelist">
-        <li class="member"><strong><code>PHP_STREAM_META_TOUCH</code></strong> (The method was called in response to  <span class="function"><a href="function.touch.html" class="function">touch()</a></span>)</li>
-        <li class="member"><strong><code>PHP_STREAM_META_OWNER_NAME</code></strong> (The method was called in response to  <span class="function"><a href="function.chown.html" class="function">chown()</a></span> with string parameter)</li>
-        <li class="member"><strong><code>PHP_STREAM_META_OWNER</code></strong> (The method was called in response to   <span class="function"><a href="function.chown.html" class="function">chown()</a></span>)</li>
-        <li class="member"><strong><code>PHP_STREAM_META_GROUP_NAME</code></strong> (The method was called in response to  <span class="function"><a href="function.chgrp.html" class="function">chgrp()</a></span>)</li>
-        <li class="member"><strong><code>PHP_STREAM_META_GROUP</code></strong> (The method was called in response to  <span class="function"><a href="function.chgrp.html" class="function">chgrp()</a></span>)</li>
-        <li class="member"><strong><code>PHP_STREAM_META_ACCESS</code></strong> (The method was called in response to   <span class="function"><a href="function.chmod.html" class="function">chmod()</a></span>)</li>
+        <li class="member"><strong><code>STREAM_META_TOUCH</code></strong> (The method was called in response to  <span class="function"><a href="function.touch.html" class="function">touch()</a></span>)</li>
+        <li class="member"><strong><code>STREAM_META_OWNER_NAME</code></strong> (The method was called in response to  <span class="function"><a href="function.chown.html" class="function">chown()</a></span> with string parameter)</li>
+        <li class="member"><strong><code>STREAM_META_OWNER</code></strong> (The method was called in response to   <span class="function"><a href="function.chown.html" class="function">chown()</a></span>)</li>
+        <li class="member"><strong><code>STREAM_META_GROUP_NAME</code></strong> (The method was called in response to  <span class="function"><a href="function.chgrp.html" class="function">chgrp()</a></span>)</li>
+        <li class="member"><strong><code>STREAM_META_GROUP</code></strong> (The method was called in response to  <span class="function"><a href="function.chgrp.html" class="function">chgrp()</a></span>)</li>
+        <li class="member"><strong><code>STREAM_META_ACCESS</code></strong> (The method was called in response to   <span class="function"><a href="function.chmod.html" class="function">chmod()</a></span>)</li>
        </ul>
       </p>
      </dd>
@@ -82,19 +82,19 @@
 
     <dt>
 
-     <span class="term"><em><code class="parameter">arg1</code></em></span>
+     <span class="term"><em><code class="parameter">value</code></em></span>
      <dd>
 
       <p class="para">
        If <em><code class="parameter">option</code></em> is
        <ul class="simplelist">
-        <li class="member"><strong><code>PHP_STREAM_META_TOUCH</code></strong>: <span class="type"><a href="language.types.array.html" class="type Array">Array</a></span> consisting of two arguments of the  <span class="function"><a href="function.touch.html" class="function">touch()</a></span>
+        <li class="member"><strong><code>STREAM_META_TOUCH</code></strong>: <span class="type"><a href="language.types.array.html" class="type Array">Array</a></span> consisting of two arguments of the  <span class="function"><a href="function.touch.html" class="function">touch()</a></span>
         function.</li>
-        <li class="member"><strong><code>PHP_STREAM_META_OWNER_NAME</code></strong> or <strong><code>PHP_STREAM_META_GROUP_NAME</code></strong>:
+        <li class="member"><strong><code>STREAM_META_OWNER_NAME</code></strong> or <strong><code>STREAM_META_GROUP_NAME</code></strong>:
         The name of the owner user/group as <span class="type"><a href="language.types.string.html" class="type string">string</a></span>.</li>
-        <li class="member"><strong><code>PHP_STREAM_META_OWNER</code></strong> or <strong><code>PHP_STREAM_META_GROUP</code></strong>:
+        <li class="member"><strong><code>STREAM_META_OWNER</code></strong> or <strong><code>STREAM_META_GROUP</code></strong>:
         The value owner user/group argument as <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>.</li>
-        <li class="member"><strong><code>PHP_STREAM_META_ACCESS</code></strong>: The argument of the  <span class="function"><a href="function.chmod.html" class="function">chmod()</a></span> as <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>.</li>
+        <li class="member"><strong><code>STREAM_META_ACCESS</code></strong>: The argument of the  <span class="function"><a href="function.chmod.html" class="function">chmod()</a></span> as <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>.</li>
        </ul>
       </p>
      </dd>

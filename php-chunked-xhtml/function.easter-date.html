@@ -116,7 +116,7 @@
  <div class="refsect1 examples" id="refsect1-function.easter-date-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-608">
+   <div class="example" id="example-625">
     <p><strong>Example #1  <span class="function"><strong>easter_date()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -127,6 +127,46 @@
 
    </div>
   </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.easter-date-notes">
+  <h3 class="title">Notes</h3>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+     <span class="function"><strong>easter_date()</strong></span> relies on your system&#039;s C library time
+    functions, rather than using PHP&#039;s internal date and time functions. As a
+    consequence,  <span class="function"><strong>easter_date()</strong></span> uses the
+    <em>TZ</em> environment variable to determine the time zone it
+    should operate in, rather than using PHP&#039;s
+    <a href="datetime.configuration.html#ini.date.timezone" class="link">default time zone</a>, which may
+    result in unexpected behaviour when using this function in conjunction
+    with other date functions in PHP.
+   </p>
+   <p class="para">
+    As a workaround, you can use the  <span class="function"><a href="function.easter-days.html" class="function">easter_days()</a></span> with
+    <a href="class.datetime.html" class="classname">DateTime</a> and <a href="class.dateinterval.html" class="classname">DateInterval</a> to
+    calculate the start of Easter in your PHP time zone as follows:
+   </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">get_easter_datetime</span><span style="color: #007700">(</span><span style="color: #0000BB">$year</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$base&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$year</span><span style="color: #DD0000">-03-21"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$days&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">easter_days</span><span style="color: #007700">(</span><span style="color: #0000BB">$year</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$base</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">"P</span><span style="color: #007700">{</span><span style="color: #0000BB">$days</span><span style="color: #007700">}</span><span style="color: #DD0000">D"</span><span style="color: #007700">));<br />}<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">2012</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2015</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$year</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Easter&nbsp;in&nbsp;%d&nbsp;is&nbsp;on&nbsp;%s\n"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$year</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">get_easter_datetime</span><span style="color: #007700">(</span><span style="color: #0000BB">$year</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'F&nbsp;j'</span><span style="color: #007700">));<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <p class="para">The above example will output:</p>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Easter in 2012 is on April 8
+Easter in 2013 is on March 31
+Easter in 2014 is on April 20
+Easter in 2015 is on April 5
+</pre></div>
+    </div>
+   </div>
+  </p></blockquote>
  </div>
 
 

@@ -15,7 +15,7 @@
   <p class="para">
    Imagick makes image manipulation in PHP extremely easy through an OO
    interface. Here is a quick example on how to make a thumbnail:
-   <div class="example" id="example-3119">
+   <div class="example" id="example-3275">
     <p><strong>Example #1 Creating a thumbnail in Imagick</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -32,7 +32,7 @@
    to resize all files in a directory (useful for batch resizing large
    digital camera images to be web viewable). Here we use resize, as we might
    want to retain certain meta-data:
-   <div class="example" id="example-3120">
+   <div class="example" id="example-3276">
     <p><strong>Example #2 Make a thumbnail of all JPG files in a directory</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -47,7 +47,7 @@
    This is an example of creating a reflection of an image.
    The reflection is created by flipping the image and overlaying a gradient on it.
    Then both, the original image and the reflection is overlayed on a canvas.
-   <div class="example" id="example-3121">
+   <div class="example" id="example-3277">
     <p><strong>Example #3 Creating a reflection of an image</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -68,7 +68,7 @@ something similar to:</p></div>
   </p>
   <p class="para">
    This example illustrates how to use fill patterns during drawing.
-   <div class="example" id="example-3122">
+   <div class="example" id="example-3278">
     <p><strong>Example #4 Filling text with gradient</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -89,7 +89,7 @@ something similar to:</p></div>
   </p>
   <p class="para">
    Working with animated GIF images
-   <div class="example" id="example-3123">
+   <div class="example" id="example-3279">
     <p><strong>Example #5 Read in GIF image and resize all frames</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -98,6 +98,27 @@ something similar to:</p></div>
 </code></div>
     </div>
 
+   </div>
+  </p>
+  <p class="para">
+   Working with ellipse primitive and custom fonts
+   <div class="example" id="example-3280">
+    <p><strong>Example #6 Create a PHP logo</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Set&nbsp;width&nbsp;and&nbsp;height&nbsp;in&nbsp;proportion&nbsp;of&nbsp;genuine&nbsp;PHP&nbsp;logo&nbsp;*/<br /></span><span style="color: #0000BB">$width&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">400</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$height&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">210</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;Create&nbsp;an&nbsp;Imagick&nbsp;object&nbsp;with&nbsp;transparent&nbsp;canvas&nbsp;*/<br /></span><span style="color: #0000BB">$img&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Imagick</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$img</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">newImage</span><span style="color: #007700">(</span><span style="color: #0000BB">$width</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$height</span><span style="color: #007700">,&nbsp;new&nbsp;</span><span style="color: #0000BB">ImagickPixel</span><span style="color: #007700">(</span><span style="color: #DD0000">'transparent'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">/*&nbsp;New&nbsp;ImagickDraw&nbsp;instance&nbsp;for&nbsp;ellipse&nbsp;draw&nbsp;*/<br /></span><span style="color: #0000BB">$draw&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ImagickDraw</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">/*&nbsp;Set&nbsp;purple&nbsp;fill&nbsp;color&nbsp;for&nbsp;ellipse&nbsp;*/<br /></span><span style="color: #0000BB">$draw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setFillColor</span><span style="color: #007700">(</span><span style="color: #DD0000">'#777bb4'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*&nbsp;Set&nbsp;ellipse&nbsp;dimensions&nbsp;*/<br /></span><span style="color: #0000BB">$draw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ellipse</span><span style="color: #007700">(</span><span style="color: #0000BB">$width&nbsp;</span><span style="color: #007700">/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$height&nbsp;</span><span style="color: #007700">/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$width&nbsp;</span><span style="color: #007700">/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$height&nbsp;</span><span style="color: #007700">/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">360</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*&nbsp;Draw&nbsp;ellipse&nbsp;onto&nbsp;the&nbsp;canvas&nbsp;*/<br /></span><span style="color: #0000BB">$img</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">drawImage</span><span style="color: #007700">(</span><span style="color: #0000BB">$draw</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Reset&nbsp;fill&nbsp;color&nbsp;from&nbsp;purple&nbsp;to&nbsp;black&nbsp;for&nbsp;text&nbsp;(note:&nbsp;we&nbsp;are&nbsp;reusing&nbsp;ImagickDraw&nbsp;object)&nbsp;*/<br /></span><span style="color: #0000BB">$draw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setFillColor</span><span style="color: #007700">(</span><span style="color: #DD0000">'black'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*&nbsp;Set&nbsp;stroke&nbsp;border&nbsp;to&nbsp;white&nbsp;color&nbsp;*/<br /></span><span style="color: #0000BB">$draw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setStrokeColor</span><span style="color: #007700">(</span><span style="color: #DD0000">'white'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*&nbsp;Set&nbsp;stroke&nbsp;border&nbsp;thickness&nbsp;*/<br /></span><span style="color: #0000BB">$draw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setStrokeWidth</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*&nbsp;Set&nbsp;font&nbsp;kerning&nbsp;(negative&nbsp;value&nbsp;means&nbsp;that&nbsp;letters&nbsp;are&nbsp;closer&nbsp;to&nbsp;each&nbsp;other)&nbsp;*/<br /></span><span style="color: #0000BB">$draw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setTextKerning</span><span style="color: #007700">(-</span><span style="color: #0000BB">8</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*&nbsp;Set&nbsp;font&nbsp;and&nbsp;font&nbsp;size&nbsp;used&nbsp;in&nbsp;PHP&nbsp;logo&nbsp;*/<br /></span><span style="color: #0000BB">$draw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setFont</span><span style="color: #007700">(</span><span style="color: #DD0000">'Handel&nbsp;Gothic.ttf'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$draw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setFontSize</span><span style="color: #007700">(</span><span style="color: #0000BB">150</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*&nbsp;Center&nbsp;text&nbsp;horizontally&nbsp;and&nbsp;vertically&nbsp;*/<br /></span><span style="color: #0000BB">$draw</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setGravity</span><span style="color: #007700">(</span><span style="color: #0000BB">Imagick</span><span style="color: #007700">::</span><span style="color: #0000BB">GRAVITY_CENTER</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Add&nbsp;center&nbsp;"php"&nbsp;with&nbsp;Y&nbsp;offset&nbsp;of&nbsp;-10&nbsp;to&nbsp;canvas&nbsp;(inside&nbsp;ellipse)&nbsp;*/<br /></span><span style="color: #0000BB">$img</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">annotateImage</span><span style="color: #007700">(</span><span style="color: #0000BB">$draw</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'php'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$img</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setImageFormat</span><span style="color: #007700">(</span><span style="color: #DD0000">'png'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Set&nbsp;appropriate&nbsp;header&nbsp;for&nbsp;PNG&nbsp;and&nbsp;output&nbsp;the&nbsp;image&nbsp;*/<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;image/png'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$img</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>The above example will output
+something similar to:</p></div>
+    <div class="mediaobject">
+     
+     <div class="imageobject">
+      <img src="images/c0d23d2d6769e53e24a1b3136c064577-php_logo.png" alt="Output of example : Creating PHP logo with Imagick" width="300" height="180" />
+     </div>
+    </div>
    </div>
   </p>
  </div><hr /><div class="manualnavbar" style="text-align: center;">

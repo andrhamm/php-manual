@@ -319,7 +319,7 @@
      <dt id="pm.start-servers">
       <span class="term">
        <em><code class="parameter">pm.start_servers</code></em>
-       <span class="type"><span class="type in">in</span></span>
+       <span class="type"><a href="language.types.integer.html" class="type int">int</a></span>
       </span>
       <dd>
 
@@ -589,6 +589,30 @@
     <p class="para">
      Settings defined with <em>php_admin_value</em> and <em>php_admin_flag</em>
      cannot be overriden with  <span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span>.
+    </p>
+    <p class="para">
+     As of 5.3.3, PHP settings are also possible to be set in webserver.
+     <div class="example" id="example-61">
+      <p><strong>Example #2 set PHP settings in nginx.conf</strong></p>
+      <div class="example-contents">
+       <div class="inicode"><pre class="inicode">set $php_value &quot;pcre.backtrack_limit=424242&quot;;
+set $php_value &quot;$php_value \n pcre.recursion_limit=99999&quot;;
+fastcgi_param  PHP_VALUE $php_value;
+
+fastcgi_param  PHP_ADMIN_VALUE &quot;open_basedir=/var/www/htdocs&quot;;</pre>
+</div>
+      </div>
+
+     </div>
+     <div class="caution"><strong class="caution">Caution</strong>
+      <p class="para">
+       Because these settings are passed to php-fpm as fastcgi headers,
+       php-fpm should not be bound to a worldwide accessible address.
+       Otherwise, anyone could alter the PHP configuration options.
+       See also 
+       <a href="install.fpm.configuration.html#listen-allowed-clients" class="link">listen.allowed_clients</a>.
+      </p>
+     </div>
     </p>
    </div>
    

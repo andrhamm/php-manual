@@ -23,7 +23,7 @@
     </p>
 
     <p class="para">
-     <div class="example" id="example-106">
+     <div class="example" id="example-107">
       <p><strong>Example #1 A simple HTML form</strong></p>
       <div class="example-contents">
 <div class="htmlcode"><pre class="htmlcode">&lt;form action=&quot;foo.php&quot; method=&quot;post&quot;&gt;
@@ -44,7 +44,7 @@
 
     
     <p class="para">
-     <div class="example" id="example-107">
+     <div class="example" id="example-108">
       <p><strong>Example #2 Accessing data from a simple POST HTML form</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -94,7 +94,8 @@
       The <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a> 
       configuration directive affects Get, Post and Cookie values.  If 
       turned on, value (It&#039;s &quot;PHP!&quot;) will automagically become (It\&#039;s \&quot;PHP!\&quot;).
-      Escaping is needed for DB insertion.  See also 
+      It was deemed that this was needed for escaping for DB insertion circa a
+      decade ago and is a legacy feature now that should be disabled. See also
        <span class="function"><a href="function.addslashes.html" class="function">addslashes()</a></span>,  <span class="function"><a href="function.stripslashes.html" class="function">stripslashes()</a></span> and 
       <a href="sybase.configuration.html#ini.magic-quotes-sybase" class="link">magic_quotes_sybase</a>.
      </p>
@@ -110,7 +111,7 @@
     </p>
 
     <p class="para">
-     <div class="example" id="example-108">
+     <div class="example" id="example-109">
       <p><strong>Example #3 More complex form variables</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -198,7 +199,7 @@
      and pass this along.  i.e.
     </p>
 
-    <div class="example" id="example-109">
+    <div class="example" id="example-110">
      <p><strong>Example #4 A  <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> example</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

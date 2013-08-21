@@ -88,7 +88,9 @@
   <h3 class="title">Return Values</h3>
   <p class="para">
    Returns the string associated with the <em><code class="parameter">key</code></em> or
-   <strong><code>FALSE</code></strong> on failure or if such <em><code class="parameter">key</code></em> was not found.
+   an array of found key-value pairs when <em><code class="parameter">key</code></em> is an <span class="type"><a href="language.types.array.html" class="type array">array</a></span>.
+   Returns <strong><code>FALSE</code></strong> on failure, <em><code class="parameter">key</code></em> is not found or
+   <em><code class="parameter">key</code></em> is an empty <span class="type"><a href="language.types.array.html" class="type array">array</a></span>.
   </p>
  </div>
 
@@ -96,7 +98,7 @@
  <div class="refsect1 examples" id="refsect1-memcache.get-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4100">
+   <div class="example" id="example-4370">
     <p><strong>Example #1  <span class="function"><strong>Memcache::get()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

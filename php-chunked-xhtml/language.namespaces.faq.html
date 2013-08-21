@@ -118,7 +118,7 @@
     write this code if you wish:
    </p>
    <p class="para">
-    <div class="example" id="example-252">
+    <div class="example" id="example-255">
      <p><strong>Example #1 Accessing global classes outside a namespace</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -133,7 +133,7 @@
     This is functionally equivalent to:
    </p>
    <p class="para">
-    <div class="example" id="example-253">
+    <div class="example" id="example-256">
      <p><strong>Example #2 Accessing global classes outside a namespace</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -148,7 +148,7 @@
   <div class="sect2" id="language.namespaces.faq.globalclass">
    <h3 class="title">How do I use internal or global classes in a namespace?</h3>
    <p class="para">
-    <div class="example" id="example-254">
+    <div class="example" id="example-257">
      <p><strong>Example #3 Accessing internal classes in namespaces</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -166,7 +166,7 @@
     namespace?
    </h3>
    <p class="para">
-    <div class="example" id="example-255">
+    <div class="example" id="example-258">
      <p><strong>Example #4 Accessing internal classes, functions or constants in namespaces</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -187,7 +187,7 @@
     Names that begin with a <em>\</em> always resolve to what they
     look like, so <em>\my\name</em> is in fact <em>my\name</em>,
     and <em>\Exception</em> is <em>Exception</em>.
-    <div class="example" id="example-256">
+    <div class="example" id="example-259">
      <p><strong>Example #5 Fully Qualified names</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -214,7 +214,7 @@
     Otherwise, the current namespace name is prepended to <em>my\name</em>.
    </p>
    <p class="para">
-    <div class="example" id="example-257">
+    <div class="example" id="example-260">
      <p><strong>Example #6 Qualified names</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -241,7 +241,7 @@
     Otherwise, the current namespace name is prepended to <em>name</em>.
    </p>
    <p class="para">
-    <div class="example" id="example-258">
+    <div class="example" id="example-261">
      <p><strong>Example #7 Unqualified class names</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -271,11 +271,11 @@
     is used if it exists.
    </p>
    <p class="para">
-    <div class="example" id="example-259">
+    <div class="example" id="example-262">
      <p><strong>Example #8 Unqualified function or constant names</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">blah</span><span style="color: #007700">\</span><span style="color: #0000BB">blah&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br /><br />const&nbsp;</span><span style="color: #0000BB">FOO&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">my</span><span style="color: #007700">()&nbsp;{}<br />function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{}<br />function&nbsp;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_flip</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">my</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;calls&nbsp;"foo\my"<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #DD0000">'hi'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;calls&nbsp;global&nbsp;function&nbsp;"strlen"&nbsp;because&nbsp;"foo\strlen"&nbsp;does&nbsp;not&nbsp;exist<br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;calls&nbsp;function&nbsp;"foo\sort"<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;calls&nbsp;function&nbsp;"foo\foo"&nbsp;-&nbsp;import&nbsp;is&nbsp;not&nbsp;applied<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FOO</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;sets&nbsp;$a&nbsp;to&nbsp;value&nbsp;of&nbsp;constant&nbsp;"foo\FOO"&nbsp;-&nbsp;import&nbsp;is&nbsp;not&nbsp;applied<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">INI_ALL</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;sets&nbsp;$b&nbsp;to&nbsp;value&nbsp;of&nbsp;global&nbsp;constant&nbsp;"INI_ALL"<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">blah</span><span style="color: #007700">\</span><span style="color: #0000BB">blah&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br /><br />const&nbsp;</span><span style="color: #0000BB">FOO&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">my</span><span style="color: #007700">()&nbsp;{}<br />function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{}<br />function&nbsp;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;\</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;calls&nbsp;the&nbsp;global&nbsp;function&nbsp;"sort"<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_flip</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">my</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;calls&nbsp;"foo\my"<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #DD0000">'hi'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;calls&nbsp;global&nbsp;function&nbsp;"strlen"&nbsp;because&nbsp;"foo\strlen"&nbsp;does&nbsp;not&nbsp;exist<br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;calls&nbsp;function&nbsp;"foo\sort"<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;calls&nbsp;function&nbsp;"foo\foo"&nbsp;-&nbsp;import&nbsp;is&nbsp;not&nbsp;applied<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">FOO</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;sets&nbsp;$a&nbsp;to&nbsp;value&nbsp;of&nbsp;constant&nbsp;"foo\FOO"&nbsp;-&nbsp;import&nbsp;is&nbsp;not&nbsp;applied<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">INI_ALL</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;sets&nbsp;$b&nbsp;to&nbsp;value&nbsp;of&nbsp;global&nbsp;constant&nbsp;"INI_ALL"<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
      </div>
@@ -379,7 +379,7 @@
     It is very important to realize that because the backslash is used as an escape character
     within strings, it should always be doubled when used inside a string.  Otherwise
     there is a risk of unintended consequences:
-    <div class="example" id="example-260">
+    <div class="example" id="example-263">
      <p><strong>Example #9 Dangers of using namespaced names inside a double-quoted string</strong></p>
      <div class="example-contents">
       <div class="phpcode"><code><span style="color: #000000">
@@ -400,7 +400,7 @@
     produce a notice explaining that PHP assumed <em>FOO</em> was the value
     of the constant.  Any constant, qualified or fully qualified, that contains a
     backslash will produce a fatal error if not found.
-    <div class="example" id="example-261">
+    <div class="example" id="example-264">
      <p><strong>Example #10 Undefined constants</strong></p>
      <div class="example-contents">
       <div class="phpcode"><code><span style="color: #000000">
@@ -417,7 +417,7 @@
    <p class="para">
     Any attempt to define a namespaced constant that is a special, built-in constant
     results in a fatal error
-    <div class="example" id="example-262">
+    <div class="example" id="example-265">
      <p><strong>Example #11 Undefined constants</strong></p>
      <div class="example-contents">
       <div class="phpcode"><code><span style="color: #000000">

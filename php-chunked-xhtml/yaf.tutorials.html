@@ -15,7 +15,7 @@
 
 
  <div class="section">
-  <div class="example" id="example-3840">
+  <div class="example" id="example-4063">
    <p><strong>Example #1 A classic Application directory layout</strong></p>
    <div class="example-contents screen">
 <div class="cdata"><pre>
@@ -40,7 +40,7 @@
  </div>
 
  <div class="section">
- <div class="example" id="example-3841">
+ <div class="example" id="example-4064">
   <p><strong>Example #2 Entry</strong></p>
   <div class="example-contents"><p>index.php in the top directory is the only way in of the application, you should rewrite all request to it(you can use .htaccess in Apache+php_mod) </p></div>
    <div class="example-contents">
@@ -54,7 +54,7 @@
  </div>
 
  <div class="section">
- <div class="example" id="example-3842">
+ <div class="example" id="example-4065">
   <p><strong>Example #3 Rewrite rule</strong></p>
   <div class="example-contents screen">
 <div class="cdata"><pre>
@@ -87,7 +87,7 @@ $HTTP[&quot;host&quot;] =~ &quot;(www.)?domain.com$&quot; {
  </div>
 
  <div class="section">
- <div class="example" id="example-3843">
+ <div class="example" id="example-4066">
   <p><strong>Example #4 Application config</strong></p>
    <div class="example-contents">
 <div class="inicode"><pre class="inicode">[yaf]
@@ -104,11 +104,11 @@ foo=bar</pre>
  </div>
 
  <div class="section">
- <div class="example" id="example-3844">
+ <div class="example" id="example-4067">
   <p><strong>Example #5 Default controller</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">IndexController&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Yaf_Controller_Abstract&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;default&nbsp;action&nbsp;*/<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">indexAction</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">view</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">word&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"hello&nbsp;world"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">IndexController&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Yaf_Controller_Abstract&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;default&nbsp;action&nbsp;*/<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">indexAction</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">_view</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">word&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"hello&nbsp;world"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//or<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;$this-&gt;getView()-&gt;word&nbsp;=&nbsp;"hello&nbsp;world";<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -117,7 +117,7 @@ foo=bar</pre>
  </div>
 
  <div class="section">
- <div class="example" id="example-3845">
+ <div class="example" id="example-4068">
   <p><strong>Example #6 Default view template</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -129,7 +129,7 @@ foo=bar</pre>
   </div>
 
  <div class="section">
-  <div class="example" id="example-3846">
+  <div class="example" id="example-4069">
    <p><strong>Example #7 Run the Applicatioin</strong></p>
     <div class="example-contents"><p>The above example will output
 something similar to:</p></div>

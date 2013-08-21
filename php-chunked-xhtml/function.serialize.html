@@ -25,7 +25,7 @@
     )</div>
 
   <p class="para rdfs-comment">
-   Generates a storable representation of a value
+   Generates a storable representation of a value.
   </p>
   <p class="para">
    This is useful for storing or passing PHP values around without
@@ -86,13 +86,19 @@
    Returns a string containing a byte-stream representation of 
    <em><code class="parameter">value</code></em> that can be stored anywhere.
   </p>
+  <p class="para">
+   Note that this is a binary string which may include null bytes, and needs
+   to be stored and handled as such. For example,
+    <span class="function"><strong>serialize()</strong></span> output should generally be stored in a BLOB
+   field in a database, rather than a CHAR or TEXT field.
+  </p>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-function.serialize-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4940">
+   <div class="example" id="example-5218">
     <p><strong>Example #1  <span class="function"><strong>serialize()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

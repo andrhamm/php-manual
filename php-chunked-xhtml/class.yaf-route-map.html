@@ -15,13 +15,28 @@
  <h1 class="title">The Yaf_Route_Map class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(Yaf &gt;=1.0.0)</p>
 
 
   <div class="section" id="yaf-route-map.intro">
    <h2 class="title">Introduction</h2>
    <p class="para">
+     <strong class="classname">Yaf_Route_Map</strong> is a built-in route, it simply
+     convert a URI endpoint (that part of the URI which comes after the
+     base URI: see  <span class="methodname"><a href="yaf-request-abstract.setbaseuri.html" class="methodname">Yaf_Request_Abstract::setBaseUri()</a></span>)
+     to a controller name or action name(depends on the paramter passed to
+      <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">Yaf_Route_Map::__construct()</a></span>) in following rule:
+     A =&gt; controller A.
+     A/B/C =&gt; controller A_B_C.
+     A/B/C/D/E =&gt; controller A_B_C_D_E.
+    </p>
 
+    <p class="para">
+     If the second parameter of
+      <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">Yaf_Route_Map::__construct()</a></span> is specificed, then
+     only the part before delimeter of URI will used to routing, the part after
+     it is used to routing request parameters (see the example section of
+      <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">Yaf_Route_Map::__construct()</a></span>).
    </p>
   </div>
 

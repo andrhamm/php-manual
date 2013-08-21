@@ -129,7 +129,7 @@ foreach (array_expression as $key =&gt; $value)
   </div>
  </p>
  <p class="para">
-  Some more examples to demonstrate usages:
+  Some more examples to demonstrate usage:
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -140,6 +140,87 @@ foreach (array_expression as $key =&gt; $value)
 
   </div>
  </p>
+
+ <div class="sect2" id="control-structures.foreach.list">
+  <h3 class="title">Unpacking nested arrays with list()</h3>
+  <p class="verinfo">(PHP 5 &gt;= 5.5.0)</p>
+
+  <p class="para">
+   PHP 5.5 added the ability to iterate over an array of arrays and unpack the
+   nested array into loop variables by providing a  <span class="function"><a href="function.list.html" class="function">list()</a></span>
+   as the value.
+  </p>
+
+  <p class="para">
+   For example:
+
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">],<br />];<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">as&nbsp;list(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$a&nbsp;contains&nbsp;the&nbsp;first&nbsp;element&nbsp;of&nbsp;the&nbsp;nested&nbsp;array,<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;and&nbsp;$b&nbsp;contains&nbsp;the&nbsp;second&nbsp;element.<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"A:&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #DD0000">;&nbsp;B:&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <p class="para">The above example will output:</p>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+A: 1; B: 2
+A: 3; B: 4
+</pre></div>
+    </div>
+   </div>
+  </p>
+
+  <p class="para">
+   You can provide fewer elements in the  <span class="function"><a href="function.list.html" class="function">list()</a></span> than there
+   are in the nested array, in which case the leftover array values will be
+   ignored:
+
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">],<br />];<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">as&nbsp;list(</span><span style="color: #0000BB">$a</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Note&nbsp;that&nbsp;there&nbsp;is&nbsp;no&nbsp;$b&nbsp;here.<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$a</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <p class="para">The above example will output:</p>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+1
+3
+</pre></div>
+    </div>
+   </div>
+  </p>
+
+  <p class="para">
+   A notice will be generated if there aren&#039;t enough array elements to fill
+   the  <span class="function"><a href="function.list.html" class="function">list()</a></span>:
+
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">],<br />];<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">as&nbsp;list(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A:&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #DD0000">;&nbsp;B:&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #DD0000">;&nbsp;C:&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <p class="para">The above example will output:</p>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+
+Notice: Undefined offset: 2 in example.php on line 7
+A: 1; B: 2; C: 
+
+Notice: Undefined offset: 2 in example.php on line 7
+A: 3; B: 4; C: 
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="control-structures.for.html">for</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="control-structures.break.html">break</a></div>

@@ -23,8 +23,9 @@
    <span class="type">string</span> <span class="methodname"><strong>mb_encode_numericentity</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$convmap</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$encoding</code></span>
-   )</div>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$encoding</code><span class="initializer"> = mb_internal_encoding()</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_hex</code></span>
+  ]] )</div>
 
   <p class="para rdfs-comment">
    Converts
@@ -76,6 +77,17 @@ encoding value will be used.</p>
 
     </dt>
 
+    <dt>
+
+     <span class="term"><em><code class="parameter">is_hex</code></em></span>
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    </dt>
+
    </dl>
 
   </p>
@@ -90,10 +102,39 @@ encoding value will be used.</p>
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-function.mb-encode-numericentity-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        Added <em><code class="parameter">is_hex</code></em> parameter.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-function.mb-encode-numericentity-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-2534">
+   <div class="example" id="example-2684">
     <p><strong>Example #1 <em><code class="parameter">convmap</code></em> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -110,7 +151,7 @@ encoding value will be used.</p>
  <div class="refsect1 examples" id="refsect1-function.mb-encode-numericentity-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-2535">
+   <div class="example" id="example-2685">
     <p><strong>Example #2  <span class="function"><strong>mb_encode_numericentity()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -15,7 +15,7 @@
  <h1 class="title">The Yaf_Loader class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(Yaf &gt;=1.0.0)</p>
 
 
   <div class="section" id="yaf-loader.intro">
@@ -33,9 +33,9 @@
     <strong class="classname">Yaf_Loader</strong> attempt to load a class only one shot, if
     failed, depend on <a href="yaf.configuration.html#ini.yaf.use-spl-autoload" class="link">yaf.use_spl_auload</a>, if this
     config is On  <span class="methodname"><a href="yaf-loader.autoload.html" class="methodname">Yaf_Loader::autoload()</a></span> will return 
-    FALSE, thus give the chance to other autoload function. if it is Off 
+    <strong><code>FALSE</code></strong>, thus give the chance to other autoload function. if it is Off 
     (by default),  <span class="methodname"><a href="yaf-loader.autoload.html" class="methodname">Yaf_Loader::autoload()</a></span> will return 
-    TRUE, and more important is that a very usefull warning will be triggerd 
+    <strong><code>TRUE</code></strong>, and more important is that a very usefull warning will be triggerd 
     (very usefull to find out why a class could not be loaded). 
     <blockquote class="note"><p><strong class="note">Note</strong>: 
      <p class="para">
@@ -61,7 +61,7 @@
 
    <p class="para">
     Let&#039;s see some examples(assuming APPLICATION_PATH is <a href="yaf.appconfig.html#configuration.yaf.directory" class="link">application.directory</a>):
-    <div class="example" id="example-3882">
+    <div class="example" id="example-4106">
      <p><strong>Example #1 Config example</strong></p>
       <div class="example-contents">
 <div class="shellcode"><pre class="shellcode">// Assuming the following configure in php.ini:
@@ -75,7 +75,7 @@ application.libraray = APPLICATION_PATH &quot;/library&quot;</pre>
     </div>
 
     Assuming the following local name space registerd:
-    <div class="example" id="example-3883">
+    <div class="example" id="example-4107">
      <p><strong>Example #2 Register localnamespace</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -87,7 +87,7 @@ application.libraray = APPLICATION_PATH &quot;/library&quot;</pre>
     </div>
 
    Then the autoload examples:
-    <div class="example" id="example-3884">
+    <div class="example" id="example-4108">
      <p><strong>Example #3 Load class example</strong></p>
       <div class="example-contents">
 <div class="shellcode"><pre class="shellcode">class Foo_Bar_Test =&gt;
@@ -104,7 +104,7 @@ class BarNon_Test
     </div>
 
    As of PHP 5.3, you can use namespace:
-   <div class="example" id="example-3885">
+   <div class="example" id="example-4109">
     <p><strong>Example #4 Load namespace class example</strong></p>
     <div class="example-contents">
 <div class="shellcode"><pre class="shellcode">class \Foo\Bar\Dummy =&gt;
@@ -126,7 +126,7 @@ class \FooBar\Bar\Dummy =&gt;
   <p class="para">
    <strong class="classname">Yaf_Loader</strong> is also designed to load the MVC classes,
    and the rule is:
-   <div class="example" id="example-3886">
+   <div class="example" id="example-4110">
     <p><strong>Example #5 MVC class loading example</strong></p>
     <div class="example-contents">
 <div class="shellcode"><pre class="shellcode">Controller Classes =&gt;
@@ -145,7 +145,7 @@ Plugin Classes =&gt;
    Yaf identify a class&#039;s suffix(this is by default, you can also change to
    the prefix by change the configure <a href="yaf.configuration.html#ini.yaf.name-suffix" class="link">yaf.name_suffix</a>) to decide whether it
    is a MVC class:
-   <div class="example" id="example-3887">
+   <div class="example" id="example-4111">
     <p><strong>Example #6 MVC class distinctions</strong></p>
    <div class="example-contents">
 <div class="shellcode"><pre class="shellcode">Controller Classes =&gt;
@@ -162,7 +162,7 @@ Plugin Classes =&gt;
   </div>
 
    some examples:
-   <div class="example" id="example-3888">
+   <div class="example" id="example-4112">
     <p><strong>Example #7 MVC loading example</strong></p>
     <div class="example-contents">
 <div class="shellcode"><pre class="shellcode">class IndexController
@@ -181,6 +181,15 @@ class A_B_TestModel =&gt;
 
   </div>
 
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+    As of 2.1.18, Yaf supports Controllers autoloading for user script side,
+    (which means the autoloading triggered by user php script, eg: access a
+    controller static property in Bootstrap or Plugins),
+    but autoloader only try to locate controller class script under the default
+    module folder, which is &quot;APPLICATION_PATH/controllers/&quot;.
+   </p>
+  </p></blockquote>
    also, the directory will be affected by <a href="yaf.configuration.html#ini.yaf.lowcase-path" class="link">yaf.lowcase_path</a>.
   </p>
   </div>
@@ -262,8 +271,8 @@ class A_B_TestModel =&gt;
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-loader.registerlocalnamespace.html" class="methodname">registerLocalNamespace</a></span>
-    ([ <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$prefix</code></span>
-  ] )</div>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$prefix</code></span>
+   )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">Yaf_Loader</span> <span class="methodname"><a href="yaf-loader.setlibrarypath.html" class="methodname">setLibraryPath</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$directory</code></span>

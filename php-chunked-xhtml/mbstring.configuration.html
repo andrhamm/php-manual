@@ -35,7 +35,7 @@ The behaviour of these functions is affected by settings in <var class="filename
       <td>&quot;neutral&quot;</td>
       <td>PHP_INI_ALL</td>
       <td>
-       Available since PHP 4.3.0.; PHP_INI_PERDIR in PHP &lt;= 5.2.6
+       Available since PHP 4.3.0. PHP_INI_PERDIR in PHP &lt;= 5.2.6
       </td>
      </tr>
 
@@ -86,8 +86,8 @@ The behaviour of these functions is affected by settings in <var class="filename
       <td>&quot;0&quot;</td>
       <td>PHP_INI_SYSTEM</td>
       <td>
-       PHP_INI_SYSTEM in PHP &lt;= 4.2.3; PHP_INI_SYSTEM | PHP_INI_PERDIR from PHP 4.3
-       through 5.2.6. Available since PHP 4.2.0.
+       PHP_INI_PERDIR from PHP 4.3 to 5.2.6, otherwise PHP_INI_SYSTEM.
+       Available since PHP 4.2.0.
       </td>
      </tr>
 
@@ -235,6 +235,9 @@ the configuration directives.</p>
       <a href="mbstring.overload.html" class="link">Function overloading</a> for more
       information.
      </p>
+     <p class="para">
+      This setting can only be changed from the <var class="filename">php.ini</var> file.
+     </p>
     </dd>
 
    </dt>
@@ -273,7 +276,7 @@ the configuration directives.</p>
   <a href="ini.core.html#ini.sect.data-handling" class="link">default_charset</a> ini setting.
  </p>
  <p class="para">
-  <div class="example" id="example-2518">
+  <div class="example" id="example-2668">
   <p><strong>Example #1 <var class="filename">php.ini</var> setting examples</strong></p>
    <div class="example-contents">
 <div class="cdata"><pre>
@@ -315,7 +318,7 @@ mbstring.substitute_character = long    ; Long Example: U+3000,JIS+7E7E
   </div>
  </p>
  <p class="para">
-  <div class="example" id="example-2519">
+  <div class="example" id="example-2669">
    <p><strong>Example #2 <var class="filename">php.ini</var> setting for <em>EUC-JP</em> users</strong></p>
    <div class="example-contents">
 <div class="cdata"><pre>
@@ -348,7 +351,7 @@ mbstring.substitute_character = none
   </div>
  </p>
  <p class="para">
-  <div class="example" id="example-2520">
+  <div class="example" id="example-2670">
    <p><strong>Example #3 <var class="filename">php.ini</var> setting for <em>SJIS</em> users</strong></p>
    <div class="example-contents">
 <div class="cdata"><pre>

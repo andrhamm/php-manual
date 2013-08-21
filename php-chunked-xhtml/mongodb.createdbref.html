@@ -22,7 +22,7 @@
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><strong>MongoDB::createDBRef</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$collection</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$a</code></span>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$document_or_id</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -54,14 +54,14 @@
     <dt>
 
      <span class="term">
-      <em><code class="parameter">a</code></em>
+      <em><code class="parameter">document_or_id</code></em>
      </span>
      <dd>
 
       <p class="para">
-       Object or _id to which to create a reference.  If an object or
-       associative array is given, this will create a reference using
-       the <em>_id</em> field.
+       If an array or object is given, its <em>_id</em> field will be
+       used as the reference ID. If a <a href="class.mongoid.html" class="classname">MongoId</a> or scalar
+       is given, it will be used as the reference ID.
       </p>
      </dd>
 
@@ -78,11 +78,15 @@
   <p class="para">
    Returns a database reference array.
   </p>
+  <p class="para">
+   If an array without an <em>_id</em> field was provided as the
+   <em>document_or_id</em> parameter, <strong><code>NULL</code></strong> will be returned.
+  </p>
  </div>
 
  <div class="refsect1 examples" id="refsect1-mongodb.createdbref-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-1419">
+  <div class="example" id="example-1489">
    <p><strong>Example #1  <span class="function"><strong>MongoDB::createDBRef()</strong></span> example</strong></p>
    <div class="example-contents"><p>
     Example demonstrating how to programatically create a DB reference array from
@@ -123,7 +127,7 @@ something similar to:</p></div>
       <span class="methodname"><a href="mongodb.getdbref.html" class="methodname">MongoDB::getDBRef()</a></span> or  <span class="methodname"><a href="mongocollection.getdbref.html" class="methodname">MongoCollection::getDBRef()</a></span>.
    </p></div>
   </div>
-  <div class="example" id="example-1420">
+  <div class="example" id="example-1490">
    <p><strong>Example #2  <span class="function"><strong>MongoDB::createDBRef()</strong></span> example</strong></p>
    <div class="example-contents"><p>
     Example demonstrating how to programatically create a DB reference from just an id.

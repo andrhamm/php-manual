@@ -20,7 +20,7 @@
  <div class="refsect1 description" id="refsect1-function.event-set-description">
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>event_set</strong></span>
+   <span class="type">bool</span> <span class="methodname"><a href="event.set.html" class="methodname">event_set</a></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$event</code></span>
    , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$fd</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$events</code></span>
@@ -29,7 +29,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   Prepares the event to be used in  <span class="function"><a href="function.event-add.html" class="function">event_add()</a></span>. The event
+   Prepares the event to be used in  <span class="function"><a href="event.add.html" class="function">event_add()</a></span>. The event
    is prepared to call the function specified by the <em><code class="parameter">callback</code></em> 
    on the events specified in parameter <em><code class="parameter">events</code></em>, which
    is a set of the following flags: <strong><code>EV_TIMEOUT</code></strong>, 
@@ -82,7 +82,7 @@
      <dd>
 
       <p class="para">
-       Optional parameter, previously passed to  <span class="function"><strong>event_set()</strong></span>
+       Optional parameter, previously passed to  <span class="function"><a href="event.set.html" class="function">event_set()</a></span>
        as <em><code class="parameter">arg</code></em>.
       </p>
      </dd>
@@ -135,7 +135,7 @@
        A set of flags indicating the desired event, can be
        <strong><code>EV_READ</code></strong> and/or <strong><code>EV_WRITE</code></strong>.
        The additional flag <strong><code>EV_PERSIST</code></strong> makes the event
-       to persist until  <span class="function"><a href="function.event-del.html" class="function">event_del()</a></span> is called, otherwise
+       to persist until  <span class="function"><a href="event.del.html" class="function">event_del()</a></span> is called, otherwise
        the callback is invoked only once. 
       </p>
      </dd>
@@ -175,7 +175,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.event-set-returnvalues">
   <h3 class="title">Return Values</h3>
   <p class="para">
-    <span class="function"><strong>event_set()</strong></span> returns <strong><code>TRUE</code></strong> on success or <strong><code>FALSE</code></strong> on error.
+    <span class="function"><a href="event.set.html" class="function">event_set()</a></span> returns <strong><code>TRUE</code></strong> on success or <strong><code>FALSE</code></strong> on error.
   </p>
  </div>
 

@@ -65,7 +65,7 @@
 
      <p class="para">
       A <a href="class.datetimezone.html" class="classname">DateTimeZone</a> object representing the
-      desired time zone.
+      timezone of <em><code class="parameter">$time</code></em>.
      </p>
      <p class="para">
       If <em><code class="parameter">$timezone</code></em> is omitted,
@@ -124,8 +124,9 @@
       <tr>
        <td>5.3.0</td>
        <td>
-        If an invalid date is specified, then an exception is now 
-        thrown. Previously an error was emitted.
+        If <em><code class="parameter">time</code></em> contains an invalid
+        <a href="datetime.formats.html" class="link">date/time format</a>, then an
+        exception is now thrown. Previously an error was emitted.
        </td>
       </tr>
 
@@ -139,7 +140,7 @@
 
  <div class="refsect1 examples" id="refsect1-datetime.construct-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-615">
+  <div class="example" id="example-632">
    <p><strong>Example #1  <span class="function"><strong>DateTime::__construct()</strong></span> example</strong></p>
    <div class="example-contents"><p>Object oriented style</p></div>
    <div class="example-contents">
@@ -164,7 +165,7 @@
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-616">
+  <div class="example" id="example-633">
    <p><strong>Example #2 Intricacies of  <span class="function"><strong>DateTime::__construct()</strong></span></strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

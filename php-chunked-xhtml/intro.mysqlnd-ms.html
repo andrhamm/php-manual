@@ -27,7 +27,7 @@
   <p class="para">
    The MySQL native driver for PHP is a C library that ships together with
    PHP as of PHP 5.3.0. It serves as a drop-in replacement for the
-   MySQL Client Library (libmysql/libmysqlclient). Using mysqlnd has
+   MySQL Client Library (libmysqlclient). Using mysqlnd has
    several advantages: no extra downloads are required because it&#039;s bundled with PHP,
    it&#039;s under the PHP license, there is lower memory consumption in certain cases, and
    it contains new functionality such as asynchronous queries.
@@ -202,7 +202,7 @@
         </li>
         <li class="listitem">
          <p class="para">
-          Support for built-in global transaction identifier feature of MySQL 5.6.5-m8 or newer.
+          Support for built-in global transaction identifier feature of MySQL 5.6.5 or newer.
          </p>
         </li>
         <li class="listitem">
@@ -238,6 +238,29 @@
          <p class="para">
           Eventual consistent MySQL Replication slave accesses can be replaced
           with fast local cache accesses transparently to reduce server load.
+         </p>
+        </li>
+       </ul>
+      </p>
+     </li>
+
+     <li class="listitem">
+      <p class="para">
+       Partitioning and sharding
+      </p>
+      <p class="para">
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <p class="para">
+          Servers of a replication cluster can be organized into groups. SQL hints
+          can be used to manually direct queries to a specific group.
+          Grouping can be used to partition (shard) the data, or to cure the issue of
+          hotspots with updates.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          MySQL Replication filters are supported through the table filter.
          </p>
         </li>
        </ul>

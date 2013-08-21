@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns current encoding for multibyte regex as string</title>
+  <title>Set/Get character encoding for multibyte regex</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.mb-regex-encoding" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">mb_regex_encoding</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">mb_regex_encoding</span> &mdash; <span class="dc-title">Returns current encoding for multibyte regex as string</span></p>
+  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">mb_regex_encoding</span> &mdash; <span class="dc-title">Set/Get character encoding for multibyte regex</span></p>
 
  </div>
    
@@ -25,7 +25,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   Returns the current encoding for a multibyte regex as a <span class="type"><a href="language.types.string.html" class="type string">string</a></span>.
+   Set/Get character encoding for a multibyte regex.
   </p>
  </div>
 
@@ -56,7 +56,11 @@ encoding value will be used.</p>
  <div class="refsect1 returnvalues" id="refsect1-function.mb-regex-encoding-returnvalues">
   <h3 class="title">Return Values</h3>
   <p class="simpara">
-   Returns the character encoding used by multibyte regex functions.
+   If <em><code class="parameter">encoding</code></em> is set, then 
+   Returns <strong><code>TRUE</code></strong> on success or <strong><code>FALSE</code></strong> on failure. 
+   In this case, the internal character encoding is NOT changed.
+   If <em><code class="parameter">encoding</code></em> is omitted, then 
+   the current character encoding name for a multibyte regex is returned.
   </p>
  </div>
 

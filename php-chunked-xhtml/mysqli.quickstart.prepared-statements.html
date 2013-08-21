@@ -22,7 +22,7 @@
   </p>
   <p class="para">
    The prepared statement execution consists of two stages:
-   prepare and execute. At the prepare stage a statement template is send
+   prepare and execute. At the prepare stage a statement template is sent
    to the database server. The server performs a syntax check and initializes
    server internal resources for later use.
   </p>
@@ -31,7 +31,7 @@
    with <em>?</em>.
   </p>
   <p class="para">
-   <div class="example" id="example-1614">
+   <div class="example" id="example-1701">
     <p><strong>Example #1 First stage: prepare</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -49,7 +49,7 @@
    execute it using the previously created internal resources.
   </p>
   <p class="para">
-   <div class="example" id="example-1615">
+   <div class="example" id="example-1702">
     <p><strong>Example #2 Second stage: bind and execute</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -65,12 +65,12 @@
   </p>
   <p class="para">
    A prepared statement can be executed repeatedly. Upon every execution
-   the current value of the bound variable is evaluated and send to the server.
+   the current value of the bound variable is evaluated and sent to the server.
    The statement is not parsed again. The statement template is not
    transferred to the server again.
   </p>
   <p class="para">
-   <div class="example" id="example-1616">
+   <div class="example" id="example-1703">
     <p><strong>Example #3 INSERT prepared once, executed multiple times</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -127,7 +127,7 @@ array(4) {
    the server and client than the prepared statement shown above.
   </p>
   <p class="para">
-   <div class="example" id="example-1617">
+   <div class="example" id="example-1704">
     <p><strong>Example #4 Less round trips using multi-INSERT SQL</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -152,7 +152,7 @@ array(4) {
    <em>INT</em> column will be provided as PHP integer variables.
   </p>
   <p class="para">
-   <div class="example" id="example-1618">
+   <div class="example" id="example-1705">
     <p><strong>Example #5 Native datatypes</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -188,7 +188,7 @@ label = a (string)
    One variable must be bound for every column of the statements result set.
   </p>
   <p class="para">
-   <div class="example" id="example-1619">
+   <div class="example" id="example-1706">
     <p><strong>Example #6 Output variable binding</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -227,7 +227,7 @@ id = 1 (integer), label = a (string)
    returns a buffered result set.
   </p>
   <p class="para">
-   <div class="example" id="example-1620">
+   <div class="example" id="example-1707">
     <p><strong>Example #7 Using mysqli_result to fetch results</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -257,7 +257,7 @@ array(1) {
    flexible client-side result set navigation.
   </p>
   <p class="para">
-   <div class="example" id="example-1621">
+   <div class="example" id="example-1708">
     <p><strong>Example #8 Buffered result set for flexible read out</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -319,7 +319,8 @@ array(2) {
   <p class="para">
    The table below compares server-side prepared and non-prepared statements.
   </p>
-  <table class="doctable informaltable">
+  <table class="doctable table">
+   <caption><strong>Comparison of prepared and non-prepared statements</strong></caption>
    
     <thead>
      <tr>

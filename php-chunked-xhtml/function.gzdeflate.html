@@ -22,7 +22,8 @@
    <span class="type">string</span> <span class="methodname"><strong>gzdeflate</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$level</code><span class="initializer"> = -1</span></span>
-  ] )</div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$encoding</code><span class="initializer"> = ZLIB_ENCODING_RAW</span></span>
+  ]] )</div>
 
   <p class="para rdfs-comment">
    This function compress the given string using the <em>DEFLATE</em>
@@ -66,6 +67,18 @@
 
     </dt>
 
+    <dt>
+
+     <span class="term"><em><code class="parameter">encoding</code></em></span>
+     <dd>
+
+      <p class="para">
+       One of <strong><code>ZLIB_ENCODING_*</code></strong> constants.
+      </p>
+     </dd>
+
+    </dt>
+
    </dl>
 
   </p>
@@ -81,7 +94,7 @@
  <div class="refsect1 examples" id="refsect1-function.gzdeflate-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-872">
+   <div class="example" id="example-890">
     <p><strong>Example #1  <span class="function"><strong>gzdeflate()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -93,6 +106,36 @@
    </div>
   </p>
  </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.gzdeflate-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        Added <em><code class="parameter">encoding</code></em> parameter.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
 
  <div class="refsect1 seealso" id="refsect1-function.gzdeflate-seealso">
   <h3 class="title">See Also</h3>

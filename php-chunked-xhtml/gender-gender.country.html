@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get textual country representation.</title>
+  <title>Get textual country representation</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,19 +13,20 @@
 </div><hr /><div id="gender-gender.country" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Gender\Gender::country</h1>
-  <p class="verinfo">(PECL gender &gt;= 0.8.0)</p><p class="refpurpose"><span class="refname">Gender\Gender::country</span> &mdash; <span class="dc-title">Get textual country representation.</span></p>
+  <p class="verinfo">(PECL gender &gt;= 0.8.0)</p><p class="refpurpose"><span class="refname">Gender\Gender::country</span> &mdash; <span class="dc-title">Get textual country representation</span></p>
 
  </div>
 
  <div class="refsect1 description" id="refsect1-gender-gender.country-description">
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><strong>Gender\Gender::country</strong></span>
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><strong>Gender\Gender::country</strong></span>
     ( <span class="methodparam"><span class="type">integer</span> <code class="parameter">$country</code></span>
    )</div>
 
   <p class="para rdfs-comment">
-    Get textual country representation from a Gender class constant.
+   Returns the textual representation of a country from a Gender class
+   constant.
   </p>
  </div>
 
@@ -34,17 +35,18 @@
   <h3 class="title">Parameters</h3>
   <dl>
 
-    <dt>
+   <dt>
 
-      <span class="term"><em><code class="parameter">country</code></em></span>
-        <dd>
+    <span class="term"><em><code class="parameter">country</code></em></span>
+    <dd>
 
-          <p class="para">
-            Country id identified by Gender class constant.
-          </p>
-       </dd>
+     <p class="para">
+      A country ID specified by a <a href="class.gender.html" class="classname">Gender\Gender</a> class
+      constant.
+     </p>
+    </dd>
 
-     </dt>
+    </dt>
 
    </dl>
 
@@ -52,9 +54,37 @@
 
 
  <div class="refsect1 returnvalues" id="refsect1-gender-gender.country-returnvalues">
-  <h3 class="title">Return Values</h3>
+   <h3 class="title">Return Values</h3>
+   <p class="para">
+    Returns an array with the short and full names of the country on success
+     or <strong><code>FALSE</code></strong> on failure.
+   </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-gender-gender.country-examples">
+  <h3 class="title">Examples</h3>
   <p class="para">
-    Returns country name as string or false on failure.
+   <div class="example" id="example-2446">
+    <p><strong>Example #1 Using  <span class="methodname"><strong>Gender\Gender::country()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+$gender&nbsp;=&nbsp;new&nbsp;Gender\Gender;<br />var_dump($gender-&gt;country(Gender\Gender::BRITAIN));</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(2) {
+  &#039;country_short&#039; =&gt;
+  string(2) &quot;UK&quot;
+  &#039;country&#039; =&gt;
+  string(13) &quot;Great Britain&quot;
+}
+</pre></div>
+    </div>
+   </div>
   </p>
  </div>
 

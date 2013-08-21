@@ -36,6 +36,13 @@ located here:
   Session handler support is enabled by default. To disable it, use <strong class="option configure">--disable-memcached-session</strong>
  switch.
  </p>
+ <p class="para">
+  SASL authentication support is disabled by default. To enable it, use
+  <strong class="option configure">--enable-memcached-sasl</strong>
+ switch. This
+  requires that libsasl2 has been installed and that libmemcached has been
+  built with SASL support enabled.
+ </p>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="memcached.requirements.html">Requirements</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="memcached.configuration.html">Runtime Configuration</a></div>

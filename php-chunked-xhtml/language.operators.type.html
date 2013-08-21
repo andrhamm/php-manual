@@ -16,7 +16,7 @@
     <em>instanceof</em> is used to determine whether a PHP variable
     is an instantiated object of a certain
     <a href="language.oop5.basic.html#language.oop5.basic.class" class="link">class</a>:
-    <div class="example" id="example-124">
+    <div class="example" id="example-125">
      <p><strong>Example #1 Using <em>instanceof</em> with classes</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -37,7 +37,7 @@ bool(false)
    <p class="para">
     <em>instanceof</em> can also be used to determine whether a variable
     is an instantiated object of a class that inherits from a parent class:
-    <div class="example" id="example-125">
+    <div class="example" id="example-126">
      <p><strong>Example #2 Using <em>instanceof</em> with inherited classes</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -59,7 +59,7 @@ bool(true)
     To check if an object is <em class="emphasis">not</em> an instanceof a class, the
     <a href="language.operators.logical.html" class="link">logical <em>not</em>
     operator</a> can be used.
-    <div class="example" id="example-126">
+    <div class="example" id="example-127">
      <p><strong>Example #3 Using <em>instanceof</em> to check if object is <em class="emphasis">not</em> an
       instanceof a class</strong></p>
      <div class="example-contents">
@@ -81,7 +81,7 @@ bool(true)
     Lastly, <em>instanceof</em> can also be used to determine whether
     a variable is an instantiated object of a class that implements an
     <a href="language.oop5.interfaces.html" class="link">interface</a>:
-    <div class="example" id="example-127">
+    <div class="example" id="example-128">
      <p><strong>Example #4 Using <em>instanceof</em> for class</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -102,7 +102,7 @@ bool(true)
    <p class="para">
     Although <em>instanceof</em> is usually used with a literal classname,
     it can also be used with another object or a string variable:
-    <div class="example" id="example-128">
+    <div class="example" id="example-129">
      <p><strong>Example #5 Using <em>instanceof</em> with other variables</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -124,7 +124,7 @@ bool(false)
    <p class="para">
     instanceof does not throw any error if the variable being tested is not
     an object, it simply returns <strong><code>FALSE</code></strong>. Constants, however, are not allowed.
-    <div class="example" id="example-129">
+    <div class="example" id="example-130">
      <p><strong>Example #6 Using <em>instanceof</em> to test other variables</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -150,7 +150,7 @@ PHP Fatal error:  instanceof expects an object instance, constant given
     if the class name did not exist.  In addition, if the class was not loaded,
     a fatal error would occur.  This can be worked around by using a dynamic
     class reference, or a string variable containing the class name:
-    <div class="example" id="example-130">
+    <div class="example" id="example-131">
      <p><strong>Example #7 Avoiding classname lookups and fatal errors with <em>instanceof</em> in PHP 5.0</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

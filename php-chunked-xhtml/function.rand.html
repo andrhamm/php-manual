@@ -117,7 +117,7 @@ number generator is seeded automatically.</td></tr>
  <div class="refsect1 examples" id="refsect1-function.rand-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3278">
+   <div class="example" id="example-3437">
     <p><strong>Example #1  <span class="function"><strong>rand()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -139,6 +139,11 @@ something similar to:</p></div>
   </p>
  </div>
 
+ <div class="refsect1 notes" id="refsect1-function.rand-notes">
+  <h3 class="title">Notes</h3>
+  <div class="caution"><strong class="caution">Caution</strong><p class="para">This function does not generate cryptographically secure values, and should not be used for cryptographic purposes. If you need a cryptographically secure value, consider using  <span class="function"><a href="function.openssl-random-pseudo-bytes.html" class="function">openssl_random_pseudo_bytes()</a></span> instead.</p></div>
+ </div>
+
  <div class="refsect1 seealso" id="refsect1-function.rand-seealso">
   <h3 class="title">See Also</h3>
   <p class="para">
@@ -146,6 +151,7 @@ something similar to:</p></div>
     <li class="member"> <span class="function"><a href="function.srand.html" class="function" rel="rdfs-seeAlso">srand()</a> - Seed the random number generator</span></li>
     <li class="member"> <span class="function"><a href="function.getrandmax.html" class="function" rel="rdfs-seeAlso">getrandmax()</a> - Show largest possible random value</span></li>
     <li class="member"> <span class="function"><a href="function.mt-rand.html" class="function" rel="rdfs-seeAlso">mt_rand()</a> - Generate a better random value</span></li>
+    <li class="member"> <span class="function"><a href="function.openssl-random-pseudo-bytes.html" class="function" rel="rdfs-seeAlso">openssl_random_pseudo_bytes()</a> - Generate a pseudo-random string of bytes</span></li>
    </ul>
   </p>
  </div>

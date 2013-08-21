@@ -63,7 +63,7 @@
  <div class="refsect1 examples" id="refsect1-function.list-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4691">
+   <div class="example" id="example-4968">
     <p><strong>Example #1  <span class="function"><strong>list()</strong></span> examples</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -75,18 +75,18 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4692">
+   <div class="example" id="example-4969">
     <p><strong>Example #2 An example use of  <span class="function"><strong>list()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-&lt;table&gt;<br />&nbsp;&lt;tr&gt;<br />&nbsp;&nbsp;&lt;th&gt;Employee&nbsp;name&lt;/th&gt;<br />&nbsp;&nbsp;&lt;th&gt;Salary&lt;/th&gt;<br />&nbsp;&lt;/tr&gt;<br /><br /><span style="color: #0000BB">&lt;?php<br /><br />$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;id,&nbsp;name,&nbsp;salary&nbsp;FROM&nbsp;employees"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);<br />while&nbsp;(list(</span><span style="color: #0000BB">$id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$salary</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">mysql_fetch_row</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;tr&gt;\n"&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&nbsp;&nbsp;&lt;td&gt;&lt;a&nbsp;href=\"info.php?id=</span><span style="color: #0000BB">$id</span><span style="color: #DD0000">\"&gt;</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">&lt;/a&gt;&lt;/td&gt;\n"&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&nbsp;&nbsp;&lt;td&gt;</span><span style="color: #0000BB">$salary</span><span style="color: #DD0000">&lt;/td&gt;\n"&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;/tr&gt;\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;<br /></span><br />&lt;/table&gt;</span>
+&lt;table&gt;<br />&nbsp;&lt;tr&gt;<br />&nbsp;&nbsp;&lt;th&gt;Employee&nbsp;name&lt;/th&gt;<br />&nbsp;&nbsp;&lt;th&gt;Salary&lt;/th&gt;<br />&nbsp;&lt;/tr&gt;<br /><br /><span style="color: #0000BB">&lt;?php<br />$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$pdo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;id,&nbsp;name,&nbsp;salary&nbsp;FROM&nbsp;employees"</span><span style="color: #007700">);<br />while&nbsp;(list(</span><span style="color: #0000BB">$id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$salary</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetch</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">FETCH_NUM</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;tr&gt;\n"&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&nbsp;&nbsp;&lt;td&gt;&lt;a&nbsp;href=\"info.php?id=</span><span style="color: #0000BB">$id</span><span style="color: #DD0000">\"&gt;</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">&lt;/a&gt;&lt;/td&gt;\n"&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&nbsp;&nbsp;&lt;td&gt;</span><span style="color: #0000BB">$salary</span><span style="color: #DD0000">&lt;/td&gt;\n"&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;/tr&gt;\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;<br /></span><br />&lt;/table&gt;</span>
 </code></div>
     </div>
 
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4693">
+   <div class="example" id="example-4970">
     <p><strong>Example #3 Using nested  <span class="function"><strong>list()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -105,7 +105,7 @@ int(3)
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4694">
+   <div class="example" id="example-4971">
     <p><strong>Example #4 Using  <span class="function"><strong>list()</strong></span> with array indices</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

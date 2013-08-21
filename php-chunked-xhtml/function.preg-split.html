@@ -191,19 +191,30 @@
  <div class="refsect1 examples" id="refsect1-function.preg-split-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4477">
+   <div class="example" id="example-4751">
     <p><strong>Example #1  <span class="function"><strong>preg_split()</strong></span> example : Get the parts of a search string</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;split&nbsp;the&nbsp;phrase&nbsp;by&nbsp;any&nbsp;number&nbsp;of&nbsp;commas&nbsp;or&nbsp;space&nbsp;characters,<br />//&nbsp;which&nbsp;include&nbsp;"&nbsp;",&nbsp;\r,&nbsp;\t,&nbsp;\n&nbsp;and&nbsp;\f<br /></span><span style="color: #0000BB">$keywords&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">"/[\s,]+/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hypertext&nbsp;language,&nbsp;programming"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;split&nbsp;the&nbsp;phrase&nbsp;by&nbsp;any&nbsp;number&nbsp;of&nbsp;commas&nbsp;or&nbsp;space&nbsp;characters,<br />//&nbsp;which&nbsp;include&nbsp;"&nbsp;",&nbsp;\r,&nbsp;\t,&nbsp;\n&nbsp;and&nbsp;\f<br /></span><span style="color: #0000BB">$keywords&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">"/[\s,]+/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hypertext&nbsp;language,&nbsp;programming"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$keywords</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
 
+    <div class="example-contents"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; hypertext
+    [1] =&gt; language
+    [2] =&gt; programming
+)
+</pre></div>
+    </div>
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4478">
+   <div class="example" id="example-4752">
     <p><strong>Example #2 Splitting a string into component characters</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -212,10 +223,24 @@
 </code></div>
     </div>
 
+    <div class="example-contents"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; s
+    [1] =&gt; t
+    [2] =&gt; r
+    [3] =&gt; i
+    [4] =&gt; n
+    [5] =&gt; g
+)
+</pre></div>
+    </div>
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4479">
+   <div class="example" id="example-4753">
     <p><strong>Example #3 Splitting a string into matches and their offsets</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

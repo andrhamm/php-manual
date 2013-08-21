@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="messageformatter.setpattern.html">MessageFormatter::setPattern</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="intltimezone.usedaylighttime.html">IntlTimeZone::useDaylightTime</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="intldateformatter.create.html">IntlDateFormatter::create</a></div>
  <div class="up"><a href="book.intl.html">intl</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -50,91 +50,115 @@
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
     <div class="constructorsynopsis dc-description">
+   <span class="modifier">public</span>
     <span class="methodname"><a href="intldateformatter.create.html" class="methodname">__construct</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$datetype</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timetype</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$timezone</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$calendar</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$timezone</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$calendar</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code><span class="initializer"> = &#039;&#039;</span></span>
   ]]] )</div>
 
     <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span>
    <span class="modifier">static</span>
    <span class="type">IntlDateFormatter</span> <span class="methodname"><a href="intldateformatter.create.html" class="methodname">create</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$datetype</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timetype</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$timezone</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$calendar</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$timezone</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$calendar</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code><span class="initializer"> = &#039;&#039;</span></span>
   ]]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><a href="intldateformatter.format.html" class="methodname">format</a></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value</code></span>
+    <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="intldateformatter.format.html" class="methodname">format</a></span>
+     ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value</code></span>
     )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">string</span> <span class="methodname"><a href="intldateformatter.formatobject.html" class="methodname">formatObject</a></span>
+    ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$object</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$format</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code><span class="initializer"> = NULL</span></span>
+  ]] )</div>
 <div class="methodsynopsis dc-description">
    <span class="type">int</span> <span class="methodname"><a href="intldateformatter.getcalendar.html" class="methodname">getCalendar</a></span>
-       ( <span class="methodparam">void</span>
-    )</div>
-<div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><a href="intldateformatter.getdatetype.html" class="methodname">getDateType</a></span>
-       ( <span class="methodparam">void</span>
-    )</div>
-<div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><a href="intldateformatter.geterrorcode.html" class="methodname">getErrorCode</a></span>
-       ( <span class="methodparam">void</span>
-    )</div>
-<div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><a href="intldateformatter.geterrormessage.html" class="methodname">getErrorMessage</a></span>
-       ( <span class="methodparam">void</span>
-    )</div>
-<div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><a href="intldateformatter.getlocale.html" class="methodname">getLocale</a></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$which</code></span>
-   ] )</div>
-<div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><a href="intldateformatter.getpattern.html" class="methodname">getPattern</a></span>
     ( <span class="methodparam">void</span>
     )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><a href="intldateformatter.gettimetype.html" class="methodname">getTimeType</a></span>
-       ( <span class="methodparam">void</span>
+    <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="intldateformatter.getdatetype.html" class="methodname">getDateType</a></span>
+     ( <span class="methodparam">void</span>
     )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><a href="intldateformatter.gettimezoneid.html" class="methodname">getTimeZoneId</a></span>
-       ( <span class="methodparam">void</span>
+    <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="intldateformatter.geterrorcode.html" class="methodname">getErrorCode</a></span>
+     ( <span class="methodparam">void</span>
     )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><a href="intldateformatter.islenient.html" class="methodname">isLenient</a></span>
-       ( <span class="methodparam">void</span>
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="intldateformatter.geterrormessage.html" class="methodname">getErrorMessage</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="intldateformatter.getlocale.html" class="methodname">getLocale</a></span>
+    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$which</code></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="intldateformatter.getpattern.html" class="methodname">getPattern</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="intldateformatter.gettimetype.html" class="methodname">getTimeType</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="intldateformatter.gettimezoneid.html" class="methodname">getTimeZoneId</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span>
+   <span class="type">IntlCalendar</span>
+    <span class="methodname"><a href="intldateformatter.getcalendarobject.html" class="methodname">getCalendarObject</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">IntlTimeZone</span> <span class="methodname"><a href="intldateformatter.gettimezone.html" class="methodname">getTimeZone</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="intldateformatter.islenient.html" class="methodname">isLenient</a></span>
+     ( <span class="methodparam">void</span>
     )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><a href="intldateformatter.localtime.html" class="methodname">localtime</a></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$position</code></span>
+    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="intldateformatter.localtime.html" class="methodname">localtime</a></span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
+    [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$position</code></span>
    ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><a href="intldateformatter.parse.html" class="methodname">parse</a></span>
+    <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="intldateformatter.parse.html" class="methodname">parse</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$position</code></span>
    ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><a href="intldateformatter.setcalendar.html" class="methodname">setCalendar</a></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$which</code></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$which</code></span>
     )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><a href="intldateformatter.setlenient.html" class="methodname">setLenient</a></span>
-    ( <span class="methodparam"><span class="type">bool</span> <code class="parameter">$lenient</code></span>
+    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="intldateformatter.setlenient.html" class="methodname">setLenient</a></span>
+     ( <span class="methodparam"><span class="type">bool</span> <code class="parameter">$lenient</code></span>
     )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><a href="intldateformatter.setpattern.html" class="methodname">setPattern</a></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
+    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="intldateformatter.setpattern.html" class="methodname">setPattern</a></span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
     )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><a href="intldateformatter.settimezoneid.html" class="methodname">setTimeZoneId</a></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$zone</code></span>
+    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="intldateformatter.settimezoneid.html" class="methodname">setTimeZoneId</a></span>
+     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$zone</code></span>
     )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> 
+   <span class="type">boolean</span>
+    <span class="methodname"><a href="intldateformatter.settimezone.html" class="methodname">setTimeZone</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$zone</code></span>
+   )</div>
 
    }</div>
    
@@ -146,12 +170,12 @@
    <p class="para">
     <ul class="simplelist">
      <li class="member">
-      <a href="http://www.icu-project.org/apiref/icu4c/udat_8h.html#_details" class="link external">&raquo;&nbsp;ICU Date formatter</a>
+      <a href="http://www.icu-project.org/apiref/icu4c/udat_8h.html#details" class="link external">&raquo;&nbsp;ICU Date formatter</a>
      </li>
     </ul>
     <ul class="simplelist">
      <li class="member">
-      <a href="http://www.icu-project.org/apiref/icu4c/classSimpleDateFormat.html#_details" class="link external">&raquo;&nbsp;ICU Date formats</a>
+      <a href="http://www.icu-project.org/apiref/icu4c/classSimpleDateFormat.html#details" class="link external">&raquo;&nbsp;ICU Date formats</a>
      </li>
     </ul>
    </p>
@@ -376,10 +400,38 @@
 
 
 
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="intldateformatter.create.html">IntlDateFormatter::create</a> — Create a date formatter</li><li><a href="intldateformatter.format.html">IntlDateFormatter::format</a> — Format the date/time value as a string</li><li><a href="intldateformatter.getcalendar.html">IntlDateFormatter::getCalendar</a> — Get the calendar used for the IntlDateFormatter</li><li><a href="intldateformatter.getdatetype.html">IntlDateFormatter::getDateType</a> — Get the datetype used for the IntlDateFormatter</li><li><a href="intldateformatter.geterrorcode.html">IntlDateFormatter::getErrorCode</a> — Get the error code from last operation</li><li><a href="intldateformatter.geterrormessage.html">IntlDateFormatter::getErrorMessage</a> — Get the error text from the last operation.</li><li><a href="intldateformatter.getlocale.html">IntlDateFormatter::getLocale</a> — Get the locale used by formatter</li><li><a href="intldateformatter.getpattern.html">IntlDateFormatter::getPattern</a> — Get the pattern used for the IntlDateFormatter</li><li><a href="intldateformatter.gettimetype.html">IntlDateFormatter::getTimeType</a> — Get the timetype used for the IntlDateFormatter</li><li><a href="intldateformatter.gettimezoneid.html">IntlDateFormatter::getTimeZoneId</a> — Get the timezone-id used for the IntlDateFormatter</li><li><a href="intldateformatter.islenient.html">IntlDateFormatter::isLenient</a> — Get the lenient used for the IntlDateFormatter</li><li><a href="intldateformatter.localtime.html">IntlDateFormatter::localtime</a> — Parse string to a field-based time value</li><li><a href="intldateformatter.parse.html">IntlDateFormatter::parse</a> — Parse string to a timestamp value</li><li><a href="intldateformatter.setcalendar.html">IntlDateFormatter::setCalendar</a> — sets the calendar used to the appropriate calendar, which must be</li><li><a href="intldateformatter.setlenient.html">IntlDateFormatter::setLenient</a> — Set the leniency of the parser</li><li><a href="intldateformatter.setpattern.html">IntlDateFormatter::setPattern</a> — Set the pattern used for the IntlDateFormatter</li><li><a href="intldateformatter.settimezoneid.html">IntlDateFormatter::setTimeZoneId</a> — Sets the time zone to use</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="intldateformatter.create.html">IntlDateFormatter::create</a> — Create a date formatter</li><li><a href="intldateformatter.format.html">IntlDateFormatter::format</a> — Format the date/time value as a string</li><li><a href="intldateformatter.formatobject.html">IntlDateFormatter::formatObject</a> — Formats an object</li><li><a href="intldateformatter.getcalendar.html">IntlDateFormatter::getCalendar</a> — Get the calendar type used for the IntlDateFormatter</li><li><a href="intldateformatter.getdatetype.html">IntlDateFormatter::getDateType</a> — Get the datetype used for the IntlDateFormatter</li><li><a href="intldateformatter.geterrorcode.html">IntlDateFormatter::getErrorCode</a> — Get the error code from last operation</li><li><a href="intldateformatter.geterrormessage.html">IntlDateFormatter::getErrorMessage</a> — Get the error text from the last operation.</li><li><a href="intldateformatter.getlocale.html">IntlDateFormatter::getLocale</a> — Get the locale used by formatter</li><li><a href="intldateformatter.getpattern.html">IntlDateFormatter::getPattern</a> — Get the pattern used for the IntlDateFormatter</li><li><a href="intldateformatter.gettimetype.html">IntlDateFormatter::getTimeType</a> — Get the timetype used for the IntlDateFormatter</li><li><a href="intldateformatter.gettimezoneid.html">IntlDateFormatter::getTimeZoneId</a> — Get the timezone-id used for the IntlDateFormatter</li><li><a href="intldateformatter.getcalendarobject.html">IntlDateFormatter::getCalendarObject</a> — Get copy of formatterʼs calendar object</li><li><a href="intldateformatter.gettimezone.html">IntlDateFormatter::getTimeZone</a> — Get formatterʼs timezone</li><li><a href="intldateformatter.islenient.html">IntlDateFormatter::isLenient</a> — Get the lenient used for the IntlDateFormatter</li><li><a href="intldateformatter.localtime.html">IntlDateFormatter::localtime</a> — Parse string to a field-based time value</li><li><a href="intldateformatter.parse.html">IntlDateFormatter::parse</a> — Parse string to a timestamp value</li><li><a href="intldateformatter.setcalendar.html">IntlDateFormatter::setCalendar</a> — Sets the calendar type used by the formatter</li><li><a href="intldateformatter.setlenient.html">IntlDateFormatter::setLenient</a> — Set the leniency of the parser</li><li><a href="intldateformatter.setpattern.html">IntlDateFormatter::setPattern</a> — Set the pattern used for the IntlDateFormatter</li><li><a href="intldateformatter.settimezoneid.html">IntlDateFormatter::setTimeZoneId</a> — Sets the time zone to use</li><li><a href="intldateformatter.settimezone.html">IntlDateFormatter::setTimeZone</a> — Sets formatterʼs timezone</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="messageformatter.setpattern.html">MessageFormatter::setPattern</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="intltimezone.usedaylighttime.html">IntlTimeZone::useDaylightTime</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="intldateformatter.create.html">IntlDateFormatter::create</a></div>
  <div class="up"><a href="book.intl.html">intl</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

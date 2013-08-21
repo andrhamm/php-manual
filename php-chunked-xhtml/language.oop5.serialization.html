@@ -72,6 +72,15 @@
    file <em>classa.inc</em> on all of your pages, not only <var class="filename">page1.php</var>
    and <var class="filename">page2.php</var>.
   </p>
+
+  <p class="para">
+   Beyond the above advice, note that you can also hook into the serialization
+   and unserialization events on an object using the
+   <a href="language.oop5.magic.html#object.sleep" class="link">__sleep()</a> and
+   <a href="language.oop5.magic.html#object.wakeup" class="link">__wakeup()</a> methods. Using
+   <a href="language.oop5.magic.html#object.sleep" class="link">__sleep()</a> also allows you to only
+   serialize a subset of the object&#039;s properties.
+  </p>
  </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="language.oop5.references.html">Objects and references</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="language.oop5.changelog.html">OOP Changelog</a></div>

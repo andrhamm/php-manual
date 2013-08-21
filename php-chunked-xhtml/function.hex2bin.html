@@ -68,8 +68,8 @@
  <div class="refsect1 errors" id="refsect1-function.hex2bin-errors">
   <h3 class="title">Errors/Exceptions</h3>
   <p class="para">
-   If the hexadecimal input string is of odd length an <strong><code>E_WARNING</code></strong>
-   level error is thrown.
+   If the hexadecimal input string is of odd length or invalid hexadecimal string
+   an <strong><code>E_WARNING</code></strong> level error is thrown.
   </p>
  </div>
 
@@ -88,6 +88,13 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>5.5.1</td>
+       <td>
+        A warning is thrown if the input string is invalid hexadecimal string.
+       </td>
+      </tr>
+
       <tr>
        <td>5.4.1</td>
        <td>

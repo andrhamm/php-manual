@@ -30,13 +30,16 @@
     document.  For example, if we had a &quot;people&quot; collection and an &quot;addresses&quot;
     collection, we might want to create a link between each person document and
     an address document:
-    <div class="example-contents">
+    <div class="example" id="example-1574">
+     <p><strong>Example #1 Linking documents</strong></p>
+     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$people&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">people</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$addresses&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addresses</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$myAddress&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"line&nbsp;1"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"123&nbsp;Main&nbsp;Street"</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"line&nbsp;2"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"city"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Springfield"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"state"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Vermont"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"country"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"USA"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;save&nbsp;the&nbsp;address<br /></span><span style="color: #0000BB">$addresses</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(</span><span style="color: #0000BB">$myAddress</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;save&nbsp;a&nbsp;person&nbsp;with&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;address<br /></span><span style="color: #0000BB">$me&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"name"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Fred"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"address"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$myAddress</span><span style="color: #007700">[</span><span style="color: #DD0000">'_id'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(</span><span style="color: #0000BB">$me</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
-    </div>
+     </div>
 
+    </div>
    </p>
    <p class="para">
     Then, later on, we can find the person&#039;s address by querying the &quot;addresses&quot;
@@ -54,13 +57,16 @@
     multiple collections, such as &quot;hobbies&quot;, &quot;sports&quot;, &quot;books&quot;, etc., we could
     use <strong class="classname">MongoDBRef</strong>s to keep track of what &quot;like&quot; went
     with what collection:
+    <div class="example" id="example-1575">
+     <p><strong>Example #2 Creating MongoDBRef links</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$people&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">selectCollection</span><span style="color: #007700">(</span><span style="color: #DD0000">"people"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;model&nbsp;trains&nbsp;are&nbsp;in&nbsp;the&nbsp;"hobbies"&nbsp;collection<br /></span><span style="color: #0000BB">$trainRef&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">MongoDBRef</span><span style="color: #007700">::</span><span style="color: #0000BB">create</span><span style="color: #007700">(</span><span style="color: #DD0000">"hobbies"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$modelTrains</span><span style="color: #007700">[</span><span style="color: #DD0000">'_id'</span><span style="color: #007700">]);<br /></span><span style="color: #FF8000">//&nbsp;soccer&nbsp;is&nbsp;in&nbsp;the&nbsp;"sports"&nbsp;collection<br /></span><span style="color: #0000BB">$soccerRef&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">MongoDBRef</span><span style="color: #007700">::</span><span style="color: #0000BB">create</span><span style="color: #007700">(</span><span style="color: #DD0000">"sports"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$soccer</span><span style="color: #007700">[</span><span style="color: #DD0000">'_id'</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;now&nbsp;we'll&nbsp;know&nbsp;what&nbsp;collections&nbsp;the&nbsp;items&nbsp;in&nbsp;the&nbsp;"likes"&nbsp;array&nbsp;came&nbsp;from&nbsp;when<br />//&nbsp;we&nbsp;retrieve&nbsp;this&nbsp;document<br /></span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"name"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Fred"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"likes"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #0000BB">$trainRef</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$soccerRef</span><span style="color: #007700">)));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
-    </div>
+     </div>
 
+    </div>
    </p>
    <p class="para">
     Database references can be thought of as hyperlinks: they give the unique 
@@ -116,7 +122,7 @@
   <div class="section">
    <h2 class="title">See Also</h2>
    <p class="para">
-    MongoDB core docs on <a href="http://dochub.mongodb.org/core/dbrefs" class="link external">&raquo;&nbsp;databases references</a>.
+    MongoDB core docs on <a href="http://docs.mongodb.org/manual/applications/database-references/" class="link external">&raquo;&nbsp;databases references</a>.
    </p>
   </div>
  </div>

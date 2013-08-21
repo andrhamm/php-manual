@@ -17,18 +17,18 @@
 
  </div>
 
- <div id="function.mysql-fetch-assoc-soft-deprecation-notice" class="soft-deprecation-notice">
-  <blockquote class="sidebar">
-   <h1 class="title">Suggested alternatives</h1>
-<p class="para">Use of this extension is discouraged. Instead, the <a href="book.mysqli.html" class="link">MySQLi</a> or 
-<a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> extension should be used. See also <a href="mysqlinfo.api.choosing.html" class="link">MySQL: 
-choosing an API</a> guide and <a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">related FAQ</a> for more information. 
+ <div id="function.mysql-fetch-assoc-refsynopsisdiv">
+  <div class="warning"><strong class="warning">Warning</strong>
+   <p class="para">This extension is deprecated as of PHP 5.5.0, and will be removed in the future.
+Instead, the <a href="book.mysqli.html" class="link">MySQLi</a> or <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> extension should be used.
+See also <a href="mysqlinfo.api.choosing.html" class="link">MySQL: choosing an API</a> guide and
+<a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">related FAQ</a> for more information. 
 Alternatives to this function include:</p>
    <ul class="simplelist">
     <li class="member"> <span class="function"><a href="mysqli-result.fetch-assoc.html" class="function">mysqli_fetch_assoc()</a></span></li>
     <li class="member"> <span class="methodname"><a href="pdostatement.fetch.html" class="methodname">PDOStatement::fetch(PDO::FETCH_ASSOC)</a></span></li>
    </ul>
-  </blockquote>
+  </div>
  </div>
 
  <div class="refsect1 description" id="refsect1-function.mysql-fetch-assoc-description">
@@ -88,7 +88,7 @@ is being evaluated. This result comes from a call to
  <div class="refsect1 examples" id="refsect1-function.mysql-fetch-assoc-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-1569">
+   <div class="example" id="example-1656">
     <p><strong>Example #1 An expanded  <span class="function"><strong>mysql_fetch_assoc()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

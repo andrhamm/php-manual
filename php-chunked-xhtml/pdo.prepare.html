@@ -21,7 +21,7 @@
  <div class="refsect1 description" id="refsect1-pdo.prepare-description">
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type"><a href="class.pdostatement.html" class="type PDOStatement">PDOStatement</a></span> <span class="methodname"><strong>PDO::prepare</strong></span>
+   <span class="modifier">public</span> <span class="type"><a href="class.pdostatement.html" class="type PDOStatement">PDOStatement</a></span> <span class="methodname"><strong>PDO::prepare</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$statement</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$driver_options</code><span class="initializer"> = array()</span></span>
   ] )</div>
@@ -124,7 +124,7 @@
  <div class="refsect1 examples" id="refsect1-pdo.prepare-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-979"><p><strong>Example #1 Prepare an SQL statement with named parameters</strong></p>
+   <div class="example" id="example-1003"><p><strong>Example #1 Prepare an SQL statement with named parameters</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Execute&nbsp;a&nbsp;prepared&nbsp;statement&nbsp;by&nbsp;passing&nbsp;an&nbsp;array&nbsp;of&nbsp;values&nbsp;*/<br /></span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;name,&nbsp;colour,&nbsp;calories<br />&nbsp;&nbsp;&nbsp;&nbsp;FROM&nbsp;fruit<br />&nbsp;&nbsp;&nbsp;&nbsp;WHERE&nbsp;calories&nbsp;&lt;&nbsp;:calories&nbsp;AND&nbsp;colour&nbsp;=&nbsp;:colour'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$sth&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_CURSOR&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">CURSOR_FWDONLY</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">(array(</span><span style="color: #DD0000">':calories'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">150</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">':colour'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'red'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$red&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetchAll</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">(array(</span><span style="color: #DD0000">':calories'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">175</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">':colour'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'yellow'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$yellow&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetchAll</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -133,7 +133,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-980">
+   <div class="example" id="example-1004">
     <p><strong>Example #2 Prepare an SQL statement with question mark parameters</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

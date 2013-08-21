@@ -24,27 +24,29 @@
    Object oriented style
   </p>
   <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span>
    <span class="modifier">static</span>
    <span class="type"><a href="class.intldateformatter.html" class="type IntlDateFormatter">IntlDateFormatter</a></span> <span class="methodname"><strong>IntlDateFormatter::create</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$datetype</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timetype</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$timezone</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$calendar</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$timezone</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$calendar</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code><span class="initializer"> = &#039;&#039;</span></span>
   ]]] )</div>
 
   <p class="para rdfs-comment">
    Object oriented style (constructor)
   </p>
   <div class="constructorsynopsis dc-description">
+   <span class="modifier">public</span>
     <span class="methodname"><strong>IntlDateFormatter::__construct()</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$datetype</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timetype</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$timezone</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$calendar</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$timezone</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$calendar</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code><span class="initializer"> = &#039;&#039;</span></span>
   ]]] )</div>
 
   <p class="para rdfs-comment">
@@ -55,13 +57,13 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$datetype</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timetype</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$timezone</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$calendar</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$timezone</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$calendar</code><span class="initializer"> = NULL</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code><span class="initializer"> = &#039;&#039;</span></span>
   ]]] )</div>
 
   <p class="para rdfs-comment">
-   Create a date formatter 
+   Create a date formatter.
   </p> 
  </div>
 
@@ -77,7 +79,8 @@
      <dd>
 
       <p class="para">
-       Locale to use when formatting or parsing.
+       Locale to use when formatting or parsing or <strong><code>NULL</code></strong> to use the value
+       specified in the ini setting <a href="intl.configuration.html#ini.intl.default-locale" class="link">intl.default_locale</a>.
       </p>
      </dd>
 
@@ -89,11 +92,11 @@
      <dd>
 
       <p class="para">
-       Date type to use (<strong><code>none</code></strong>, 
-       <strong><code>short</code></strong>, <strong><code>medium</code></strong>, 
-       <strong><code>long</code></strong>, <strong><code>full</code></strong>). 
-       This is one of the 
-       <a href="class.intldateformatter.html#intl.intldateformatter-constants" class="link">IntlDateFormatter constants</a>.
+       Date type to use (<strong><code>none</code></strong>, <strong><code>short</code></strong>,
+       <strong><code>medium</code></strong>, <strong><code>long</code></strong>,
+       <strong><code>full</code></strong>).  This is one of the <a href="class.intldateformatter.html#intl.intldateformatter-constants" class="link">IntlDateFormatter
+       constants</a>.  It can also be <strong><code>NULL</code></strong>, in which case ICUʼs default
+       date type will be used.
       </p>
      </dd>
 
@@ -105,11 +108,11 @@
      <dd>
 
       <p class="para">
-       Time type to use (<strong><code>none</code></strong>, 
-       <strong><code>short</code></strong>, <strong><code>medium</code></strong>, 
-       <strong><code>long</code></strong>, <strong><code>full</code></strong>).
-       This is one of the 
-       <a href="class.intldateformatter.html#intl.intldateformatter-constants" class="link">IntlDateFormatter constants</a>.
+       Time type to use (<strong><code>none</code></strong>, <strong><code>short</code></strong>,
+       <strong><code>medium</code></strong>, <strong><code>long</code></strong>,
+       <strong><code>full</code></strong>).  This is one of the <a href="class.intldateformatter.html#intl.intldateformatter-constants" class="link">IntlDateFormatter
+       constants</a>.  It can also be <strong><code>NULL</code></strong>, in which case ICUʼs default
+       time type will be used.
       </p>
      </dd>
 
@@ -121,7 +124,16 @@
      <dd>
 
       <p class="para">
-       Time zone ID, default is system default.      
+       Time zone ID. The default (and the one used if <strong><code>NULL</code></strong> is given) is the
+       one returned by  <span class="function"><a href="function.date-default-timezone-get.html" class="function">date_default_timezone_get()</a></span> or, if
+       applicable, that of the <a href="class.intlcalendar.html" class="classname">IntlCalendar</a> object passed
+       for the <em><code class="parameter">calendar</code></em> parameter. This ID must be a
+       valid identifier on ICUʼs database or an ID representing an
+       explicit offset, such as <em>GMT-05:30</em>.
+      </p>
+      <p class="para">
+       This can also be an <a href="class.intltimezone.html" class="classname">IntlTimeZone</a> or a
+       <a href="class.datetimezone.html" class="classname">DateTimeZone</a> object.
       </p>
      </dd>
 
@@ -133,9 +145,16 @@
      <dd>
 
       <p class="para">
-       Calendar to use for formatting or parsing; default is Gregorian.
-       This is one of the 
-       <a href="class.intldateformatter.html#intl.intldateformatter-constants.calendartypes" class="link">IntlDateFormatter calendar constants</a>.
+       Calendar to use for formatting or parsing. The default value is <strong><code>NULL</code></strong>,
+       which corresponds to <strong><code>IntlDateFormatter::GREGORIAN</code></strong>.
+       This can either be one of the 
+       <a href="class.intldateformatter.html#intl.intldateformatter-constants.calendartypes" class="link">IntlDateFormatter
+       calendar constants</a> or an <a href="class.intlcalendar.html" class="classname">IntlCalendar</a>. Any
+       <a href="class.intlcalendar.html" class="classname">IntlCalendar</a> object passed will be clone; it will
+       not be changed by the <a href="class.intldateformatter.html" class="classname">IntlDateFormatter</a>. This will
+       determine the calendar type used (gregorian, islamic, persian, etc.) and,
+       if <strong><code>NULL</code></strong> is given for the <em><code class="parameter">timezone</code></em> parameter,
+       also the timezone used.
       </p>
      </dd>
 
@@ -164,13 +183,61 @@
  <div class="refsect1 returnvalues" id="refsect1-intldateformatter.create-returnvalues">
   <h3 class="title">Return Values</h3>
   <p class="para">
+   The created <a href="class.intldateformatter.html" class="classname">IntlDateFormatter</a> or <strong><code>FALSE</code></strong> in case of
+   failure.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-intldateformatter.create-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.5.0/PECL 3.0.0</td>
+       <td>
+        <p class="para">
+         An <a href="class.intlcalendar.html" class="classname">IntlCalendar</a> object is allowed for
+         <em><code class="parameter">calendar</code></em>.
+        </p>
+        <p class="para">
+         Objects of type <a href="class.intltimezone.html" class="classname">IntlTimeZone</a> and
+         <a href="class.datetimezone.html" class="classname">DateTimeZone</a> are allowed for
+         <em><code class="parameter">timezone</code></em>.
+        </p>
+        <p class="para">
+         Invalid timezone identifiers (including empty strings) are no longer
+         allowed for <em><code class="parameter">timezone</code></em>.
+        </p>
+        <p class="para">
+         If <strong><code>NULL</code></strong> is given for <em><code class="parameter">timezone</code></em>, the timezone
+         identifier given by  <span class="function"><a href="function.date-default-timezone-get.html" class="function">date_default_timezone_get()</a></span> will
+         be used instead of ICUʼs default.
+        </p>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 
  
  <div class="refsect1 examples" id="refsect1-intldateformatter.create-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-2456">
+  <div class="example" id="example-2600">
    <p><strong>Example #1  <span class="function"><strong>datefmt_create()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -180,7 +247,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-2457">
+  <div class="example" id="example-2601">
    <p><strong>Example #2 OO example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -13,7 +13,7 @@
 </div><hr /><div id="mongogridfsfile.getresource" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoGridFSFile::getResource</h1>
-  <p class="verinfo">(No version information available, might only be in SVN)</p><p class="refpurpose"><span class="refname">MongoGridFSFile::getResource</span> &mdash; <span class="dc-title">Returns a resource that can be used to read the stored file</span></p>
+  <p class="verinfo">(PECL mongo &gt;=1.3.0)</p><p class="refpurpose"><span class="refname">MongoGridFSFile::getResource</span> &mdash; <span class="dc-title">Returns a resource that can be used to read the stored file</span></p>
 
  </div>
 
@@ -26,8 +26,9 @@
 
   <p class="para rdfs-comment">
    This method returns a stream resource that can be used with all file
-   functions in PHP. The contents of the file are pulled out of MongoDB on the
-   fly, so that the whole file does not have to be loaded into memory first.
+   functions in PHP that deal with reading files. The contents of the file are
+   pulled out of MongoDB on the fly, so that the whole file does not have to
+   be loaded into memory first.
   </p>
   <p class="para">
    At most two GridFSFile chunks will be loaded in memory.
@@ -51,7 +52,7 @@
  
  <div class="refsect1 examples" id="refsect1-mongogridfsfile.getresource-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-1499">
+  <div class="example" id="example-1583">
    <p><strong>Example #1  <span class="methodname"><strong>MongoGridFSFile::getResource()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

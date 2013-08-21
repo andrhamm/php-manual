@@ -148,7 +148,8 @@
       <tr>
        <td>1.2.11</td>
        <td>
-       Emits <strong><code>E_DEPRECATED</code></strong> when <em><code class="parameter">options</code></em> is <span class="type"><span class="type scalar">scalar</span></span>.
+        Emits <strong><code>E_DEPRECATED</code></strong> when
+        <em><code class="parameter">options</code></em> is <span class="type"><span class="type scalar">scalar</span></span>.
        </td>
       </tr>
 
@@ -162,7 +163,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.group-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-1459">
+  <div class="example" id="example-1532">
    <p><strong>Example #1  <span class="function"><strong>MongoCollection::group()</strong></span> example</strong></p>
    <div class="example-contents"><p>
     This groups documents by category and creates a list of names within that
@@ -184,7 +185,7 @@ something similar to:</p></div>
    </div>
   </div>
 
-  <div class="example" id="example-1460">
+  <div class="example" id="example-1533">
    <p><strong>Example #2  <span class="function"><strong>MongoCollection::group()</strong></span> example</strong></p>
    <div class="example-contents"><p>
     This example doesn&#039;t use any key, so every document will be its own group.
@@ -193,7 +194,7 @@ something similar to:</p></div>
    </p></div>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;use&nbsp;all&nbsp;fields<br /></span><span style="color: #0000BB">$keys&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /><br /></span><span style="color: #FF8000">//&nbsp;set&nbsp;intial&nbsp;values<br /></span><span style="color: #0000BB">$initial&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"count"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;JavaScript&nbsp;function&nbsp;to&nbsp;perform<br /></span><span style="color: #0000BB">$reduce&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"function&nbsp;(obj,&nbsp;prev)&nbsp;{&nbsp;prev.count++;&nbsp;}"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;only&nbsp;use&nbsp;documents&nbsp;where&nbsp;the&nbsp;"a"&nbsp;field&nbsp;is&nbsp;greater&nbsp;than&nbsp;1<br /></span><span style="color: #0000BB">$condition&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(&nbsp;</span><span style="color: #DD0000">'$gt'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$g&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">group</span><span style="color: #007700">(</span><span style="color: #0000BB">$keys</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$initial</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$reduce</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$condition</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$g</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;use&nbsp;all&nbsp;fields<br /></span><span style="color: #0000BB">$keys&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /><br /></span><span style="color: #FF8000">//&nbsp;set&nbsp;intial&nbsp;values<br /></span><span style="color: #0000BB">$initial&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"count"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;JavaScript&nbsp;function&nbsp;to&nbsp;perform<br /></span><span style="color: #0000BB">$reduce&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"function&nbsp;(obj,&nbsp;prev)&nbsp;{&nbsp;prev.count++;&nbsp;}"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;only&nbsp;use&nbsp;documents&nbsp;where&nbsp;the&nbsp;"a"&nbsp;field&nbsp;is&nbsp;greater&nbsp;than&nbsp;1<br /></span><span style="color: #0000BB">$condition&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'condition'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(&nbsp;</span><span style="color: #DD0000">'$gt'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)));<br /><br /></span><span style="color: #0000BB">$g&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">group</span><span style="color: #007700">(</span><span style="color: #0000BB">$keys</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$initial</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$reduce</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$condition</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$g</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -222,7 +223,7 @@ array(4) {
    </div>
   </div>
 
-  <div class="example" id="example-1461">
+  <div class="example" id="example-1534">
    <p><strong>Example #3 Passing a <em><code class="parameter">keys</code></em> function</strong></p>
    <div class="example-contents"><p>
     If you want to group by something other than a field name, you can pass

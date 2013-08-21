@@ -32,11 +32,11 @@
    <a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.enable" class="link">mysqlnd_ms.enable</a>.
   </p>
   <p class="para">
-   <div class="example" id="example-1738">
+   <div class="example" id="example-1826">
     <p><strong>Example #1 Enabling the plugin (php.ini)</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">mysqlnd_ms.enable=1
-mysqlnd_ms.ini_file=/path/to/mysqlnd_ms_plugin.ini</pre>
+mysqlnd_ms.config_file=/path/to/mysqlnd_ms_plugin.ini</pre>
 </div>
     </div>
 
@@ -45,14 +45,18 @@ mysqlnd_ms.ini_file=/path/to/mysqlnd_ms_plugin.ini</pre>
   <p class="para">
    The plugin uses its own configuration file. Use the PHP
    configuration directive
-   <a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.ini-file" class="link">mysqlnd_ms.ini_file</a>
+   <a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.config-file" class="link">mysqlnd_ms.config_file</a>
    to set the full file path to the plugin-specific configuration file.
    This file must be readable by PHP (e.g., the web server user).
+   Please note, the configuration directive <a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.config-file" class="link">mysqlnd_ms.config_file</a>
+   superseeds <a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.ini-file" class="link">mysqlnd_ms.ini_file</a>
+   since 1.4.0. It is a common pitfall to use the old, no longer available
+   configuration directive.
   </p>
   <p class="para">
    Create a plugin-specific configuration file. Save the file to the path
    set by the PHP configuration directive
-   <a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.ini-file" class="link">mysqlnd_ms.ini_file</a>.
+   <a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.config-file" class="link">mysqlnd_ms.config_file</a>.
   </p>
   <p class="para">
    The plugins <a href="mysqlnd-ms.plugin-ini-json.html" class="link">configuration file</a>
@@ -72,7 +76,7 @@ mysqlnd_ms.ini_file=/path/to/mysqlnd_ms_plugin.ini</pre>
     keyword.
   </p>
   <p class="para">
-   <div class="example" id="example-1739">
+   <div class="example" id="example-1827">
     <p><strong>Example #2 Minimal plugin-specific configuration file (mysqlnd_ms_plugin.ini)</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -105,7 +109,7 @@ mysqlnd_ms.ini_file=/path/to/mysqlnd_ms_plugin.ini</pre>
    more verbose non-anonymous syntax.
   </p>
   <p class="para">
-   <div class="example" id="example-1740">
+   <div class="example" id="example-1828">
     <p><strong>Example #3 Recommended minimal plugin-specific config (mysqlnd_ms_plugin.ini)</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -155,7 +159,7 @@ mysqlnd_ms.ini_file=/path/to/mysqlnd_ms_plugin.ini</pre>
    caused by replication lag.
   </p>
   <p class="para">
-   <div class="example" id="example-1741">
+   <div class="example" id="example-1829">
     <p><strong>Example #4 Using one server as a master and as a slave (testing only!)</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -178,6 +182,16 @@ mysqlnd_ms.ini_file=/path/to/mysqlnd_ms_plugin.ini</pre>
     </div>
 
     </div>
+  </p>
+  <p class="para">
+   The plugin attempts to notify you of invalid configurations. Since 1.5.0 it
+   will throw a warning during PHP startup if the configuration file cannot be read,
+   is empty or parsing the JSON failed. Depending on your PHP settings those
+   errors may appear in some log files only. Further validation is done when a connection
+   is to be established and the configuration file is searched for valid sections.
+   Setting <a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.force-config-usage" class="link">mysqlnd_ms.force_config_usage</a>
+   may help debugging a faulty setup. Please, see also
+   <a href="mysqlnd-ms.plugin-ini-json.html#mysqlnd-ms.plugin-ini-json.debug_config" class="link">configuration file debugging notes</a>.
   </p>
 
  </div><hr /><div class="manualnavbar" style="text-align: center;">

@@ -103,13 +103,15 @@
 
      </dt>
 
-     <dt>
-
+     <dt id="reference.pcre.pattern.modifiers.eval">
       <span class="term"><em class="emphasis">e</em> (<em>PREG_REPLACE_EVAL</em>)</span>
       <dd>
 
+       <div class="warning"><strong class="warning">Warning</strong><p class="simpara">This feature has been
+<em class="emphasis">DEPRECATED</em> as of PHP 5.5.0. Relying on this feature
+is highly discouraged.</p></div>
        <span class="simpara">
-        If this modifier is set,  <span class="function"><a href="function.preg-replace.html" class="function">preg_replace()</a></span>
+        If this deprecated modifier is set,  <span class="function"><a href="function.preg-replace.html" class="function">preg_replace()</a></span>
         does normal substitution of backreferences in the
         replacement string, evaluates it as PHP code, and uses the
         result for replacing the search string.

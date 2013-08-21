@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="memcached.prepend.html">Memcached::prepend</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="memcached.replace.html">Memcached::replace</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="memcached.quit.html">Memcached::quit</a></div>
  <div class="up"><a href="class.memcached.html">Memcached</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="memcached.prependbykey" class="refentry">
@@ -46,7 +46,7 @@
      <dd>
 
       <p class="para">
-       The key identifying the server to store the value on.
+       The key identifying the server to store the value on or retrieve it from. Instead of hashing on the actual key for the item, we hash on the server key when deciding which memcached server to talk to. This allows related items to be grouped together on a single server for efficiency with multi operations.
       </p>
      </dd>
 
@@ -105,7 +105,7 @@
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="memcached.prepend.html">Memcached::prepend</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="memcached.replace.html">Memcached::replace</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="memcached.quit.html">Memcached::quit</a></div>
  <div class="up"><a href="class.memcached.html">Memcached</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

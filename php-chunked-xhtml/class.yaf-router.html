@@ -15,7 +15,7 @@
  <h1 class="title">The Yaf_Router class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(Yaf &gt;=1.0.0)</p>
 
 
   <div class="section" id="yaf-router.intro">
@@ -23,20 +23,20 @@
    <p class="para">
    <strong class="classname">Yaf_Router</strong> is the standard framework router. Routing is
    the process of taking a URI endpoint (that part of the URI which comes
-   after the base URL) and decomposing it into parameters to determine which
-   module, controller, and action of that controller should receive the
-   request. This values of the module, controller, action and other parameters
-   are packaged into a <a href="class.yaf-request-abstract.html" class="classname">Yaf_Request_Abstract</a> object which is then
-   processed by <a href="class.yaf-dispatcher.html" class="classname">Yaf_Dispatcher</a>. Routing occurs only once:
-   when the request is initially received and before the first controller is
-   dispatched.
+   after the base URI: see  <span class="methodname"><a href="yaf-request-abstract.setbaseuri.html" class="methodname">Yaf_Request_Abstract::setBaseUri()</a></span>)
+   and decomposing it into parameters to determine which module, controller, and
+   action of that controller should receive the request. This values of the module,
+   controller, action and other parameters are packaged into a
+   <a href="class.yaf-request-abstract.html" class="classname">Yaf_Request_Abstract</a> object which is then processed by
+   <a href="class.yaf-dispatcher.html" class="classname">Yaf_Dispatcher</a>. Routing occurs only once: when the request
+   is initially received and before the first controller is dispatched.
 
    <strong class="classname">Yaf_Router</strong> is designed to allow for mod_rewrite-like
    functionality using pure PHP structures. It is very loosely based on Ruby
    on Rails routing and does not require any prior knowledge of webserver URL
    rewriting. It is designed to work with a single Apache mod_rewrite rule
    (one of):
-   <div class="example" id="example-3904">
+   <div class="example" id="example-4128">
     <p><strong>Example #1 Rewrite rule for Apache</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">RewriteEngine on
@@ -46,7 +46,7 @@ RewriteRule !\.(js|ico|gif|jpg|png|css|html)$ index.php</pre>
 
    </div>
    or (preferred):
-   <div class="example" id="example-3905">
+   <div class="example" id="example-4129">
    <p><strong>Example #2 Rewrite rule for Apache</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">RewriteEngine On
@@ -60,7 +60,7 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
 
   </div>
    If using Lighttpd, the following rewrite rule is valid:
-   <div class="example" id="example-3906">
+   <div class="example" id="example-4130">
     <p><strong>Example #3 Rewrite rule for Lighttpd</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">url.rewrite-once = (
@@ -73,7 +73,7 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
 
   </div>
    If using Nginx, use the following rewrite rule:
-   <div class="example" id="example-3907">
+   <div class="example" id="example-4131">
     <p><strong>Example #4 Rewrite rule for Nginx</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">server {
@@ -97,12 +97,12 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
   <div class="section" id="yaf-router.default">
    <h2 class="title">Default route</h2>
    <p class="para">
-   Yaf_Router comes preconfigured with a default route, which
-   will match URIs in the shape of controller/action. Additionally, a module
-   name may be specified as the first path element, allowing URIs of the form
-   module/controller/action. Finally, it will also match any additional
-   parameters appended to the URI by default -
-   controller/action/var1/value1/var2/value2.
+    <strong class="classname">Yaf_Router</strong> comes preconfigured with a default route
+    <a href="class.yaf-route-static.html" class="classname">Yaf_Route_Static</a>, which will match URIs in the shape of 
+    controller/action. Additionally, a module name may be specified as the first
+    path element, allowing URIs of the form module/controller/action. Finally, 
+    it will also match any additional parameters appended to the URI by default 
+    - controller/action/var1/value1/var2/value2.
     <blockquote class="note"><p><strong class="note">Note</strong>: 
      <p class="para">
       Module name must be defined in config, considering application.module=&quot;Index,Foo,Bar&quot;,
@@ -114,9 +114,8 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
 
    <p class="para">
    Some examples of how such routes are matched:
-   <div class="example" id="example-3908">
-    <p><strong>Example #5 <a href="class.yaf-route-static.html" class="classname">Yaf_Route_Static</a>(default
-     route)example</strong></p>
+   <div class="example" id="example-4132">
+    <p><strong>Example #5 <a href="class.yaf-route-static.html" class="classname">Yaf_Route_Static</a>(default route)example</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">// Assuming the following configure:
 $conf = array(
@@ -234,7 +233,9 @@ http://example/blog/archive/list/sort/alpha/date/desc
      <span class="term"><var class="varname"><var class="varname">_routes</var></var></span>
      <dd>
 
-      <p class="para"/>
+      <p class="para">
+      registered routes stack
+      </p>
      </dd>
 
     </dt>
@@ -243,7 +244,13 @@ http://example/blog/archive/list/sort/alpha/date/desc
      <span class="term"><var class="varname"><var class="varname">_current</var></var></span>
      <dd>
 
-      <p class="para"/>
+      <p class="para">
+       after routing phase, this indicated the name of which route
+       is used to route current request.
+
+       you can get this name by
+        <span class="methodname"><a href="yaf-router.getcurrentroute.html" class="methodname">Yaf_Router::getCurrentRoute()</a></span>.
+      </p>
      </dd>
 
     </dt>

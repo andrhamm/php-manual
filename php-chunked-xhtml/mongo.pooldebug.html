@@ -6,14 +6,14 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongo.listdbs.html">Mongo::listDBs</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongo.selectcollection.html">Mongo::selectCollection</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongo.getslaveokay.html">Mongo::getSlaveOkay</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongo.setpoolsize.html">Mongo::setPoolSize</a></div>
  <div class="up"><a href="class.mongo.html">Mongo</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="mongo.pooldebug" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Mongo::poolDebug</h1>
-  <p class="verinfo">(No version information available, might only be in SVN)</p><p class="refpurpose"><span class="refname">Mongo::poolDebug</span> &mdash; <span class="dc-title">Returns information about all connection pools.</span></p>
+  <p class="verinfo">(PECL mongo &gt;=1.2.0)</p><p class="refpurpose"><span class="refname">Mongo::poolDebug</span> &mdash; <span class="dc-title">Returns information about all connection pools.</span></p>
 
  </div>
 
@@ -60,7 +60,7 @@
 
       <p class="para">
        The number of connections currently being used by
-       <a href="class.mongo.html" class="classname">Mongo</a> instances.
+       <a href="class.mongoclient.html" class="classname">MongoClient</a> instances.
       </p>
      </dd>
 
@@ -91,9 +91,9 @@
        The number of connections that could be created by this pool. For
        example, suppose a pool had 5 connections remaining and 3 connections in
        the pool.  We could create 8 new instances of
-       <a href="class.mongo.html" class="classname">Mongo</a> before we exhausted this pool (assuming no
-       instances of <a href="class.mongo.html" class="classname">Mongo</a> went out of scope, returning
-       their connections to the pool).
+       <a href="class.mongoclient.html" class="classname">MongoClient</a> before we exhausted this pool
+       (assuming no instances of <a href="class.mongoclient.html" class="classname">MongoClient</a> went out of
+       scope, returning their connections to the pool).
       </p>
       <p class="para">
        A negative number means that this pool will spawn unlimited connections.
@@ -145,9 +145,7 @@
      <tbody class="tbody">
       <tr>
        <td>1.2.11</td>
-       <td>
-       Emits <strong><code>E_DEPRECATED</code></strong> when used.
-       </td>
+       <td>Emits <strong><code>E_DEPRECATED</code></strong> when used.</td>
       </tr>
 
      </tbody>
@@ -159,8 +157,8 @@
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongo.listdbs.html">Mongo::listDBs</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongo.selectcollection.html">Mongo::selectCollection</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongo.getslaveokay.html">Mongo::getSlaveOkay</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongo.setpoolsize.html">Mongo::setPoolSize</a></div>
  <div class="up"><a href="class.mongo.html">Mongo</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

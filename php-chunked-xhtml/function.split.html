@@ -117,7 +117,7 @@ highly discouraged.</p></div>
  <div class="refsect1 examples" id="refsect1-function.split-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4487">
+   <div class="example" id="example-4761">
     <p><strong>Example #1  <span class="function"><strong>split()</strong></span> example</strong></p>
     <div class="example-contents"><p>
      To split off the first four fields from a line from
@@ -133,7 +133,7 @@ highly discouraged.</p></div>
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4488">
+   <div class="example" id="example-4762">
     <p><strong>Example #2  <span class="function"><strong>split()</strong></span> example</strong></p>
     <div class="example-contents"><p>
      To parse a date which may be delimited with slashes, dots, or hyphens:
@@ -159,9 +159,8 @@ will issue an <strong><code>E_DEPRECATED</code></strong> notice. See <a href="re
 differences</a> for help on converting to PCRE.</p></p></blockquote>
   <div class="tip"><strong class="tip">Tip</strong>
    <p class="para">
-     <span class="function"><a href="function.preg-split.html" class="function">preg_split()</a></span>, which uses a Perl-compatible regular
-    expression syntax, is often a faster alternative to
-     <span class="function"><strong>split()</strong></span>.  If you don&#039;t require the power of regular
+     <span class="function"><strong>split()</strong></span> is deprecated as of PHP 5.3.0.  <span class="function"><a href="function.preg-split.html" class="function">preg_split()</a></span> 
+    is the suggested alternative to this function. If you don&#039;t require the power of regular
     expressions, it is faster to use  <span class="function"><a href="function.explode.html" class="function">explode()</a></span>, which
     doesn&#039;t incur the overhead of the regular expression engine.
    </p>

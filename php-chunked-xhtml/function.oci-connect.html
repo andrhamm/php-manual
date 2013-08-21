@@ -103,7 +103,7 @@ and <strong><code>ORACLE_SID</code></strong> to determine the
 To use the Easy Connect naming method, PHP must be linked with Oracle
 10g or greater Client libraries. The Easy Connect string for Oracle
 10g is of the form:
-<em class="emphasis">[//]host_name[:port][/service_name]</em>. With Oracle
+<em class="emphasis">[//]host_name[:port][/service_name]</em>. From Oracle
 11g, the syntax is:
 <em class="emphasis">[//]host_name[:port][/service_name][:server_type][/instance_name]</em>.
 Service names can be found by running the Oracle
@@ -140,7 +140,7 @@ Oracle Client libraries determine a character set from
 the <strong><code>NLS_LANG</code></strong> environment variable.
 </p>
 <p class="para">Passing this parameter can
-reduce connection time.
+reduce the time taken to connect.
 </p>
      </dd>
 
@@ -201,7 +201,7 @@ security reasons.
  <div class="refsect1 examples" id="refsect1-function.oci-connect-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-1925">
+   <div class="example" id="example-2034">
     <p><strong>Example #1 Basic  <span class="function"><strong>oci_connect()</strong></span> using Easy Connect syntax</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -213,7 +213,7 @@ security reasons.
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1926">
+   <div class="example" id="example-2035">
     <p><strong>Example #2 Basic  <span class="function"><strong>oci_connect()</strong></span> using a Network Connect name</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -225,7 +225,7 @@ security reasons.
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1927">
+   <div class="example" id="example-2036">
     <p><strong>Example #3  <span class="function"><strong>oci_connect()</strong></span> with an explicit character set</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -237,7 +237,7 @@ security reasons.
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1928">
+   <div class="example" id="example-2037">
     <p><strong>Example #4 Using multiple calls to  <span class="function"><strong>oci_connect()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -15,15 +15,15 @@
 
  <p class="para">
   Various parts of the PHP language are represented internally by types like
-  T_SR. PHP outputs identifiers like this one in parse errors, like 
+  T_SR. PHP outputs identifiers like this one in parse errors, like
   <em>&quot;Parse error: unexpected T_SR, expecting &#039;,&#039; or &#039;;&#039; in script.php on line 10.&quot;</em>
  </p>
  <p class="para">
-  You&#039;re supposed to know what T_SR means. For everybody who doesn&#039;t 
-  know that, here is a table with those identifiers, PHP-syntax and 
+  You&#039;re supposed to know what T_SR means. For everybody who doesn&#039;t
+  know that, here is a table with those identifiers, PHP-syntax and
   references to the appropriate places in the manual.
  </p>
- 
+
  <blockquote class="note"><p><strong class="note">Note</strong>: 
   <strong>Usage of T_* constants</strong><br />
   <p class="para">
@@ -39,8 +39,8 @@
    (using big numbers like <em>10000</em>) and an appropriate strategy that
    will work with both PHP versions and T_* values.
   </p>
- </p></blockquote> 
- 
+ </p></blockquote>
+
  <table class="doctable table">
   <caption><strong>Tokens</strong></caption>
   
@@ -389,6 +389,12 @@
      <td><strong><code>T_FINAL</code></strong></td>
      <td>final</td>
      <td><a href="language.oop5.final.html" class="xref">Final Keyword</a> (available since PHP 5.0.0)</td>
+    </tr>
+
+    <tr>
+     <td><strong><code>T_FINALLY</code></strong></td>
+     <td>finally</td>
+     <td><a href="language.exceptions.html" class="xref">Exceptions</a> (available since PHP 5.5.0)</td>
     </tr>
 
     <tr>
@@ -802,11 +808,11 @@
 
     <tr>
      <td><strong><code>T_STRING</code></strong></td>
-     <td>&quot;parent&quot;</td>
+     <td>parent, true etc.</td>
      <td>
-      identifiers, e.g. <a href="language.types.string.html#language.types.string.parsing" class="link">strings</a>, 
-      object oriented keywords like <em>parent</em> and <em>self</em>, 
-      functions, classes and more are matched.
+      identifiers, e.g. keywords like <em>parent</em> and <em>self</em>,
+      function names, class names and more are matched.
+      See also <strong><code>T_CONSTANT_ENCAPSED_STRING</code></strong>.
      </td>
     </tr>
 
@@ -904,7 +910,13 @@
      operators</a></td>
     </tr>
 
-   </tbody> 
+    <tr>
+     <td><strong><code>T_YIELD</code></strong></td>
+     <td>yield</td>
+     <td><a href="language.generators.syntax.html#control-structures.yield" class="link">generators</a> (available since PHP 5.5.0)</td>
+    </tr>
+
+   </tbody>
   
  </table>
 

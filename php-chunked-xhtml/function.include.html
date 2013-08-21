@@ -55,7 +55,7 @@
   global scope.
  </p>
  <p class="para">
-  <div class="example" id="example-136">
+  <div class="example" id="example-137">
    <p><strong>Example #1 Basic <em>include</em> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -75,7 +75,7 @@ vars.php<br /><span style="color: #0000BB">&lt;?php<br /><br />$color&nbsp;</spa
   evaluated by the parser before the include occurs.
  </p>
  <p class="para">
-  <div class="example" id="example-137">
+  <div class="example" id="example-138">
    <p><strong>Example #2 Including within functions</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -95,8 +95,8 @@ vars.php<br /><span style="color: #0000BB">&lt;?php<br /><br />$color&nbsp;</spa
   and end tags</a>.
  </p>
  <p class="simpara">
-  If &quot;<a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">URL fopen wrappers</a>&quot;
-  are enabled in PHP (which they are in the default configuration),
+  If &quot;<a href="filesystem.configuration.html#ini.allow-url-include" class="link">URL include wrappers</a>&quot;
+  are enabled in PHP,
   you can specify the file to be included using a URL (via HTTP or
   other supported wrapper - see <a href="wrappers.html" class="xref">Supported Protocols and Wrappers</a> for a list
   of protocols) instead of a local pathname.  If the target server interprets
@@ -112,7 +112,7 @@ prior to PHP 4.3.0 do not support access of remote files via this function,
 even if <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">allow_url_fopen</a> is enabled.
 </p></div>
  <p class="para">
-  <div class="example" id="example-138">
+  <div class="example" id="example-139">
    <p><strong>Example #3 <em>include</em> through HTTP</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -159,7 +159,7 @@ even if <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link"
   Because <em>include</em> is a special language construct,
   parentheses are not needed around its argument. Take care when comparing
   return value.
-  <div class="example" id="example-139">
+  <div class="example" id="example-140">
    <p><strong>Example #4 Comparing return value of include</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -171,7 +171,7 @@ even if <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link"
   </div>
  </p>
  <p class="para">
-  <div class="example" id="example-140">
+  <div class="example" id="example-141">
    <p><strong>Example #5 <em>include</em> and the  <span class="function"><a href="function.return.html" class="function">return</a></span> statement</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -205,7 +205,7 @@ return.php<br /><span style="color: #0000BB">&lt;?php<br /><br />$var&nbsp;</spa
   Functions</a> with <em>include</em>. For example:
  </p>
  <p class="para">
-  <div class="example" id="example-141">
+  <div class="example" id="example-142">
    <p><strong>Example #6 Using output buffering to include a PHP file into a string</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -67,7 +67,7 @@
 
       <tr>
        <td>PARAM_AUTO_COMMIT</td>
-       <td>In CUBRID PHP, an auto-commit mode is disabled by default for
+       <td>In CUBRID PHP, auto-commit mode is disabled by default for
         transaction management. It can be set by using
          <span class="function"><a href="function.cubrid-set-autocommit.html" class="function">cubrid_set_autocommit()</a></span>. 
        </td>
@@ -219,7 +219,7 @@
 
  <div class="refsect1 examples" id="refsect1-function.cubrid-get-db-parameter-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-1072">
+  <div class="example" id="example-1098">
    <p><strong>Example #1  <span class="function"><strong>cubrid_get_db_parameter()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -231,15 +231,15 @@
     <div class="example-contents"><p>The above example will output:</p></div>
     <div class="example-contents screen">
 <div class="cdata"><pre>
-CUBRID PHP Version:            8.3.1.0005
+CUBRID PHP Version:            9.1.0.0001
 
 PARAM_ISOLATION_LEVEL          3
-PARAM_LOCK_TIMEOUT             -1
-PARAM_MAX_STRING_LENGTH        1073741823
-PARAM_AUTO_COMMIT              0
+LOCK_TIMEOUT                   -1
+MAX_STRING_LENGTH              1073741823
+PARAM_AUTO_COMMIT              1
 
-Server Info:                   8.3.1.0173
-Client Info:                   8.3.1
+Server Info:                   9.1.0.0212
+Client Info:                   9.1.0
 
 CUBRID Charset:                iso8859-1
 </pre></div>

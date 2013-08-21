@@ -15,7 +15,7 @@
  <h1 class="title">The Yaf_Action_Abstract class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(Yaf &gt;=1.0.0)</p>
 
 
   <div class="section" id="yaf-action-abstract.intro">
@@ -90,11 +90,9 @@
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-controller-abstract.forward.html" class="methodname">Yaf_Controller_Abstract::forward</a></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$module</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$controller</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$action</code></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$action</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$paramters</code></span>
-  ]]] )</div>
+  ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-controller-abstract.getinvokearg.html" class="methodname">Yaf_Controller_Abstract::getInvokeArg</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
@@ -124,11 +122,15 @@
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-controller-abstract.init.html" class="methodname">Yaf_Controller_Abstract::init</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-controller-abstract.initview.html" class="methodname">Yaf_Controller_Abstract::initView</a></span>
     ([ <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-controller-abstract.redirect.html" class="methodname">Yaf_Controller_Abstract::redirect</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="yaf-controller-abstract.redirect.html" class="methodname">Yaf_Controller_Abstract::redirect</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$url</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
@@ -240,7 +242,7 @@
 
 
 
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="yaf-action-abstract.execute.html">Yaf_Action_Abstract::execute</a> — Execute the action</li><li><a href="yaf-action-abstract.getcontroller.html">Yaf_Action_Abstract::getController</a> — get controller instance</li></ul>
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="yaf-action-abstract.execute.html">Yaf_Action_Abstract::execute</a> — Action entry point</li><li><a href="yaf-action-abstract.getcontroller.html">Yaf_Action_Abstract::getController</a> — Retrieve controller object</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="yaf-controller-abstract.setviewpath.html">Yaf_Controller_Abstract::setViewpath</a></div>

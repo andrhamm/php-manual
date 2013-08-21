@@ -114,7 +114,7 @@
   ]]] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocollection.createdbref.html" class="methodname">createDBRef</a></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$a</code></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$document_or_id</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocollection.deleteindex.html" class="methodname">deleteIndex</a></span>
@@ -143,6 +143,13 @@
     ([ <span class="methodparam"><span class="type">array</span> <code class="parameter">$query</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$fields</code><span class="initializer"> = array()</span></span>
   ]] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocollection.findandmodify.html" class="methodname">findAndModify</a></span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$query</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$update</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$fields</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code></span>
+  ]]] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocollection.findone.html" class="methodname">findOne</a></span>
     ([ <span class="methodparam"><span class="type">array</span> <code class="parameter">$query</code><span class="initializer"> = array()</span></span>
@@ -181,7 +188,7 @@
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool|array</span> <span class="methodname"><a href="mongocollection.insert.html" class="methodname">insert</a></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$a</code></span>
+    ( <span class="methodparam"><span class="type"><span class="type array|object">array|object</span></span> <code class="parameter">$a</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
@@ -191,12 +198,12 @@
   ]] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongocollection.save.html" class="methodname">save</a></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$a</code></span>
+    ( <span class="methodparam"><span class="type"><span class="type array|object">array|object</span></span> <code class="parameter">$a</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongocollection.setreadpreference.html" class="methodname">setReadPreference</a></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$read_preference</code></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$read_preference</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$tags</code></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
@@ -309,7 +316,7 @@
   <div class="section">
    <h2 class="title">See Also</h2>
    <p class="para">
-    MongoDB core docs on <a href="http://dochub.mongodb.org/core/collections" class="link external">&raquo;&nbsp;collections</a>.
+    MongoDB core docs on <a href="http://docs.mongodb.org/manual/reference/glossary/#term-collection" class="link external">&raquo;&nbsp;collections</a>.
    </p>
   </div>
 
@@ -387,6 +394,50 @@
 
 
 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
 
@@ -436,44 +487,7 @@
 
 
 
- 
 
-
-
-
-
- 
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
- 
-
-
-
-
-
- 
 
 
 
@@ -491,7 +505,7 @@
 
 <h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="mongocollection.aggregate.html">MongoCollection::aggregate</a> — Perform an aggregation using the aggregation framework</li><li><a href="mongocollection.batchinsert.html">MongoCollection::batchInsert</a> — Inserts multiple documents into this collection</li><li><a href="mongocollection.construct.html">MongoCollection::__construct</a> — Creates a new collection</li><li><a href="mongocollection.count.html">MongoCollection::count</a> — Counts the number of documents in this collection</li><li><a href="mongocollection.createdbref.html">MongoCollection::createDBRef</a> — Creates a database reference</li><li><a href="mongocollection.deleteindex.html">MongoCollection::deleteIndex</a> — Deletes an index from this collection</li><li><a href="mongocollection.deleteindexes.html">MongoCollection::deleteIndexes</a> — Delete all indices for this collection</li><li><a href="mongocollection.distinct.html">MongoCollection::distinct</a> — Retrieve a list of distinct values for the given key across a collection.</li><li><a href="mongocollection.drop.html">MongoCollection::drop</a> — Drops this collection</li><li><a href="mongocollection.ensureindex.html">MongoCollection::ensureIndex</a> — Creates an index on the given field(s), or does nothing if the index 
    already exists</li><li><a href="mongocollection.find.html">MongoCollection::find</a> — Querys this collection, returning a MongoCursor
-  for the result set</li><li><a href="mongocollection.findone.html">MongoCollection::findOne</a> — Querys this collection, returning a single element</li><li><a href="mongocollection.get.html">MongoCollection::__get</a> — Gets a collection</li><li><a href="mongocollection.getdbref.html">MongoCollection::getDBRef</a> — Fetches the document pointed to by a database reference</li><li><a href="mongocollection.getindexinfo.html">MongoCollection::getIndexInfo</a> — Returns information about indexes on this collection</li><li><a href="mongocollection.getname.html">MongoCollection::getName</a> — Returns this collection's name</li><li><a href="mongocollection.getreadpreference.html">MongoCollection::getReadPreference</a> — Get the read preference for this collection</li><li><a href="mongocollection.getslaveokay.html">MongoCollection::getSlaveOkay</a> — Get slaveOkay setting for this collection</li><li><a href="mongocollection.group.html">MongoCollection::group</a> — Performs an operation similar to SQL's GROUP BY command</li><li><a href="mongocollection.insert.html">MongoCollection::insert</a> — Inserts an array into the collection</li><li><a href="mongocollection.remove.html">MongoCollection::remove</a> — Remove records from this collection</li><li><a href="mongocollection.save.html">MongoCollection::save</a> — Saves an object to this collection</li><li><a href="mongocollection.setreadpreference.html">MongoCollection::setReadPreference</a> — Set the read preference for this collection</li><li><a href="mongocollection.setslaveokay.html">MongoCollection::setSlaveOkay</a> — Change slaveOkay setting for this collection</li><li><a href="mongocollection.toindexstring.html">MongoCollection::toIndexString</a> — Converts keys specifying an index to its identifying string</li><li><a href="mongocollection.--tostring.html">MongoCollection::__toString</a> — String representation of this collection</li><li><a href="mongocollection.update.html">MongoCollection::update</a> — Update records based on a given criteria</li><li><a href="mongocollection.validate.html">MongoCollection::validate</a> — Validates this collection</li></ul>
+  for the result set</li><li><a href="mongocollection.findandmodify.html">MongoCollection::findAndModify</a> — Update a document and return it</li><li><a href="mongocollection.findone.html">MongoCollection::findOne</a> — Querys this collection, returning a single element</li><li><a href="mongocollection.get.html">MongoCollection::__get</a> — Gets a collection</li><li><a href="mongocollection.getdbref.html">MongoCollection::getDBRef</a> — Fetches the document pointed to by a database reference</li><li><a href="mongocollection.getindexinfo.html">MongoCollection::getIndexInfo</a> — Returns information about indexes on this collection</li><li><a href="mongocollection.getname.html">MongoCollection::getName</a> — Returns this collection's name</li><li><a href="mongocollection.getreadpreference.html">MongoCollection::getReadPreference</a> — Get the read preference for this collection</li><li><a href="mongocollection.getslaveokay.html">MongoCollection::getSlaveOkay</a> — Get slaveOkay setting for this collection</li><li><a href="mongocollection.group.html">MongoCollection::group</a> — Performs an operation similar to SQL's GROUP BY command</li><li><a href="mongocollection.insert.html">MongoCollection::insert</a> — Inserts a document into the collection</li><li><a href="mongocollection.remove.html">MongoCollection::remove</a> — Remove records from this collection</li><li><a href="mongocollection.save.html">MongoCollection::save</a> — Saves a document to this collection</li><li><a href="mongocollection.setreadpreference.html">MongoCollection::setReadPreference</a> — Set the read preference for this collection</li><li><a href="mongocollection.setslaveokay.html">MongoCollection::setSlaveOkay</a> — Change slaveOkay setting for this collection</li><li><a href="mongocollection.toindexstring.html">MongoCollection::toIndexString</a> — Converts keys specifying an index to its identifying string</li><li><a href="mongocollection.--tostring.html">MongoCollection::__toString</a> — String representation of this collection</li><li><a href="mongocollection.update.html">MongoCollection::update</a> — Update records based on a given criteria</li><li><a href="mongocollection.validate.html">MongoCollection::validate</a> — Validates this collection</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongodb.--tostring.html">MongoDB::__toString</a></div>

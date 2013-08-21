@@ -16,24 +16,24 @@
    <p class="para">
     The mysqli, PDO_MySQL and mysql PHP extensions are lightweight wrappers on
     top of a C client library. The extensions can either use the
-    <a href="book.mysqlnd.html" class="link">mysqlnd</a> library or the <em>libmysql</em>
+    <a href="book.mysqlnd.html" class="link">mysqlnd</a> library or the <em>libmysqlclient</em>
     library. Choosing a library is a compile time decision.
    </p>
    <p class="para">
     The mysqlnd library is part of the PHP distribution since 5.3.0. It offers
     features like lazy connections and query caching, features that are not available
-    with libmysql, so using the built-in mysqlnd library is highly recommended.
+    with libmysqlclient, so using the built-in mysqlnd library is highly recommended.
     See the <a href="book.mysqlnd.html" class="link">mysqlnd documentation</a> for
     additional details, and a listing of features and functionality that it offers.
    </p>
    <p class="para">
-    <div class="example" id="example-1541">
-     <p><strong>Example #1 Configure commands for using mysqlnd or libmysql</strong></p>
+    <div class="example" id="example-1628">
+     <p><strong>Example #1 Configure commands for using mysqlnd or libmysqlclient</strong></p>
      <div class="example-contents">
 <div class="shellcode"><pre class="shellcode">// Recommended, compiles with mysqlnd
 $ ./configure --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-mysql=mysqlnd
 
-// Not recommended, compiles with libmysql
+// Not recommended, compiles with libmysqlclient
 $ ./configure --with-mysqli=/path/to/mysql_config --with-pdo-mysql=/path/to/mysql_config --with-mysql=/path/to/mysql_config</pre>
 </div>
      </div>
@@ -45,7 +45,7 @@ $ ./configure --with-mysqli=/path/to/mysql_config --with-pdo-mysql=/path/to/mysq
    </p>
    <p class="para">
     It is recommended to use the <a href="book.mysqlnd.html" class="link">mysqlnd</a>
-    library instead of the MySQL Client Server library (libmysql). Both
+    library instead of the MySQL Client Server library (libmysqlclient). Both
     libraries are supported and constantly being improved.
    </p>
    <table class="doctable informaltable">
@@ -54,7 +54,7 @@ $ ./configure --with-mysqli=/path/to/mysql_config --with-pdo-mysql=/path/to/mysq
       <tr>
        <th class="empty">&nbsp;</th>
        <th>MySQL native driver (<a href="book.mysqlnd.html" class="link">mysqlnd</a>)</th>
-       <th>MySQL client server library (<em>libmysql</em>)</th>
+       <th>MySQL client server library (<em>libmysqlclient</em>)</th>
       </tr>
 
      </thead>
@@ -105,7 +105,7 @@ $ ./configure --with-mysqli=/path/to/mysql_config --with-pdo-mysql=/path/to/mysq
       <tr>
        <td>Compression protocol support</td>
        <td>Yes (5.3.1+)</td>
-       <td>yes</td>
+       <td>Yes</td>
       </tr>
 
       <tr>

@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd-ms.errorhandling.html">Error handling</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd-ms.transient_errors.html">Transient errors</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mysqlnd-ms.loadbalancing.html">Load balancing</a></div>
  <div class="up"><a href="mysqlnd-ms.concepts.html">Concepts</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -62,7 +62,17 @@
    of connection attempts can be limited and failed hosts can be excluded
    from future load balancing attempts. Limiting the number of retries and
    remembering failed hosts are considered experimental features, albeit being
-   resonable stable. Syntax and semantics may change in future versions.
+   reasonable stable. Syntax and semantics may change in future versions.
+  </p>
+  <p class="para">
+    Please note, since version 1.5.0 automatic failover is disabled for the
+    duration of a transaction if transaction stickiness is enabled and
+    transaction boundaries have been detected.  The plugin will not switch
+    connections for the duration of a transaction. It will also not perform
+    automatic and silent failover. Instead an error  will be thrown. It is then left
+    to the user to handle the failure of the transaction. Please check, the
+    <a href="mysqlnd-ms.plugin-ini-json.html#ini.mysqlnd-ms-plugin-config-v2.trx-stickiness" class="link"><em>trx_stickiness</em></a>
+    documentation how to do this.
   </p>
   <p class="para">
    A basic manual failover example is provided within the
@@ -109,7 +119,7 @@
    configurations, if need be.
   </p>
  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd-ms.errorhandling.html">Error handling</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd-ms.transient_errors.html">Transient errors</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mysqlnd-ms.loadbalancing.html">Load balancing</a></div>
  <div class="up"><a href="mysqlnd-ms.concepts.html">Concepts</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

@@ -15,9 +15,22 @@
   <blockquote class="note"><p><strong class="note">Note</strong>: 
    <strong>Version requirement</strong><br />
    <p class="para">
-    The feature requires used of PECL/mysqlnd_ms 1.3.0-beta or later
-    and PECL/mysqlnd_qc 1.1.0-alpha or new. PECL/mysqlnd_ms must be
+    The feature requires use of PECL/mysqlnd_ms 1.3.0-beta or later,
+    and PECL/mysqlnd_qc 1.1.0-alpha or newer. PECL/mysqlnd_ms must be
     compiled to support the feature. PHP 5.4.0 or newer is required.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <strong>Setup: extension load order</strong><br />
+   <p class="para">
+	PECL/mysqlnd_ms must be loaded before PECL/mysqlnd_qc, when using shared
+	extensions.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <strong>Feature stability</strong><br />
+   <p class="para">
+    The cache integration is of beta quality.
    </p>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">Note</strong>: 
@@ -119,7 +132,7 @@
     <li class="listitem">
      <span class="simpara">
       Search for the maximum value of <em>Seconds_Behind_Master</em> from
-      all slaves that passed the previous conditions. Substract the value from
+      all slaves that passed the previous conditions. Subtract the value from
       the maximum age provided by the user with  <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>.
       Use the result as a TTL.
      </span>

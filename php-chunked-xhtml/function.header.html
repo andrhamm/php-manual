@@ -42,7 +42,7 @@
    <div class="informalexample">
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-&lt;html&gt;<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;This&nbsp;will&nbsp;give&nbsp;an&nbsp;error.&nbsp;Note&nbsp;the&nbsp;output<br />&nbsp;*&nbsp;above,&nbsp;which&nbsp;is&nbsp;before&nbsp;the&nbsp;header()&nbsp;call&nbsp;*/<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Location:&nbsp;http://www.example.com/'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+&lt;html&gt;<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;This&nbsp;will&nbsp;give&nbsp;an&nbsp;error.&nbsp;Note&nbsp;the&nbsp;output<br />&nbsp;*&nbsp;above,&nbsp;which&nbsp;is&nbsp;before&nbsp;the&nbsp;header()&nbsp;call&nbsp;*/<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Location:&nbsp;http://www.example.com/'</span><span style="color: #007700">);<br />exit;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -84,18 +84,6 @@
         </div>
 
        </div>
-      </p>
-      <p class="para">
-       For FastCGI you must use the following for a 404 response:
-       <div class="informalexample">
-        <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Status:&nbsp;404&nbsp;Not&nbsp;Found"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-        </div>
-
-       </div>         
       </p>
       <p class="para">
        The second special case is the &quot;Location:&quot; header.  Not only does
@@ -221,7 +209,7 @@
  <div class="refsect1 examples" id="refsect1-function.header-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4167">
+   <div class="example" id="example-4439">
     <p><strong>Example #1 Download dialog</strong></p>
     <div class="example-contents"><p>
      If you want the user to be prompted to save the data you are
@@ -239,7 +227,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4168">
+   <div class="example" id="example-4440">
     <p><strong>Example #2 Caching directives</strong></p>
     <div class="example-contents"><p>
      PHP scripts often generate dynamic content that must not be cached

@@ -26,17 +26,11 @@
    occurred, and only if the <a href="errorfunc.configuration.html#ini.track-errors" class="link">track_errors</a> configuration
    option is turned on (it defaults to off).
   </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    This variable is only available when <em>track_errors</em> is
-    enabled in <var class="filename">php.ini</var>.
-   </span>
-  </p></blockquote>
   <div class="warning"><strong class="warning">Warning</strong>
    <p class="simpara">
     If a user defined error handler ( <span class="function"><a href="function.set-error-handler.html" class="function">set_error_handler()</a></span>)
     is set <var class="varname"><var class="varname">$php_errormsg</var></var> is only set if the error handler
-    returns <strong><code>FALSE</code></strong>
+    returns <strong><code>FALSE</code></strong>.
    </p>
   </div>
  </div>

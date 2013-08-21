@@ -29,7 +29,7 @@
 
   <p class="para rdfs-comment">Object oriented style (constructor):</p>
   <div class="constructorsynopsis dc-description">
-    <span class="methodname"><strong>finfo::__construct()</strong></span>
+   <span class="modifier">public</span>  <span class="methodname"><strong>finfo::__construct()</strong></span>
     ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = FILEINFO_NONE</span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$magic_file</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
   ]] )</div>
@@ -65,14 +65,14 @@
 
       <p class="para">
        Name of a magic database file, usually something like
-       <var class="filename">/path/to/magic.mime</var>. If not specified,
-       the <em>MAGIC</em> environment variable is used. If this variable
-       is not set either, <var class="filename">/usr/share/misc/magic</var> is used by default.
-       A <em>.mime</em> and/or <em>.mgc</em> suffix is added if
-       needed.
+       <var class="filename">/path/to/magic.mime</var>. If not specified, the
+       <em>MAGIC</em> environment variable is used. If the
+       environment variable isn&#039;t set, then PHP&#039;s bundled magic database will
+       be used.
       </p>
       <p class="para">
-       Passing NULL or an empty string will be equivalent to the default value.
+       Passing <strong><code>NULL</code></strong> or an empty string will be equivalent to the default
+       value.
       </p>
      </dd>
 
@@ -93,21 +93,34 @@
  </div>
 
 
-  <div class="refsect1 notes" id="refsect1-function.finfo-open-notes">
+ <div class="refsect1 notes" id="refsect1-function.finfo-open-notes">
   <h3 class="title">Notes</h3>
   <div class="warning"><strong class="warning">Warning</strong>
    <p class="para">
-    As of PHP &gt;= 5.3.11 and &gt;= 5.4.1 the magic datababase format has changed. Due to this, the internal mime database was upgraded. This affects especially the code where external magic is read in. Reading in magic files of the older formats will not work.
+    The expected magic database format changed in PHP 5.3.11 and 5.4.1.
+    Due to this, the internal magic database was upgraded. This mostly effects
+    code where an external magic database is used: reading an older magic file
+    will now fail.
     
-    Also, some textual representations of the mime types has changed, for instance for PHP would be &quot;PHP script, ASCII text&quot; instead of &quot;PHP script text&quot; returned.
+    Also, some textual representations of the mime types has changed, for
+    instance for PHP would be &quot;PHP script, ASCII text&quot; instead of &quot;PHP script
+    text&quot; returned.
    </p>
   </div>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+    Generally, using the bundled magic database (by leaving
+    <em><code class="parameter">magic_file</code></em> and the <em>MAGIC</em>
+    environment variables unset) is the best course of action unless you
+    specifically need a custom magic database.
+   </p>
+  </p></blockquote>
  </div>
 
  
  <div class="refsect1 examples" id="refsect1-function.finfo-open-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-2211">
+  <div class="example" id="example-2320">
    <p><strong>Example #1 Object oriented style</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -117,7 +130,7 @@
   </div>
 
   </div>
-  <div class="example" id="example-2212">
+  <div class="example" id="example-2321">
    <p><strong>Example #2 Procedural style</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -65,7 +65,7 @@ provide.</p></div>
 
  <div class="refsect1 examples" id="refsect1-function.imagecreatefromgif-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-3037">
+  <div class="example" id="example-3187">
    <p><strong>Example #1 Example to handle an error during loading of a GIF</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -92,6 +92,12 @@ something similar to:</p></div>
     GIF support was removed from the GD library in Version 1.6,
     and added back in Version 2.0.28. This function is not
     available between these versions.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+    When reading animated GIF files into memory, only the first frame 
+    is returned in the image resource pointer.
    </p>
   </p></blockquote>
   <div class="warning"><strong class="warning">Warning</strong><p class="para">Windows versions of PHP

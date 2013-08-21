@@ -15,7 +15,7 @@
  <h1 class="title">The SolrIllegalOperationException class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(PECL solr &gt;= 0.9.2)</p>
 
 
   <div class="section" id="solrillegaloperationexception.intro">
@@ -45,7 +45,43 @@
      </span>
      {</div>
 
-    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Properties */</div>
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Inherited properties */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.exception.html#exception.props.message">$<var class="varname">message</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.exception.html#exception.props.code">$<var class="varname">code</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.exception.html#exception.props.file">$<var class="varname">file</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.exception.html#exception.props.line">$<var class="varname">line</var></a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">integer</span>
+      <var class="varname"><a href="class.solrexception.html#solrexception.props.sourceline">$<var class="varname">sourceline</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.solrexception.html#solrexception.props.sourcefile">$<var class="varname">sourcefile</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.solrexception.html#solrexception.props.zif-name">$<var class="varname">zif_name</var></a></var>
+    ;</div>
 
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
@@ -56,6 +92,43 @@
 
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Inherited methods */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="exception.getmessage.html" class="methodname">Exception::getMessage</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">Exception</span> <span class="methodname"><a href="exception.getprevious.html" class="methodname">Exception::getPrevious</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="exception.getcode.html" class="methodname">Exception::getCode</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="exception.getfile.html" class="methodname">Exception::getFile</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="exception.getline.html" class="methodname">Exception::getLine</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="exception.gettrace.html" class="methodname">Exception::getTrace</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="exception.gettraceasstring.html" class="methodname">Exception::getTraceAsString</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span>  <span class="methodname"><a href="exception.tostring.html" class="methodname">Exception::__toString</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">private</span> <span class="type">void</span> <span class="methodname"><a href="exception.clone.html" class="methodname">Exception::__clone</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
     <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="solrexception.getinternalinfo.html" class="methodname">SolrException::getInternalInfo</a></span>
     ( <span class="methodparam">void</span>
@@ -68,80 +141,6 @@
   </div>
 
   
-
-  <div class="section" id="solrillegaloperationexception.props">
-   <h2 class="title">Properties</h2>
-   <dl>
-
-    <dt id="solrillegaloperationexception.props.message">
-     <span class="term"><var class="varname"><var class="varname">message</var></var></span>
-     <dd>
-
-      <p class="para">The error message</p>
-     </dd>
-
-    </dt>
-
-    <dt id="solrillegaloperationexception.props.code">
-     <span class="term"><var class="varname"><var class="varname">code</var></var></span>
-     <dd>
-
-      <p class="para">The error code</p>
-     </dd>
-
-    </dt>
-
-    <dt id="solrillegaloperationexception.props.file">
-     <span class="term"><var class="varname"><var class="varname">file</var></var></span>
-     <dd>
-
-      <p class="para">The userspace php source file where exception was generated</p>
-     </dd>
-
-    </dt>
-
-    <dt id="solrillegaloperationexception.props.line">
-     <span class="term"><var class="varname"><var class="varname">line</var></var></span>
-     <dd>
-
-      <p class="para">The line in userspace php source file where exception was generated</p>
-     </dd>
-
-    </dt>
-
-    <dt id="solrillegaloperationexception.props.sourceline">
-     <span class="term"><var class="varname"><var class="varname">sourceline</var></var></span>
-     <dd>
-
-      <p class="para">The line in c-space source file where exception was generated</p>
-     </dd>
-
-    </dt>
-
-    <dt id="solrillegaloperationexception.props.sourcefile">
-     <span class="term"><var class="varname"><var class="varname">sourcefile</var></var></span>
-     <dd>
-
-      <p class="para">The c-space source file where exception was generated</p>
-     </dd>
-
-    </dt>
-
-    <dt id="solrillegaloperationexception.props.zif-name">
-     <span class="term"><var class="varname"><var class="varname">zif_name</var></var></span>
-     <dd>
-
-      <p class="para">The c-space function where exception was generated</p>
-     </dd>
-
-    </dt>
-
-   </dl>
-
-  </div>
-
-
-
  </div>
 
  

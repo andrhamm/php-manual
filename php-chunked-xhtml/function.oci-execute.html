@@ -89,14 +89,6 @@
           </tr>
 
           <tr>
-           <td><strong><code>OCI_DEFAULT</code></strong></td>
-           <td>Obsolete as of PHP 5.3.2 (PECL OCI8 1.4) but still
-             available for backward compatibility.  Use the
-             equivalent <strong><code>OCI_NO_AUTO_COMMIT</code></strong> in new
-             code.</td>
-          </tr>
-
-          <tr>
            <td><strong><code>OCI_DESCRIBE_ONLY</code></strong></td>
            <td>Make query meta data available to functions
              like  <span class="function"><a href="function.oci-field-name.html" class="function">oci_field_name()</a></span> but do not
@@ -109,8 +101,8 @@
            <td><strong><code>OCI_NO_AUTO_COMMIT</code></strong></td>
            <td>Do not automatically commit changes.  Prior to PHP
              5.3.2 (PECL OCI8 1.4)
-             use <strong><code>OCI_DEFAULT</code></strong> which is an alias
-             for <strong><code>OCI_NO_AUTO_COMMIT</code></strong>.</td>
+             use <strong><code>OCI_DEFAULT</code></strong> which is equivalent
+             to <strong><code>OCI_NO_AUTO_COMMIT</code></strong>.</td>
           </tr>
 
          </tbody>
@@ -119,7 +111,7 @@
 
       </p>
       <p class="para">
-       Using <strong><code>OCI_NO_AUTO_COMMIT</code></strong> mode starts a
+       Using <strong><code>OCI_NO_AUTO_COMMIT</code></strong> mode starts or continues a
        transaction. Transactions are automatically rolled back when
        the connection is closed, or when the script ends.  Explicitly
        call  <span class="function"><a href="function.oci-commit.html" class="function">oci_commit()</a></span> to commit a transaction,
@@ -165,7 +157,7 @@
  <div class="refsect1 examples" id="refsect1-function.oci-execute-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-1936">
+   <div class="example" id="example-2045">
     <p><strong>Example #1  <span class="function"><strong>oci_execute()</strong></span> for queries</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -177,7 +169,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1937">
+   <div class="example" id="example-2046">
     <p><strong>Example #2  <span class="function"><strong>oci_execute()</strong></span> without specifying a mode example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -189,7 +181,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1938">
+   <div class="example" id="example-2047">
     <p><strong>Example #3  <span class="function"><strong>oci_execute()</strong></span> with <strong><code>OCI_NO_AUTO_COMMIT</code></strong> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -201,7 +193,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1939">
+   <div class="example" id="example-2048">
     <p><strong>Example #4  <span class="function"><strong>oci_execute()</strong></span> with different commit modes example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -213,7 +205,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1940">
+   <div class="example" id="example-2049">
     <p><strong>Example #5  <span class="function"><strong>oci_execute()</strong></span> with
      <strong><code>OCI_DESCRIBE_ONLY</code></strong> example</strong></p>
     <div class="example-contents">

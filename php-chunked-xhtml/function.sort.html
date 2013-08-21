@@ -146,7 +146,7 @@
  <div class="refsect1 examples" id="refsect1-function.sort-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4704">
+   <div class="example" id="example-4981">
     <p><strong>Example #1  <span class="function"><strong>sort()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -170,7 +170,7 @@ fruits[3] = orange
    The fruits have been sorted in alphabetical order.
   </p>
   <p class="para">
-   <div class="example" id="example-4705">
+   <div class="example" id="example-4982">
     <p><strong>Example #2  <span class="function"><strong>sort()</strong></span> example using case-insensitive natural
     ordering</strong></p>
     <div class="example-contents">
@@ -206,6 +206,9 @@ than just reordering the keys.</span></p></blockquote>
    <span class="simpara">
     Like most PHP sorting functions,  <span class="function"><strong>sort()</strong></span> uses an
     implementation of <a href="http://en.wikipedia.org/wiki/Quicksort" class="link external">&raquo;&nbsp;Quicksort</a>.
+    The pivot is chosen in the middle of the partition resulting in an optimal
+    time for already sorted arrays. This is however an implementation detail you
+    shouldn&#039;t rely on.
    </span>
   </p></blockquote>
   <div class="warning"><strong class="warning">Warning</strong>

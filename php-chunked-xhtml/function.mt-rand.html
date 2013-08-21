@@ -87,7 +87,8 @@
   <h3 class="title">Return Values</h3>
   <p class="para">
    A random integer value between <em><code class="parameter">min</code></em> (or 0)
-   and <em><code class="parameter">max</code></em> (or  <span class="function"><a href="function.mt-getrandmax.html" class="function">mt_getrandmax()</a></span>, inclusive)
+   and <em><code class="parameter">max</code></em> (or  <span class="function"><a href="function.mt-getrandmax.html" class="function">mt_getrandmax()</a></span>, inclusive),
+   or <strong><code>FALSE</code></strong> if <em><code class="parameter">max</code></em> is less than <em><code class="parameter">min</code></em>.
   </p>
  </div>
 
@@ -105,6 +106,14 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>5.3.4</td>
+       <td>
+        Issues an <strong><code>E_WARNING</code></strong> and returns <strong><code>FALSE</code></strong> if
+        <em><code class="parameter">max</code></em> &lt; <em><code class="parameter">min</code></em>.
+       </td>
+      </tr>
+
       <tr><td>4.2.0</td><td>The random
 number generator is seeded automatically.</td></tr>
 
@@ -118,7 +127,7 @@ number generator is seeded automatically.</td></tr>
  <div class="refsect1 examples" id="refsect1-function.mt-rand-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3272">
+   <div class="example" id="example-3431">
     <p><strong>Example #1  <span class="function"><strong>mt_rand()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -142,6 +151,7 @@ something similar to:</p></div>
 
  <div class="refsect1 notes" id="refsect1-function.mt-rand-notes">
   <h3 class="title">Notes</h3>
+  <div class="caution"><strong class="caution">Caution</strong><p class="para">This function does not generate cryptographically secure values, and should not be used for cryptographic purposes. If you need a cryptographically secure value, consider using  <span class="function"><a href="function.openssl-random-pseudo-bytes.html" class="function">openssl_random_pseudo_bytes()</a></span> instead.</p></div>
   <div class="caution"><strong class="caution">Caution</strong>
    <p class="para">
     The distribution of  <span class="function"><strong>mt_rand()</strong></span> return values is biased
@@ -157,6 +167,7 @@ something similar to:</p></div>
    <ul class="simplelist">
     <li class="member"> <span class="function"><a href="function.mt-srand.html" class="function" rel="rdfs-seeAlso">mt_srand()</a> - Seed the better random number generator</span></li>
     <li class="member"> <span class="function"><a href="function.mt-getrandmax.html" class="function" rel="rdfs-seeAlso">mt_getrandmax()</a> - Show largest possible random value</span></li>
+    <li class="member"> <span class="function"><a href="function.openssl-random-pseudo-bytes.html" class="function" rel="rdfs-seeAlso">openssl_random_pseudo_bytes()</a> - Generate a pseudo-random string of bytes</span></li>
     <li class="member"> <span class="function"><a href="function.rand.html" class="function" rel="rdfs-seeAlso">rand()</a> - Generate a random integer</span></li>
    </ul>
   </p>

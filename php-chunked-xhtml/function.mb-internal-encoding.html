@@ -45,6 +45,7 @@
        used for the HTTP input character encoding conversion, HTTP output 
        character encoding conversion, and the default character encoding 
        for string functions defined by the mbstring module.
+       You should notice that the internal encoding is totally different from the one for multibyte regex.
       </p>
      </dd>
 
@@ -61,6 +62,7 @@
   <p class="para">
    If <em><code class="parameter">encoding</code></em> is set, then 
    Returns <strong><code>TRUE</code></strong> on success or <strong><code>FALSE</code></strong> on failure.
+   In this case, the character encoding for multibyte regex is NOT changed.
    If <em><code class="parameter">encoding</code></em> is omitted, then 
    the current character encoding name is returned.
   </p>
@@ -70,7 +72,7 @@
  <div class="refsect1 examples" id="refsect1-function.mb-internal-encoding-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-2539">
+   <div class="example" id="example-2689">
     <p><strong>Example #1  <span class="function"><strong>mb_internal_encoding()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -93,6 +95,7 @@
     <li class="member"> <span class="function"><a href="function.mb-http-input.html" class="function" rel="rdfs-seeAlso">mb_http_input()</a> - Detect HTTP input character encoding</span></li>
     <li class="member"> <span class="function"><a href="function.mb-http-output.html" class="function" rel="rdfs-seeAlso">mb_http_output()</a> - Set/Get HTTP output character encoding</span></li>
     <li class="member"> <span class="function"><a href="function.mb-detect-order.html" class="function" rel="rdfs-seeAlso">mb_detect_order()</a> - Set/Get character encoding detection order</span></li>
+    <li class="member"> <span class="function"><a href="function.mb-regex-encoding.html" class="function" rel="rdfs-seeAlso">mb_regex_encoding()</a> - Set/Get character encoding for multibyte regex</span></li>
    </ul>
   </p>
  </div>

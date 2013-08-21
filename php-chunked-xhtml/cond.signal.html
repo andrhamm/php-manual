@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Signal a condition to a single Thread</title>
+  <title>Signal a Condition</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="cond.signal" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Cond::signal</h1>
-  <p class="verinfo">(PECL pthreads &gt;= 0.0.33)</p><p class="refpurpose"><span class="refname">Cond::signal</span> &mdash; <span class="dc-title">Signal a condition to a single Thread</span></p>
+  <p class="verinfo">(PECL pthreads &gt;= 0.34)</p><p class="refpurpose"><span class="refname">Cond::signal</span> &mdash; <span class="dc-title">Signal a Condition</span></p>
 
  </div>
 
@@ -61,6 +61,28 @@
   <p class="para">A boolean indication of success.</p>
  </div>
 
+
+ <div class="refsect1 examples" id="refsect1-cond.signal-examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   <div class="example" id="example-3683">
+    <p><strong>Example #1 Condition Signalling</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/**&nbsp;You&nbsp;cannot&nbsp;use&nbsp;the&nbsp;"new"&nbsp;keyword,&nbsp;a&nbsp;Cond&nbsp;is&nbsp;not&nbsp;a&nbsp;PHP&nbsp;object&nbsp;**/<br /></span><span style="color: #0000BB">$cond&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Cond</span><span style="color: #007700">::</span><span style="color: #0000BB">create</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">/**&nbsp;The&nbsp;caller&nbsp;must&nbsp;lock&nbsp;the&nbsp;associated&nbsp;Mutex&nbsp;before&nbsp;a&nbsp;call&nbsp;to&nbsp;broadcast&nbsp;**/<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">Cond</span><span style="color: #007700">::</span><span style="color: #0000BB">signal</span><span style="color: #007700">(</span><span style="color: #0000BB">$cond</span><span style="color: #007700">));<br /></span><span style="color: #FF8000">/**&nbsp;Always&nbsp;destroy&nbsp;Cond&nbsp;you&nbsp;have&nbsp;created&nbsp;**/<br /></span><span style="color: #0000BB">Cond</span><span style="color: #007700">::</span><span style="color: #0000BB">destroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$cond</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

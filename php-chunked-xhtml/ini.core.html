@@ -73,8 +73,8 @@
        <tr>
         <td><a href="ini.core.html#ini.short-open-tag" class="link">short_open_tag</a></td>
         <td>&quot;1&quot;</td>
-        <td>PHP_INI_ALL</td>
-        <td>PHP_INI_ALL in PHP 4.0.0. PHP_INI_PERDIR in PHP &lt; 5.3.0</td>
+        <td>PHP_INI_PERDIR</td>
+        <td>PHP_INI_ALL in PHP 4.0.0. PHP_INI_PERDIR in PHP &gt;= 4.0.1.</td>
        </tr>
 
        <tr>
@@ -361,14 +361,23 @@ the configuration directives.</p>
 
        <p class="para">
         Exposes to the world that PHP is installed on the server, which includes the
-        PHP version within the HTTP header (e.g., X-Powered-By: PHP/5.3.7). The PHP logo
-        guids are also exposed, thus appending them to the URL of a PHP enabled site
-        will display the appropriate logo 
+        PHP version within the HTTP header (e.g., X-Powered-By: PHP/5.3.7).
+        Prior to PHP 5.5.0 the PHP logo guids are also exposed, thus appending them
+        to the URL of your PHP script would display the appropriate logo
         (e.g., <a href="http://www.php.net/?=PHPE9568F34-D428-11d2-A769-00AA001ACF42" class="link external">&raquo;&nbsp;http://www.php.net/?=PHPE9568F34-D428-11d2-A769-00AA001ACF42</a>).
-        This also affects the output of  <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span>, as when disabled, the PHP logo
-        and credits information will not be displayed.
+        This also affected the output of  <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span>, as when disabled, the PHP logo
+        and credits information would not be displayed.
        </p>
-       <p class="para">
+       <blockquote class="note"><p><strong class="note">Note</strong>: 
+        <p class="para">
+         Since PHP 5.5.0 these guids and the  <span class="function"><a href="function.php-logo-guid.html" class="function">php_logo_guid()</a></span> function
+         have been removed from PHP and the guids are replaced with data URIs instead.
+         Thus accessing the PHP logo via appending the guid to the URL no longer works.
+         Similarly, turning <em><code class="parameter">expose_php</code></em> off will not affect
+         seeing the PHP logo in  <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span>.
+        </p>
+       </p></blockquote>
+       <p class="para">       
         See also  <span class="function"><a href="function.php-logo-guid.html" class="function">php_logo_guid()</a></span> and  <span class="function"><a href="function.phpcredits.html" class="function">phpcredits()</a></span>.
        </p>
       </dd>
@@ -782,6 +791,13 @@ the configuration directives.</p>
        </tr>
 
        <tr>
+        <td><a href="ini.core.html#ini.enable-post-data-reading" class="link">enable_post_data_reading</a></td>
+        <td>&quot;1&quot;</td>
+        <td>PHP_INI_PERDIR</td>
+        <td>Available since PHP 5.4.0</td>
+       </tr>
+
+       <tr>
         <td><a href="ini.core.html#ini.post-max-size" class="link">post_max_size</a></td>
         <td>&quot;8M&quot;</td>
         <td>PHP_INI_PERDIR</td>
@@ -792,7 +808,7 @@ the configuration directives.</p>
         <td><a href="ini.core.html#ini.gpc-order" class="link">gpc_order</a></td>
         <td>&quot;GPC&quot;</td>
         <td>PHP_INI_ALL</td>
-        <td class="empty">&nbsp;</td>
+        <td>Removed in PHP 5.0.0.</td>
        </tr>
 
        <tr>
@@ -828,13 +844,6 @@ the configuration directives.</p>
         <td>&quot;0&quot;</td>
         <td>PHP_INI_PERDIR</td>
         <td>PHP_INI_ALL in PHP &lt;= 4.2.3. Available since PHP 4.1.0.</td>
-       </tr>
-
-       <tr>
-        <td><a href="ini.core.html#ini.allow-webdav-methods" class="link">allow_webdav_methods</a></td>
-        <td>&quot;0&quot;</td>
-        <td>PHP_INI_PERDIR</td>
-        <td class="empty">&nbsp;</td>
        </tr>
 
       </tbody>
@@ -1196,7 +1205,7 @@ in <a href="faq.using.html#faq.using.shorthandbytes" class="link">this FAQ</a>, 
        </p>
        <blockquote class="note"><p><strong class="note">Note</strong>: 
         <p class="para">
-         This option is not available in PHP 4.
+         This option was removed in PHP 5.0.0.
          Use <a href="ini.core.html#ini.variables-order" class="link">variables_order</a>
          instead.
         </p>
@@ -1304,25 +1313,6 @@ in <a href="faq.using.html#faq.using.shorthandbytes" class="link">this FAQ</a>, 
      </dt>
 
      
-     <dt id="ini.allow-webdav-methods">
-      <span class="term">
-       <em><code class="parameter">allow_webdav_methods</code></em>
-       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
-      <dd>
-
-       <p class="para">
-        Allow handling of WebDAV http requests within PHP scripts (eg.
-        PROPFIND, PROPPATCH, MOVE, COPY, etc.).
-        This directive does not exist as of PHP 4.3.2.
-        If you want to get the post data of those requests, you have to
-        set <a href="ini.core.html#ini.always-populate-raw-post-data" class="link">
-        always_populate_raw_post_data</a> as well.
-       </p>
-      </dd>
-
-     </dt>
-
     </dl>
 
    </p>
@@ -1509,7 +1499,7 @@ the configuration directives.</p>
          <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span>.
        </p>
        <p class="para">
-        <div class="example" id="example-5292">
+        <div class="example" id="example-5560">
          <p><strong>Example #1 Unix include_path</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1519,7 +1509,7 @@ the configuration directives.</p>
         </div>
        </p>
        <p class="para">
-        <div class="example" id="example-5293">
+        <div class="example" id="example-5561">
          <p><strong>Example #2 Windows include_path</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1534,6 +1524,27 @@ the configuration directives.</p>
         it is more efficient to explicitly use <em>include
         &#039;./file&#039;</em> than having PHP always check the current
         directory for every include.
+       </p>
+       <blockquote class="note"><p><strong class="note">Note</strong>: 
+        <p class="para">
+         <em>ENV</em> variables are also accessible in .ini files.
+         As such it is possible to reference the home directory using
+         <em>${LOGIN}</em> and <em>${USER}</em>.
+        </p>
+        <p class="para">
+         Environment variables may vary between Server APIs as those environments
+         may be different.
+        </p>       
+       </p></blockquote>
+       <p class="para">
+        <div class="example" id="example-5562">
+         <p><strong>Example #3 Unix include_path using ${USER} env variable</strong></p>
+         <div class="example-contents">
+<div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>
+</div>
+         </div>
+
+        </div>
        </p>
       </dd>
 
@@ -1851,12 +1862,21 @@ the configuration directives.</p>
       </span>
       <dd>
 
-       <p class="para">
+      <p class="para">
         Tells PHP what type of headers to use when sending HTTP response
-        code. If it&#039;s set 0, PHP sends a Status: header that is supported
-        by Apache and other web servers. When this option is set to 1, PHP
-        will send <a href="http://www.faqs.org/rfcs/rfc2616" class="link external">&raquo;&nbsp;RFC 2616</a> compliant
-        headers.  Leave it set to 0 unless you know what you&#039;re doing.
+        code. If it&#039;s set to 0, PHP sends a <a href="http://www.faqs.org/rfcs/rfc3875" class="link external">&raquo;&nbsp;RFC 3875</a> 
+        &quot;Status:&quot; header that is supported by Apache and other web servers. When this option 
+        is set to 1, PHP will send <a href="http://www.faqs.org/rfcs/rfc2616" class="link external">&raquo;&nbsp;RFC 2616</a> compliant
+        headers.  
+       </p>
+       <p class="para">
+        If this option is enabled, and you are running PHP in a CGI environment (e.g. PHP-FPM)
+        you should not use standard RFC 2616 style HTTP status response headers, you should 
+        instead use their RFC 3875 equivalent e.g. instead of header(&quot;HTTP/1.0 404 Not found&quot;); 
+        you should use header(&quot;Status: 404 Not Found&quot;);
+       </p>
+       <p class="para">
+        Leave it set to 0 unless you know what you&#039;re doing.
        </p>
       </dd>
 

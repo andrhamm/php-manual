@@ -37,23 +37,25 @@
    </li>
    <li class="listitem">
     <span class="simpara">
-     <em>zend_extension_debug</em> and
-     <em>zend_extension_ts</em> have been removed. Use the
-     <em>zend_extension</em> directive to load all Zend Extensions.
+     <a href="ini.core.html#ini.zend-extension-debug" class="link">zend_extension_debug</a>,
+     <a href="ini.core.html#ini.zend-extension-debug-ts" class="link">zend_extension_debug_ts</a>
+     and <a href="ini.core.html#ini.zend-extension-ts" class="link">zend_extension_ts</a> have
+     been removed. Use the
+     <a href="ini.core.html#ini.zend-extension" class="link">zend_extension</a> directive to
+     load all Zend Extensions.
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
-     <em>zend.ze1_compatibility_mode</em> has been removed. If this 
-     INI directive is set to On, an <strong><code>E_ERROR</code></strong> error is 
-     emitted at startup.
+     <a href="ini.core.html#ini.zend.ze1-compatibility-mode" class="link">zend.ze1_compatibility_mode</a>
+     has been removed. If this INI directive is set to On, an
+     <strong><code>E_ERROR</code></strong> error is emitted at startup.
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
      It is now possible to use the full path to load modules using the 
-     &quot;<a href="ini.core.html#ini.extension" class="link"><em>extension</em></a>&quot;
-     directive.
+     <a href="ini.core.html#ini.extension" class="link">extension</a> directive.
     </span>
    </li>
    <li class="listitem">
@@ -64,8 +66,8 @@
    </li>
    <li class="listitem">
     <span class="simpara">
-     Runtime tightening of <em>open_basedir</em> restrictions is now
-     possible.
+     <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> restrictions may now
+     be tighted at runtime, and the directive is now PHP_INI_ALL.
     </span>
    </li>
    <li class="listitem">
@@ -81,27 +83,9 @@
    </li>
    <li class="listitem">
     <span class="simpara">
-     A new directive, mail.add_x_header, has been added.
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     user_ini.filename is new
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     user_ini.cache_ttl is also new
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     exit_on_timeout is new too
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     open_basedir is now PHP_INI_ALL
+     Two new mail directives:
+     <a href="mail.configuration.html#ini.mail.add-x-header" class="link">mail.add_x_header</a> and
+     <a href="mail.configuration.html#ini.mail.log" class="link">mail.log</a>, have been added.
     </span>
    </li>
   </ul>
@@ -112,8 +96,14 @@
    <li class="listitem">
     <span class="simpara">
      <em>user_ini.filename</em> and
-     <em>user_ini.cache_ttl</em> for the new .htaccess-style user INI
-     file mechanism.
+     <em>user_ini.cache_ttl</em> have been added to control the use
+     of <a href="configuration.file.per-user.html" class="link">user INI files</a>.
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="ini.core.html#ini.exit-on-timeout" class="link">exit_on_timeout</a> has been added
+     to force Apache 1.x children to exit if a PHP execution timeout occurs.
     </span>
    </li>
    <li class="listitem">
@@ -125,7 +115,7 @@
    </li>
    <li class="listitem">
     <span class="simpara">
-     Added <em>request_order</em>.
+     Added <a href="ini.core.html#ini.request-order" class="link">request_order</a>.
      Allows controlling which external variables will be available in
      <var class="varname"><var class="varname"><a href="reserved.variables.request.html" class="classname">$_REQUEST</a></var></var>.
     </span>
@@ -137,14 +127,14 @@
   <ul class="itemizedlist">
    <li class="listitem">
     <span class="simpara">
-     <em>session.use_only_cookies</em> is now set to
-     <em>&quot;1&quot;</em> (enabled) by default.
+     <a href="session.configuration.html#ini.session.use-only-cookies" class="link">session.use_only_cookies</a>
+     is now set to <em>&quot;1&quot;</em> (enabled) by default.
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
-     <em>oci8.default_prefetch</em> has changed from
-     <em>&quot;10&quot;</em> to <em>&quot;100&quot;</em>.
+     <a href="oci8.configuration.html#ini.oci8.default-prefetch" class="link">oci8.default_prefetch</a>
+     has changed from <em>&quot;10&quot;</em> to <em>&quot;100&quot;</em>.
     </span>
    </li>
   </ul>

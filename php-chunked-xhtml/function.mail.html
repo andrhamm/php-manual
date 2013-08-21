@@ -87,8 +87,8 @@
        Message to be sent.
       </p>
       <p class="para">
-       Each line should be separated with a LF (\n). Lines should not be larger
-       than 70 characters.
+       Each line should be separated with a CRLF (\r\n). Lines should not be
+       larger than 70 characters.
       </p>
       <div class="caution"><strong class="caution">Caution</strong>
        <p class="para">
@@ -138,7 +138,8 @@
       <blockquote class="note"><p><strong class="note">Note</strong>: 
        <p class="para">
         If messages are not received, try using a LF (\n) only.
-        Some poor quality Unix mail transfer agents replace LF by CRLF
+        Some Unix mail transfer agents (most notably
+        <a href="http://www.qmail.org/" class="link external">&raquo;&nbsp;qmail</a>) replace LF by CRLF
         automatically (which leads to doubling CR if CRLF is used).
         This should be a last resort, as it does not comply with
         <a href="http://www.faqs.org/rfcs/rfc2822" class="link external">&raquo;&nbsp;RFC 2822</a>.
@@ -242,20 +243,20 @@
  <div class="refsect1 examples" id="refsect1-function.mail-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3188">
+   <div class="example" id="example-3345">
     <p><strong>Example #1 Sending mail.</strong></p>
     <div class="example-contents"><p>
      Using  <span class="function"><strong>mail()</strong></span> to send a simple email:
     </p></div>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;The&nbsp;message<br /></span><span style="color: #0000BB">$message&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Line&nbsp;1\nLine&nbsp;2\nLine&nbsp;3"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;In&nbsp;case&nbsp;any&nbsp;of&nbsp;our&nbsp;lines&nbsp;are&nbsp;larger&nbsp;than&nbsp;70&nbsp;characters,&nbsp;we&nbsp;should&nbsp;use&nbsp;wordwrap()<br /></span><span style="color: #0000BB">$message&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">wordwrap</span><span style="color: #007700">(</span><span style="color: #0000BB">$message</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">70</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Send<br /></span><span style="color: #0000BB">mail</span><span style="color: #007700">(</span><span style="color: #DD0000">'caffeinated@example.com'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'My&nbsp;Subject'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$message</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;The&nbsp;message<br /></span><span style="color: #0000BB">$message&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Line&nbsp;1\r\nLine&nbsp;2\r\nLine&nbsp;3"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;In&nbsp;case&nbsp;any&nbsp;of&nbsp;our&nbsp;lines&nbsp;are&nbsp;larger&nbsp;than&nbsp;70&nbsp;characters,&nbsp;we&nbsp;should&nbsp;use&nbsp;wordwrap()<br /></span><span style="color: #0000BB">$message&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">wordwrap</span><span style="color: #007700">(</span><span style="color: #0000BB">$message</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">70</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\r\n"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Send<br /></span><span style="color: #0000BB">mail</span><span style="color: #007700">(</span><span style="color: #DD0000">'caffeinated@example.com'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'My&nbsp;Subject'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$message</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
 
    </div>
-   <div class="example" id="example-3189">
+   <div class="example" id="example-3346">
     <p><strong>Example #2 Sending mail with extra headers.</strong></p>
     <div class="example-contents"><p>
      The addition of basic headers, telling the MUA
@@ -269,7 +270,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-3190">
+   <div class="example" id="example-3347">
     <p><strong>Example #3 Sending mail with an additional command line parameter.</strong></p>
     <div class="example-contents"><p>
      The <em><code class="parameter">additional_parameters</code></em> parameter
@@ -284,7 +285,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-3191">
+   <div class="example" id="example-3348">
     <p><strong>Example #4 Sending HTML email</strong></p>
     <div class="example-contents"><p>
      It is also possible to send HTML email with  <span class="function"><strong>mail()</strong></span>.

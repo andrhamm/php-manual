@@ -456,7 +456,13 @@
        Implicit commit happens, for example, when autocommit has been turned
        off, a query is executed and autocommit is enabled again. In that case,
        the statement will be committed by the server and SQL to maintain is
-       injected before the autocommit is re-enabled.
+       injected before the autocommit is re-enabled. Another sequence
+       causing an an implicit commit is <em>begin()</em>,
+       <em>query()</em>, <em>begin()</em>. The second call
+       to <em>begin()</em> will implicitly commit the transaction
+       started by the first call to <em>begin()</em>.
+       <em>begin()</em> refers to internal library calls not actual
+       PHP user API calls.
       </td>
       <td>Since 1.2.0.</td>
      </tr>
@@ -477,6 +483,19 @@
       <td>Since 1.2.0.</td>
      </tr>
 
+     <tr>
+      <td>
+       <em>transient_error_retries</em>
+      </td>
+      <td>
+       How often an operation has been retried when a transient error was
+       detected. See also,
+       <a href="mysqlnd-ms.plugin-ini-json.html#ini.mysqlnd-ms-plugin-config-v2.transient_error" class="link"><em>transient_error</em></a>
+       plugin configuration file setting.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
     </tbody>
    
   </table>
@@ -487,7 +506,7 @@
  <div class="refsect1 examples" id="refsect1-function.mysqlnd-ms-get-stats-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-1809">
+   <div class="example" id="example-1913">
     <p><strong>Example #1  <span class="function"><strong>mysqlnd_ms_get_stats()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -553,6 +572,8 @@ array(26) {
   [&quot;gtid_implicit_commit_injections_success&quot;]=&gt;
   string(1) &quot;0&quot;
   [&quot;gtid_implicit_commit_injections_failure&quot;]=&gt;
+  string(1) &quot;0&quot;
+  [&quot;transient_error_retries&quot;]=&gt;
   string(1) &quot;0&quot;
 }
 </pre></div>

@@ -22,13 +22,13 @@
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>pcntl_signal</strong></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$signo</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$handler</code></span>
+   , <span class="methodparam"><span class="type"><span class="type callable|int">callable|int</span></span> <code class="parameter">$handler</code></span>
    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$restart_syscalls</code><span class="initializer"> = true</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
    The  <span class="function"><strong>pcntl_signal()</strong></span> function installs a new
-   signal handler for the signal indicated by <em><code class="parameter">signo</code></em>.   
+   signal handler or replaces the current signal handler for the signal indicated by <em><code class="parameter">signo</code></em>.
   </p>
  </div>
 
@@ -56,9 +56,38 @@
      <dd>
 
       <p class="para">
-       The signal handler which may be the name of a user created function,
-       or method, or either of the two global constants 
-       <strong><code>SIG_IGN</code></strong> or <strong><code>SIG_DFL</code></strong>. 
+       The signal handler. This may be either a <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span>, which
+       will be invoked to handle the signal, or either of the two global
+       constants <strong><code>SIG_IGN</code></strong> or <strong><code>SIG_DFL</code></strong>,
+       which will ignore the signal or restore the default signal handler
+       respectively. 
+      </p>
+      <p class="para">
+       If a <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> is given, it must implement the following
+       signature:
+      </p>
+      <p class="para">
+       <div class="methodsynopsis dc-description">
+        <span class="type"><span class="type void">void</span></span> <span class="methodname"><span class="replaceable">handler</span></span>
+         ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$signo</code></span>
+        )</div>
+
+       <dl>
+
+        <dt>
+
+         <span class="term"><em><code class="parameter">signo</code></em></span>
+         <dd>
+
+          <span class="simpara">
+           The signal being handled.
+          </span>
+         </dd>
+
+        </dt>
+
+       </dl>
+
       </p>
       <blockquote class="note"><p><strong class="note">Note</strong>: 
        <p class="para">
@@ -151,16 +180,24 @@
  <div class="refsect1 examples" id="refsect1-function.pcntl-signal-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3423">
+   <div class="example" id="example-3609">
     <p><strong>Example #1  <span class="function"><strong>pcntl_signal()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;tick&nbsp;use&nbsp;required&nbsp;as&nbsp;of&nbsp;PHP&nbsp;4.3.0<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">ticks&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;signal&nbsp;handler&nbsp;function<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sig_handler</span><span style="color: #007700">(</span><span style="color: #0000BB">$signo</span><span style="color: #007700">)<br />{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(</span><span style="color: #0000BB">$signo</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">SIGTERM</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;handle&nbsp;shutdown&nbsp;tasks<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">exit;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">SIGHUP</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;handle&nbsp;restart&nbsp;tasks<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">SIGUSR1</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Caught&nbsp;SIGUSR1...\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;handle&nbsp;all&nbsp;other&nbsp;signals<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br /><br />}<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Installing&nbsp;signal&nbsp;handler...\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;setup&nbsp;signal&nbsp;handlers<br /></span><span style="color: #0000BB">pcntl_signal</span><span style="color: #007700">(</span><span style="color: #0000BB">SIGTERM</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"sig_handler"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pcntl_signal</span><span style="color: #007700">(</span><span style="color: #0000BB">SIGHUP</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">"sig_handler"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pcntl_signal</span><span style="color: #007700">(</span><span style="color: #0000BB">SIGUSR1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"sig_handler"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;or&nbsp;use&nbsp;an&nbsp;object,&nbsp;available&nbsp;as&nbsp;of&nbsp;PHP&nbsp;4.3.0<br />//&nbsp;pcntl_signal(SIGUSR1,&nbsp;array($obj,&nbsp;"do_something");<br /><br /></span><span style="color: #007700">echo</span><span style="color: #DD0000">"Generating&nbsp;signal&nbsp;SIGTERM&nbsp;to&nbsp;self...\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;send&nbsp;SIGUSR1&nbsp;to&nbsp;current&nbsp;process&nbsp;id<br /></span><span style="color: #0000BB">posix_kill</span><span style="color: #007700">(</span><span style="color: #0000BB">posix_getpid</span><span style="color: #007700">(),&nbsp;</span><span style="color: #0000BB">SIGUSR1</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Done\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;tick&nbsp;use&nbsp;required&nbsp;as&nbsp;of&nbsp;PHP&nbsp;4.3.0<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">ticks&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;signal&nbsp;handler&nbsp;function<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sig_handler</span><span style="color: #007700">(</span><span style="color: #0000BB">$signo</span><span style="color: #007700">)<br />{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(</span><span style="color: #0000BB">$signo</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">SIGTERM</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;handle&nbsp;shutdown&nbsp;tasks<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">exit;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">SIGHUP</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;handle&nbsp;restart&nbsp;tasks<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">SIGUSR1</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Caught&nbsp;SIGUSR1...\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;handle&nbsp;all&nbsp;other&nbsp;signals<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br /><br />}<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Installing&nbsp;signal&nbsp;handler...\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;setup&nbsp;signal&nbsp;handlers<br /></span><span style="color: #0000BB">pcntl_signal</span><span style="color: #007700">(</span><span style="color: #0000BB">SIGTERM</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"sig_handler"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pcntl_signal</span><span style="color: #007700">(</span><span style="color: #0000BB">SIGHUP</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">"sig_handler"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pcntl_signal</span><span style="color: #007700">(</span><span style="color: #0000BB">SIGUSR1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"sig_handler"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;or&nbsp;use&nbsp;an&nbsp;object,&nbsp;available&nbsp;as&nbsp;of&nbsp;PHP&nbsp;4.3.0<br />//&nbsp;pcntl_signal(SIGUSR1,&nbsp;array($obj,&nbsp;"do_something"));<br /><br /></span><span style="color: #007700">echo</span><span style="color: #DD0000">"Generating&nbsp;signal&nbsp;SIGTERM&nbsp;to&nbsp;self...\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;send&nbsp;SIGUSR1&nbsp;to&nbsp;current&nbsp;process&nbsp;id<br /></span><span style="color: #0000BB">posix_kill</span><span style="color: #007700">(</span><span style="color: #0000BB">posix_getpid</span><span style="color: #007700">(),&nbsp;</span><span style="color: #0000BB">SIGUSR1</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Done\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
 
    </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.pcntl-signal-notes">
+  <h3 class="title">Notes</h3>
+  <p class="para">
+    <span class="function"><strong>pcntl_signal()</strong></span> doesn&#039;t stack the signal handlers, but replaces them.
   </p>
  </div>
 

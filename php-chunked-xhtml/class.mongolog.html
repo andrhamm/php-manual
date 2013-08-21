@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongo.miscellaneous.html">Miscellaneous</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongolog.getlevel.html">MongoLog::getLevel</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongolog.getcallback.html">MongoLog::getCallback</a></div>
  <div class="up"><a href="mongo.miscellaneous.html">Miscellaneous</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="class.mongolog" class="reference">
@@ -15,7 +15,7 @@
  <h1 class="title">The MongoLog class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(PECL mongo &gt;=1.2.3)</p>
 
 
   <div class="section" id="mongolog.intro">
@@ -152,12 +152,20 @@
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
     <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">void</span> <span class="methodname"><a href="mongolog.getcallback.html" class="methodname">getCallback</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">int</span> <span class="methodname"><a href="mongolog.getlevel.html" class="methodname">getLevel</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">int</span> <span class="methodname"><a href="mongolog.getmodule.html" class="methodname">getModule</a></span>
     ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">void</span> <span class="methodname"><a href="mongolog.setcallback.html" class="methodname">setCallback</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$log_function</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">void</span> <span class="methodname"><a href="mongolog.setlevel.html" class="methodname">setLevel</a></span>
@@ -211,7 +219,7 @@
 
    </div>
 
-   <div class="section">
+   <div class="section" id="mongolog.constants.level">
     <h2 class="title">MongoLog Level Constants</h2>
     <p class="para">
      These constants can be used by  <span class="function"><a href="mongolog.setlevel.html" class="function">MongoLog::setLevel()</a></span>.
@@ -258,7 +266,7 @@
 
    </div>
 
-   <div class="section">
+   <div class="section" id="mongolog.constants.module">
     <h2 class="title">MongoLog Module Constants</h2>
     <p class="para">
      These constants can be used by  <span class="function"><a href="mongolog.setmodule.html" class="function">MongoLog::setModule()</a></span>.
@@ -361,11 +369,25 @@
 
 
 
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="mongolog.getlevel.html">MongoLog::getLevel</a> — Gets the log level</li><li><a href="mongolog.getmodule.html">MongoLog::getModule</a> — Gets the modules currently being logged</li><li><a href="mongolog.setlevel.html">MongoLog::setLevel</a> — Sets logging level</li><li><a href="mongolog.setmodule.html">MongoLog::setModule</a> — Sets driver functionality to log</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="mongolog.getcallback.html">MongoLog::getCallback</a> — Retrieve the previously set callback function name</li><li><a href="mongolog.getlevel.html">MongoLog::getLevel</a> — Gets the log level</li><li><a href="mongolog.getmodule.html">MongoLog::getModule</a> — Gets the modules currently being logged</li><li><a href="mongolog.setcallback.html">MongoLog::setCallback</a> — Set a callback function to be called on events</li><li><a href="mongolog.setlevel.html">MongoLog::setLevel</a> — Sets logging level</li><li><a href="mongolog.setmodule.html">MongoLog::setModule</a> — Sets driver functionality to log</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongo.miscellaneous.html">Miscellaneous</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongolog.getlevel.html">MongoLog::getLevel</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongolog.getcallback.html">MongoLog::getCallback</a></div>
  <div class="up"><a href="mongo.miscellaneous.html">Miscellaneous</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

@@ -6,14 +6,14 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-timefmt.html">ibase_timefmt</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-set-event-handler.html">ibase_set_event_handler</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="function.ibase-wait-event.html">ibase_wait_event</a></div>
  <div class="up"><a href="ref.ibase.html">Firebird/InterBase Functions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="function.ibase-trans" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">ibase_trans</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">ibase_trans</span> &mdash; <span class="dc-title">Begin a transaction</span></p>
+  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_trans</span> &mdash; <span class="dc-title">Begin a transaction</span></p>
 
  </div>
  
@@ -36,8 +36,7 @@
   </p>
   <blockquote class="note"><p><strong class="note">Note</strong>: 
    <p class="para">
-    The behaviour of this function has been changed in PHP 5.0.0. The first call
-    to  <span class="function"><strong>ibase_trans()</strong></span> will not return the default transaction
+    The first call to  <span class="function"><strong>ibase_trans()</strong></span> will not return the default transaction
     of a connection. All transactions started by  <span class="function"><strong>ibase_trans()</strong></span>
     will be rolled back at the end of the script if they were not committed or
     rolled back by either  <span class="function"><a href="function.ibase-commit.html" class="function">ibase_commit()</a></span> or
@@ -46,7 +45,7 @@
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">Note</strong>: 
    <p class="para">
-    In PHP 5.0.0. and up, this function will accept multiple <em><code class="parameter">trans_args</code></em>
+    This function will accept multiple <em><code class="parameter">trans_args</code></em>
     and <em><code class="parameter">link_identifier</code></em> arguments. This allows transactions
     over multiple database connections, which are committed using a 2-phase commit
     algorithm. This means you can rely on the updates to either succeed in every
@@ -116,7 +115,7 @@
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-timefmt.html">ibase_timefmt</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-set-event-handler.html">ibase_set_event_handler</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="function.ibase-wait-event.html">ibase_wait_event</a></div>
  <div class="up"><a href="ref.ibase.html">Firebird/InterBase Functions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

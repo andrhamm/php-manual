@@ -147,7 +147,7 @@
  <div class="refsect1 examples" id="refsect1-function.register-shutdown-function-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4790">
+   <div class="example" id="example-5067">
     <p><strong>Example #1  <span class="function"><strong>register_shutdown_function()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -167,6 +167,14 @@
    <p class="para">
     Working directory of the script can change inside the shutdown function
     under some web servers, e.g. Apache.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+    Shutdown functions will not be executed if the process is killed with a SIGTERM
+    or SIGKILL signal. While you cannot intercept a SIGKILL, you can use  <span class="function"><a href="function.pcntl-signal.html" class="function">pcntl_signal()</a></span>
+    to install a handler for a SIGTERM which uses  <span class="function"><a href="function.exit.html" class="function">exit()</a></span> to
+    end cleanly.
    </p>
   </p></blockquote>
  </div>

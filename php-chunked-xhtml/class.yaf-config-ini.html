@@ -15,7 +15,7 @@
  <h1 class="title">The Yaf_Config_Ini class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(Yaf &gt;=1.0.0)</p>
 
 
   <div class="section" id="yaf-config-ini.intro">
@@ -34,8 +34,8 @@
    <p class="para">
    Yaf_Config_Ini utilizes the » parse_ini_file() PHP function. Please review
    this documentation to be aware of its specific behaviors, which propagate
-   to Yaf_Config_Ini, such as how the special values of &quot;TRUE&quot;, &quot;FALSE&quot;,
-   &quot;yes&quot;, &quot;no&quot;, and &quot;NULL&quot; are handled. 
+   to Yaf_Config_Ini, such as how the special values of &quot;<strong><code>TRUE</code></strong>&quot;, &quot;<strong><code>FALSE</code></strong>&quot;,
+   &quot;yes&quot;, &quot;no&quot;, and &quot;<strong><code>NULL</code></strong>&quot; are handled. 
    </p>
   </p></blockquote>
   </p>
@@ -62,10 +62,6 @@
      
      <span class="oointerface">implements 
       <span class="interfacename"><a href="class.iterator.html" class="interfacename">Iterator</a></span>
-     </span>
-
-     <span class="oointerface">, 
-      <span class="interfacename"><a href="class.traversable.html" class="interfacename">Traversable</a></span>
      </span>
 
      <span class="oointerface">, 
@@ -141,7 +137,7 @@
    , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-config-ini.toarray.html" class="methodname">toArray</a></span>
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="yaf-config-ini.toarray.html" class="methodname">toArray</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
@@ -206,7 +202,7 @@
 
  <div class="section">
   <h2 class="title">Examples</h2>
-  <div class="example" id="example-3870">
+  <div class="example" id="example-4093">
    <p><strong>Example #1  <span class="function"><strong>Yaf_Config_Ini()</strong></span>example</strong></p>
    <div class="example-contents"><p>
     This example illustrates a basic use of Yaf_Config_Ini for loading
@@ -374,7 +370,7 @@ string(7) &quot;devuser
 
 
 
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="yaf-config-ini.construct.html">Yaf_Config_Ini::__construct</a> — The __construct purpose</li><li><a href="yaf-config-ini.count.html">Yaf_Config_Ini::count</a> — The count purpose</li><li><a href="yaf-config-ini.current.html">Yaf_Config_Ini::current</a> — The current purpose</li><li><a href="yaf-config-ini.get.html">Yaf_Config_Ini::__get</a> — The __get purpose</li><li><a href="yaf-config-ini.isset.html">Yaf_Config_Ini::__isset</a> — The __isset purpose</li><li><a href="yaf-config-ini.key.html">Yaf_Config_Ini::key</a> — The key purpose</li><li><a href="yaf-config-ini.next.html">Yaf_Config_Ini::next</a> — The next purpose</li><li><a href="yaf-config-ini.offsetexists.html">Yaf_Config_Ini::offsetExists</a> — The offsetExists purpose</li><li><a href="yaf-config-ini.offsetget.html">Yaf_Config_Ini::offsetGet</a> — The offsetGet purpose</li><li><a href="yaf-config-ini.offsetset.html">Yaf_Config_Ini::offsetSet</a> — The offsetSet purpose</li><li><a href="yaf-config-ini.offsetunset.html">Yaf_Config_Ini::offsetUnset</a> — The offsetUnset purpose</li><li><a href="yaf-config-ini.readonly.html">Yaf_Config_Ini::readonly</a> — The readonly purpose</li><li><a href="yaf-config-ini.rewind.html">Yaf_Config_Ini::rewind</a> — The rewind purpose</li><li><a href="yaf-config-ini.set.html">Yaf_Config_Ini::__set</a> — The __set purpose</li><li><a href="yaf-config-ini.toarray.html">Yaf_Config_Ini::toArray</a> — The toArray purpose</li><li><a href="yaf-config-ini.valid.html">Yaf_Config_Ini::valid</a> — The valid purpose</li></ul>
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="yaf-config-ini.construct.html">Yaf_Config_Ini::__construct</a> — Yaf_Config_Ini constructor</li><li><a href="yaf-config-ini.count.html">Yaf_Config_Ini::count</a> — The count purpose</li><li><a href="yaf-config-ini.current.html">Yaf_Config_Ini::current</a> — The current purpose</li><li><a href="yaf-config-ini.get.html">Yaf_Config_Ini::__get</a> — The __get purpose</li><li><a href="yaf-config-ini.isset.html">Yaf_Config_Ini::__isset</a> — The __isset purpose</li><li><a href="yaf-config-ini.key.html">Yaf_Config_Ini::key</a> — The key purpose</li><li><a href="yaf-config-ini.next.html">Yaf_Config_Ini::next</a> — The next purpose</li><li><a href="yaf-config-ini.offsetexists.html">Yaf_Config_Ini::offsetExists</a> — The offsetExists purpose</li><li><a href="yaf-config-ini.offsetget.html">Yaf_Config_Ini::offsetGet</a> — The offsetGet purpose</li><li><a href="yaf-config-ini.offsetset.html">Yaf_Config_Ini::offsetSet</a> — The offsetSet purpose</li><li><a href="yaf-config-ini.offsetunset.html">Yaf_Config_Ini::offsetUnset</a> — The offsetUnset purpose</li><li><a href="yaf-config-ini.readonly.html">Yaf_Config_Ini::readonly</a> — The readonly purpose</li><li><a href="yaf-config-ini.rewind.html">Yaf_Config_Ini::rewind</a> — The rewind purpose</li><li><a href="yaf-config-ini.set.html">Yaf_Config_Ini::__set</a> — The __set purpose</li><li><a href="yaf-config-ini.toarray.html">Yaf_Config_Ini::toArray</a> — Returns a PHP array</li><li><a href="yaf-config-ini.valid.html">Yaf_Config_Ini::valid</a> — The valid purpose</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="yaf-config-abstract.toarray.html">Yaf_Config_Abstract::toArray</a></div>

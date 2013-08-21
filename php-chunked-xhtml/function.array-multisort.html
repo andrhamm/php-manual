@@ -63,11 +63,48 @@
       <p class="para">
        Optionally another <span class="type"><a href="language.types.array.html" class="type array">array</a></span>, or sort options for the
        previous <span class="type"><a href="language.types.array.html" class="type array">array</a></span> argument: 
-       <strong><code>SORT_ASC</code></strong>, 
-       <strong><code>SORT_DESC</code></strong>, 
-       <strong><code>SORT_REGULAR</code></strong>,
-       <strong><code>SORT_NUMERIC</code></strong>,
-       <strong><code>SORT_STRING</code></strong>.
+      </p>
+      <p class="para">
+       Sorting type flags:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <span class="simpara"><strong><code>SORT_ASC</code></strong> - sort items ascendingly.</span>
+        </li>
+        <li class="listitem">
+         <span class="simpara"><strong><code>SORT_DESC</code></strong> - sort items descendingly.</span>
+        </li>
+        <li class="listitem">
+         <span class="simpara"><strong><code>SORT_REGULAR</code></strong> - compare items normally
+         (don&#039;t change types)</span>
+        </li>
+        <li class="listitem">
+         <span class="simpara"><strong><code>SORT_NUMERIC</code></strong> - compare items numerically</span>
+        </li>
+        <li class="listitem">
+         <span class="simpara"><strong><code>SORT_STRING</code></strong> - compare items as strings</span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>SORT_LOCALE_STRING</code></strong> - compare items as
+          strings, based on the current locale. It uses the locale,
+          which can be changed using  <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span>
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>SORT_NATURAL</code></strong> - compare items as strings
+          using &quot;natural ordering&quot; like  <span class="function"><a href="function.natsort.html" class="function">natsort()</a></span>
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>SORT_FLAG_CASE</code></strong> - can be combined
+          (bitwise OR) with
+          <strong><code>SORT_STRING</code></strong> or
+          <strong><code>SORT_NATURAL</code></strong> to sort strings case-insensitively
+         </span>
+        </li>
+       </ul>
       </p>
      </dd>
 
@@ -98,10 +135,49 @@
   </p>
  </div>
 
+ 
+ <div class="refsect1 changelog" id="refsect1-function.array-multisort-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        The <strong><code>SORT_NATURAL</code></strong> and <strong><code>SORT_FLAG_CASE</code></strong>
+        were added to <em><code class="parameter">arg</code></em> as possible sort flags.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        The <strong><code>SORT_LOCALE_STRING</code></strong> was added to
+        <em><code class="parameter">arg</code></em> as possible sort flags.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ 
  <div class="refsect1 examples" id="refsect1-function.array-multisort-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4639">
+   <div class="example" id="example-4915">
     <p><strong>Example #1 Sorting multiple arrays</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -135,7 +211,7 @@ array(4) {
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4640">
+   <div class="example" id="example-4916">
     <p><strong>Example #2 Sorting multi-dimensional array</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -173,7 +249,7 @@ array(2) {
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4641">
+   <div class="example" id="example-4917">
     <p><strong>Example #3 Sorting database results</strong></p>
     <div class="example-contents"><p>
      For this example, each element in the <var class="varname"><var class="varname">data</var></var>
@@ -240,7 +316,7 @@ volume | edition
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4642">
+   <div class="example" id="example-4918">
     <p><strong>Example #4 Case insensitive sorting</strong></p>
     <div class="example-contents"><p>
      Both <strong><code>SORT_STRING</code></strong> and

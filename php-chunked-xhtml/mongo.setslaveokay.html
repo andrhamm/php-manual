@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongo.setreadpreference.html">Mongo::setReadPreference</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongo.setpoolsize.html">Mongo::setPoolSize</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mongo.switchslave.html">Mongo::switchSlave</a></div>
  <div class="up"><a href="class.mongo.html">Mongo</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -27,7 +27,7 @@
 
   <p class="para rdfs-comment">
    See <a href="mongo.queries.html" class="link">the query section</a> of this manual for
-   information on distributing reads to slaves.
+   information on distributing reads to secondaries.
   </p>
  </div>
 
@@ -45,8 +45,8 @@
      <dd>
 
       <p class="para">
-       If reads should be sent to secondary members of a replica set for all 
-       possible queries using this <a href="class.mongo.html" class="classname">Mongo</a> instance.
+       If reads should be sent to secondary members of a replica set for all
+       possible queries using this <a href="class.mongoclient.html" class="classname">MongoClient</a> instance.
       </p>
      </dd>
 
@@ -82,9 +82,7 @@
      <tbody class="tbody">
       <tr>
        <td>1.2.11</td>
-       <td>
-       Emits <strong><code>E_DEPRECATED</code></strong> when used.
-       </td>
+       <td>Emits <strong><code>E_DEPRECATED</code></strong> when used.</td>
       </tr>
 
      </tbody>
@@ -95,8 +93,17 @@
  </div>
 
 
+ <div class="refsect1 seealso" id="refsect1-mongo.setslaveokay-seealso">
+  <h3 class="title">See Also</h3>
+  <ul class="simplelist">
+   <li class="member"><a href="mongo.readpreferences.html" class="xref">Read Preferences</a></li>
+   <li class="member"> <span class="methodname"><a href="mongoclient.setreadpreference.html" class="methodname" rel="rdfs-seeAlso">MongoClient::setReadPreference()</a> - Set the read preference for this connection</span></li>
+  </ul>
+ </div>
+
+
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongo.setreadpreference.html">Mongo::setReadPreference</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongo.setpoolsize.html">Mongo::setPoolSize</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mongo.switchslave.html">Mongo::switchSlave</a></div>
  <div class="up"><a href="class.mongo.html">Mongo</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

@@ -180,7 +180,7 @@
       <p class="para">
        The format string supports argument numbering/swapping.  Here is an
        example:
-       <div class="example" id="example-4538">
+       <div class="example" id="example-4812">
         <p><strong>Example #1 Argument swapping</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -194,7 +194,7 @@
        imagine we are creating a format string in a separate file,
        commonly because we would like to internationalize it and we
        rewrite it as:
-       <div class="example" id="example-4539">
+       <div class="example" id="example-4813">
         <p><strong>Example #2 Argument swapping</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -209,7 +209,7 @@
        code.  We would like to leave the code as is and simply indicate
        in the format string which arguments the placeholders refer to.
        We would write the format string like this instead:
-       <div class="example" id="example-4540">
+       <div class="example" id="example-4814">
         <p><strong>Example #3 Argument swapping</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -221,7 +221,7 @@
        </div>
        An added benefit here is that you can repeat the placeholders without
        adding more arguments in the code.  For example:
-       <div class="example" id="example-4541">
+       <div class="example" id="example-4815">
         <p><strong>Example #4 Argument swapping</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -235,7 +235,7 @@
        <em class="emphasis">position specifier</em> must come immediately
        after the percent sign (<em>%</em>), before any other
        specifiers, as shown in the example below.
-       <div class="example" id="example-4542">
+       <div class="example" id="example-4816">
         <p><strong>Example #5 Position specifier with other specifiers</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -252,6 +252,13 @@ The tree contains 0005 monkeys
         </div>
        </div>
       </p>
+      <blockquote class="note"><p><strong class="note">Note</strong>: 
+       <p class="para">
+        Attempting to use a position specifier greater than
+        <strong><code>PHP_INT_MAX</code></strong> will result in
+         <span class="function"><strong>sprintf()</strong></span> generating warnings.
+       </p>
+      </p></blockquote>
      </dd>
 
     </dt>
@@ -324,7 +331,7 @@ The tree contains 0005 monkeys
 
  <div class="refsect1 examples" id="refsect1-function.sprintf-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-4543">
+  <div class="example" id="example-4817">
    <p><strong>Example #6  <span class="function"><a href="function.printf.html" class="function">printf()</a></span>: various examples</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -352,7 +359,7 @@ The tree contains 0005 monkeys
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-4544">
+  <div class="example" id="example-4818">
    <p><strong>Example #7  <span class="function"><a href="function.printf.html" class="function">printf()</a></span>: string specifiers</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -373,7 +380,7 @@ The tree contains 0005 monkeys
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-4545">
+  <div class="example" id="example-4819">
    <p><strong>Example #8  <span class="function"><strong>sprintf()</strong></span>: zero-padded integers</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -383,7 +390,7 @@ The tree contains 0005 monkeys
    </div>
 
   </div>
-  <div class="example" id="example-4546">
+  <div class="example" id="example-4820">
    <p><strong>Example #9  <span class="function"><strong>sprintf()</strong></span>: formatting currency</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -393,7 +400,7 @@ The tree contains 0005 monkeys
    </div>
 
   </div>
-  <div class="example" id="example-4547">
+  <div class="example" id="example-4821">
    <p><strong>Example #10  <span class="function"><strong>sprintf()</strong></span>: scientific notation</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

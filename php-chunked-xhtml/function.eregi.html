@@ -109,7 +109,7 @@ highly discouraged.</p></div>
  <div class="refsect1 examples" id="refsect1-function.eregi-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4486">
+   <div class="example" id="example-4760">
     <p><strong>Example #1  <span class="function"><strong>eregi()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -130,6 +130,12 @@ regex extension is deprecated in favor of the
 <a href="book.pcre.html" class="link">PCRE extension</a>. Calling this function
 will issue an <strong><code>E_DEPRECATED</code></strong> notice. See <a href="reference.pcre.pattern.posix.html" class="link">the list of
 differences</a> for help on converting to PCRE.</p></p></blockquote>
+  <div class="tip"><strong class="tip">Tip</strong>
+   <p class="para">
+     <span class="function"><strong>eregi()</strong></span> is deprecated as of PHP 5.3.0.  <span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span> 
+    with the <em>i</em> (<strong><code>PCRE_CASELESS</code></strong>) modifier is the suggested alternative.
+   </p>
+  </div>
  </div>
 
 
@@ -143,6 +149,7 @@ differences</a> for help on converting to PCRE.</p></p></blockquote>
     <li class="member"> <span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - Perform a regular expression match</span></li>
     <li class="member"> <span class="function"><a href="function.stripos.html" class="function" rel="rdfs-seeAlso">stripos()</a> - Find the position of the first occurrence of a case-insensitive substring in a string</span></li>
     <li class="member"> <span class="function"><a href="function.stristr.html" class="function" rel="rdfs-seeAlso">stristr()</a> - Case-insensitive strstr</span></li>
+    <li class="member"> <span class="function"><a href="function.quotemeta.html" class="function" rel="rdfs-seeAlso">quotemeta()</a> - Quote meta characters</span></li>
    </ul>
   </p>
  </div>

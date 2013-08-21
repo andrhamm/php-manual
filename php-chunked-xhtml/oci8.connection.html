@@ -42,8 +42,8 @@
    the <a href="oci8.configuration.html#ini.oci8.max-persistent" class="link">oci8.max_persistent</a>
    and <a href="oci8.configuration.html#ini.oci8.persistent-timeout" class="link">oci8.persistent_timeout</a>
    configuration settings (these will give control over the persistent
-   connection cache size and lifetime), use Oracle 11g Database
-   Resident Connection Pooling, or use
+   connection cache size and lifetime), use Oracle Database
+   Resident Connection Pooling (in Oracle Database 11g or later), or use
     <span class="function"><a href="function.oci-connect.html" class="function">oci_connect()</a></span> instead.
   </p>
   <p class="para">
@@ -86,7 +86,7 @@
  <div class="section">
   <h2 class="title">DRCP Connection Pooling</h2>
   <p class="para">
-   PHP 5.3 (PECL OCI8 1.3) supports Oracle 11g Database Resident
+   PHP from 5.3 (PECL OCI8 1.3) supports Oracle Database Resident
    Connection Pooling (DRCP).  DRCP allows more efficient use of
    database machine memory and provides high scalability.  No, or
    minimal, application changes are needed to use DRCP.
@@ -105,7 +105,7 @@
   </p>
   <p class="para">
    For DRCP to be available in OCI8, Oracle client libraries used by
-   PHP and the version of the Oracle Database must both be 11g.
+   PHP and the version of the Oracle Database must both be 11g or greater.
   </p>
   <p class="para">
    Documentation on DRCP is found in several Oracle manuals. For
@@ -117,7 +117,7 @@
    white paper</a> contains background information on DRCP.
   </p>
   <p class="para">
-   To use DRCP, build PHP with the OCI8 1.3 extension and Oracle 11g
+   To use DRCP, build PHP with the OCI8 1.3 (or later) extension and Oracle 11g (or later)
    libraries and then follow these steps:
   </p>
   <p class="para">
@@ -210,7 +210,7 @@
     </li>
     <li class="listitem">
      <p class="para">
-      Run the application, connecting to the 11g database.
+      Run the application, connecting to the 11g (or later) database.
      </p>
     </li>
     </ul>
@@ -233,7 +233,7 @@
    This is a documented restriction of Oracle Database 11g.
   </p>
   <p class="para">
-   With the OCI8 1.3 extension, persistent connections can now be
+   From OCI8 1.3, persistent connections can be
    closed by the user, allowing greater control over connection
    resource usage.  Persistent connections will now also be closed
    automatically when there is no PHP variable referencing them, such
@@ -332,7 +332,7 @@
   </p>
   <p class="para">
    FAN support is available when the Oracle client libraries that PHP
-   links with and the Oracle Database are either version 10gR2 or 11g.
+   links with and the Oracle Database are either version 10gR2 or later.
   </p>
   <p class="para">
    FAN benefits users of Oracle&#039;s clustering technology (RAC) because
@@ -361,7 +361,7 @@
    by a service disruption.
   </p>
   <p class="para">
-   To enable FAN support in PHP, build PHP with Oracle 10gR2 or 11g
+   To enable FAN support in PHP, build PHP with Oracle 10gR2 or later
    libraries and then follow these steps:
   </p>
   <p class="para">
@@ -408,7 +408,7 @@
     </li>
     <li class="listitem">
      <span class="simpara">
-      Run the application, connecting to an Oracle 10gR2 or 11g database.
+      Run the application, connecting to Oracle Database 10gR2 or later.
      </span>
     </li>
    </ul>

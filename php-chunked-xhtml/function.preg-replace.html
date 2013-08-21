@@ -52,8 +52,8 @@
       </p>
       <p class="para">
        Several <a href="reference.pcre.pattern.modifiers.html" class="link">PCRE modifiers</a>
-       are also available, including &#039;<em>e</em>&#039; (PREG_REPLACE_EVAL), which
-       is specific to this function.
+       are also available, including the deprecated &#039;<em>e</em>&#039;
+       (PREG_REPLACE_EVAL), which is specific to this function.
       </p>
      </dd>
 
@@ -103,7 +103,7 @@
        as a literal.
       </p>
       <p class="para">
-       When using the <em>e</em> modifier, this function escapes
+       When using the deprecated <em>e</em> modifier, this function escapes
        some characters (namely <em>&#039;</em>, <em>&quot;</em>,
        <em>\</em> and NULL) in the strings that replace the
        backreferences. This is done to ensure that no syntax errors arise
@@ -181,6 +181,15 @@
  </div>
 
 
+ <div class="refsect1 errors" id="refsect1-function.preg-replace-errors">
+  <h3 class="title">Errors/Exceptions</h3>
+  <p class="para">
+   An <strong><code>E_DEPRECATED</code></strong> level error is emitted when
+   passing in the &quot;\e&quot; modifier.
+  </p>
+ </div>
+
+
  <div class="refsect1 changelog" id="refsect1-function.preg-replace-changelog">
   <h3 class="title">Changelog</h3>
   <p class="para">
@@ -195,6 +204,16 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        The <em>/e</em> modifier is deprecated. Use
+         <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> instead. See the
+        <a href="reference.pcre.pattern.modifiers.html#reference.pcre.pattern.modifiers.eval" class="link">PREG_REPLACE_EVAL</a>
+        documentation for additional information about security risks.
+       </td>
+      </tr>
+
       <tr>
        <td>5.1.0</td>
        <td>
@@ -227,7 +246,7 @@
  <div class="refsect1 examples" id="refsect1-function.preg-replace-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4472">
+   <div class="example" id="example-4746">
     <p><strong>Example #1 Using backreferences followed by numeric literals</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -245,7 +264,7 @@ April1,2003
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4473">
+   <div class="example" id="example-4747">
     <p><strong>Example #2 Using indexed arrays with  <span class="function"><strong>preg_replace()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -279,7 +298,7 @@ The slow black bear jumped over the lazy dog.
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4474">
+   <div class="example" id="example-4748">
     <p><strong>Example #3 Replacing several values</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -297,7 +316,7 @@ $startDate = 5/27/1999
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4475">
+   <div class="example" id="example-4749">
     <p><strong>Example #4 Strip whitespace</strong></p>
     <div class="example-contents"><p>
      This example strips excess whitespace from a string.
@@ -312,7 +331,7 @@ $startDate = 5/27/1999
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4476">
+   <div class="example" id="example-4750">
     <p><strong>Example #5 Using the <em><code class="parameter">count</code></em> parameter</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

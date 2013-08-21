@@ -25,7 +25,8 @@
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code><span class="initializer"> = DNS_ANY</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$authns</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$addtl</code></span>
-  ]]] )</div>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter reference">&$raw</code><span class="initializer"> = false</span></span>
+  ]]]] )</div>
 
   <p class="para rdfs-comment">
    Fetch DNS Resource Records associated with the given
@@ -114,6 +115,19 @@
       <p class="para">
        Passed by reference and, if given, will be populated with any
        <em class="emphasis">Additional Records</em>.
+      </p>
+     </dd>
+
+    </dt>
+
+    <dt>
+
+     <span class="term"><em><code class="parameter">raw</code></em></span>
+     <dd>
+
+      <p class="para">
+       In case of raw mode, we query only the requestd type instead of looping
+       type by type before going with the additional info stuff.
       </p>
      </dd>
 
@@ -341,6 +355,13 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.4.0</td>
+       <td>
+        Added <em><code class="parameter">raw</code></em> parameter.
+       </td>
+      </tr>
+
+      <tr>
        <td>5.3.0</td>
        <td>
          This function is now available on Windows platforms.
@@ -367,7 +388,7 @@
  <div class="refsect1 examples" id="refsect1-function.dns-get-record-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4154">
+   <div class="example" id="example-4426">
     <p><strong>Example #1 Using  <span class="function"><strong>dns_get_record()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -405,7 +426,7 @@ Array
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-4155">
+   <div class="example" id="example-4427">
     <p><strong>Example #2 Using  <span class="function"><strong>dns_get_record()</strong></span> and DNS_ANY</strong></p>
     <div class="example-contents"><p>
      Since it&#039;s very common to want the IP address of a mail server

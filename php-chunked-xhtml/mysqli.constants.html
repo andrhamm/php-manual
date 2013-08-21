@@ -626,7 +626,7 @@ been compiled into PHP or dynamically loaded at runtime.
     <dd>
 
      <p class="para">
-      Field is defined as <em>STRING</em>
+      Field is defined as <em>CHAR</em> or <em>BINARY</em>
      </p>
     </dd>
 
@@ -637,7 +637,8 @@ been compiled into PHP or dynamically loaded at runtime.
     <dd>
 
      <p class="para">
-      Field is defined as <em>CHAR</em>
+      Field is defined as <em>TINYINT</em>.
+      For <em>CHAR</em>, see <em>MYSQLI_TYPE_STRING</em>
      </p>
     </dd>
 
@@ -693,6 +694,17 @@ been compiled into PHP or dynamically loaded at runtime.
 
      <p class="para">
      Field is defined as <em>ENUM</em>. Available since PHP 5.3.0.
+     </p>
+    </dd>
+
+   </dt>
+
+   <dt id="constantmysqli-binary-flag">
+    <span class="term"><strong><code>MYSQLI_BINARY_FLAG</code></strong></span>
+    <dd>
+
+     <p class="para">
+      Field is defined as <em>BINARY</em>. Available since PHP 5.3.0.
      </p>
     </dd>
 
@@ -955,6 +967,54 @@ been compiled into PHP or dynamically loaded at runtime.
       On a master replication server: removes the binary log files listed in the
       binary log index, and truncates the index file. Like executing the
       <em>RESET MASTER</em> <acronym>SQL</acronym> statement.
+     </p>
+    </dd>
+
+   </dt>
+
+   <dt id="constantmysqli-trans-cor-and-chain">
+    <span class="term"><strong><code>MYSQLI_TRANS_COR_AND_CHAIN</code></strong></span>
+    <dd>
+
+     <p class="para">
+      Appends &quot;AND CHAIN&quot; to  <span class="function"><a href="mysqli.commit.html" class="function">mysqli_commit()</a></span> or
+       <span class="function"><a href="mysqli.rollback.html" class="function">mysqli_rollback()</a></span>.
+     </p>
+    </dd>
+
+   </dt>
+
+   <dt id="constantmysqli-trans-cor-and-no-chain">
+    <span class="term"><strong><code>MYSQLI_TRANS_COR_AND_NO_CHAIN</code></strong></span>
+    <dd>
+
+     <p class="para">
+      Appends &quot;AND NO CHAIN&quot; to  <span class="function"><a href="mysqli.commit.html" class="function">mysqli_commit()</a></span> or
+       <span class="function"><a href="mysqli.rollback.html" class="function">mysqli_rollback()</a></span>.
+     </p>
+    </dd>
+
+   </dt>
+
+   <dt id="constantmysqli-trans-cor-release">
+    <span class="term"><strong><code>MYSQLI_TRANS_COR_RELEASE</code></strong></span>
+    <dd>
+
+     <p class="para">
+      Appends &quot;RELEASE&quot; to  <span class="function"><a href="mysqli.commit.html" class="function">mysqli_commit()</a></span> or
+       <span class="function"><a href="mysqli.rollback.html" class="function">mysqli_rollback()</a></span>.
+     </p>
+    </dd>
+
+   </dt>
+
+   <dt id="constantmysqli-trans-cor-no-release">
+    <span class="term"><strong><code>MYSQLI_TRANS_COR_NO_RELEASE</code></strong></span>
+    <dd>
+
+     <p class="para">
+      Appends &quot;NO RELEASE&quot; to  <span class="function"><a href="mysqli.commit.html" class="function">mysqli_commit()</a></span> or
+       <span class="function"><a href="mysqli.rollback.html" class="function">mysqli_rollback()</a></span>.
      </p>
     </dd>
 

@@ -25,30 +25,30 @@
    )</div>
 
   <p class="para rdfs-comment">
-   This method causes its connection to be authenticated.  If authentication is 
-   enabled for the database server (it&#039;s not, by default), you need to log in 
+   This method causes its connection to be authenticated.  If authentication is
+   enabled for the database server (it&#039;s not, by default), you need to log in
    before the database will allow you to do anything.
   </p>
   <p class="para">
-   In general, you should use the authenticate built into 
-    <span class="function"><a href="mongo.construct.html" class="function">Mongo::__construct()</a></span> in preference to this method.  If you
-   authenticate on connection and the connection drops and reconnects during 
-   your session, you&#039;ll be reauthenticated.  If you manually authenticated using
-   this method and the connection drops, you&#039;ll have to call this method again 
-   once you&#039;re reconnected.
+   In general, you should use the authenticate built into
+    <span class="function"><a href="mongoclient.construct.html" class="function">MongoClient::__construct()</a></span> in preference to this method.
+   If you authenticate on connection and the connection drops and reconnects
+   during your session, you&#039;ll be reauthenticated.  If you manually
+   authenticated using this method and the connection drops, you&#039;ll have to call
+   this method again once you&#039;re reconnected.
   </p>
   <p class="para">
    This method is identical to running:
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$salted&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #007700">${</span><span style="color: #0000BB">username</span><span style="color: #007700">}</span><span style="color: #DD0000">:mongo:</span><span style="color: #007700">${</span><span style="color: #0000BB">password</span><span style="color: #007700">}</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$hash&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">md5</span><span style="color: #007700">(</span><span style="color: #0000BB">$salted</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$nonce&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">command</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"getnonce"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$saltedHash&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">md5</span><span style="color: #007700">(</span><span style="color: #0000BB">$nonce</span><span style="color: #007700">[</span><span style="color: #DD0000">"nonce"</span><span style="color: #007700">].</span><span style="color: #DD0000">"</span><span style="color: #007700">${</span><span style="color: #0000BB">username</span><span style="color: #007700">}${</span><span style="color: #0000BB">hash</span><span style="color: #007700">}</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">command</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"authenticate"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"user"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$username</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"nonce"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$nonce</span><span style="color: #007700">[</span><span style="color: #DD0000">"nonce"</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"key"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$saltedHash<br /></span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$salted&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #007700">${</span><span style="color: #0000BB">username</span><span style="color: #007700">}</span><span style="color: #DD0000">:mongo:</span><span style="color: #007700">${</span><span style="color: #0000BB">password</span><span style="color: #007700">}</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$hash&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">md5</span><span style="color: #007700">(</span><span style="color: #0000BB">$salted</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$nonce&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">command</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"getnonce"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$saltedHash&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">md5</span><span style="color: #007700">(</span><span style="color: #0000BB">$nonce</span><span style="color: #007700">[</span><span style="color: #DD0000">"nonce"</span><span style="color: #007700">].</span><span style="color: #DD0000">"</span><span style="color: #007700">${</span><span style="color: #0000BB">username</span><span style="color: #007700">}${</span><span style="color: #0000BB">hash</span><span style="color: #007700">}</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">command</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"authenticate"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"user"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$username</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"nonce"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$nonce</span><span style="color: #007700">[</span><span style="color: #DD0000">"nonce"</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"key"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$saltedHash<br /></span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
 
   </p>
   <p class="para">
-   Once a connection has been authenticated, it can only be un-authenticated by 
+   Once a connection has been authenticated, it can only be un-authenticated by
    using the &quot;logout&quot; database command:
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -78,7 +78,7 @@
      </dd>
 
     </dt>
-   
+
     <dt>
 
      <span class="term">
@@ -92,14 +92,14 @@
      </dd>
 
     </dt>
-   
+
    </dl>
 
   </p>
  </div>
 
  <div class="refsect1 returnvalues" id="refsect1-mongodb.authenticate-returnvalues">
-  <h3 class="title">Return Values</h3>  
+  <h3 class="title">Return Values</h3>
   <p class="para">
    Returns database response.  If the login was successful, it will return
   <div class="example-contents">
@@ -126,7 +126,7 @@
  <div class="refsect1 seealso" id="refsect1-mongodb.authenticate-seealso">
   <h3 class="title">See Also</h3>
   <p class="para">
-   MongoDB core docs on <a href="http://dochub.mongodb.org/core/authenticate" class="link external">&raquo;&nbsp;authenticate</a>.
+   MongoDB core docs on <a href="http://docs.mongodb.org/manual/administration/security/#authentication" class="link external">&raquo;&nbsp;authenticate</a>.
   </p>
  </div>
 
@@ -148,8 +148,8 @@
       <tr>
        <td>1.2.11</td>
        <td>
-       Emits <strong><code>E_DEPRECATED</code></strong> when used.
-       Please pass in the authentication details to the constructor.
+        Emits <strong><code>E_DEPRECATED</code></strong> when used. Please pass in the
+        authentication details to the constructor.
        </td>
       </tr>
 

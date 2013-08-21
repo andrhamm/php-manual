@@ -243,7 +243,7 @@
      this limitation is valid only for heredocs containing variables.
     </p>
     
-    <div class="example" id="example-71">
+    <div class="example" id="example-72">
      <p><strong>Example #1 Invalid example</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -263,7 +263,7 @@
     inside a heredoc as with <span class="type"><a href="language.types.string.html" class="type string">string</a></span>s.
    </p>
 
-   <div class="example" id="example-72"> 
+   <div class="example" id="example-73"> 
     <p><strong>Example #2 Heredoc string quoting example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -286,7 +286,7 @@ This should print a capital &#039;A&#039;: A</pre></div>
     arguments:
    </p>
 
-   <div class="example" id="example-73"> 
+   <div class="example" id="example-74"> 
     <p><strong>Example #3 Heredoc in arguments example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -302,7 +302,7 @@ This should print a capital &#039;A&#039;: A</pre></div>
     properties/constants using the Heredoc syntax:
    </p>
 
-   <div class="example" id="example-74"> 
+   <div class="example" id="example-75"> 
     <p><strong>Example #4 Using Heredoc to initialize static values</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -318,7 +318,7 @@ This should print a capital &#039;A&#039;: A</pre></div>
     enclosed in double quotes:
    </p>
 
-   <div class="example" id="example-75"> 
+   <div class="example" id="example-76"> 
     <p><strong>Example #5 Using double quotes in Heredoc</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -352,7 +352,7 @@ This should print a capital &#039;A&#039;: A</pre></div>
     regarding the appearance of the closing identifier.
    </p>
    
-   <div class="example" id="example-76">
+   <div class="example" id="example-77">
     <p><strong>Example #6 Nowdoc string quoting example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -377,7 +377,7 @@ This should not print a capital &#039;A&#039;: \x41</pre></div>
     </p>
    </p></blockquote>
     
-   <div class="example" id="example-77">
+   <div class="example" id="example-78">
     <p><strong>Example #7 Static data example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -452,7 +452,7 @@ He drank some juice made of .
      object properties as to simple variables.
     </p>
 
-    <div class="example" id="example-78"><p><strong>Example #8 Simple syntax example</strong></p>
+    <div class="example" id="example-79"><p><strong>Example #8 Simple syntax example</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$juices&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"apple"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"orange"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"koolaid1"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"purple"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;juice&nbsp;made&nbsp;of&nbsp;</span><span style="color: #0000BB">$juice</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]</span><span style="color: #DD0000">s."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Won't&nbsp;work<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">koolaid1</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">people&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$john&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"John&nbsp;Smith"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$jane&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Jane&nbsp;Smith"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$robert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Robert&nbsp;Paulsen"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$smith&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Smith"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$people&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">people</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">john</span><span style="color: #DD0000">&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">john</span><span style="color: #DD0000">&nbsp;then&nbsp;said&nbsp;hello&nbsp;to&nbsp;</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">jane</span><span style="color: #DD0000">."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">john</span><span style="color: #DD0000">'s&nbsp;wife&nbsp;greeted&nbsp;</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">robert</span><span style="color: #DD0000">."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">robert</span><span style="color: #DD0000">&nbsp;greeted&nbsp;the&nbsp;two&nbsp;</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">smiths</span><span style="color: #DD0000">."</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Won't&nbsp;work<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -588,7 +588,16 @@ I am bar.
     </p>
    </div>
 
-   <div class="example" id="example-79">
+   <div class="warning"><strong class="warning">Warning</strong>
+    <p class="simpara">
+     Internally, PHP strings are byte arrays. As a result, accessing or
+     modifying a string using array brackets is not multi-byte safe, and
+     should only be done with strings that are in a single-byte encoding such
+     as ISO-8859-1.
+    </p>
+   </div>
+
+   <div class="example" id="example-80">
     <p><strong>Example #9 Some string examples</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -604,7 +613,7 @@ I am bar.
     will be thrown. Previously an offset like <em>&quot;foo&quot;</em> was silently cast to <em>0</em>.
    </p>
 
-   <div class="example" id="example-80">
+   <div class="example" id="example-81">
     <p><strong>Example #10 Differences between PHP 5.3 and PHP 5.4</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -653,6 +662,12 @@ bool(false)
     </p>
    </p></blockquote>
 
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <p class="para">
+     PHP 5.5 added support for accessing characters within string literals
+     using <em>[]</em> or <em>{}</em>.
+    </p>
+   </p></blockquote>
   </div>
  </div>
 

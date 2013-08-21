@@ -21,22 +21,22 @@
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>  <span class="methodname"><strong>MongoDB::__construct</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="class.mongo.html" class="type Mongo">Mongo</a></span> <code class="parameter">$conn</code></span>
+    ( <span class="methodparam"><span class="type"><a href="class.mongoclient.html" class="type MongoClient">MongoClient</a></span> <code class="parameter">$conn</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    )</div>
 
   <p class="para rdfs-comment">
-   This method is not meant to be called directly.  The preferred way to create 
-   an instance of MongoDB is through  <span class="function"><a href="mongo.get.html" class="function">Mongo::__get()</a></span> or 
-    <span class="function"><a href="mongo.selectdb.html" class="function">Mongo::selectDB()</a></span>.
+   This method is not meant to be called directly.  The preferred way to create
+   an instance of MongoDB is through  <span class="function"><a href="mongoclient.get.html" class="function">MongoClient::__get()</a></span> or
+    <span class="function"><a href="mongoclient.selectdb.html" class="function">MongoClient::selectDB()</a></span>.
   </p>
   <p class="para">
-   If you&#039;re ignoring the previous paragraph and want to call it directly you 
+   If you&#039;re ignoring the previous paragraph and want to call it directly you
    can do so:
   </p>
   <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Mongo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">(</span><span style="color: #0000BB">$m</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mydbname'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">(</span><span style="color: #0000BB">$m</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mydbname'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
   </div>
@@ -46,14 +46,14 @@
   </p>
   <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Mongo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">mydbname</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;or,&nbsp;if&nbsp;the&nbsp;name&nbsp;contains&nbsp;weird&nbsp;characters:<br /><br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">selectDB</span><span style="color: #007700">(</span><span style="color: #DD0000">'my,db:name'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">mydbname</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;or,&nbsp;if&nbsp;the&nbsp;name&nbsp;contains&nbsp;weird&nbsp;characters:<br /><br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">selectDB</span><span style="color: #007700">(</span><span style="color: #DD0000">'my,db:name'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
   </div>
 
  </div>
 
- 
+
  <div class="refsect1 parameters" id="refsect1-mongodb.construct-parameters">
   <h3 class="title">Parameters</h3>
   <p class="para">
@@ -62,7 +62,7 @@
     <dt>
 
      <span class="term">
-      <span class="type"><a href="class.mongo.html" class="type Mongo">Mongo</a></span>
+      <span class="type"><a href="class.mongoclient.html" class="type MongoClient">MongoClient</a></span>
       <em><code class="parameter">conn</code></em>
      </span>
      <dd>
@@ -73,7 +73,7 @@
      </dd>
 
     </dt>
-   
+
     <dt>
 
      <span class="term">
@@ -87,7 +87,7 @@
      </dd>
 
     </dt>
-   
+
    </dl>
 
   </p>

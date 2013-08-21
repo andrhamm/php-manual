@@ -92,7 +92,7 @@ and <strong><code>ORACLE_SID</code></strong> to determine the
 To use the Easy Connect naming method, PHP must be linked with Oracle
 10g or greater Client libraries. The Easy Connect string for Oracle
 10g is of the form:
-<em class="emphasis">[//]host_name[:port][/service_name]</em>. With Oracle
+<em class="emphasis">[//]host_name[:port][/service_name]</em>. From Oracle
 11g, the syntax is:
 <em class="emphasis">[//]host_name[:port][/service_name][:server_type][/instance_name]</em>.
 Service names can be found by running the Oracle
@@ -129,7 +129,7 @@ Oracle Client libraries determine a character set from
 the <strong><code>NLS_LANG</code></strong> environment variable.
 </p>
 <p class="para">Passing this parameter can
-reduce connection time.
+reduce the time taken to connect.
 </p>
      </dd>
 
@@ -192,7 +192,7 @@ security reasons.
   <blockquote class="note"><p><strong class="note">Note</strong>: 
    <span class="simpara">
     Starting with PHP 5.1.2 and PECL oci8 1.1, the lifetime and
-    maximum number of persistent Oracle connections can be tuned by setting
+    maximum number of persistent Oracle connections per PHP process can be tuned by setting
     the following configuration values: <a href="oci8.configuration.html#ini.oci8.persistent-timeout" class="link">oci8.persistent_timeout</a>,
     <a href="oci8.configuration.html#ini.oci8.ping-interval" class="link">oci8.ping_interval</a> and
     <a href="oci8.configuration.html#ini.oci8.max-persistent" class="link">oci8.max_persistent</a>.

@@ -38,7 +38,7 @@
     call functions to carry out tasks, with the object-oriented API you
     instantiate classes and then call methods on the resulting objects.
     Of the two the latter is usually the preferred interface, as it is
-    more modern and leads to better organised code.
+    more modern and leads to better organized code.
   </p>
 
   <p class="para">
@@ -358,26 +358,26 @@
     the PDO MYSQL driver each use a low-level library that implements
     the required protocol. In the past, the only available library was
     the MySQL Client Library, otherwise known as
-    <em>libmysql</em>.
+    <em>libmysqlclient</em>.
   </p>
 
   <p class="para">
-    However, the interface presented by <em>libmysql</em> was
+    However, the interface presented by <em>libmysqlclient</em> was
     not optimized for communication with PHP applications, as
-    <em>libmysql</em> was originally designed with C
+    <em>libmysqlclient</em> was originally designed with C
     applications in mind. For this reason the MySQL Native Driver,
     <em>mysqlnd</em>, was developed as an alternative to
-    <em>libmysql</em> for PHP applications.
+    <em>libmysqlclient</em> for PHP applications.
   </p>
 
   <p class="para">
     The <em>mysql</em> extension, the
     <em>mysqli</em> extension and the PDO MySQL driver can
     each be individually configured to use either
-    <em>libmysql</em> or <em>mysqlnd</em>. As
+    <em>libmysqlclient</em> or <em>mysqlnd</em>. As
     <em>mysqlnd</em> is designed specifically to be utilised
     in the PHP system it has numerous memory and speed enhancements over
-    <em>libmysql</em>. You are strongly encouraged to take
+    <em>libmysqlclient</em>. You are strongly encouraged to take
     advantage of these improvements.
   </p>
 
@@ -406,7 +406,8 @@
     methods of connecting to MySQL from PHP:
   </p>
 
-  <table class="doctable informaltable">
+  <table class="doctable table">
+   <caption><strong>Comparison of MySQL API options for PHP</strong></caption>
     
       <col width="25*" />
       <col width="25*" />

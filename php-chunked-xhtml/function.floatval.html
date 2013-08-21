@@ -58,12 +58,18 @@
    The float value of the given variable. Empty arrays return 0, non-empty
    arrays return 1.
   </p>
+  <p class="para">
+   Strings will most likely return 0 although this depends on the 
+   leftmost characters of the string. The common rules of 
+   <a href="language.types.float.html#language.types.float.casting" class="link">float casting</a> 
+   apply.
+  </p>
  </div>
 
  <div class="refsect1 examples" id="refsect1-function.floatval-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4919">
+   <div class="example" id="example-5197">
     <p><strong>Example #1  <span class="function"><strong>floatval()</strong></span> Example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -80,6 +86,7 @@
   <h3 class="title">See Also</h3>
   <p class="para">
    <ul class="simplelist">
+    <li class="member"> <span class="function"><a href="function.boolval.html" class="function" rel="rdfs-seeAlso">boolval()</a> - Get the boolean value of a variable</span></li>
     <li class="member"> <span class="function"><a href="function.intval.html" class="function" rel="rdfs-seeAlso">intval()</a> - Get the integer value of a variable</span></li>
     <li class="member"> <span class="function"><a href="function.strval.html" class="function" rel="rdfs-seeAlso">strval()</a> - Get string value of a variable</span></li>
     <li class="member"> <span class="function"><a href="function.settype.html" class="function" rel="rdfs-seeAlso">settype()</a> - Set the type of a variable</span></li>

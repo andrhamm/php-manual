@@ -27,8 +27,10 @@
   <p class="para rdfs-comment">
    This function sets whether or not to use the SOAP error handler in the SOAP server. 
    It will return the previous value. If set to <strong><code>TRUE</code></strong>, details of errors
-   in a <a href="class.soapserver.html" class="classname">SoapServer</a> application will be sent to the clients.
-   If <strong><code>FALSE</code></strong>, no information will be sent.
+   in a <a href="class.soapserver.html" class="classname">SoapServer</a> application will be sent to the client
+   as a SOAP fault message.
+   If <strong><code>FALSE</code></strong>, the standard PHP error handler is used.
+   The default is to use the standard PHP error handler.
   </p>
  </div>
 

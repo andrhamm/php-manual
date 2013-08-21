@@ -15,7 +15,7 @@
  <h1 class="title">The MongoBinData class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(PECL mongo &gt;= 0.8.1)</p>
 
 
   <div class="section" id="mongobindata.intro">
@@ -24,22 +24,24 @@
     An object that can be used to store or retrieve binary data from the database.
    </p>
    <p class="para">
-    The maximum size of a single object that can be inserted into the database 
-    is 4Mb.  For data that is larger than this (movies, music, Henry Kissinger&#039;s
-    autobiography), use <a href="class.mongogridfs.html" class="classname">MongoGridFS</a>. For data that is 
-    smaller than 4Mb, it&#039;s probably be easier to just embed it into the document
+    The maximum size of a single object that can be inserted into the database
+    is 16MB. For data that is larger than this (movies, music, Henry Kissinger&#039;s
+    autobiography), use <a href="class.mongogridfs.html" class="classname">MongoGridFS</a>. For data that is
+    smaller than 16MB, you may find it easier to embed it within the document
     using <strong class="classname">MongoBinData</strong>.
    </p>
    <p class="para">
     For example, to embed an image in a document, one could write:
    </p>
-   <div class="example-contents">
+   <div class="example" id="mongobindata.intro-example">
+    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$profile&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"username"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"foobity"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"pic"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoBinData</span><span style="color: #007700">(</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"gravatar.jpg"</span><span style="color: #007700">))<br />);<br /><br /></span><span style="color: #0000BB">$users</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">(</span><span style="color: #0000BB">$profile</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
-   </div>
+    </div>
 
+   </div>
    <p class="para">
     This class contains a <var class="varname"><var class="varname">type</var></var> field, which currently gives 
     no additional functionality in the driver or the database.  There are five 

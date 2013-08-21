@@ -21,9 +21,10 @@
  <div class="refsect1 description" id="refsect1-domdocument.loadhtml-description">
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>DOMDocument::loadHTML</strong></span>
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><strong>DOMDocument::loadHTML</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$source</code></span>
-   )</div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
+  ] )</div>
 
   <p class="para rdfs-comment">
    The function parses the HTML contained in the string <em><code class="parameter">source</code></em>. 
@@ -47,6 +48,19 @@
 
       <p class="para">
        The HTML string.
+      </p>
+     </dd>
+
+    </dt>
+
+    <dt>
+
+     <span class="term"><em><code class="parameter">options</code></em></span>
+     <dd>
+
+      <p class="para">
+       Since PHP 5.4.0 and Libxml 2.6.0, you may also use the
+       <em><code class="parameter">options</code></em> parameter to specify <a href="libxml.constants.html" class="link">additional Libxml parameters</a>.
       </p>
      </dd>
 
@@ -79,7 +93,7 @@
  <div class="refsect1 examples" id="refsect1-domdocument.loadhtml-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-5071">
+   <div class="example" id="example-5340">
     <p><strong>Example #1 Creating a Document</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -92,6 +106,36 @@
   </p>
  </div>
 
+ 
+ <div class="refsect1 changelog" id="refsect1-domdocument.loadhtml-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        Added <em><code class="parameter">options</code></em> parameter.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ 
  <div class="refsect1 seealso" id="refsect1-domdocument.loadhtml-seealso">
   <h3 class="title">See Also</h3>
   <p class="para">

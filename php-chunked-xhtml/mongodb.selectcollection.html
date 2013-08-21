@@ -25,6 +25,7 @@
 
  </div>
 
+
  <div class="refsect1 parameters" id="refsect1-mongodb.selectcollection-parameters">
   <h3 class="title">Parameters</h3>    
   <p class="para">
@@ -38,7 +39,7 @@
      <dd>
 
       <p class="para">
-       The name of the collection.
+       The collection name.
       </p>
      </dd>
 
@@ -49,12 +50,22 @@
   </p>
  </div>
 
+
  <div class="refsect1 returnvalues" id="refsect1-mongodb.selectcollection-returnvalues">
   <h3 class="title">Return Values</h3>  
   <p class="para">
-   Returns the collection.
+   Returns a new collection object.
   </p>
  </div>
+
+
+ <div class="refsect1 errors" id="refsect1-mongodb.selectcollection-errors">
+  <h3 class="title">Errors/Exceptions</h3>
+  <p class="para">
+   Throws <a href="class.exception.html" class="classname">Exception</a> if the collection name is invalid.
+  </p>
+ </div>
+
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongodb.reseterror.html">MongoDB::resetError</a></div>

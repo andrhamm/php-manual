@@ -56,6 +56,15 @@
       <p class="para">
        Whether to use the iterator element keys as index.
       </p>
+      <p class="para">
+       In PHP 5.5 and later, if a key is an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> or
+       <span class="type"><a href="language.types.object.html" class="type object">object</a></span>, a warning will be generated. <strong><code>NULL</code></strong> keys will be
+       converted to an empty string, <span class="type"><a href="language.types.float.html" class="type double">double</a></span> keys will be
+       truncated to their <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> counterpart,
+       <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> keys will generate a warning and be converted to
+       their resource ID, and <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> keys will be converted to
+       integers.
+      </p>
      </dd>
 
     </dt>
@@ -89,6 +98,15 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.5.0</td>
+       <td>
+         <span class="function"><strong>iterator_to_array()</strong></span> gained support for key types
+        other than <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> and <span class="type"><a href="language.types.string.html" class="type string">string</a></span> when the
+        <em><code class="parameter">use_keys</code></em> parameter is enabled.
+       </td>
+      </tr>
+
+      <tr>
        <td>5.2.1</td>
        <td>
         The <em><code class="parameter">use_keys</code></em> parameter was added.
@@ -106,7 +124,7 @@
  <div class="refsect1 examples" id="refsect1-function.iterator-to-array-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3654">
+   <div class="example" id="example-3877">
     <p><strong>Example #1  <span class="function"><strong>iterator_to_array()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

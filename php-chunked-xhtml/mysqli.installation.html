@@ -63,7 +63,7 @@
       <th>PHP Version</th>
       <th>Default</th>
       <th>Configure Options: <a href="mysqlnd.overview.html" class="link">mysqlnd</a></th>
-      <th>Configure Options: <em>libmysql</em></th>
+      <th>Configure Options: <em>libmysqlclient</em></th>
       <th>Changelog</th>
      </tr>
 
@@ -72,7 +72,7 @@
     <tbody class="tbody">
      <tr>
       <td>5.0.x, 5.1.x, 5.2.x</td>
-      <td>libmysql</td>
+      <td>libmysqlclient</td>
       <td>Not Available</td>
       <td><strong class="option configure">--with-mysqli=/path/to/mysql_config</strong>
 </td>
@@ -81,7 +81,7 @@
 
      <tr>
       <td>5.3.x</td>
-      <td>libmysql</td>
+      <td>libmysqlclient</td>
       <td><strong class="option configure">--with-mysqli=mysqlnd</strong>
 </td>
       <td><strong class="option configure">--with-mysqli=/path/to/mysql_config</strong>
@@ -107,7 +107,7 @@
   <p class="para">
    Note that it is possible to freely mix MySQL extensions and client
    libraries. For example, it is possible to enable the MySQL extension
-   to use the MySQL Client Library (libmysql), while configuring the
+   to use the MySQL Client Library (libmysqlclient), while configuring the
    <em>mysqli</em> extension to use the MySQL Native Driver.
    However, all permutations of extension and client library are
    possible.

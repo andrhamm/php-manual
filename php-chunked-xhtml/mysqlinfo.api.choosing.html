@@ -21,7 +21,7 @@
     greet the user.
    </p>
    <p class="para">
-    <div class="example" id="example-1540">
+    <div class="example" id="example-1627">
      <p><strong>Example #1 Comparing the three MySQL APIs</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -39,10 +39,12 @@
     It is recommended to use either the <a href="book.mysqli.html" class="link">mysqli</a>
     or <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> extensions.
     It is not recommended to use the old <a href="ref.mysql.html" class="link">mysql</a>
-    extension for new development. A detailed feature comparison matrix is provided
-    below. The overall performance of all three extensions is considered to be
-    about the same. Although the performance of the extension contributes only a fraction
-    of the total run time of a PHP web request. Often, the impact is as low as 0.1%.
+    extension for new development, as it has been deprecated as of PHP 5.5.0
+    and will be removed in the future. A detailed feature comparison matrix is
+    provided below. The overall performance of all three extensions is
+    considered to be about the same. Although the performance of the extension
+    contributes only a fraction of the total run time of a PHP web request.
+    Often, the impact is as low as 0.1%.
    </p>
    <p class="para">
     <em class="emphasis">Feature comparison</em>
@@ -85,7 +87,7 @@
        <td>Lifecycle</td>
        <td>Active</td>
        <td>Active</td>
-       <td>Long term deprecation announced</td>
+       <td>Deprecated</td>
       </tr>
 
       <tr>

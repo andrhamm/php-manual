@@ -88,6 +88,13 @@ The behaviour of these functions is affected by settings in <var class="filename
      </tr>
 
      <tr>
+      <td><a href="apc.configuration.html#ini.apc.shm-strings-buffer" class="link">apc.shm_strings_buffer</a></td>
+      <td>&quot;4M&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
       <td><a href="apc.configuration.html#ini.apc.optimization" class="link">apc.optimization</a></td>
       <td>&quot;0&quot;</td>
       <td>PHP_INI_ALL</td>
@@ -373,6 +380,21 @@ the configuration directives.</p>
       By default, some systems (including most BSD
       variants) have very low limits on the size of a
       shared memory segment.
+     </p>
+    </dd>
+
+   </dt>
+
+   <dt id="ini.apc.shm-strings-buffer">
+    <span class="term">
+     <em><code class="parameter">apc.shm_strings_buffer</code></em>
+     <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+    </span>
+    <dd>
+
+     <p class="para">
+      The shared memory size reserved for strings, and
+      defined with the M or G suffix.
      </p>
     </dd>
 
@@ -776,7 +798,7 @@ the configuration directives.</p>
       transfers are completed.
      </p>
      <p class="para">
-      <div class="example" id="example-387">
+      <div class="example" id="example-398">
        <p><strong>Example #1 An apc.rfc1867 example</strong></p>
        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -865,7 +887,7 @@ Array
    <dt id="ini.apc.rfc1867-ttl">
     <span class="term">
      <em><code class="parameter">apc.rfc1867_ttl</code></em>
-     <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>
+     <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
     </span>
     <dd>
 
@@ -987,6 +1009,8 @@ Array
     <dd>
 
      <p class="para">
+      Optionally, set a path to the directory that APC will load 
+      cache data at startup.
      </p>
     </dd>
 

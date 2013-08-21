@@ -13,7 +13,7 @@
 </div><hr /><div id="yaf-dispatcher.autorender" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Yaf_Dispatcher::autoRender</h1>
-  <p class="verinfo">(PECL yaf &gt;=1.0.0)</p><p class="refpurpose"><span class="refname">Yaf_Dispatcher::autoRender</span> &mdash; <span class="dc-title">Switch on/off autorendering</span></p>
+  <p class="verinfo">(Yaf &gt;=1.0.0)</p><p class="refpurpose"><span class="refname">Yaf_Dispatcher::autoRender</span> &mdash; <span class="dc-title">Switch on/off autorendering</span></p>
 
  </div>
 
@@ -21,16 +21,16 @@
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><a href="class.yaf-dispatcher.html" class="type Yaf_Dispatcher">Yaf_Dispatcher</a></span> <span class="methodname"><strong>Yaf_Dispatcher::autoRender</strong></span>
-    ( <span class="methodparam"><span class="type">bool</span> <code class="parameter">$flag</code></span>
-   )</div>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$flag</code></span>
+  ] )</div>
 
   <p class="para rdfs-comment">
    <a href="class.yaf-dispatcher.html" class="classname">Yaf_Dispatcher</a> will render automatically after 
    dispatches a incoming request, you can prevent the rendering by calling
-   this method with <em><code class="parameter">flag</code></em> TRUE
+   this method with <em><code class="parameter">flag</code></em> <strong><code>TRUE</code></strong>
    <blockquote class="note"><p><strong class="note">Note</strong>: 
      <p class="para">
-     you can simply return FALSE in a action to prevent the auto-rendering of
+     you can simply return <strong><code>FALSE</code></strong> in a action to prevent the auto-rendering of
      that action
     </p>
    </p></blockquote>
@@ -48,7 +48,13 @@
     <dd>
 
      <p class="para">
-       bool
+      bool
+      <blockquote class="note"><p><strong class="note">Note</strong>: 
+       <p class="para">
+        since 2.2.0, if this parameter is not given, then the current state
+        will be renturned
+       </p>
+      </p></blockquote>
      </p>
     </dd>
 
@@ -69,7 +75,7 @@
 
  <div class="refsect1 examples" id="refsect1-yaf-dispatcher.autorender-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-3863">
+  <div class="example" id="example-4086">
    <p><strong>Example #1  <span class="function"><strong>Yaf_Dispatcher::autoRender()</strong></span>example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

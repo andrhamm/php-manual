@@ -65,13 +65,18 @@
   <p class="para">
    If an error occurs, returns <strong><code>FALSE</code></strong>.
   </p>
+  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">
+    Because PHP&#039;s integer type is signed and many platforms use 32bit integers,
+    some filesystem functions may return unexpected results for files which
+    are larger than 2GB.
+   </span></p></blockquote>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-function.ftell-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-2261">
+   <div class="example" id="example-2370">
     <p><strong>Example #1  <span class="function"><strong>ftell()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

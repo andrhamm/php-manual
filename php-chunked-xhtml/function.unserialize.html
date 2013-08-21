@@ -122,7 +122,7 @@
  <div class="refsect1 examples" id="refsect1-function.unserialize-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4943">
+   <div class="example" id="example-5221">
     <p><strong>Example #1  <span class="function"><strong>unserialize()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -134,7 +134,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4944">
+   <div class="example" id="example-5222">
     <p><strong>Example #2 unserialize_callback_func example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -157,6 +157,16 @@
     comparing <em><code class="parameter">str</code></em> with
     <em>serialize(false)</em> or by catching the issued
     <strong><code>E_NOTICE</code></strong>.
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">Warning</strong>
+   <p class="para">
+    Do not pass untrusted user input to  <span class="function"><strong>unserialize()</strong></span>.
+    Unserialization can result in code being loaded and executed due to object
+    instantiation and autoloading, and a malicious user may be able to exploit
+    this. Use a safe, standard data interchange format such as JSON (via
+     <span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> and  <span class="function"><a href="function.json-encode.html" class="function">json_encode()</a></span>) if
+    you need to pass serialized data to the user.
    </p>
   </div>
  </div>

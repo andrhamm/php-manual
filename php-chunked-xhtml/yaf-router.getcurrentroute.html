@@ -13,7 +13,7 @@
 </div><hr /><div id="yaf-router.getcurrentroute" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Yaf_Router::getCurrentRoute</h1>
-  <p class="verinfo">(PECL yaf &gt;=1.0.0)</p><p class="refpurpose"><span class="refname">Yaf_Router::getCurrentRoute</span> &mdash; <span class="dc-title">Get the effective route name</span></p>
+  <p class="verinfo">(Yaf &gt;=1.0.0)</p><p class="refpurpose"><span class="refname">Yaf_Router::getCurrentRoute</span> &mdash; <span class="dc-title">Get the effective route name</span></p>
 
  </div>
 
@@ -29,7 +29,7 @@
    <blockquote class="note"><p><strong class="note">Note</strong>: 
     <p class="para">
      You should call this method after the route process finished, since
-     before that, this method will always return NULL.
+     before that, this method will always return <strong><code>NULL</code></strong>.
     </p>
    </p></blockquote>
   </p>
@@ -52,7 +52,7 @@
 
  <div class="refsect1 examples" id="refsect1-yaf-router.getcurrentroute-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-3912">
+  <div class="example" id="example-4136">
    <p><strong>Example #1 Register some routes in Bootstrap</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -62,7 +62,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-3913">
+  <div class="example" id="example-4137">
    <p><strong>Example #2 plugin Dummy.php (under <a href="yaf.appconfig.html#configuration.yaf.directory" class="link">application.directory</a>/plugins)</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

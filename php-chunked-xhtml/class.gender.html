@@ -15,7 +15,7 @@
  <h1 class="title">The Gender\Gender class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(PECL gender &gt;= 0.6.0)</p>
 
 
   <div class="section" id="gender.intro">
@@ -486,11 +486,22 @@
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$dsn</code></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="gender-gender.country.html" class="methodname">country</a></span>
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="gender-gender.country.html" class="methodname">country</a></span>
     ( <span class="methodparam"><span class="type">integer</span> <code class="parameter">$country</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">integer</span> <span class="methodname"><a href="gender-gender.get.html" class="methodname">get</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
+   [, <span class="methodparam"><span class="type">integer</span> <code class="parameter">$country</code></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="gender-gender.isnick.html" class="methodname">isNick</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name0</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$name1</code></span>
+   [, <span class="methodparam"><span class="type">integer</span> <code class="parameter">$country</code></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="gender-gender.similarnames.html" class="methodname">similarNames</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    [, <span class="methodparam"><span class="type">integer</span> <code class="parameter">$country</code></span>
   ] )</div>
@@ -1164,7 +1175,21 @@
 
 
 
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="gender-gender.connect.html">Gender\Gender::connect</a> — Connect to an external name dictionary.</li><li><a href="gender-gender.construct.html">Gender\Gender::__construct</a> — Construct the Gender object.</li><li><a href="gender-gender.country.html">Gender\Gender::country</a> — Get textual country representation.</li><li><a href="gender-gender.get.html">Gender\Gender::get</a> — Get gender of a name.</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="gender-gender.connect.html">Gender\Gender::connect</a> — Connect to an external name dictionary.</li><li><a href="gender-gender.construct.html">Gender\Gender::__construct</a> — Construct the Gender object.</li><li><a href="gender-gender.country.html">Gender\Gender::country</a> — Get textual country representation</li><li><a href="gender-gender.get.html">Gender\Gender::get</a> — Get gender of a name.</li><li><a href="gender-gender.isnick.html">Gender\Gender::isNick</a> — Check if the name0 is an alias of the name1.</li><li><a href="gender-gender.similarnames.html">Gender\Gender::similarNames</a> — Get similar names.</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="gender.example.admin.html">Usage example.</a></div>

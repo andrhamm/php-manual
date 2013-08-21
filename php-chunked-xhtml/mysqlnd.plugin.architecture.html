@@ -24,7 +24,8 @@
    know a little of how <em>mysqlnd</em> itself is organized.
    <em>Mysqlnd</em> consists of the following modules:
   </p>
-  <table class="doctable informaltable">
+  <table class="doctable table">
+   <caption><strong>The mysqlnd organization chart, per module</strong></caption>
    
     <tbody class="tbody">
      <tr>
@@ -220,7 +221,8 @@ MYSQLND_METHOD(my_conn_class, query)(MYSQLND *conn,
    The following table shows how to calculate the position of the
    pointer for a specific plugin:
   </p>
-  <table class="doctable informaltable">
+  <table class="doctable table">
+   <caption><strong>Pointer calculations for mysqlnd</strong></caption>
    
     <tbody class="tbody">
      <tr>
@@ -294,10 +296,8 @@ static MY_CONN_PROPERTIES** get_conn_properties(const MYSQLND *conn TSRMLS_DC) {
    allocator has some useful features, such as the ability to use a
    debug allocator in a non-debug build.
   </p>
-  <p class="para">
-   <em class="emphasis"> When and how to subclass </em>
-  </p>
-  <table class="doctable informaltable">
+  <table class="doctable table">
+   <caption><strong>When and how to subclass</strong></caption>
    
     <tbody class="tbody">
      <tr>
@@ -377,10 +377,8 @@ static MY_CONN_PROPERTIES** get_conn_properties(const MYSQLND *conn TSRMLS_DC) {
    The advantage of the shared function table approach is performance.
    There is no need to copy a function table for each and every object.
   </p>
-  <p class="para">
-   Constructors
-  </p>
-  <table class="doctable informaltable">
+  <table class="doctable table">
+   <caption><strong>Constructor status</strong></caption>
    
     <tbody class="tbody">
      <tr>
@@ -496,10 +494,8 @@ static MY_CONN_PROPERTIES** get_conn_properties(const MYSQLND *conn TSRMLS_DC) {
    function tables of objects with non-shared object tables, such as
    Resultset, Network, Wire Protocol.
   </p>
-  <p class="para">
-   <em class="emphasis">Destruction</em>
-  </p>
-  <table class="doctable informaltable">
+  <table class="doctable table">
+   <caption><strong>Destruction status</strong></caption>
    
     <tbody class="tbody">
      <tr>

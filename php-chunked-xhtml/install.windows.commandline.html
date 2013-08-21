@@ -36,11 +36,19 @@ C:\PHP5\php.exe -f &quot;C:\PHP Scripts\script.php&quot; -- -arg1 -arg2 -arg3
      But there are some easy steps that can be followed to make this simpler.
      Some of these steps should already have been taken, but are repeated here
      to be able to provide a complete step-by-step sequence.
+      
+     
      <ul class="itemizedlist">
+      
+      <blockquote class="note"><p><strong class="note">Note</strong>: 
+       <p class="para">
+        Both <var class="varname"><var class="varname">PATH</var></var> and <var class="varname"><var class="varname">PATHEXT</var></var> are important pre-existing system variables in Windows, and care should be taken to not overwrite either variable, only to add to them.
+       </p>
+      </p></blockquote>
 
       <li class="listitem">
        <p class="para">
-        Add the location of the PHP executable (<var class="filename">php.exe</var>,
+        Append the location of the PHP executable (<var class="filename">php.exe</var>,
         <var class="filename">php-win.exe</var> or <var class="filename">php-cli.exe</var>
         depending upon your PHP version and display preferences) to the
         <var class="varname"><var class="varname">PATH</var></var> environment variable. Read more about how to
@@ -50,7 +58,7 @@ C:\PHP5\php.exe -f &quot;C:\PHP Scripts\script.php&quot; -- -arg1 -arg2 -arg3
 
       <li class="listitem">
        <p class="para">
-        Add the <em>.PHP</em> extension to the
+        Append the <em>.PHP</em> extension to the
         <var class="varname"><var class="varname">PATHEXT</var></var> environment variable. This can be done
         at the same time as amending the <var class="varname"><var class="varname">PATH</var></var> environment
         variable. Follow the same steps as described in the <a href="faq.installation.html#faq.installation.addtopath" class="link">FAQ</a> but amend the

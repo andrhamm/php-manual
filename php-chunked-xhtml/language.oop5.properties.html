@@ -51,14 +51,12 @@
    </p>
   </p></blockquote>
   <p class="para">
-   Within class methods the properties, constants, and methods may be
-   accessed by using the form <var class="varname"><var class="varname">$this->property</var></var>
-   (where <em>property</em> is the name of the property; see
-   also <a href="language.variables.variable.html" class="link">variable property names</a>)
-   unless the access is to a static property within the context of a
-   static class method, in which case it is accessed using the
-   form <var class="varname"><var class="varname">self::$property</var></var>. See <a href="language.oop5.static.html" class="link">Static
-   Keyword</a> for more information.
+   Within class methods non-static properties may be accessed by using 
+   <em>-&gt;</em> (Object Operator): <var class="varname"><var class="varname">$this->property</var></var> 
+   (where <em>property</em> is the name of the property). 
+   Static properties are accessed by using the <em>::</em> (Double Colon):
+   <var class="varname"><var class="varname">self::$property</var></var>. See <a href="language.oop5.static.html" class="link">Static Keyword</a> 
+   for more information on the difference between static and non-static properties.
   </p>
   <p class="para">
    The pseudo-variable <var class="varname"><var class="varname">$this</var></var> is available inside
@@ -71,7 +69,7 @@
   </p>
 
   <p class="para">
-   <div class="example" id="example-171">
+   <div class="example" id="example-173">
     <p><strong>Example #1 property declarations</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -97,7 +95,7 @@
    <a href="language.types.string.html#language.types.string.syntax.nowdoc" class="link">nowdocs</a>
    can be used in any static data context, including property
    declarations.
-   <div class="example" id="example-172">
+   <div class="example" id="example-174">
     <p><strong>Example #2 Example of using a nowdoc to initialize a property</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

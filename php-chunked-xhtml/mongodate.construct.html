@@ -58,7 +58,9 @@
      <dd>
 
       <p class="para">
-       Microseconds.
+       Microseconds. Please be aware though that MongoDB&#039;s resolution is
+       <em class="emphasis">milliseconds</em> and not microseconds, which means this
+       value will be truncated to millisecond resolution.
       </p>
      </dd>
 
@@ -80,7 +82,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongodate.construct-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-1492">
+  <div class="example" id="example-1569">
    <p><strong>Example #1  <span class="function"><strong>MongoDate::__construct()</strong></span> example</strong></p>
    <div class="example-contents"><p>This example demonstrates creating a new date with the current time and a new date with a given time.</p></div>
    <div class="example-contents">

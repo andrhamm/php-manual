@@ -43,10 +43,10 @@
       </p>
       <blockquote class="note"><p><strong class="note">Note</strong>: 
        <p class="para">
-         <span class="function"><strong>empty()</strong></span> only checks variables as anything else will
-        result in a parse error. In other words, the following will not work:
-        <strong class="command">empty(trim($name))</strong>. Instead, use
-        <strong class="command">trim($name) == false</strong>.
+        Prior to PHP 5.5,  <span class="function"><strong>empty()</strong></span> only supports variables;
+        anything else will result in a parse error. In other words, the
+        following will not work: <strong class="command">empty(trim($name))</strong>.
+        Instead, use <strong class="command">trim($name) == false</strong>.
        </p>
       </p></blockquote>
       <p class="para">
@@ -99,6 +99,16 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.5.0</td>
+       <td>
+        <p class="para">
+          <span class="function"><strong>empty()</strong></span> now supports expressions, rather than only
+         variables.
+        </p>
+       </td>
+      </tr>
+
+      <tr>
        <td>5.4.0</td>
        <td>
         <p class="para">
@@ -126,7 +136,7 @@
  <div class="refsect1 examples" id="refsect1-function.empty-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4917">
+   <div class="example" id="example-5195">
     <p><strong>Example #1 
      A simple  <span class="function"><strong>empty()</strong></span> /  <span class="function"><a href="function.isset.html" class="function">isset()</a></span>
      comparison.
@@ -140,7 +150,7 @@
 
    </div>
   </p>
-  <div class="example" id="example-4918">
+  <div class="example" id="example-5196">
    <p><strong>Example #2  <span class="function"><strong>empty()</strong></span> on String Offsets</strong></p>
    <div class="example-contents"><p>
     PHP 5.4 changes how  <span class="function"><strong>empty()</strong></span> behaves

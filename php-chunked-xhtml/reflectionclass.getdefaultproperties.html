@@ -27,6 +27,13 @@
   <p class="para rdfs-comment">
    Gets default properties from a class (including inherited properties).
   </p>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+    This method only works for static properties when used on internal classes.
+    The default value of a static class property can not be tracked when using
+    this method on user defined classes.
+   </p>
+  </p></blockquote>
  </div>
 
 
@@ -51,7 +58,7 @@
  <div class="refsect1 examples" id="refsect1-reflectionclass.getdefaultproperties-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4855">
+   <div class="example" id="example-5132">
     <p><strong>Example #1  <span class="methodname"><strong>ReflectionClass::getDefaultProperties()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

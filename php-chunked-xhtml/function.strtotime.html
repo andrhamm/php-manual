@@ -114,6 +114,18 @@ variable. See also  <span class="function"><a href="function.date-default-timezo
       <tr>
        <td>5.3.0</td>
        <td>
+        Prior to PHP 5.3.0, relative time formats supplied to the
+        <em><code class="parameter">time</code></em> argument of  <span class="function"><strong>strtotime()</strong></span>
+        such as <em>this week</em>, <em>previous week</em>,
+        <em>last week</em>, and <em>next week</em> were
+        interpreted to mean a 7 day period relative to the current date/time, rather
+        than a week period of <em>Monday</em> through <em>Sunday</em>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
         Prior to PHP 5.3.0, <em>24:00</em> was not a valid format and
          <span class="function"><strong>strtotime()</strong></span> returned <strong><code>FALSE</code></strong>.
        </td>
@@ -181,7 +193,7 @@ time zone errors.</p></td></tr>
  <div class="refsect1 examples" id="refsect1-function.strtotime-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-684">
+   <div class="example" id="example-702">
     <p><strong>Example #1 A  <span class="function"><strong>strtotime()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -193,7 +205,7 @@ time zone errors.</p></td></tr>
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-685">
+   <div class="example" id="example-703">
     <p><strong>Example #2 Checking for failure</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

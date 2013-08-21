@@ -77,10 +77,54 @@
      <dd>
 
       <p class="para">
-       One of <strong><code>PHP_ROUND_HALF_UP</code></strong>,
-       <strong><code>PHP_ROUND_HALF_DOWN</code></strong>,
-       <strong><code>PHP_ROUND_HALF_EVEN</code></strong>, or
-       <strong><code>PHP_ROUND_HALF_ODD</code></strong>.
+       Use one of the following constants to specify the mode in which rounding occurs.
+       <table class="doctable informaltable">
+        
+         <thead>
+          <tr>
+           <th>Constant</th>
+           <th>Description</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td><strong><code>PHP_ROUND_HALF_UP</code></strong></td>
+           <td>
+            Round <em><code class="parameter">val</code></em> up to <em><code class="parameter">precision</code></em> decimal places
+            away from zero, when it is half way there. Making 1.5 into 2 and -1.5 into -2.
+           </td>
+          </tr>
+
+          <tr>
+           <td><strong><code>PHP_ROUND_HALF_DOWN</code></strong></td>
+           <td>
+            Round <em><code class="parameter">val</code></em> down to <em><code class="parameter">precision</code></em> decimal places
+            towards zero, when it is half way there. Making 1.5 into 1 and -1.5 into -1.
+           </td>
+          </tr>
+
+          <tr>
+           <td><strong><code>PHP_ROUND_HALF_EVEN</code></strong></td>
+           <td>
+            Round <em><code class="parameter">val</code></em> to <em><code class="parameter">precision</code></em> decimal places
+            towards the next even value.
+           </td>
+          </tr>
+
+          <tr>
+           <td><strong><code>PHP_ROUND_HALF_ODD</code></strong></td>
+           <td>
+            Round <em><code class="parameter">val</code></em> to <em><code class="parameter">precision</code></em> decimal places
+            towards the next odd value.      
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
       </p>
      </dd>
 
@@ -101,7 +145,7 @@
  <div class="refsect1 examples" id="refsect1-function.round-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3279">
+   <div class="example" id="example-3438">
     <p><strong>Example #1  <span class="function"><strong>round()</strong></span> examples</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -113,11 +157,21 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-3280">
+   <div class="example" id="example-3439">
     <p><strong>Example #2 <em><code class="parameter">mode</code></em> examples</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(</span><span style="color: #0000BB">9.5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_UP</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;10<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(</span><span style="color: #0000BB">9.5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_DOWN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;9<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(</span><span style="color: #0000BB">9.5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_EVEN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;10<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(</span><span style="color: #0000BB">9.5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_ODD</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;9<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(</span><span style="color: #0000BB">8.5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_UP</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;9<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(</span><span style="color: #0000BB">8.5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_DOWN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;8<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(</span><span style="color: #0000BB">8.5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_EVEN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;8<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(</span><span style="color: #0000BB">8.5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_ODD</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;9<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-3440">
+    <p><strong>Example #3 <em><code class="parameter">mode with precision</code></em> examples</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Using&nbsp;PHP_ROUND_HALF_UP&nbsp;with&nbsp;1&nbsp;decimal&nbsp;digit&nbsp;precision&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">1.55</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_UP</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;1.6<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">1.54</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_UP</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;1.5<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(-</span><span style="color: #0000BB">1.55</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_UP</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1.6<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(-</span><span style="color: #0000BB">1.54</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_UP</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1.5<br /><br />/*&nbsp;Using&nbsp;PHP_ROUND_HALF_DOWN&nbsp;with&nbsp;1&nbsp;decimal&nbsp;digit&nbsp;precision&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">1.55</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_DOWN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;1.5<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">1.54</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_DOWN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;1.5<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(-</span><span style="color: #0000BB">1.55</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_DOWN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;-1.5<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(-</span><span style="color: #0000BB">1.54</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_DOWN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;-1.5<br /><br />/*&nbsp;Using&nbsp;PHP_ROUND_HALF_EVEN&nbsp;with&nbsp;1&nbsp;decimal&nbsp;digit&nbsp;precision&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">1.55</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_EVEN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;1.6<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">1.54</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_EVEN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;1.5<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(-</span><span style="color: #0000BB">1.55</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_EVEN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;-1.6<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(-</span><span style="color: #0000BB">1.54</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_EVEN</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;-1.5<br /><br />/*&nbsp;Using&nbsp;PHP_ROUND_HALF_ODD&nbsp;with&nbsp;1&nbsp;decimal&nbsp;digit&nbsp;precision&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">1.55</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_ODD</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;1.5<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">1.54</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_ODD</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;1.5<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(-</span><span style="color: #0000BB">1.55</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_ODD</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1.5<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">round</span><span style="color: #007700">(-</span><span style="color: #0000BB">1.54</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_ROUND_HALF_ODD</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1.5<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

@@ -34,10 +34,11 @@
   <em class="emphasis">before</em> any PHP process starts.
  </p>
  <p class="para">
-  PHP should be run with the same, or more recent, major version of
+  The PHP binary should link with the same, or more recent, major version of
   Oracle libraries as it was configured with.  For example, if you build
   OCI8 with Oracle 11.2 libraries, then PHP should also be deployed
-  and run with Oracle 11.2 libraries.
+  and run with Oracle 11.2 libraries. PHP applications can connect to other
+  versions of Oracle Database.
  </p>
 </div>
 <div class="section">
@@ -146,7 +147,7 @@ extension=oci8.so
 <div class="section">
  <h2 class="title">Installing OCI8 as a Statically Compiled Extension</h2>
  <p class="para">
-  Configure OCI8 using one of the following configure options.
+  Configure PHP to include OCI8 using one of the following configure options.
  </p>
  <p class="para">
   <ul class="itemizedlist">
@@ -248,7 +249,7 @@ pecl install oci8
  </p>
  <p class="para">
   For a manual install, download the PECL OCI8 package,
-  e.g.  <var class="filename">oci8-1.3.5.tgz</var>.
+  e.g.  <var class="filename">oci8-1.4.10.tgz</var>.
  </p>
  <p class="para">
   <ul class="itemizedlist">
@@ -260,8 +261,8 @@ pecl install oci8
      <div class="informalexample">
       <div class="example-contents screen">
 <div class="cdata"><pre>
-tar -zxf oci8-1.3.5.tgz
-cd oci8-1.3.5
+tar -zxf oci8-1.4.10.tgz
+cd oci8-1.4.10
 </pre></div>
       </div>
      </div>
@@ -351,7 +352,7 @@ extension=oci8.so
   line <em>extension=php_oci8.dll</em> when using Oracle
   10gR2 client libraries.  Uncomment
   <em>extension=php_oci8_11g.dll</em> when using Oracle 11g
-  client libraries. These two DLLs contain equivalent functionality
+  or later client libraries. These two DLLs contain equivalent functionality
   and only one may be enabled at a time.  Make
   sure <a href="ini.core.html#ini.extension-dir" class="link">extension_dir</a> is set
   to the directory containing the PHP extension DLLs.

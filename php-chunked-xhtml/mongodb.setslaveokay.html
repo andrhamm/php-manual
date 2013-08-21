@@ -27,7 +27,7 @@
 
   <p class="para rdfs-comment">
    See <a href="mongo.queries.html" class="link">the query section</a> of this manual for
-   information on distributing reads to slaves.
+   information on distributing reads to secondaries.
   </p>
  </div>
 
@@ -82,9 +82,7 @@
      <tbody class="tbody">
       <tr>
        <td>1.2.11</td>
-       <td>
-       Emits <strong><code>E_DEPRECATED</code></strong> when used.
-       </td>
+       <td>Emits <strong><code>E_DEPRECATED</code></strong> when used.</td>
       </tr>
 
      </tbody>
@@ -92,6 +90,16 @@
    </table>
 
   </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-mongodb.setslaveokay-seealso">
+  <h3 class="title">See Also</h3>
+  <ul class="simplelist">
+   <li class="member"><a href="mongo.readpreferences.html" class="xref">Read Preferences</a></li>
+   <li class="member"> <span class="methodname"><a href="mongodb.setreadpreference.html" class="methodname" rel="rdfs-seeAlso">MongoDB::setReadPreference()</a> - Set the read preference for this database</span></li>
+   <li class="member"> <span class="methodname"><a href="mongodb.getreadpreference.html" class="methodname" rel="rdfs-seeAlso">MongoDB::getReadPreference()</a> - Get the read preference for this database</span></li>
+  </ul>
  </div>
 
 

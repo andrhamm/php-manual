@@ -382,7 +382,8 @@ been compiled into PHP or dynamically loaded at runtime.
 
     <span class="simpara">
      As <strong><code>PDO::FETCH_INTO</code></strong> but object is provided as a serialized string.
-     Available since PHP 5.1.0.
+     Available since PHP 5.1.0. Since PHP 5.3.0 the class constructor is never called if this
+     flag is set.
     </span>
    </dd>
 
@@ -396,7 +397,7 @@ been compiled into PHP or dynamically loaded at runtime.
    <dd>
 
     <span class="simpara">
-     Available since PHP 5.2.0
+     Call the constructor before setting properties. Available since PHP 5.2.0.
     </span>
    </dd>
 
@@ -582,7 +583,7 @@ been compiled into PHP or dynamically loaded at runtime.
      Returns the name of the driver.
     </span>
     <p class="para">
-     <div class="example" id="example-952"><p><strong>Example #1 using <strong><code>PDO::ATTR_DRIVER_NAME</code></strong></strong></p>
+     <div class="example" id="example-975"><p><strong>Example #1 using <strong><code>PDO::ATTR_DRIVER_NAME</code></strong></strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getAttribute</span><span style="color: #007700">(</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">ATTR_DRIVER_NAME</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #DD0000">'mysql'</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Running&nbsp;on&nbsp;mysql;&nbsp;doing&nbsp;something&nbsp;mysql&nbsp;specific&nbsp;here\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>

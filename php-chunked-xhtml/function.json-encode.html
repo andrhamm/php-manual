@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.json-decode.html">json_decode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.json-last-error.html">json_last_error</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.json-last-error-msg.html">json_last_error_msg</a></div>
  <div class="up"><a href="ref.json.html">JSON Functions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="function.json-encode" class="refentry">
@@ -23,7 +23,8 @@
    <span class="type">string</span> <span class="methodname"><strong>json_encode</strong></span>
     ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
-  ] )</div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$depth</code><span class="initializer"> = 512</span></span>
+  ]] )</div>
 
   <p class="para rdfs-comment">
    Returns a string containing the JSON representation of 
@@ -67,7 +68,9 @@
        <strong><code>JSON_PRETTY_PRINT</code></strong>,
        <strong><code>JSON_UNESCAPED_SLASHES</code></strong>,
        <strong><code>JSON_FORCE_OBJECT</code></strong>,
-       <strong><code>JSON_UNESCAPED_UNICODE</code></strong>.
+       <strong><code>JSON_UNESCAPED_UNICODE</code></strong>. The behaviour of these
+       constants is described on
+       <a href="json.constants.html" class="link">the JSON constants page</a>.
       </p>
      </dd>
 
@@ -102,6 +105,13 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.5.0</td>
+       <td>
+        <em><code class="parameter">depth</code></em> parameter was added.
+       </td>
+      </tr>
+
+      <tr>
        <td>5.4.0</td>
        <td>
         <strong><code>JSON_PRETTY_PRINT</code></strong>, <strong><code>JSON_UNESCAPED_SLASHES</code></strong>, and <strong><code>JSON_UNESCAPED_UNICODE</code></strong> <em><code class="parameter">options</code></em> were added.
@@ -133,7 +143,7 @@
  <div class="refsect1 examples" id="refsect1-function.json-encode-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3497">
+   <div class="example" id="example-3720">
     <p><strong>Example #1 A  <span class="function"><strong>json_encode()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -150,8 +160,10 @@
     </div>
    </div>
 
-   <div class="example" id="example-3498">
-    <p><strong>Example #2 A  <span class="function"><strong>json_encode()</strong></span> example showing all the options in action</strong></p>
+   <div class="example" id="example-3721">
+    <p><strong>Example #2 
+     A  <span class="function"><strong>json_encode()</strong></span> example showing some options in use
+    </strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'&lt;foo&gt;'</span><span style="color: #007700">,</span><span style="color: #DD0000">"'bar'"</span><span style="color: #007700">,</span><span style="color: #DD0000">'"baz"'</span><span style="color: #007700">,</span><span style="color: #DD0000">'&amp;blong&amp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\xc3\xa9"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Normal:&nbsp;"</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Tags:&nbsp;"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_HEX_TAG</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Apos:&nbsp;"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_HEX_APOS</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Quot:&nbsp;"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_HEX_QUOT</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Amp:&nbsp;"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_HEX_AMP</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Unicode:&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_UNESCAPED_UNICODE</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"All:&nbsp;"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_HEX_TAG&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">JSON_HEX_APOS&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">JSON_HEX_QUOT&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">JSON_HEX_AMP&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">JSON_UNESCAPED_UNICODE</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Empty&nbsp;array&nbsp;output&nbsp;as&nbsp;array:&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$b</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Empty&nbsp;array&nbsp;output&nbsp;as&nbsp;object:&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_FORCE_OBJECT</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;array(array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">));<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Non-associative&nbsp;array&nbsp;output&nbsp;as&nbsp;array:&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$c</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Non-associative&nbsp;array&nbsp;output&nbsp;as&nbsp;object:&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$c</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_FORCE_OBJECT</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'foo'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'baz'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'long'</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Associative&nbsp;array&nbsp;always&nbsp;output&nbsp;as&nbsp;object:&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$d</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Associative&nbsp;array&nbsp;always&nbsp;output&nbsp;as&nbsp;object:&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$d</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_FORCE_OBJECT</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -181,7 +193,7 @@ Associative array always output as object: {&quot;foo&quot;:&quot;bar&quot;,&quo
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-3499">
+   <div class="example" id="example-3722">
     <p><strong>Example #3 Sequential versus non-sequential array example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -283,7 +295,7 @@ string(33) &quot;{&quot;0&quot;:&quot;foo&quot;,&quot;2&quot;:&quot;baz&quot;,&q
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.json-decode.html">json_decode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.json-last-error.html">json_last_error</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.json-last-error-msg.html">json_last_error_msg</a></div>
  <div class="up"><a href="ref.json.html">JSON Functions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

@@ -59,21 +59,21 @@ The behaviour of these functions is affected by settings in <var class="filename
      </tr>
 
      <tr>
-      <td>mysqlnd_ms.collect_statistics</td>
+      <td><a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.collect-statistics" class="link">mysqlnd_ms.collect_statistics</a></td>
       <td>0</td>
       <td>PHP_INI_SYSTEM</td>
       <td></td>
      </tr>
 
      <tr>
-      <td>mysqlnd_ms.multi_master</td>
+      <td><a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.multi-master" class="link">mysqlnd_ms.multi_master</a></td>
       <td>0</td>
       <td>PHP_INI_SYSTEM</td>
       <td></td>
      </tr>
 
      <tr>
-      <td>mysqlnd_ms.disable_rw_split</td>
+      <td><a href="mysqlnd-ms.configuration.html#ini.mysqlnd-ms.disable-rw-split" class="link">mysqlnd_ms.disable_rw_split</a></td>
       <td>0</td>
       <td>PHP_INI_SYSTEM</td>
       <td></td>
@@ -121,6 +121,22 @@ the configuration directives.</p>
       If enabled, the plugin checks if the host (server) parameters value of any
       MySQL connection attempt, matches a section name from the plugin configuration
       file. If not, the connection attempt is blocked.
+     </p>
+     <p class="para">
+      This setting is not only useful to restrict PHP to certain servers but also
+      to debug configuration file problems. The configuration file validity is checked
+      at two different stages. The first check is performed when PHP begins to
+      handle a web request. At this point the plugin reads and decodes the configuration
+      file. Errors thrown at this early stage in an extensions life cycle may not be
+      shown properly to the user. Thus, the plugin buffers the errors, if any, and
+      additionally displays them when establishing a connection to MySQL.
+      By default a buffered startup error will emit an error of type
+      <em>E_WARNING</em>.  If <em>force_config_usage</em> is set,
+      the error type used is <em>E_RECOVERABLE_ERROR</em>.
+     </p>
+     <p class="para">
+      Please, see also <a href="mysqlnd-ms.plugin-ini-json.html#mysqlnd-ms.plugin-ini-json.debug_config" class="link">configuration
+      file debugging notes</a>.
      </p>
     </dd>
 

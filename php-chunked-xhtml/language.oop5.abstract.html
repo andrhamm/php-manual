@@ -29,11 +29,13 @@
    if the abstract method is defined as protected, the function implementation
    must be defined as either protected or public, but not private. Furthermore
    the signatures of the methods must match, i.e. the type hints and the number
-   of required arguments must be the same. This also applies to constructors as
-   of PHP 5.4. Before 5.4 constructor signatures could differ.
+   of required arguments must be the same. For example, if the child class
+   defines an optional argument, where the abstract method&#039;s signature does
+   not, there is no conflict in the signature. This also applies to constructors
+   as of PHP 5.4. Before 5.4 constructor signatures could differ.
   </p>
 
-  <div class="example" id="example-191">
+  <div class="example" id="example-193">
    <p><strong>Example #1 Abstract class example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -49,6 +51,24 @@ ConcreteClass1
 FOO_ConcreteClass1
 ConcreteClass2
 FOO_ConcreteClass2
+</pre></div>
+   </div>
+  </div>
+
+  <div class="example" id="example-194">
+   <p><strong>Example #2 Abstract class example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">abstract&nbsp;class&nbsp;</span><span style="color: #0000BB">AbstractClass<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Our&nbsp;abstract&nbsp;method&nbsp;only&nbsp;needs&nbsp;to&nbsp;define&nbsp;the&nbsp;required&nbsp;arguments<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">abstract&nbsp;protected&nbsp;function&nbsp;</span><span style="color: #0000BB">prefixName</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">);<br /><br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">ConcreteClass&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">AbstractClass<br /></span><span style="color: #007700">{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Our&nbsp;child&nbsp;class&nbsp;may&nbsp;define&nbsp;optional&nbsp;arguments&nbsp;not&nbsp;in&nbsp;the&nbsp;parent's&nbsp;signature<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">prefixName</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$separator&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"."</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"Pacman"</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$prefix&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Mr"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"Pacwoman"</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$prefix&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Mrs"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$prefix&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #007700">{</span><span style="color: #0000BB">$prefix</span><span style="color: #007700">}{</span><span style="color: #0000BB">$separator</span><span style="color: #007700">}</span><span style="color: #DD0000">&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$name</span><span style="color: #007700">}</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$class&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ConcreteClass</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$class</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prefixName</span><span style="color: #007700">(</span><span style="color: #DD0000">"Pacman"</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$class</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prefixName</span><span style="color: #007700">(</span><span style="color: #DD0000">"Pacwoman"</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>The above example will output:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Mr. Pacman
+Mrs. Pacwoman
 </pre></div>
    </div>
   </div>

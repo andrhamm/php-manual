@@ -22,7 +22,7 @@
    The MySQL native driver for PHP features an internal C API for plugins,
    such as the connection multiplexing plugin, which can extend the functionality of
    mysqlnd. See the <a href="book.mysqlnd.html" class="link">mysqlnd</a> for additional details
-   about its benefits over the MySQL Client Library libmysql/libmysqlclient.
+   about its benefits over the MySQL Client Library libmysqlclient.
   </p>
   <p class="para">
    Mysqlnd plugins like <em>mysqlnd_mux</em> operate, for the most part,
@@ -133,7 +133,8 @@
     password differ. Be aware of the possible security implications.
    </p>
    <p class="para">
-    The proof-of-concept is transaction agnostic. It does not about SQL transactions.
+    The proof-of-concept is transaction agnostic. It does not know about SQL
+    transactions.
    </p>
    <blockquote class="note"><p><strong class="note">Note</strong>: 
     <p class="para">

@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="class.mongoexception.html">MongoException</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongoresultexception.getdocument.html">MongoResultException::getDocument</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mongocursorexception.gethost.html">MongoCursorException::getHost</a></div>
  <div class="up"><a href="mongo.exceptions.html">Exceptions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -15,7 +15,7 @@
  <h1 class="title">The MongoCursorException class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(PECL mongo &gt;= 1.0.0)</p>
 
   
   <div class="section" id="mongocursorexception.intro">
@@ -26,8 +26,8 @@
     just queries.  Writes, commands, and any other operation that sends
     information to the database and waits for a response can throw a
     <strong class="classname">MongoCursorException</strong>.  The only exception is
-    <em>new Mongo()</em> (creating a new connection), which will only
-    throw <a href="class.mongoconnectionexception.html" class="classname">MongoConnectionException</a>s.
+    <em>new MongoClient()</em> (creating a new connection), which will
+    only throw <a href="class.mongoconnectionexception.html" class="classname">MongoConnectionException</a>s.
    </p>
 
    <p class="para">
@@ -39,7 +39,7 @@
     For example, suppose you tried to insert two documents with the same _id:
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"_id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">"safe"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"_id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">"safe"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br />}<br />catch&nbsp;(</span><span style="color: #0000BB">MongoCursorException&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"error&nbsp;message:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">().</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"error&nbsp;code:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getCode</span><span style="color: #007700">().</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"_id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">"w"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"_id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">"w"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br />}<br />catch&nbsp;(</span><span style="color: #0000BB">MongoCursorException&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"error&nbsp;message:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">().</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"error&nbsp;code:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getCode</span><span style="color: #007700">().</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -340,10 +340,10 @@ error code: 11000
       Codes: 10107, 13435, and 10058
      </p>
      <p class="para">
-      Not master errors, piped through by the database.  Each of these will
-      cause the driver to disconnect and attempt to find a new master.  The
+      Not master errors, piped through by the database.  ach of these will
+      cause the driver to disconnect and attempt to find a new primary. The
       actual error you get on failover may not be a &quot;not master&quot; error,
-      depending on when the change in master occurs.
+      depending on when the change in primary occurs.
      </p>
     </li>
    </ul>
@@ -360,6 +360,9 @@ error code: 11000
 
     
     <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <strong class="classname">MongoCursorException</strong>
+     </span>
      <span class="ooclass">
       <span class="modifier">extends</span>
       <a href="class.mongoexception.html" class="classname">MongoException</a>
@@ -386,7 +389,7 @@ error code: 11000
 <h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="mongocursorexception.gethost.html">MongoCursorException::getHost</a> — The hostname of the server that encountered the error</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="class.mongoexception.html">MongoException</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongoresultexception.getdocument.html">MongoResultException::getDocument</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mongocursorexception.gethost.html">MongoCursorException::getHost</a></div>
  <div class="up"><a href="mongo.exceptions.html">Exceptions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

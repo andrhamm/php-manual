@@ -49,7 +49,7 @@
     <em>max_allowed_packet</em> of the server, the returned
     error codes are different depending on whether you are using MySQL
     Native Driver (<em>mysqlnd</em>) or MySQL Client Library
-    (<em>libmysql</em>). The behavior is as follows:
+    (<em>libmysqlclient</em>). The behavior is as follows:
    </p>
    <ul class="itemizedlist">
     <li class="listitem">
@@ -67,7 +67,7 @@
     </li>
     <li class="listitem">
      <p class="para">
-      <em>libmysql</em> on all platforms returns an error code
+      <em>libmysqlclient</em> on all platforms returns an error code
       2006. This error message means "<span class="quote">server has gone
       away</span>".
      </p>
@@ -145,7 +145,7 @@ returned by  <span class="function"><a href="mysqli.stmt-init.html" class="funct
 
  <div class="refsect1 examples" id="refsect1-mysqli-stmt.prepare-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-1700">
+  <div class="example" id="example-1787">
    <p><strong>Example #1 Object oriented style</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -155,7 +155,7 @@ returned by  <span class="function"><a href="mysqli.stmt-init.html" class="funct
    </div>
 
   </div>
-  <div class="example" id="example-1701">
+  <div class="example" id="example-1788">
    <p><strong>Example #2 Procedural style</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

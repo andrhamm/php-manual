@@ -94,7 +94,7 @@
     during serialization and perform other reinitialization
     tasks.
    </p>
-   <div class="example" id="example-213">
+   <div class="example" id="example-216">
     <p><strong>Example #1 Sleep and wakeup</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -120,7 +120,14 @@
     return a string, as otherwise a fatal <strong><code>E_RECOVERABLE_ERROR</code></strong>
     level error is emitted.
    </p>
-   <div class="example" id="example-214">
+   <div class="warning"><strong class="warning">Warning</strong>
+    <p class="simpara">
+     You cannot throw an exception from within a
+     <a href="language.oop5.magic.html#object.tostring" class="link">__toString()</a> method. Doing so will
+     result in a fatal error.
+    </p>
+   </div>
+   <div class="example" id="example-217">
     <p><strong>Example #2 Simple example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -164,7 +171,7 @@ Hello
      This feature is available since PHP 5.3.0.
     </p>
    </p></blockquote>
-   <div class="example" id="example-215">
+   <div class="example" id="example-218">
     <p><strong>Example #3 Using <a href="language.oop5.magic.html#object.invoke" class="link">__invoke()</a></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -198,7 +205,7 @@ bool(true)
     The only parameter of this method is an array containing exported
     properties in the form <em>array(&#039;property&#039; =&gt; value, ...)</em>.
    </p>
-   <div class="example" id="example-216">
+   <div class="example" id="example-219">
     <p><strong>Example #4 Using <a href="language.oop5.magic.html#object.set-state" class="link">__set_state()</a> (since PHP 5.1.0)</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

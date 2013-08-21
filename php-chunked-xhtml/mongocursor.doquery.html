@@ -24,7 +24,12 @@
     ( <span class="methodparam">void</span>
    )</div>
 
-  <p class="para rdfs-comment">
+  <div class="warning"><strong class="warning">Warning</strong>
+   <p class="para">
+    Please do not use me.
+   </p>
+  </div>
+  <p class="para">
    This function actually queries the database.  All queries and commands go 
    through this function.  Thus, this function can be overridden to provide 
    custom query handling.  
@@ -77,9 +82,7 @@
      <tbody class="tbody">
       <tr>
        <td>1.2.11</td>
-       <td>
-       Emits <strong><code>E_DEPRECATED</code></strong> when used.
-       </td>
+       <td>Emits <strong><code>E_DEPRECATED</code></strong> when used.</td>
       </tr>
 
      </tbody>
@@ -96,8 +99,8 @@
    <div class="example" id="mongocursor.doquery.example.basic">
     <p><strong>Example #1  <span class="function"><strong>MongoCursor::doQuery()</strong></span> example</strong></p>
     <div class="example-contents"><p>
-     You could override this function to attempt a query on a slave and, if that
-     fails, try it again on the master.
+     You could override this function to attempt a query on a secondary and, if
+     that fails, try it again on the primary.
     </p></div>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Broadcast a condition to all Threads</title>
+  <title>Broadcast a Condition</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="cond.broadcast" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Cond::broadcast</h1>
-  <p class="verinfo">(PECL pthreads &gt;= 0.0.33)</p><p class="refpurpose"><span class="refname">Cond::broadcast</span> &mdash; <span class="dc-title">Broadcast a condition to all Threads</span></p>
+  <p class="verinfo">(PECL pthreads &gt;= 0.34)</p><p class="refpurpose"><span class="refname">Cond::broadcast</span> &mdash; <span class="dc-title">Broadcast a Condition</span></p>
 
  </div>
 
@@ -44,7 +44,7 @@
     <span class="term"><em><code class="parameter">condition</code></em></span>
     <dd>
 
-     <p class="para">A handle to a Condition Variables returned by a previous call to  <span class="function"><a href="cond.create.html" class="function">Cond::create()</a></span></p>
+     <p class="para">A handle to a Condition Variable returned by a previous call to  <span class="function"><a href="cond.create.html" class="function">Cond::create()</a></span></p>
     </dd>
 
    </dt>
@@ -62,6 +62,27 @@
  </div>
 
 
+ <div class="refsect1 examples" id="refsect1-cond.broadcast-examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   <div class="example" id="example-3680">
+    <p><strong>Example #1 Condition Broadcasting</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/**&nbsp;You&nbsp;cannot&nbsp;use&nbsp;the&nbsp;"new"&nbsp;keyword,&nbsp;a&nbsp;Cond&nbsp;is&nbsp;not&nbsp;a&nbsp;PHP&nbsp;object&nbsp;**/<br /></span><span style="color: #0000BB">$cond&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Cond</span><span style="color: #007700">::</span><span style="color: #0000BB">create</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">/**&nbsp;The&nbsp;caller&nbsp;must&nbsp;lock&nbsp;the&nbsp;associated&nbsp;Mutex&nbsp;before&nbsp;a&nbsp;call&nbsp;to&nbsp;broadcast&nbsp;**/<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">Cond</span><span style="color: #007700">::</span><span style="color: #0000BB">broadcast</span><span style="color: #007700">(</span><span style="color: #0000BB">$cond</span><span style="color: #007700">));<br /></span><span style="color: #FF8000">/**&nbsp;Always&nbsp;destroy&nbsp;Cond&nbsp;you&nbsp;have&nbsp;created&nbsp;**/<br /></span><span style="color: #0000BB">Cond</span><span style="color: #007700">::</span><span style="color: #0000BB">destroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$cond</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="class.cond.html">Cond</a></div>

@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-exec.html">curl_exec</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="function.curl-file-create.html">curl_file_create</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="function.curl-init.html">curl_init</a></div>
  <div class="up"><a href="ref.curl.html">cURL Functions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -325,11 +325,11 @@
  <div class="refsect1 examples" id="refsect1-function.curl-getinfo-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3946">
+   <div class="example" id="example-4173">
     <p><strong>Example #1  <span class="function"><strong>curl_getinfo()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Create&nbsp;a&nbsp;curl&nbsp;handle<br /></span><span style="color: #0000BB">$ch&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.yahoo.com/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Execute<br /></span><span style="color: #0000BB">curl_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Check&nbsp;if&nbsp;any&nbsp;error&nbsp;occured<br /></span><span style="color: #007700">if(!</span><span style="color: #0000BB">curl_errno</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">))<br />{<br />&nbsp;</span><span style="color: #0000BB">$info&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_getinfo</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br />&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Took&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'total_time'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">'&nbsp;seconds&nbsp;to&nbsp;send&nbsp;a&nbsp;request&nbsp;to&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'url'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Close&nbsp;handle<br /></span><span style="color: #0000BB">curl_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Create&nbsp;a&nbsp;curl&nbsp;handle<br /></span><span style="color: #0000BB">$ch&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.yahoo.com/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Execute<br /></span><span style="color: #0000BB">curl_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Check&nbsp;if&nbsp;any&nbsp;error&nbsp;occurred<br /></span><span style="color: #007700">if(!</span><span style="color: #0000BB">curl_errno</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">))<br />{<br />&nbsp;</span><span style="color: #0000BB">$info&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_getinfo</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br />&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Took&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'total_time'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">'&nbsp;seconds&nbsp;to&nbsp;send&nbsp;a&nbsp;request&nbsp;to&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'url'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Close&nbsp;handle<br /></span><span style="color: #0000BB">curl_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -351,7 +351,7 @@
  </div>
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-exec.html">curl_exec</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="function.curl-file-create.html">curl_file_create</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="function.curl-init.html">curl_init</a></div>
  <div class="up"><a href="ref.curl.html">cURL Functions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

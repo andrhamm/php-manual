@@ -68,7 +68,8 @@ numeric string given that it is possible to convert the latter to a number.</p>
  <div class="refsect1 returnvalues" id="refsect1-function.gmp-testbit-returnvalues">
   <h3 class="title">Return Values</h3>
   <p class="para">
-   Returns <strong><code>TRUE</code></strong> on success or <strong><code>FALSE</code></strong> on failure.
+   Returns <strong><code>TRUE</code></strong> if the bit is set in resource <em><code class="parameter">$a</code></em>, 
+   otherwise <strong><code>FALSE</code></strong>.
   </p>
  </div>
 
@@ -76,8 +77,9 @@ numeric string given that it is possible to convert the latter to a number.</p>
  <div class="refsect1 errors" id="refsect1-function.gmp-testbit-errors">
   <h3 class="title">Errors/Exceptions</h3>
   <p class="para">
-   <strong><code>E_WARNING</code></strong> is issued when 
-   <em><code class="parameter">index</code></em> is less than zero.
+   An <strong><code>E_WARNING</code></strong> level error is issued when 
+   <em><code class="parameter">index</code></em> is less than zero, and <strong><code>FALSE</code></strong>
+   is returned.
   </p>
  </div>
 
@@ -85,7 +87,7 @@ numeric string given that it is possible to convert the latter to a number.</p>
  <div class="refsect1 examples" id="refsect1-function.gmp-testbit-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3245">
+   <div class="example" id="example-3404">
     <p><strong>Example #1  <span class="function"><strong>gmp_testbit()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

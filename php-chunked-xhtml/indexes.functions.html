@@ -73,6 +73,7 @@
 <li><a href="amqpconnection.getlogin.html" class="index">AMQPConnection::getLogin</a> - Get the configured login</li>
 <li><a href="amqpconnection.getpassword.html" class="index">AMQPConnection::getPassword</a> - Get the configured password</li>
 <li><a href="amqpconnection.getport.html" class="index">AMQPConnection::getPort</a> - Get the configured port</li>
+<li><a href="amqpconnection.gettimeout.html" class="index">AMQPConnection::getTimeout</a> - Get the configured timeout</li>
 <li><a href="amqpconnection.getvhost.html" class="index">AMQPConnection::getVhost</a> - Get the configured vhost</li>
 <li><a href="amqpconnection.isconnected.html" class="index">AMQPConnection::isConnected</a> - Determine if the AMQPConnection object is connected to the broker.</li>
 <li><a href="amqpconnection.reconnect.html" class="index">AMQPConnection::reconnect</a> - Closes any open connection and creates a new connection with the AMQP broker.</li>
@@ -80,6 +81,7 @@
 <li><a href="amqpconnection.setlogin.html" class="index">AMQPConnection::setLogin</a> - Set the login.</li>
 <li><a href="amqpconnection.setpassword.html" class="index">AMQPConnection::setPassword</a> - Set the password.</li>
 <li><a href="amqpconnection.setport.html" class="index">AMQPConnection::setPort</a> - Set the port.</li>
+<li><a href="amqpconnection.settimeout.html" class="index">AMQPConnection::setTimeout</a> - Set the timeout.</li>
 <li><a href="amqpconnection.setvhost.html" class="index">AMQPConnection::setVhost</a> - Set the amqp virtual host</li>
 <li><a href="amqpconnection.construct.html" class="index">AMQPConnection::__construct</a> - Create an instance of AMQPConnection</li>
 <li><a href="amqpenvelope.getappid.html" class="index">AMQPEnvelope::getAppId</a> - Get the message appid</li>
@@ -249,6 +251,7 @@
 <li><a href="arrayobject.construct.html" class="index">ArrayObject::__construct</a> - Construct a new array object</li>
 <li><a href="function.array-change-key-case.html" class="index">array_change_key_case</a> - Changes all keys in an array</li>
 <li><a href="function.array-chunk.html" class="index">array_chunk</a> - Split an array into chunks</li>
+<li><a href="function.array-column.html" class="index">array_column</a> - Return the values from a single column in the input array</li>
 <li><a href="function.array-combine.html" class="index">array_combine</a> - Creates an array by using one array for keys and another for its values</li>
 <li><a href="function.array-count-values.html" class="index">array_count_values</a> - Counts all the values of an array</li>
 <li><a href="function.array-diff.html" class="index">array_diff</a> - Computes the difference of arrays</li>
@@ -345,6 +348,11 @@
 <li><a href="function.bindec.html" class="index">bindec</a> - Binary to decimal</li>
 <li><a href="function.bindtextdomain.html" class="index">bindtextdomain</a> - Sets the path for a domain</li>
 <li><a href="function.bind-textdomain-codeset.html" class="index">bind_textdomain_codeset</a> - Specify the character encoding in which the messages from the DOMAIN message catalog will be returned</li>
+<li><a href="function.blenc-encrypt.html" class="index">blenc_encrypt</a> - This function encrypt a PHP script with BLENC. It
+			takes a content string containing the script source and
+			create a file with encrypted data. If key is not given
+			BLENC create itself a valid encryption key.</li>
+<li><a href="function.boolval.html" class="index">boolval</a> - Get the boolean value of a variable</li>
 <li><a href="function.bson-decode.html" class="index">bson_decode</a> - Deserializes a BSON object into a PHP array</li>
 <li><a href="function.bson-encode.html" class="index">bson_encode</a> - Serializes a PHP variable into a BSON string</li>
 <li><a href="function.bzclose.html" class="index">bzclose</a> - Close a bzip2 file</li>
@@ -712,6 +720,8 @@
 <li><a href="function.class-parents.html" class="index">class_parents</a> - Return the parent classes of the given class</li>
 <li><a href="function.class-uses.html" class="index">class_uses</a> - Return the traits used by the given class</li>
 <li><a href="function.clearstatcache.html" class="index">clearstatcache</a> - Clears file status cache</li>
+<li><a href="function.cli-get-process-title.html" class="index">cli_get_process_title</a> - Returns the current process title</li>
+<li><a href="function.cli-set-process-title.html" class="index">cli_set_process_title</a> - Sets the process title</li>
 <li><a href="function.closedir.html" class="index">closedir</a> - Close directory handle</li>
 <li><a href="function.closelog.html" class="index">closelog</a> - Close connection to system logger</li>
 <li><a href="closure.bind.html" class="index">Closure::bind</a> - Duplicates a closure with a specific bound object and class scope</li>
@@ -748,11 +758,11 @@
 <li><a href="function.com-propset.html" class="index">com_propset</a> - Alias of com_set</li>
 <li><a href="function.com-release.html" class="index">com_release</a> - Decreases the components reference counter [deprecated]</li>
 <li><a href="function.com-set.html" class="index">com_set</a> - Assigns a value to a COM component's property</li>
-<li><a href="cond.broadcast.html" class="index">Cond::broadcast</a> - Broadcast a condition to all Threads</li>
-<li><a href="cond.create.html" class="index">Cond::create</a> - Create a new Condition Variable</li>
-<li><a href="cond.destroy.html" class="index">Cond::destroy</a> - Destroy a handle to a Condition Variable and free the associated resources</li>
-<li><a href="cond.signal.html" class="index">Cond::signal</a> - Signal a condition to a single Thread</li>
-<li><a href="cond.wait.html" class="index">Cond::wait</a> - Wait for a signal on a Condition Variable</li>
+<li><a href="cond.broadcast.html" class="index">Cond::broadcast</a> - Broadcast a Condition</li>
+<li><a href="cond.create.html" class="index">Cond::create</a> - Create a Condition</li>
+<li><a href="cond.destroy.html" class="index">Cond::destroy</a> - Destroy a Condition</li>
+<li><a href="cond.signal.html" class="index">Cond::signal</a> - Signal a Condition</li>
+<li><a href="cond.wait.html" class="index">Cond::wait</a> - Wait for Condition</li>
 <li><a href="function.connection-aborted.html" class="index">connection_aborted</a> - Check whether client disconnected</li>
 <li><a href="function.connection-status.html" class="index">connection_status</a> - Returns connection status bitfield</li>
 <li><a href="function.connection-timeout.html" class="index">connection_timeout</a> - Check if the script timed out</li>
@@ -849,7 +859,7 @@
 <li><a href="function.cubrid-get-db-parameter.html" class="index">cubrid_get_db_parameter</a> - Returns the CUBRID database parameters</li>
 <li><a href="function.cubrid-get-query-timeout.html" class="index">cubrid_get_query_timeout</a> - Get the query timeout value of the request</li>
 <li><a href="function.cubrid-get-server-info.html" class="index">cubrid_get_server_info</a> - Return the CUBRID server version</li>
-<li><a href="function.cubrid-insert-id.html" class="index">cubrid_insert_id</a> - Return the ID generated for the lastest updated AUTO_INCREMENT column</li>
+<li><a href="function.cubrid-insert-id.html" class="index">cubrid_insert_id</a> - Return the ID generated for the last updated AUTO_INCREMENT column</li>
 <li><a href="function.cubrid-is-instance.html" class="index">cubrid_is_instance</a> - Check whether the instance pointed by OID exists</li>
 <li><a href="function.cubrid-list-dbs.html" class="index">cubrid_list_dbs</a> - Return an array with the list of all existing CUBRID databases</li>
 <li><a href="function.cubrid-load-from-glo.html" class="index">cubrid_load_from_glo</a> - Read data from a GLO instance and save it in a file</li>
@@ -882,7 +892,7 @@
 <li><a href="function.cubrid-pconnect.html" class="index">cubrid_pconnect</a> - Open a persistent connection to a CUBRID server</li>
 <li><a href="function.cubrid-pconnect-with-url.html" class="index">cubrid_pconnect_with_url</a> - Open a persistent connection to CUBRID server</li>
 <li><a href="function.cubrid-ping.html" class="index">cubrid_ping</a> - Ping a server connection or reconnect if there is no connection</li>
-<li><a href="function.cubrid-prepare.html" class="index">cubrid_prepare</a> - Prepare an SQL statement for execution</li>
+<li><a href="function.cubrid-prepare.html" class="index">cubrid_prepare</a> - Prepare a SQL statement for execution</li>
 <li><a href="function.cubrid-put.html" class="index">cubrid_put</a> - Update a column using OID</li>
 <li><a href="function.cubrid-query.html" class="index">cubrid_query</a> - Send a CUBRID query</li>
 <li><a href="function.cubrid-real-escape-string.html" class="index">cubrid_real_escape_string</a> - Escape special characters in a string for use in an SQL statement</li>
@@ -902,11 +912,20 @@
 <li><a href="function.cubrid-unbuffered-query.html" class="index">cubrid_unbuffered_query</a> - Perform a query without fetching the results into memory</li>
 <li><a href="function.cubrid-version.html" class="index">cubrid_version</a> - Get the CUBRID PHP module's version</li>
 <li><a href="context.curl.html" class="index">CURL context options</a> - CURL context option listing</li>
+<li><a href="curlfile.getfilename.html" class="index">CURLFile::getFilename</a> - Get file name</li>
+<li><a href="curlfile.getmimetype.html" class="index">CURLFile::getMimeType</a> - Get MIME type</li>
+<li><a href="curlfile.getpostfilename.html" class="index">CURLFile::getPostFilename</a> - Get file name for POST</li>
+<li><a href="curlfile.setmimetype.html" class="index">CURLFile::setMimeType</a> - Set MIME type</li>
+<li><a href="curlfile.setpostfilename.html" class="index">CURLFile::setPostFilename</a> - Set file name for POST</li>
+<li><a href="curlfile.construct.html" class="index">CURLFile::__construct</a> - Create the CURLFile object</li>
+<li><a href="curlfile.wakeup.html" class="index">CURLFile::__wakeup</a> - Unserialization handler</li>
 <li><a href="function.curl-close.html" class="index">curl_close</a> - Close a cURL session</li>
 <li><a href="function.curl-copy-handle.html" class="index">curl_copy_handle</a> - Copy a cURL handle along with all of its preferences</li>
 <li><a href="function.curl-errno.html" class="index">curl_errno</a> - Return the last error number</li>
 <li><a href="function.curl-error.html" class="index">curl_error</a> - Return a string containing the last error for the current session</li>
+<li><a href="function.curl-escape.html" class="index">curl_escape</a> - URL encodes the given string</li>
 <li><a href="function.curl-exec.html" class="index">curl_exec</a> - Perform a cURL session</li>
+<li><a href="function.curl-file-create.html" class="index">curl_file_create</a> - Create a CURLFile object</li>
 <li><a href="function.curl-getinfo.html" class="index">curl_getinfo</a> - Get information regarding a specific transfer</li>
 <li><a href="function.curl-init.html" class="index">curl_init</a> - Initialize a cURL session</li>
 <li><a href="function.curl-multi-add-handle.html" class="index">curl_multi_add_handle</a> - Add a normal cURL handle to a cURL multi handle</li>
@@ -917,8 +936,17 @@
 <li><a href="function.curl-multi-init.html" class="index">curl_multi_init</a> - Returns a new cURL multi handle</li>
 <li><a href="function.curl-multi-remove-handle.html" class="index">curl_multi_remove_handle</a> - Remove a multi handle from a set of cURL handles</li>
 <li><a href="function.curl-multi-select.html" class="index">curl_multi_select</a> - Wait for activity on any curl_multi connection</li>
+<li><a href="function.curl-multi-setopt.html" class="index">curl_multi_setopt</a> - Set an option for the cURL multi handle</li>
+<li><a href="function.curl-multi-strerror.html" class="index">curl_multi_strerror</a> - Return string describing error code</li>
+<li><a href="function.curl-pause.html" class="index">curl_pause</a> - Pause and unpause a connection</li>
+<li><a href="function.curl-reset.html" class="index">curl_reset</a> - Reset all options of a libcurl session handle</li>
 <li><a href="function.curl-setopt.html" class="index">curl_setopt</a> - Set an option for a cURL transfer</li>
 <li><a href="function.curl-setopt-array.html" class="index">curl_setopt_array</a> - Set multiple options for a cURL transfer</li>
+<li><a href="function.curl-share-close.html" class="index">curl_share_close</a> - Close a cURL share handle</li>
+<li><a href="function.curl-share-init.html" class="index">curl_share_init</a> - Initialize a cURL share handle</li>
+<li><a href="function.curl-share-setopt.html" class="index">curl_share_setopt</a> - Set an option for a cURL share handle.</li>
+<li><a href="function.curl-strerror.html" class="index">curl_strerror</a> - Return string describing the given error code</li>
+<li><a href="function.curl-unescape.html" class="index">curl_unescape</a> - Decodes the given URL encoded string</li>
 <li><a href="function.curl-version.html" class="index">curl_version</a> - Gets cURL version information</li>
 <li><a href="function.current.html" class="index">current</a> - Return the current element in an array</li>
 <li><a href="function.cyrus-authenticate.html" class="index">cyrus_authenticate</a> - Authenticate against a Cyrus IMAP server</li>
@@ -955,16 +983,30 @@
 <li><a href="datetime.construct.html" class="index">DateTime::__construct</a> - Returns new DateTime object</li>
 <li><a href="datetime.set-state.html" class="index">DateTime::__set_state</a> - The __set_state handler</li>
 <li><a href="datetime.wakeup.html" class="index">DateTime::__wakeup</a> - The __wakeup handler</li>
+<li><a href="datetimeimmutable.add.html" class="index">DateTimeImmutable::add</a> - Adds an amount of days, months, years, hours, minutes and seconds</li>
+<li><a href="datetimeimmutable.createfromformat.html" class="index">DateTimeImmutable::createFromFormat</a> - Returns new DateTimeImmutable object formatted according to the specified format</li>
+<li><a href="datetimeimmutable.getlasterrors.html" class="index">DateTimeImmutable::getLastErrors</a> - Returns the warnings and errors</li>
+<li><a href="datetimeimmutable.modify.html" class="index">DateTimeImmutable::modify</a> - Alters the timestamp</li>
+<li><a href="datetimeimmutable.setdate.html" class="index">DateTimeImmutable::setDate</a> - Sets the date</li>
+<li><a href="datetimeimmutable.setisodate.html" class="index">DateTimeImmutable::setISODate</a> - Sets the ISO date</li>
+<li><a href="datetimeimmutable.settime.html" class="index">DateTimeImmutable::setTime</a> - Sets the time</li>
+<li><a href="datetimeimmutable.settimestamp.html" class="index">DateTimeImmutable::setTimestamp</a> - Sets the date and time based on an Unix timestamp</li>
+<li><a href="datetimeimmutable.settimezone.html" class="index">DateTimeImmutable::setTimezone</a> - Sets the time zone</li>
+<li><a href="datetimeimmutable.sub.html" class="index">DateTimeImmutable::sub</a> - Subtracts an amount of days, months, years, hours, minutes and seconds</li>
+<li><a href="datetimeimmutable.construct.html" class="index">DateTimeImmutable::__construct</a> - Returns new DateTimeImmutable object</li>
+<li><a href="datetimeimmutable.set-state.html" class="index">DateTimeImmutable::__set_state</a> - The __set_state handler</li>
 <li><a href="datetimezone.getlocation.html" class="index">DateTimeZone::getLocation</a> - Returns location information for a timezone</li>
 <li><a href="datetimezone.getname.html" class="index">DateTimeZone::getName</a> - Returns the name of the timezone</li>
 <li><a href="datetimezone.getoffset.html" class="index">DateTimeZone::getOffset</a> - Returns the timezone offset from GMT</li>
 <li><a href="datetimezone.gettransitions.html" class="index">DateTimeZone::getTransitions</a> - Returns all transitions for the timezone</li>
 <li><a href="datetimezone.listabbreviations.html" class="index">DateTimeZone::listAbbreviations</a> - Returns associative array containing dst, offset and the timezone name</li>
-<li><a href="datetimezone.listidentifiers.html" class="index">DateTimeZone::listIdentifiers</a> - Returns numerically index array with all timezone identifiers</li>
+<li><a href="datetimezone.listidentifiers.html" class="index">DateTimeZone::listIdentifiers</a> - Returns a numerically indexed array containing all defined timezone identifiers</li>
 <li><a href="datetimezone.construct.html" class="index">DateTimeZone::__construct</a> - Creates new DateTimeZone object</li>
 <li><a href="function.date-add.html" class="index">date_add</a> - Alias of DateTime::add</li>
 <li><a href="function.date-create.html" class="index">date_create</a> - Alias of DateTime::__construct</li>
 <li><a href="function.date-create-from-format.html" class="index">date_create_from_format</a> - Alias of DateTime::createFromFormat</li>
+<li><a href="function.date-create-immutable.html" class="index">date_create_immutable</a> - Alias of DateTimeImmutable::__construct</li>
+<li><a href="function.date-create-immutable-from-format.html" class="index">date_create_immutable_from_format</a> - Alias of DateTimeImmutable::createFromFormat</li>
 <li><a href="function.date-date-set.html" class="index">date_date_set</a> - Alias of DateTime::setDate</li>
 <li><a href="function.date-default-timezone-get.html" class="index">date_default_timezone_get</a> - Gets the default timezone used by all date/time functions in a script</li>
 <li><a href="function.date-default-timezone-set.html" class="index">date_default_timezone_set</a> - Sets the default timezone used by all date/time functions in a script</li>
@@ -1389,12 +1431,194 @@
 <li><a href="errorexception.getseverity.html" class="index">ErrorException::getSeverity</a> - Gets the exception severity</li>
 <li><a href="errorexception.construct.html" class="index">ErrorException::__construct</a> - Constructs the exception</li>
 <li><a href="function.error-get-last.html" class="index">error_get_last</a> - Get the last occurred error</li>
-<li><a href="function.error-log.html" class="index">error_log</a> - Send an error message somewhere</li>
+<li><a href="function.error-log.html" class="index">error_log</a> - Send an error message to the defined error handling routines</li>
 <li><a href="function.error-reporting.html" class="index">error_reporting</a> - Sets which PHP errors are reported</li>
 <li><a href="function.escapeshellarg.html" class="index">escapeshellarg</a> - Escape a string to be used as a shell argument</li>
 <li><a href="function.escapeshellcmd.html" class="index">escapeshellcmd</a> - Escape shell metacharacters</li>
+<li><a href="ev.backend.html" class="index">Ev::backend</a> - Returns an integer describing the backend used by libev.</li>
+<li><a href="ev.depth.html" class="index">Ev::depth</a> - Returns recursion depth</li>
+<li><a href="ev.embeddablebackends.html" class="index">Ev::embeddableBackends</a> - Returns the set of backends that are embeddable in other event loops.</li>
+<li><a href="ev.feedsignal.html" class="index">Ev::feedSignal</a> - Feed a signal event info Ev</li>
+<li><a href="ev.feedsignalevent.html" class="index">Ev::feedSignalEvent</a> - Feed signal event into the default loop</li>
+<li><a href="ev.iteration.html" class="index">Ev::iteration</a> - Return the number of times the default event loop has polled for new
+  events.</li>
+<li><a href="ev.now.html" class="index">Ev::now</a> - Returns the time when the last iteration of the default event
+  loop has started.</li>
+<li><a href="ev.nowupdate.html" class="index">Ev::nowUpdate</a> - Establishes the current time by querying the kernel, updating the time
+    returned by Ev::now in the progress.</li>
+<li><a href="ev.recommendedbackends.html" class="index">Ev::recommendedBackends</a> - Returns a bit mask of recommended backends for current
+  platform.</li>
+<li><a href="ev.resume.html" class="index">Ev::resume</a> - Resume previously suspended default event loop</li>
+<li><a href="ev.run.html" class="index">Ev::run</a> - Begin checking for events and calling callbacks for the default
+  loop</li>
+<li><a href="ev.sleep.html" class="index">Ev::sleep</a> - Block the process for the given number of seconds.</li>
+<li><a href="ev.stop.html" class="index">Ev::stop</a> - Stops the default event loop</li>
+<li><a href="ev.supportedbackends.html" class="index">Ev::supportedBackends</a> - Returns the set of backends supported by current libev
+  configuration.</li>
+<li><a href="ev.suspend.html" class="index">Ev::suspend</a> - Suspend the default event loop</li>
+<li><a href="ev.time.html" class="index">Ev::time</a> - Returns the current time in fractional seconds since the epoch.</li>
+<li><a href="ev.verify.html" class="index">Ev::verify</a> - Performs internal consistency checks(for debugging)</li>
 <li><a href="function.eval.html" class="index">eval</a> - Evaluate a string as PHP code</li>
-<li><a href="function.event-add.html" class="index">event_add</a> - Add an event to the set of monitored events</li>
+<li><a href="evcheck.createstopped.html" class="index">EvCheck::createStopped</a> - Create instance of a stopped EvCheck watcher</li>
+<li><a href="evcheck.construct.html" class="index">EvCheck::__construct</a> - Constructs the EvCheck watcher object</li>
+<li><a href="evchild.createstopped.html" class="index">EvChild::createStopped</a> - Create instance of a stopped EvCheck watcher</li>
+<li><a href="evchild.set.html" class="index">EvChild::set</a> - Configures the watcher</li>
+<li><a href="evchild.construct.html" class="index">EvChild::__construct</a> - Constructs the EvChild watcher object</li>
+<li><a href="evembed.createstopped.html" class="index">EvEmbed::createStopped</a> - Create stopped EvEmbed watcher object</li>
+<li><a href="evembed.set.html" class="index">EvEmbed::set</a> - Configures the watcher</li>
+<li><a href="evembed.sweep.html" class="index">EvEmbed::sweep</a> - Make a single, non-blocking sweep over the embedded loop.</li>
+<li><a href="evembed.construct.html" class="index">EvEmbed::__construct</a> - Constructs the EvEmbed object</li>
+<li><a href="event.add.html" class="index">Event::add</a> - Makes event pending</li>
+<li><a href="event.addsignal.html" class="index">Event::addSignal</a> - Makes signal event pending</li>
+<li><a href="event.addtimer.html" class="index">Event::addTimer</a> - Makes timer event pending</li>
+<li><a href="event.del.html" class="index">Event::del</a> - Makes event non-pending</li>
+<li><a href="event.delsignal.html" class="index">Event::delSignal</a> - Makes signal event non-pending</li>
+<li><a href="event.deltimer.html" class="index">Event::delTimer</a> - Makes timer event non-pending</li>
+<li><a href="event.free.html" class="index">Event::free</a> - Make event non-pending and free resources allocated for this
+  event.</li>
+<li><a href="event.getsupportedmethods.html" class="index">Event::getSupportedMethods</a> - Returns array with of the names of the methods supported in this version of Libevent</li>
+<li><a href="event.pending.html" class="index">Event::pending</a> - Detects whether event is pending or scheduled</li>
+<li><a href="event.set.html" class="index">Event::set</a> - Re-configures event</li>
+<li><a href="event.setpriority.html" class="index">Event::setPriority</a> - Set event priority</li>
+<li><a href="event.settimer.html" class="index">Event::setTimer</a> - Re-configures timer event</li>
+<li><a href="event.signal.html" class="index">Event::signal</a> - Constructs signal event object</li>
+<li><a href="event.timer.html" class="index">Event::timer</a> - Constructs timer event object</li>
+<li><a href="event.construct.html" class="index">Event::__construct</a> - Constructs Event object</li>
+<li><a href="eventbase.dispatch.html" class="index">EventBase::dispatch</a> - Dispatch pending events</li>
+<li><a href="eventbase.exit.html" class="index">EventBase::exit</a> - Stop dispatching events</li>
+<li><a href="eventbase.getfeatures.html" class="index">EventBase::getFeatures</a> - Returns bitmask of features supported</li>
+<li><a href="eventbase.getmethod.html" class="index">EventBase::getMethod</a> - Returns event method in use</li>
+<li><a href="eventbase.gettimeofdaycached.html" class="index">EventBase::getTimeOfDayCached</a> - Returns the current event base time</li>
+<li><a href="eventbase.gotexit.html" class="index">EventBase::gotExit</a> - Checks if the event loop was told to exit</li>
+<li><a href="eventbase.gotstop.html" class="index">EventBase::gotStop</a> - Checks if the event loop was told to exit</li>
+<li><a href="eventbase.loop.html" class="index">EventBase::loop</a> - Dispatch pending events</li>
+<li><a href="eventbase.priorityinit.html" class="index">EventBase::priorityInit</a> - Sets number of priorities per event base</li>
+<li><a href="eventbase.reinit.html" class="index">EventBase::reInit</a> - Re-initialize event base(after a fork).</li>
+<li><a href="eventbase.stop.html" class="index">EventBase::stop</a> - Tells event_base to stop dispatching events</li>
+<li><a href="eventbase.construct.html" class="index">EventBase::__construct</a> - Constructs EventBase object</li>
+<li><a href="eventbuffer.add.html" class="index">EventBuffer::add</a> - Append data to the end of an event buffer</li>
+<li><a href="eventbuffer.addbuffer.html" class="index">EventBuffer::addBuffer</a> - Move all data from a buffer provided to the current instance of EventBuffer</li>
+<li><a href="eventbuffer.appendfrom.html" class="index">EventBuffer::appendFrom</a> - Moves the specified number of bytes from a source buffer to the
+  end of the current buffer</li>
+<li><a href="eventbuffer.copyout.html" class="index">EventBuffer::copyout</a> - Copies out specified number of bytes from the front of the buffer</li>
+<li><a href="eventbuffer.drain.html" class="index">EventBuffer::drain</a> - Removes specified number of bytes from the front of the buffer
+  without copying it anywhere</li>
+<li><a href="eventbuffer.enablelocking.html" class="index">EventBuffer::enableLocking</a> - Description</li>
+<li><a href="eventbuffer.expand.html" class="index">EventBuffer::expand</a> - Reserves space in buffer</li>
+<li><a href="eventbuffer.freeze.html" class="index">EventBuffer::freeze</a> - Prevent calls that modify an event buffer from succeeding</li>
+<li><a href="eventbuffer.lock.html" class="index">EventBuffer::lock</a> - Acquires a lock on buffer</li>
+<li><a href="eventbuffer.prepend.html" class="index">EventBuffer::prepend</a> - Prepend data to the front of the buffer</li>
+<li><a href="eventbuffer.prependbuffer.html" class="index">EventBuffer::prependBuffer</a> - Moves all data from source buffer to the front of current buffer</li>
+<li><a href="eventbuffer.pullup.html" class="index">EventBuffer::pullup</a> - Linearizes data within buffer
+  and returns it's contents as a string</li>
+<li><a href="eventbuffer.read.html" class="index">EventBuffer::read</a> - Read data from an evbuffer and drain the bytes read</li>
+<li><a href="eventbuffer.readfrom.html" class="index">EventBuffer::readFrom</a> - Read data from a file onto the end of the buffer</li>
+<li><a href="eventbuffer.readline.html" class="index">EventBuffer::readLine</a> - Extracts a line from the front of the buffer</li>
+<li><a href="eventbuffer.search.html" class="index">EventBuffer::search</a> - Scans the buffer for an occurrence of a string</li>
+<li><a href="eventbuffer.searcheol.html" class="index">EventBuffer::searchEol</a> - Scans the buffer for an occurrence of an end of line</li>
+<li><a href="eventbuffer.substr.html" class="index">EventBuffer::substr</a> - Substracts a portion of the buffer data</li>
+<li><a href="eventbuffer.unfreeze.html" class="index">EventBuffer::unfreeze</a> - Re-enable calls that modify an event buffer</li>
+<li><a href="eventbuffer.unlock.html" class="index">EventBuffer::unlock</a> - Releases lock acquired by EventBuffer::lock</li>
+<li><a href="eventbuffer.write.html" class="index">EventBuffer::write</a> - Write contents of the buffer to a file or socket</li>
+<li><a href="eventbuffer.construct.html" class="index">EventBuffer::__construct</a> - Constructs EventBuffer object</li>
+<li><a href="eventbufferevent.connect.html" class="index">EventBufferEvent::connect</a> - Connect buffer event's file descriptor to given address or
+  UNIX socket</li>
+<li><a href="eventbufferevent.connecthost.html" class="index">EventBufferEvent::connectHost</a> - Connects to a hostname with optionally asyncronous DNS resolving</li>
+<li><a href="eventbufferevent.createpair.html" class="index">EventBufferEvent::createPair</a> - Creates two buffer events connected to each other</li>
+<li><a href="eventbufferevent.disable.html" class="index">EventBufferEvent::disable</a> - Disable events read, write, or both on a buffer event.</li>
+<li><a href="eventbufferevent.enable.html" class="index">EventBufferEvent::enable</a> - Enable events read, write, or both on a buffer event.</li>
+<li><a href="eventbufferevent.free.html" class="index">EventBufferEvent::free</a> - Free a buffer event</li>
+<li><a href="eventbufferevent.getdnserrorstring.html" class="index">EventBufferEvent::getDnsErrorString</a> - Returns string describing the last failed DNS lookup attempt</li>
+<li><a href="eventbufferevent.getenabled.html" class="index">EventBufferEvent::getEnabled</a> - Returns bitmask of events currently enabled on the buffer event</li>
+<li><a href="eventbufferevent.getinput.html" class="index">EventBufferEvent::getInput</a> - Returns underlying input buffer associated with current buffer
+  event</li>
+<li><a href="eventbufferevent.getoutput.html" class="index">EventBufferEvent::getOutput</a> - Returns underlying output buffer associated with current buffer
+  event</li>
+<li><a href="eventbufferevent.read.html" class="index">EventBufferEvent::read</a> - Read buffer's data</li>
+<li><a href="eventbufferevent.readbuffer.html" class="index">EventBufferEvent::readBuffer</a> - Drains the entire contents of the input buffer and places them into buf</li>
+<li><a href="eventbufferevent.setcallbacks.html" class="index">EventBufferEvent::setCallbacks</a> - Assigns read, write and event(status) callbacks</li>
+<li><a href="eventbufferevent.setpriority.html" class="index">EventBufferEvent::setPriority</a> - Assign a priority to a bufferevent</li>
+<li><a href="eventbufferevent.settimeouts.html" class="index">EventBufferEvent::setTimeouts</a> - Set the read and write timeout for a buffer event</li>
+<li><a href="eventbufferevent.setwatermark.html" class="index">EventBufferEvent::setWatermark</a> - Adjusts read and/or write watermarks</li>
+<li><a href="eventbufferevent.sslerror.html" class="index">EventBufferEvent::sslError</a> - Returns most recent OpenSSL error reported on the buffer event</li>
+<li><a href="eventbufferevent.sslfilter.html" class="index">EventBufferEvent::sslFilter</a> - Create a new SSL buffer event to send its data over another buffer event</li>
+<li><a href="eventbufferevent.sslrenegotiate.html" class="index">EventBufferEvent::sslRenegotiate</a> - Tells a bufferevent to begin SSL renegotiation.</li>
+<li><a href="eventbufferevent.sslsocket.html" class="index">EventBufferEvent::sslSocket</a> - Creates a new SSL buffer event to send its data over an SSL on a socket</li>
+<li><a href="eventbufferevent.write.html" class="index">EventBufferEvent::write</a> - Adds data to a buffer event's output buffer</li>
+<li><a href="eventbufferevent.writebuffer.html" class="index">EventBufferEvent::writeBuffer</a> - Adds contents of the entire buffer to a buffer event's output
+  buffer</li>
+<li><a href="eventbufferevent.construct.html" class="index">EventBufferEvent::__construct</a> - Constructs EventBufferEvent object</li>
+<li><a href="eventconfig.avoidmethod.html" class="index">EventConfig::avoidMethod</a> - Tells libevent to avoid specific event method</li>
+<li><a href="eventconfig.requirefeatures.html" class="index">EventConfig::requireFeatures</a> - Enters a required event method feature that the application demands</li>
+<li><a href="eventconfig.setmaxdispatchinterval.html" class="index">EventConfig::setMaxDispatchInterval</a> - Prevents priority inversion</li>
+<li><a href="eventconfig.construct.html" class="index">EventConfig::__construct</a> - Constructs EventConfig object</li>
+<li><a href="eventdnsbase.addnameserverip.html" class="index">EventDnsBase::addNameserverIp</a> - Adds a nameserver to the DNS base</li>
+<li><a href="eventdnsbase.addsearch.html" class="index">EventDnsBase::addSearch</a> - Adds a domain to the list of search domains</li>
+<li><a href="eventdnsbase.clearsearch.html" class="index">EventDnsBase::clearSearch</a> - Removes all current search suffixes</li>
+<li><a href="eventdnsbase.countnameservers.html" class="index">EventDnsBase::countNameservers</a> - Gets the number of configured nameservers</li>
+<li><a href="eventdnsbase.loadhosts.html" class="index">EventDnsBase::loadHosts</a> - Loads a hosts file (in the same format as /etc/hosts) from hosts file</li>
+<li><a href="eventdnsbase.parseresolvconf.html" class="index">EventDnsBase::parseResolvConf</a> - Scans the resolv.conf-formatted file</li>
+<li><a href="eventdnsbase.setoption.html" class="index">EventDnsBase::setOption</a> - Set the value of a configuration option</li>
+<li><a href="eventdnsbase.setsearchndots.html" class="index">EventDnsBase::setSearchNdots</a> - Set the 'ndots' parameter for searches</li>
+<li><a href="eventdnsbase.construct.html" class="index">EventDnsBase::__construct</a> - Constructs EventDnsBase object</li>
+<li><a href="eventhttp.accept.html" class="index">EventHttp::accept</a> - Makes an HTTP server accept connections on the specified socket stream or resource</li>
+<li><a href="eventhttp.addserveralias.html" class="index">EventHttp::addServerAlias</a> - Adds a server alias to the HTTP server object</li>
+<li><a href="eventhttp.bind.html" class="index">EventHttp::bind</a> - Binds an HTTP server on the specified address and port</li>
+<li><a href="eventhttp.removeserveralias.html" class="index">EventHttp::removeServerAlias</a> - Removes server alias</li>
+<li><a href="eventhttp.setallowedmethods.html" class="index">EventHttp::setAllowedMethods</a> - Sets the what HTTP methods are supported in requests accepted by this server, and passed to user callbacks</li>
+<li><a href="eventhttp.setcallback.html" class="index">EventHttp::setCallback</a> - Sets a callback for specified URI</li>
+<li><a href="eventhttp.setdefaultcallback.html" class="index">EventHttp::setDefaultCallback</a> - Sets default callback to handle requests that are not caught by specific callbacks</li>
+<li><a href="eventhttp.setmaxbodysize.html" class="index">EventHttp::setMaxBodySize</a> - Sets maximum request body size</li>
+<li><a href="eventhttp.setmaxheaderssize.html" class="index">EventHttp::setMaxHeadersSize</a> - Sets maximum HTTP header size</li>
+<li><a href="eventhttp.settimeout.html" class="index">EventHttp::setTimeout</a> - Sets the timeout for an HTTP request</li>
+<li><a href="eventhttp.construct.html" class="index">EventHttp::__construct</a> - Constructs EventHttp object(the HTTP server)</li>
+<li><a href="eventhttpconnection.getbase.html" class="index">EventHttpConnection::getBase</a> - Returns event base associated with the connection</li>
+<li><a href="eventhttpconnection.getpeer.html" class="index">EventHttpConnection::getPeer</a> - Gets the remote address and port associated with the connection</li>
+<li><a href="eventhttpconnection.makerequest.html" class="index">EventHttpConnection::makeRequest</a> - Makes an HTTP request over the specified connection</li>
+<li><a href="eventhttpconnection.setlocaladdress.html" class="index">EventHttpConnection::setLocalAddress</a> - Sets the IP address from which HTTP connections are made</li>
+<li><a href="eventhttpconnection.setlocalport.html" class="index">EventHttpConnection::setLocalPort</a> - Sets the local port from which connections are made</li>
+<li><a href="eventhttpconnection.setmaxbodysize.html" class="index">EventHttpConnection::setMaxBodySize</a> - Sets maximum body size for the connection</li>
+<li><a href="eventhttpconnection.setmaxheaderssize.html" class="index">EventHttpConnection::setMaxHeadersSize</a> - Sets maximum header size</li>
+<li><a href="eventhttpconnection.setretries.html" class="index">EventHttpConnection::setRetries</a> - Sets the retry limit for the connection</li>
+<li><a href="eventhttpconnection.settimeout.html" class="index">EventHttpConnection::setTimeout</a> - Sets the timeout for the connection</li>
+<li><a href="eventhttpconnection.construct.html" class="index">EventHttpConnection::__construct</a> - Constructs EventHttpConnection object</li>
+<li><a href="eventhttprequest.addheader.html" class="index">EventHttpRequest::addHeader</a> - Adds an HTTP header to the headers of the request</li>
+<li><a href="eventhttprequest.cancel.html" class="index">EventHttpRequest::cancel</a> - Cancels a pending HTTP request</li>
+<li><a href="eventhttprequest.clearheaders.html" class="index">EventHttpRequest::clearHeaders</a> - Removes all output headers from the header list of the request</li>
+<li><a href="eventhttprequest.findheader.html" class="index">EventHttpRequest::findHeader</a> - Finds the value belonging a header</li>
+<li><a href="eventhttprequest.free.html" class="index">EventHttpRequest::free</a> - Frees the object and removes associated events</li>
+<li><a href="eventhttprequest.getcommand.html" class="index">EventHttpRequest::getCommand</a> - Returns the request command(method)</li>
+<li><a href="eventhttprequest.gethost.html" class="index">EventHttpRequest::getHost</a> - Returns the request host</li>
+<li><a href="eventhttprequest.getinputbuffer.html" class="index">EventHttpRequest::getInputBuffer</a> - Returns the input buffer</li>
+<li><a href="eventhttprequest.getinputheaders.html" class="index">EventHttpRequest::getInputHeaders</a> - Returns associative array of the input headers</li>
+<li><a href="eventhttprequest.getoutputbuffer.html" class="index">EventHttpRequest::getOutputBuffer</a> - Returns the output buffer of the request</li>
+<li><a href="eventhttprequest.getoutputheaders.html" class="index">EventHttpRequest::getOutputHeaders</a> - Returns associative array of the input headers</li>
+<li><a href="eventhttprequest.getresponsecode.html" class="index">EventHttpRequest::getResponseCode</a> - Returns the the response code</li>
+<li><a href="eventhttprequest.geturi.html" class="index">EventHttpRequest::getUri</a> - Returns the request URI</li>
+<li><a href="eventhttprequest.removeheader.html" class="index">EventHttpRequest::removeHeader</a> - Removes an HTTP header from the headers of the request</li>
+<li><a href="eventhttprequest.senderror.html" class="index">EventHttpRequest::sendError</a> - Send an HTML error message to the client</li>
+<li><a href="eventhttprequest.sendreply.html" class="index">EventHttpRequest::sendReply</a> - Send an HTML reply to the client</li>
+<li><a href="eventhttprequest.sendreplychunk.html" class="index">EventHttpRequest::sendReplyChunk</a> - Send another data chunk as part of an ongoing chunked reply</li>
+<li><a href="eventhttprequest.sendreplyend.html" class="index">EventHttpRequest::sendReplyEnd</a> - Complete a chunked reply, freeing the request as appropriate</li>
+<li><a href="eventhttprequest.sendreplystart.html" class="index">EventHttpRequest::sendReplyStart</a> - Initiate a chunked reply</li>
+<li><a href="eventhttprequest.construct.html" class="index">EventHttpRequest::__construct</a> - Constructs EventHttpRequest object</li>
+<li><a href="eventlistener.disable.html" class="index">EventListener::disable</a> - Disables an event connect listener object</li>
+<li><a href="eventlistener.enable.html" class="index">EventListener::enable</a> - Enables an event connect listener object</li>
+<li><a href="eventlistener.getbase.html" class="index">EventListener::getBase</a> - Returns event base associated with the event listener</li>
+<li><a href="eventlistener.getsocketname.html" class="index">EventListener::getSocketName</a> - Retreives the current address to which the
+  listener's socket is bound.</li>
+<li><a href="eventlistener.setcallback.html" class="index">EventListener::setCallback</a> - The setCallback purpose</li>
+<li><a href="eventlistener.seterrorcallback.html" class="index">EventListener::setErrorCallback</a> - Set event listener's error callback</li>
+<li><a href="eventlistener.construct.html" class="index">EventListener::__construct</a> - Creates new connection listener associated with an event base</li>
+<li><a href="eventsslcontext.construct.html" class="index">EventSslContext::__construct</a> - Constructs an OpenSSL context for use with Event classes</li>
+<li><a href="eventutil.getlastsocketerrno.html" class="index">EventUtil::getLastSocketErrno</a> - Returns the most recent socket error number</li>
+<li><a href="eventutil.getlastsocketerror.html" class="index">EventUtil::getLastSocketError</a> - Returns the most recent socket error</li>
+<li><a href="eventutil.getsocketfd.html" class="index">EventUtil::getSocketFd</a> - Returns numeric file descriptor of a socket, or stream</li>
+<li><a href="eventutil.getsocketname.html" class="index">EventUtil::getSocketName</a> - Retreives the current address to which the
+  socket is bound.</li>
+<li><a href="eventutil.setsocketoption.html" class="index">EventUtil::setSocketOption</a> - Sets socket options</li>
+<li><a href="eventutil.sslrandpoll.html" class="index">EventUtil::sslRandPoll</a> - Generates entropy by means of OpenSSL's RAND_poll()</li>
+<li><a href="eventutil.construct.html" class="index">EventUtil::__construct</a> - The abstract constructor</li>
 <li><a href="function.event-base-free.html" class="index">event_base_free</a> - Destroy event base</li>
 <li><a href="function.event-base-loop.html" class="index">event_base_loop</a> - Handle events</li>
 <li><a href="function.event-base-loopbreak.html" class="index">event_base_loopbreak</a> - Abort event loop</li>
@@ -1414,10 +1638,79 @@
 <li><a href="function.event-buffer-timeout-set.html" class="index">event_buffer_timeout_set</a> - Set read and write timeouts for a buffered event</li>
 <li><a href="function.event-buffer-watermark-set.html" class="index">event_buffer_watermark_set</a> - Set the watermarks for read and write events</li>
 <li><a href="function.event-buffer-write.html" class="index">event_buffer_write</a> - Write data to a buffered event</li>
-<li><a href="function.event-del.html" class="index">event_del</a> - Remove an event from the set of monitored events</li>
-<li><a href="function.event-free.html" class="index">event_free</a> - Free event resource</li>
 <li><a href="function.event-new.html" class="index">event_new</a> - Create new event</li>
-<li><a href="function.event-set.html" class="index">event_set</a> - Prepare an event</li>
+<li><a href="evfork.createstopped.html" class="index">EvFork::createStopped</a> - Creates a stopped instance of EvFork watcher class</li>
+<li><a href="evfork.construct.html" class="index">EvFork::__construct</a> - Constructs the EvFork watcher object</li>
+<li><a href="evidle.createstopped.html" class="index">EvIdle::createStopped</a> - Creates instance of a stopped EvIdle watcher object</li>
+<li><a href="evidle.construct.html" class="index">EvIdle::__construct</a> - Constructs the EvIdle watcher object</li>
+<li><a href="evio.createstopped.html" class="index">EvIo::createStopped</a> - Create stopped EvIo watcher object</li>
+<li><a href="evio.set.html" class="index">EvIo::set</a> - Configures the watcher</li>
+<li><a href="evio.construct.html" class="index">EvIo::__construct</a> - Constructs EvIo watcher object</li>
+<li><a href="evloop.backend.html" class="index">EvLoop::backend</a> - Returns an integer describing the backend used by libev.</li>
+<li><a href="evloop.check.html" class="index">EvLoop::check</a> - Creates EvCheck object associated with the current event loop
+  instance</li>
+<li><a href="evloop.child.html" class="index">EvLoop::child</a> - Creates EvChild object associated with the current event loop</li>
+<li><a href="evloop.defaultloop.html" class="index">EvLoop::defaultLoop</a> - Returns or creates the default event loop.</li>
+<li><a href="evloop.embed.html" class="index">EvLoop::embed</a> - Creates an instance of EvEmbed watcher associated
+  with the current EvLoop object.</li>
+<li><a href="evloop.fork.html" class="index">EvLoop::fork</a> - Creates EvFork watcher object associated with the current event
+  loop instance</li>
+<li><a href="evloop.idle.html" class="index">EvLoop::idle</a> - Creates EvIdle watcher object associated with the current event
+  loop instance</li>
+<li><a href="evloop.invokepending.html" class="index">EvLoop::invokePending</a> - Invoke all pending watchers while resetting their pending state</li>
+<li><a href="evloop.io.html" class="index">EvLoop::io</a> - Create EvIo watcher object associated with the current event
+  loop instance</li>
+<li><a href="evloop.loopfork.html" class="index">EvLoop::loopFork</a> - Must be called after a fork</li>
+<li><a href="evloop.now.html" class="index">EvLoop::now</a> - Returns the current &quot;event loop time&quot;</li>
+<li><a href="evloop.nowupdate.html" class="index">EvLoop::nowUpdate</a> - Establishes the current time by querying the kernel, updating the time
+    returned by EvLoop::now in the progress.</li>
+<li><a href="evloop.periodic.html" class="index">EvLoop::periodic</a> - Creates EvPeriodic watcher object associated with the current
+  event loop instance</li>
+<li><a href="evloop.prepare.html" class="index">EvLoop::prepare</a> - Creates EvPrepare watcher object associated with the current
+  event loop instance</li>
+<li><a href="evloop.resume.html" class="index">EvLoop::resume</a> - Resume previously suspended default event loop</li>
+<li><a href="evloop.run.html" class="index">EvLoop::run</a> - Begin checking for events and calling callbacks for the loop</li>
+<li><a href="evloop.signal.html" class="index">EvLoop::signal</a> - Creates EvSignal watcher object associated with the current
+  event loop instance</li>
+<li><a href="evloop.stat.html" class="index">EvLoop::stat</a> - Creates EvStat watcher object associated with the current event
+  loop instance</li>
+<li><a href="evloop.stop.html" class="index">EvLoop::stop</a> - Stops the event loop</li>
+<li><a href="evloop.suspend.html" class="index">EvLoop::suspend</a> - Suspend the loop</li>
+<li><a href="evloop.timer.html" class="index">EvLoop::timer</a> - Creates EvTimer watcher object associated with the current event
+  loop instance</li>
+<li><a href="evloop.verify.html" class="index">EvLoop::verify</a> - Performs internal consistency checks(for debugging)</li>
+<li><a href="evloop.construct.html" class="index">EvLoop::__construct</a> - Constructs the event loop object</li>
+<li><a href="evperiodic.again.html" class="index">EvPeriodic::again</a> - Simply stops and restarts the periodic watcher again.</li>
+<li><a href="evperiodic.at.html" class="index">EvPeriodic::at</a> - Returns the absolute time that this
+  watcher is supposed to trigger next</li>
+<li><a href="evperiodic.createstopped.html" class="index">EvPeriodic::createStopped</a> - Create a stopped EvPeriodic watcher</li>
+<li><a href="evperiodic.set.html" class="index">EvPeriodic::set</a> - Configures the watcher</li>
+<li><a href="evperiodic.construct.html" class="index">EvPeriodic::__construct</a> - Constructs EvPeriodic watcher object</li>
+<li><a href="evprepare.createstopped.html" class="index">EvPrepare::createStopped</a> - Creates a stopped instance of EvPrepare watcher</li>
+<li><a href="evprepare.construct.html" class="index">EvPrepare::__construct</a> - Constructs EvPrepare watcher object</li>
+<li><a href="evsignal.createstopped.html" class="index">EvSignal::createStopped</a> - Create stopped EvSignal watcher object</li>
+<li><a href="evsignal.set.html" class="index">EvSignal::set</a> - Configures the watcher</li>
+<li><a href="evsignal.construct.html" class="index">EvSignal::__construct</a> - Constructs EvPeriodic watcher object</li>
+<li><a href="evstat.attr.html" class="index">EvStat::attr</a> - Returns the values most recently detected by Ev</li>
+<li><a href="evstat.createstopped.html" class="index">EvStat::createStopped</a> - Create a stopped EvStat watcher object</li>
+<li><a href="evstat.prev.html" class="index">EvStat::prev</a> - Returns the previous set of values returned by EvStat::attr</li>
+<li><a href="evstat.set.html" class="index">EvStat::set</a> - Configures the watcher</li>
+<li><a href="evstat.stat.html" class="index">EvStat::stat</a> - Initiates the stat call</li>
+<li><a href="evstat.construct.html" class="index">EvStat::__construct</a> - Constructs EvStat watcher object</li>
+<li><a href="evtimer.again.html" class="index">EvTimer::again</a> - Restarts the timer watcher</li>
+<li><a href="evtimer.createstopped.html" class="index">EvTimer::createStopped</a> - Creates EvTimer stopped watcher object</li>
+<li><a href="evtimer.set.html" class="index">EvTimer::set</a> - Configures the watcher</li>
+<li><a href="evtimer.construct.html" class="index">EvTimer::__construct</a> - Constructs an EvTimer watcher object</li>
+<li><a href="evwatcher.clear.html" class="index">EvWatcher::clear</a> - Clear watcher pending status</li>
+<li><a href="evwatcher.feed.html" class="index">EvWatcher::feed</a> - Feeds the given revents set into the event loop</li>
+<li><a href="evwatcher.getloop.html" class="index">EvWatcher::getLoop</a> - Returns the loop responsible for the watcher</li>
+<li><a href="evwatcher.invoke.html" class="index">EvWatcher::invoke</a> - Invokes the watcher callback with the given received events bit
+  mask</li>
+<li><a href="evwatcher.keepalive.html" class="index">EvWatcher::keepalive</a> - Configures whether to keep the loop from returning</li>
+<li><a href="evwatcher.setcallback.html" class="index">EvWatcher::setCallback</a> - Sets new callback for the watcher</li>
+<li><a href="evwatcher.start.html" class="index">EvWatcher::start</a> - Starts the watcher</li>
+<li><a href="evwatcher.stop.html" class="index">EvWatcher::stop</a> - Stops the watcher</li>
+<li><a href="evwatcher.construct.html" class="index">EvWatcher::__construct</a> - Abstract constructor of a watcher object</li>
 <li><a href="pdo-4d.examples.html" class="index">Examples with PDO_4D</a> - Examples PDO_4D</li>
 <li><a href="exception.getcode.html" class="index">Exception::getCode</a> - Gets the Exception code</li>
 <li><a href="exception.getfile.html" class="index">Exception::getFile</a> - Gets the file in which the exception occurred</li>
@@ -1786,9 +2079,19 @@
 <li><a href="gearmanworker.work.html" class="index">GearmanWorker::work</a> - Wait for and perform jobs</li>
 <li><a href="gearmanworker.construct.html" class="index">GearmanWorker::__construct</a> - Create a GearmanWorker instance</li>
 <li><a href="gender-gender.connect.html" class="index">Gender\Gender::connect</a> - Connect to an external name dictionary.</li>
-<li><a href="gender-gender.country.html" class="index">Gender\Gender::country</a> - Get textual country representation.</li>
+<li><a href="gender-gender.country.html" class="index">Gender\Gender::country</a> - Get textual country representation</li>
 <li><a href="gender-gender.get.html" class="index">Gender\Gender::get</a> - Get gender of a name.</li>
+<li><a href="gender-gender.isnick.html" class="index">Gender\Gender::isNick</a> - Check if the name0 is an alias of the name1.</li>
+<li><a href="gender-gender.similarnames.html" class="index">Gender\Gender::similarNames</a> - Get similar names.</li>
 <li><a href="gender-gender.construct.html" class="index">Gender\Gender::__construct</a> - Construct the Gender object.</li>
+<li><a href="generator.current.html" class="index">Generator::current</a> - Get the yielded value</li>
+<li><a href="generator.key.html" class="index">Generator::key</a> - Get the yielded key</li>
+<li><a href="generator.next.html" class="index">Generator::next</a> - Resume execution of the generator</li>
+<li><a href="generator.rewind.html" class="index">Generator::rewind</a> - Rewind the iterator</li>
+<li><a href="generator.send.html" class="index">Generator::send</a> - Send a value to the generator</li>
+<li><a href="generator.throw.html" class="index">Generator::throw</a> - Throw an exception into the generator</li>
+<li><a href="generator.valid.html" class="index">Generator::valid</a> - Check if the iterator has been closed</li>
+<li><a href="generator.wakeup.html" class="index">Generator::__wakeup</a> - Serialize callback</li>
 <li><a href="function.geoip-continent-code-by-name.html" class="index">geoip_continent_code_by_name</a> - Get the two letter continent code</li>
 <li><a href="function.geoip-country-code3-by-name.html" class="index">geoip_country_code3_by_name</a> - Get the three letter country code</li>
 <li><a href="function.geoip-country-code-by-name.html" class="index">geoip_country_code_by_name</a> - Get the two letter country code</li>
@@ -2139,7 +2442,7 @@
 <li><a href="function.gupnp-root-device-start.html" class="index">gupnp_root_device_start</a> - Start main loop</li>
 <li><a href="function.gupnp-root-device-stop.html" class="index">gupnp_root_device_stop</a> - Stop main loop</li>
 <li><a href="function.gupnp-service-action-get.html" class="index">gupnp_service_action_get</a> - Retrieves the specified action arguments</li>
-<li><a href="function.gupnp-service-action-return.html" class="index">gupnp_service_action_return</a> - Return succesfully</li>
+<li><a href="function.gupnp-service-action-return.html" class="index">gupnp_service_action_return</a> - Return successfully</li>
 <li><a href="function.gupnp-service-action-return-error.html" class="index">gupnp_service_action_return_error</a> - Return error code</li>
 <li><a href="function.gupnp-service-action-set.html" class="index">gupnp_service_action_set</a> - Sets the specified action return values</li>
 <li><a href="function.gupnp-service-freeze-notify.html" class="index">gupnp_service_freeze_notify</a> - Freeze new notifications</li>
@@ -2729,7 +3032,6 @@
 <li><a href="function.ibase-service-attach.html" class="index">ibase_service_attach</a> - Connect to the service manager</li>
 <li><a href="function.ibase-service-detach.html" class="index">ibase_service_detach</a> - Disconnect from the service manager</li>
 <li><a href="function.ibase-set-event-handler.html" class="index">ibase_set_event_handler</a> - Register a callback function to be called when events are posted</li>
-<li><a href="function.ibase-timefmt.html" class="index">ibase_timefmt</a> - Sets the format of timestamp, date and time type columns returned from queries</li>
 <li><a href="function.ibase-trans.html" class="index">ibase_trans</a> - Begin a transaction</li>
 <li><a href="function.ibase-wait-event.html" class="index">ibase_wait_event</a> - Wait for an event to be posted by the database</li>
 <li><a href="function.iconv.html" class="index">iconv</a> - Convert string to requested character encoding</li>
@@ -2811,6 +3113,9 @@
 <li><a href="function.iis-stop-server.html" class="index">iis_stop_server</a> - Stops the virtual web server</li>
 <li><a href="function.iis-stop-service.html" class="index">iis_stop_service</a> - Stops the service defined by ServiceId</li>
 <li><a href="function.image2wbmp.html" class="index">image2wbmp</a> - Output image to browser or file</li>
+<li><a href="function.imageaffine.html" class="index">imageaffine</a> - Return an image containing the affine tramsformed src image, using an optional clipping area</li>
+<li><a href="function.imageaffinematrixconcat.html" class="index">imageaffinematrixconcat</a> - Concat two matrices (as in doing many ops in one go)</li>
+<li><a href="function.imageaffinematrixget.html" class="index">imageaffinematrixget</a> - Return an image containing the affine tramsformed src image, using an optional clipping area</li>
 <li><a href="function.imagealphablending.html" class="index">imagealphablending</a> - Set the blending mode for an image</li>
 <li><a href="function.imageantialias.html" class="index">imageantialias</a> - Should antialias functions be used or not</li>
 <li><a href="function.imagearc.html" class="index">imagearc</a> - Draws an arc</li>
@@ -2847,9 +3152,12 @@
 <li><a href="function.imagecreatefrompng.html" class="index">imagecreatefrompng</a> - Create a new image from file or URL</li>
 <li><a href="function.imagecreatefromstring.html" class="index">imagecreatefromstring</a> - Create a new image from the image stream in the string</li>
 <li><a href="function.imagecreatefromwbmp.html" class="index">imagecreatefromwbmp</a> - Create a new image from file or URL</li>
+<li><a href="function.imagecreatefromwebp.html" class="index">imagecreatefromwebp</a> - Create a new image from file or URL</li>
 <li><a href="function.imagecreatefromxbm.html" class="index">imagecreatefromxbm</a> - Create a new image from file or URL</li>
 <li><a href="function.imagecreatefromxpm.html" class="index">imagecreatefromxpm</a> - Create a new image from file or URL</li>
 <li><a href="function.imagecreatetruecolor.html" class="index">imagecreatetruecolor</a> - Create a new true color image</li>
+<li><a href="function.imagecrop.html" class="index">imagecrop</a> - Crop an image using the given coordinates and size, x, y, width and height</li>
+<li><a href="function.imagecropauto.html" class="index">imagecropauto</a> - Crop an image automatically using one of the available modes</li>
 <li><a href="function.imagedashedline.html" class="index">imagedashedline</a> - Draw a dashed line</li>
 <li><a href="function.imagedestroy.html" class="index">imagedestroy</a> - Destroy an image</li>
 <li><a href="function.imageellipse.html" class="index">imageellipse</a> - Draw an ellipse</li>
@@ -2860,6 +3168,7 @@
 <li><a href="function.imagefilledrectangle.html" class="index">imagefilledrectangle</a> - Draw a filled rectangle</li>
 <li><a href="function.imagefilltoborder.html" class="index">imagefilltoborder</a> - Flood fill to specific color</li>
 <li><a href="function.imagefilter.html" class="index">imagefilter</a> - Applies a filter to an image</li>
+<li><a href="function.imageflip.html" class="index">imageflip</a> - Flips an image using a given mode</li>
 <li><a href="function.imagefontheight.html" class="index">imagefontheight</a> - Get font height</li>
 <li><a href="function.imagefontwidth.html" class="index">imagefontwidth</a> - Get font width</li>
 <li><a href="function.imageftbbox.html" class="index">imageftbbox</a> - Give the bounding box of a text using fonts via freetype2</li>
@@ -2877,6 +3186,7 @@
 <li><a href="function.imageline.html" class="index">imageline</a> - Draw a line</li>
 <li><a href="function.imageloadfont.html" class="index">imageloadfont</a> - Load a new font</li>
 <li><a href="function.imagepalettecopy.html" class="index">imagepalettecopy</a> - Copy the palette from one image to another</li>
+<li><a href="function.imagepalettetotruecolor.html" class="index">imagepalettetotruecolor</a> - Converts a palette based image to true color</li>
 <li><a href="function.imagepng.html" class="index">imagepng</a> - Output a PNG image to either the browser or a file</li>
 <li><a href="function.imagepolygon.html" class="index">imagepolygon</a> - Draws a polygon</li>
 <li><a href="function.imagepsbbox.html" class="index">imagepsbbox</a> - Give the bounding box of a text rectangle using PostScript Type1 fonts</li>
@@ -2889,7 +3199,9 @@
 <li><a href="function.imagerectangle.html" class="index">imagerectangle</a> - Draw a rectangle</li>
 <li><a href="function.imagerotate.html" class="index">imagerotate</a> - Rotate an image with a given angle</li>
 <li><a href="function.imagesavealpha.html" class="index">imagesavealpha</a> - Set the flag to save full alpha channel information (as opposed to single-color transparency) when saving PNG images</li>
+<li><a href="function.imagescale.html" class="index">imagescale</a> - Scale an image using the given new width and height</li>
 <li><a href="function.imagesetbrush.html" class="index">imagesetbrush</a> - Set the brush image for line drawing</li>
+<li><a href="function.imagesetinterpolation.html" class="index">imagesetinterpolation</a> - Set the interpolation method</li>
 <li><a href="function.imagesetpixel.html" class="index">imagesetpixel</a> - Set a single pixel</li>
 <li><a href="function.imagesetstyle.html" class="index">imagesetstyle</a> - Set the style for line drawing</li>
 <li><a href="function.imagesetthickness.html" class="index">imagesetthickness</a> - Set the thickness for line drawing</li>
@@ -2903,7 +3215,8 @@
 <li><a href="function.imagettftext.html" class="index">imagettftext</a> - Write text to the image using TrueType fonts</li>
 <li><a href="function.imagetypes.html" class="index">imagetypes</a> - Return the image types supported by this PHP build</li>
 <li><a href="function.imagewbmp.html" class="index">imagewbmp</a> - Output image to browser or file</li>
-<li><a href="function.imagexbm.html" class="index">imagexbm</a> - Output XBM image to browser or file</li>
+<li><a href="function.imagewebp.html" class="index">imagewebp</a> - Output an WebP image to browser or file</li>
+<li><a href="function.imagexbm.html" class="index">imagexbm</a> - Output an XBM image to browser or file</li>
 <li><a href="function.image-type-to-extension.html" class="index">image_type_to_extension</a> - Get file extension for image type</li>
 <li><a href="function.image-type-to-mime-type.html" class="index">image_type_to_mime_type</a> - Get Mime-Type for image-type returned by getimagesize,
    exif_read_data, exif_thumbnail, exif_imagetype</li>
@@ -3386,7 +3699,7 @@
 <li><a href="function.imap-createmailbox.html" class="index">imap_createmailbox</a> - Create a new mailbox</li>
 <li><a href="function.imap-delete.html" class="index">imap_delete</a> - Mark a message for deletion from current mailbox</li>
 <li><a href="function.imap-deletemailbox.html" class="index">imap_deletemailbox</a> - Delete a mailbox</li>
-<li><a href="function.imap-errors.html" class="index">imap_errors</a> - Returns all of the IMAP errors that have occured</li>
+<li><a href="function.imap-errors.html" class="index">imap_errors</a> - Returns all of the IMAP errors that have occurred</li>
 <li><a href="function.imap-expunge.html" class="index">imap_expunge</a> - Delete all messages marked for deletion</li>
 <li><a href="function.imap-fetchbody.html" class="index">imap_fetchbody</a> - Fetch a particular section of the body of the message</li>
 <li><a href="function.imap-fetchheader.html" class="index">imap_fetchheader</a> - Returns header for a message</li>
@@ -3431,7 +3744,7 @@
 <li><a href="function.imap-scan.html" class="index">imap_scan</a> - Alias of imap_listscan</li>
 <li><a href="function.imap-scanmailbox.html" class="index">imap_scanmailbox</a> - Alias of imap_listscan</li>
 <li><a href="function.imap-search.html" class="index">imap_search</a> - This function returns an array of messages matching the given search criteria</li>
-<li><a href="function.imap-setacl.html" class="index">imap_setacl</a> - Sets the ACL for a giving mailbox</li>
+<li><a href="function.imap-setacl.html" class="index">imap_setacl</a> - Sets the ACL for a given mailbox</li>
 <li><a href="function.imap-setflag-full.html" class="index">imap_setflag_full</a> - Sets flags on messages</li>
 <li><a href="function.imap-set-quota.html" class="index">imap_set_quota</a> - Sets a quota for a given mailbox</li>
 <li><a href="function.imap-sort.html" class="index">imap_sort</a> - Gets and sort messages</li>
@@ -3497,23 +3810,125 @@
 <li><a href="function.inotify-read.html" class="index">inotify_read</a> - Read events from an inotify instance</li>
 <li><a href="function.inotify-rm-watch.html" class="index">inotify_rm_watch</a> - Remove an existing watch from an inotify instance</li>
 <li><a href="function.interface-exists.html" class="index">interface_exists</a> - Checks if the interface has been defined</li>
+<li><a href="intlbreakiterator.createcharacterinstance.html" class="index">IntlBreakIterator::createCharacterInstance</a> - Create break iterator for boundaries of combining character sequences</li>
+<li><a href="intlbreakiterator.createcodepointinstance.html" class="index">IntlBreakIterator::createCodePointInstance</a> - Create break iterator for boundaries of code points</li>
+<li><a href="intlbreakiterator.createlineinstance.html" class="index">IntlBreakIterator::createLineInstance</a> - Create break iterator for logically possible line breaks</li>
+<li><a href="intlbreakiterator.createsentenceinstance.html" class="index">IntlBreakIterator::createSentenceInstance</a> - Create break iterator for sentence breaks</li>
+<li><a href="intlbreakiterator.createtitleinstance.html" class="index">IntlBreakIterator::createTitleInstance</a> - Create break iterator for title-casing breaks</li>
+<li><a href="intlbreakiterator.createwordinstance.html" class="index">IntlBreakIterator::createWordInstance</a> - Create break iterator for word breaks</li>
+<li><a href="intlbreakiterator.current.html" class="index">IntlBreakIterator::current</a> - Get index of current position</li>
+<li><a href="intlbreakiterator.first.html" class="index">IntlBreakIterator::first</a> - Set position to the first character in the text</li>
+<li><a href="intlbreakiterator.following.html" class="index">IntlBreakIterator::following</a> - Advance the iterator to the first boundary following specified offset</li>
+<li><a href="intlbreakiterator.geterrorcode.html" class="index">IntlBreakIterator::getErrorCode</a> - Get last error code on the object</li>
+<li><a href="intlbreakiterator.geterrormessage.html" class="index">IntlBreakIterator::getErrorMessage</a> - Get last error message on the object</li>
+<li><a href="intlbreakiterator.getlocale.html" class="index">IntlBreakIterator::getLocale</a> - Get the locale associated with the object</li>
+<li><a href="intlbreakiterator.getpartsiterator.html" class="index">IntlBreakIterator::getPartsIterator</a> - Create iterator for navigating fragments between boundaries</li>
+<li><a href="intlbreakiterator.gettext.html" class="index">IntlBreakIterator::getText</a> - Get the text being scanned</li>
+<li><a href="intlbreakiterator.isboundary.html" class="index">IntlBreakIterator::isBoundary</a> - Tell whether an offset is a boundaryʼs offset</li>
+<li><a href="intlbreakiterator.last.html" class="index">IntlBreakIterator::last</a> - Set the iterator position to index beyond the last character</li>
+<li><a href="intlbreakiterator.next.html" class="index">IntlBreakIterator::next</a> - Advance the iterator the next boundary</li>
+<li><a href="intlbreakiterator.preceding.html" class="index">IntlBreakIterator::preceding</a> - Set the iterator position to the first boundary before an offset</li>
+<li><a href="intlbreakiterator.previous.html" class="index">IntlBreakIterator::previous</a> - Set the iterator position to the boundary immediately before the current</li>
+<li><a href="intlbreakiterator.settext.html" class="index">IntlBreakIterator::setText</a> - Set the text being scanned</li>
+<li><a href="intlbreakiterator.construct.html" class="index">IntlBreakIterator::__construct</a> - Private constructor for disallowing instantiation</li>
+<li><a href="intlcalendar.add.html" class="index">IntlCalendar::add</a> - Add a (signed) amount of time to a field</li>
+<li><a href="intlcalendar.after.html" class="index">IntlCalendar::after</a> - Whether this objectʼs time is after that of the passed object</li>
+<li><a href="intlcalendar.before.html" class="index">IntlCalendar::before</a> - Whether this objectʼs time is before that of the passed object</li>
+<li><a href="intlcalendar.clear.html" class="index">IntlCalendar::clear</a> - Clear a field or all fields</li>
+<li><a href="intlcalendar.createinstance.html" class="index">IntlCalendar::createInstance</a> - Create a new IntlCalendar</li>
+<li><a href="intlcalendar.equals.html" class="index">IntlCalendar::equals</a> - Compare time of two IntlCalendar objects for equality</li>
+<li><a href="intlcalendar.fielddifference.html" class="index">IntlCalendar::fieldDifference</a> - Calculate difference between given time and this objectʼs time</li>
+<li><a href="intlcalendar.fromdatetime.html" class="index">IntlCalendar::fromDateTime</a> - Create an IntlCalendar from a DateTime object or string</li>
+<li><a href="intlcalendar.get.html" class="index">IntlCalendar::get</a> - Get the value for a field</li>
+<li><a href="intlcalendar.getactualmaximum.html" class="index">IntlCalendar::getActualMaximum</a> - The maximum value for a field, considering the objectʼs current time</li>
+<li><a href="intlcalendar.getactualminimum.html" class="index">IntlCalendar::getActualMinimum</a> - The minimum value for a field, considering the objectʼs current time</li>
+<li><a href="intlcalendar.getavailablelocales.html" class="index">IntlCalendar::getAvailableLocales</a> - Get array of locales for which there is data</li>
+<li><a href="intlcalendar.getdayofweektype.html" class="index">IntlCalendar::getDayOfWeekType</a> - Tell whether a day is a weekday, weekend or a day that has a transition between the two</li>
+<li><a href="intlcalendar.geterrorcode.html" class="index">IntlCalendar::getErrorCode</a> - Get last error code on the object</li>
+<li><a href="intlcalendar.geterrormessage.html" class="index">IntlCalendar::getErrorMessage</a> - Get last error message on the object</li>
+<li><a href="intlcalendar.getfirstdayofweek.html" class="index">IntlCalendar::getFirstDayOfWeek</a> - Get the first day of the week for the calendarʼs locale</li>
+<li><a href="intlcalendar.getgreatestminimum.html" class="index">IntlCalendar::getGreatestMinimum</a> - Get the largest local minimum value for a field</li>
+<li><a href="intlcalendar.getkeywordvaluesforlocale.html" class="index">IntlCalendar::getKeywordValuesForLocale</a> - Get set of locale keyword values</li>
+<li><a href="intlcalendar.getleastmaximum.html" class="index">IntlCalendar::getLeastMaximum</a> - Get the smallest local maximum for a field</li>
+<li><a href="intlcalendar.getlocale.html" class="index">IntlCalendar::getLocale</a> - Get the locale associated with the object</li>
+<li><a href="intlcalendar.getmaximum.html" class="index">IntlCalendar::getMaximum</a> - Get the global maximum value for a field</li>
+<li><a href="intlcalendar.getminimaldaysinfirstweek.html" class="index">IntlCalendar::getMinimalDaysInFirstWeek</a> - Get minimal number of days the first week in a year or month can have</li>
+<li><a href="intlcalendar.getminimum.html" class="index">IntlCalendar::getMinimum</a> - Get the global minimum value for a field</li>
+<li><a href="intlcalendar.getnow.html" class="index">IntlCalendar::getNow</a> - Get number representing the current time</li>
+<li><a href="intlcalendar.getrepeatedwalltimeoption.html" class="index">IntlCalendar::getRepeatedWallTimeOption</a> - Get behavior for handling repeating wall time</li>
+<li><a href="intlcalendar.getskippedwalltimeoption.html" class="index">IntlCalendar::getSkippedWallTimeOption</a> - Get behavior for handling skipped wall time</li>
+<li><a href="intlcalendar.gettime.html" class="index">IntlCalendar::getTime</a> - Get time currently represented by the object</li>
+<li><a href="intlcalendar.gettimezone.html" class="index">IntlCalendar::getTimeZone</a> - Get the objectʼs timezone</li>
+<li><a href="intlcalendar.gettype.html" class="index">IntlCalendar::getType</a> - Get the calendar type</li>
+<li><a href="intlcalendar.getweekendtransition.html" class="index">IntlCalendar::getWeekendTransition</a> - Get time of the day at which weekend begins or ends</li>
+<li><a href="intlcalendar.indaylighttime.html" class="index">IntlCalendar::inDaylightTime</a> - Whether the objectʼs time is in Daylight Savings Time</li>
+<li><a href="intlcalendar.isequivalentto.html" class="index">IntlCalendar::isEquivalentTo</a> - Whether another calendar is equal but for a different time</li>
+<li><a href="intlcalendar.islenient.html" class="index">IntlCalendar::isLenient</a> - Whether date/time interpretation is in lenient mode</li>
+<li><a href="intlcalendar.isset.html" class="index">IntlCalendar::isSet</a> - Whether a field is set</li>
+<li><a href="intlcalendar.isweekend.html" class="index">IntlCalendar::isWeekend</a> - Whether a certain date/time is in the weekend</li>
+<li><a href="intlcalendar.roll.html" class="index">IntlCalendar::roll</a> - Add value to field without carrying into more significant fields</li>
+<li><a href="intlcalendar.set.html" class="index">IntlCalendar::set</a> - Set a time field or several common fields at once</li>
+<li><a href="intlcalendar.setfirstdayofweek.html" class="index">IntlCalendar::setFirstDayOfWeek</a> - Set the day on which the week is deemed to start</li>
+<li><a href="intlcalendar.setlenient.html" class="index">IntlCalendar::setLenient</a> - Set whether date/time interpretation is to be lenient</li>
+<li><a href="intlcalendar.setrepeatedwalltimeoption.html" class="index">IntlCalendar::setRepeatedWallTimeOption</a> - Set behavior for handling repeating wall times at negative timezone offset transitions</li>
+<li><a href="intlcalendar.setskippedwalltimeoption.html" class="index">IntlCalendar::setSkippedWallTimeOption</a> - Set behavior for handling skipped wall times at positive timezone offset transitions</li>
+<li><a href="intlcalendar.settime.html" class="index">IntlCalendar::setTime</a> - Set the calendar time in milliseconds since the epoch</li>
+<li><a href="intlcalendar.settimezone.html" class="index">IntlCalendar::setTimeZone</a> - Set the timezone used by this calendar</li>
+<li><a href="intlcalendar.todatetime.html" class="index">IntlCalendar::toDateTime</a> - Convert an IntlCalendar into a DateTime object</li>
+<li><a href="intlcalendar.construct.html" class="index">IntlCalendar::__construct</a> - Private constructor for disallowing instantiation</li>
+<li><a href="intlcodepointbreakiterator.getlastcodepoint.html" class="index">IntlCodePointBreakIterator::getLastCodePoint</a> - Get last code point passed over after advancing or receding the iterator</li>
 <li><a href="intldateformatter.create.html" class="index">IntlDateFormatter::create</a> - Create a date formatter</li>
 <li><a href="intldateformatter.format.html" class="index">IntlDateFormatter::format</a> - Format the date/time value as a string</li>
-<li><a href="intldateformatter.getcalendar.html" class="index">IntlDateFormatter::getCalendar</a> - Get the calendar used for the IntlDateFormatter</li>
+<li><a href="intldateformatter.formatobject.html" class="index">IntlDateFormatter::formatObject</a> - Formats an object</li>
+<li><a href="intldateformatter.getcalendar.html" class="index">IntlDateFormatter::getCalendar</a> - Get the calendar type used for the IntlDateFormatter</li>
+<li><a href="intldateformatter.getcalendarobject.html" class="index">IntlDateFormatter::getCalendarObject</a> - Get copy of formatterʼs calendar object</li>
 <li><a href="intldateformatter.getdatetype.html" class="index">IntlDateFormatter::getDateType</a> - Get the datetype used for the IntlDateFormatter</li>
 <li><a href="intldateformatter.geterrorcode.html" class="index">IntlDateFormatter::getErrorCode</a> - Get the error code from last operation</li>
 <li><a href="intldateformatter.geterrormessage.html" class="index">IntlDateFormatter::getErrorMessage</a> - Get the error text from the last operation.</li>
 <li><a href="intldateformatter.getlocale.html" class="index">IntlDateFormatter::getLocale</a> - Get the locale used by formatter</li>
 <li><a href="intldateformatter.getpattern.html" class="index">IntlDateFormatter::getPattern</a> - Get the pattern used for the IntlDateFormatter</li>
 <li><a href="intldateformatter.gettimetype.html" class="index">IntlDateFormatter::getTimeType</a> - Get the timetype used for the IntlDateFormatter</li>
+<li><a href="intldateformatter.gettimezone.html" class="index">IntlDateFormatter::getTimeZone</a> - Get formatterʼs timezone</li>
 <li><a href="intldateformatter.gettimezoneid.html" class="index">IntlDateFormatter::getTimeZoneId</a> - Get the timezone-id used for the IntlDateFormatter</li>
 <li><a href="intldateformatter.islenient.html" class="index">IntlDateFormatter::isLenient</a> - Get the lenient used for the IntlDateFormatter</li>
 <li><a href="intldateformatter.localtime.html" class="index">IntlDateFormatter::localtime</a> - Parse string to a field-based time value</li>
 <li><a href="intldateformatter.parse.html" class="index">IntlDateFormatter::parse</a> - Parse string to a timestamp value</li>
-<li><a href="intldateformatter.setcalendar.html" class="index">IntlDateFormatter::setCalendar</a> - sets the calendar used to the appropriate calendar, which must be</li>
+<li><a href="intldateformatter.setcalendar.html" class="index">IntlDateFormatter::setCalendar</a> - Sets the calendar type used by the formatter</li>
 <li><a href="intldateformatter.setlenient.html" class="index">IntlDateFormatter::setLenient</a> - Set the leniency of the parser</li>
 <li><a href="intldateformatter.setpattern.html" class="index">IntlDateFormatter::setPattern</a> - Set the pattern used for the IntlDateFormatter</li>
+<li><a href="intldateformatter.settimezone.html" class="index">IntlDateFormatter::setTimeZone</a> - Sets formatterʼs timezone</li>
 <li><a href="intldateformatter.settimezoneid.html" class="index">IntlDateFormatter::setTimeZoneId</a> - Sets the time zone to use</li>
+<li><a href="intliterator.current.html" class="index">IntlIterator::current</a> - Get the current element</li>
+<li><a href="intliterator.key.html" class="index">IntlIterator::key</a> - Get the current key</li>
+<li><a href="intliterator.next.html" class="index">IntlIterator::next</a> - Move forward to the next element</li>
+<li><a href="intliterator.rewind.html" class="index">IntlIterator::rewind</a> - Rewind the iterator to the first element</li>
+<li><a href="intliterator.valid.html" class="index">IntlIterator::valid</a> - Check if curent position is valid</li>
+<li><a href="intlpartsiterator.getbreakiterator.html" class="index">IntlPartsIterator::getBreakIterator</a> - Get IntlBreakIterator backing this parts iterator</li>
+<li><a href="intlrulebasedbreakiterator.getbinaryrules.html" class="index">IntlRuleBasedBreakIterator::getBinaryRules</a> - Get the binary form of compiled rules</li>
+<li><a href="intlrulebasedbreakiterator.getrules.html" class="index">IntlRuleBasedBreakIterator::getRules</a> - Get the rule set used to create this object</li>
+<li><a href="intlrulebasedbreakiterator.getrulestatus.html" class="index">IntlRuleBasedBreakIterator::getRuleStatus</a> - Get the largest status value from the break rules that determined the current break position</li>
+<li><a href="intlrulebasedbreakiterator.getrulestatusvec.html" class="index">IntlRuleBasedBreakIterator::getRuleStatusVec</a> - Get the status values from the break rules that determined the current break position</li>
+<li><a href="intlrulebasedbreakiterator.construct.html" class="index">IntlRuleBasedBreakIterator::__construct</a> - Create iterator from ruleset</li>
+<li><a href="intltimezone.countequivalentids.html" class="index">IntlTimeZone::countEquivalentIDs</a> - Get the number of IDs in the equivalency group that includes the given ID</li>
+<li><a href="intltimezone.createdefault.html" class="index">IntlTimeZone::createDefault</a> - Create a new copy of the default timezone for this host</li>
+<li><a href="intltimezone.createenumeration.html" class="index">IntlTimeZone::createEnumeration</a> - Get an enumeration over time zone IDs associated with the
+  given country or offset</li>
+<li><a href="intltimezone.createtimezone.html" class="index">IntlTimeZone::createTimeZone</a> - Create a timezone object for the given ID</li>
+<li><a href="intltimezone.fromdatetimezone.html" class="index">IntlTimeZone::fromDateTimeZone</a> - Create a timezone object from DateTimeZone</li>
+<li><a href="intltimezone.getcanonicalid.html" class="index">IntlTimeZone::getCanonicalID</a> - Get the canonical system timezone ID or the normalized custom time zone ID for the given time zone ID</li>
+<li><a href="intltimezone.getdisplayname.html" class="index">IntlTimeZone::getDisplayName</a> - Get a name of this time zone suitable for presentation to the user</li>
+<li><a href="intltimezone.getdstsavings.html" class="index">IntlTimeZone::getDSTSavings</a> - Get the amount of time to be added to local standard time to get local wall clock time</li>
+<li><a href="intltimezone.getequivalentid.html" class="index">IntlTimeZone::getEquivalentID</a> - Get an ID in the equivalency group that includes the given ID</li>
+<li><a href="intltimezone.geterrorcode.html" class="index">IntlTimeZone::getErrorCode</a> - Get last error code on the object</li>
+<li><a href="intltimezone.geterrormessage.html" class="index">IntlTimeZone::getErrorMessage</a> - Get last error message on the object</li>
+<li><a href="intltimezone.getgmt.html" class="index">IntlTimeZone::getGMT</a> - Create GMT (UTC) timezone</li>
+<li><a href="intltimezone.getid.html" class="index">IntlTimeZone::getID</a> - Get timezone ID</li>
+<li><a href="intltimezone.getoffset.html" class="index">IntlTimeZone::getOffset</a> - Get the time zone raw and GMT offset for the given moment in time</li>
+<li><a href="intltimezone.getrawoffset.html" class="index">IntlTimeZone::getRawOffset</a> - Get the raw GMT offset (before taking daylight savings time into account</li>
+<li><a href="intltimezone.gettzdataversion.html" class="index">IntlTimeZone::getTZDataVersion</a> - Get the timezone data version currently used by ICU</li>
+<li><a href="intltimezone.hassamerules.html" class="index">IntlTimeZone::hasSameRules</a> - Check if this zone has the same rules and offset as another zone</li>
+<li><a href="intltimezone.todatetimezone.html" class="index">IntlTimeZone::toDateTimeZone</a> - Convert to DateTimeZone object</li>
+<li><a href="intltimezone.usedaylighttime.html" class="index">IntlTimeZone::useDaylightTime</a> - Check if this time zone uses daylight savings time</li>
 <li><a href="function.intl-error-name.html" class="index">intl_error_name</a> - Get symbolic name for a given error code</li>
 <li><a href="function.intl-get-error-code.html" class="index">intl_get_error_code</a> - Get the last error code</li>
 <li><a href="function.intl-get-error-message.html" class="index">intl_get_error_message</a> - Get description of the last error</li>
@@ -3588,6 +4003,7 @@
 <li><a href="function.json-decode.html" class="index">json_decode</a> - Decodes a JSON string</li>
 <li><a href="function.json-encode.html" class="index">json_encode</a> - Returns the JSON representation of a value</li>
 <li><a href="function.json-last-error.html" class="index">json_last_error</a> - Returns the last error occurred</li>
+<li><a href="function.json-last-error-msg.html" class="index">json_last_error_msg</a> - Returns the error string of the last json_encode() or json_decode() call</li>
 <li><a href="judy.bycount.html" class="index">Judy::byCount</a> - Locate the Nth index present in the Judy array</li>
 <li><a href="judy.count.html" class="index">Judy::count</a> - Count the number of elements in the Judy array</li>
 <li><a href="judy.first.html" class="index">Judy::first</a> - Search for the first index in the Judy array</li>
@@ -3624,6 +4040,7 @@
 <li><a href="function.kadm5-init-with-password.html" class="index">kadm5_init_with_password</a> - Opens a connection to the KADM5 library</li>
 <li><a href="function.kadm5-modify-principal.html" class="index">kadm5_modify_principal</a> - Modifies a kerberos principal with the given parameters</li>
 <li><a href="function.key.html" class="index">key</a> - Fetch a key from an array</li>
+<li><a href="function.key-exists.html" class="index">key_exists</a> - Alias of array_key_exists</li>
 <li><a href="function.krsort.html" class="index">krsort</a> - Sort an array by key in reverse order</li>
 <li><a href="function.ksort.html" class="index">ksort</a> - Sort an array by key</li>
 <li><a href="id3v2attachedpictureframe.getdescription.html" class="index">KTaglib_ID3v2_AttachedPictureFrame::getDescription</a> - Returns a description for the picture in a picture frame</li>
@@ -3737,6 +4154,7 @@
 <li><a href="function.linkinfo.html" class="index">linkinfo</a> - Gets information about a link</li>
 <li><a href="function.list.html" class="index">list</a> - Assign variables as if they were an array</li>
 <li><a href="locale.acceptfromhttp.html" class="index">Locale::acceptFromHttp</a> - Tries to find out best available locale based on HTTP &quot;Accept-Language&quot; header</li>
+<li><a href="locale.canonicalize.html" class="index">Locale::canonicalize</a> - Canonicalize the locale string</li>
 <li><a href="locale.composelocale.html" class="index">Locale::composeLocale</a> - Returns a correctly ordered and delimited locale ID</li>
 <li><a href="locale.filtermatches.html" class="index">Locale::filterMatches</a> - Checks if a language tag filter matches with locale</li>
 <li><a href="locale.getallvariants.html" class="index">Locale::getAllVariants</a> - Gets the variants for the input locale</li>
@@ -3930,7 +4348,7 @@
 <li><a href="function.mb-output-handler.html" class="index">mb_output_handler</a> - Callback function converts character encoding in output buffer</li>
 <li><a href="function.mb-parse-str.html" class="index">mb_parse_str</a> - Parse GET/POST/COOKIE data and set global variable</li>
 <li><a href="function.mb-preferred-mime-name.html" class="index">mb_preferred_mime_name</a> - Get MIME charset string</li>
-<li><a href="function.mb-regex-encoding.html" class="index">mb_regex_encoding</a> - Returns current encoding for multibyte regex as string</li>
+<li><a href="function.mb-regex-encoding.html" class="index">mb_regex_encoding</a> - Set/Get character encoding for multibyte regex</li>
 <li><a href="function.mb-regex-set-options.html" class="index">mb_regex_set_options</a> - Set/Get the default options for mbregex functions</li>
 <li><a href="function.mb-send-mail.html" class="index">mb_send_mail</a> - Send encoded mail</li>
 <li><a href="function.mb-split.html" class="index">mb_split</a> - Split multibyte string using regular expression</li>
@@ -4017,12 +4435,16 @@
 <li><a href="memcached.cas.html" class="index">Memcached::cas</a> - Compare and swap an item</li>
 <li><a href="memcached.casbykey.html" class="index">Memcached::casByKey</a> - Compare and swap an item on a specific server</li>
 <li><a href="memcached.decrement.html" class="index">Memcached::decrement</a> - Decrement numeric item's value</li>
+<li><a href="memcached.decrementbykey.html" class="index">Memcached::decrementByKey</a> - Decrement numeric item's value, stored on a specific server</li>
 <li><a href="memcached.delete.html" class="index">Memcached::delete</a> - Delete an item</li>
 <li><a href="memcached.deletebykey.html" class="index">Memcached::deleteByKey</a> - Delete an item from a specific server</li>
+<li><a href="memcached.deletemulti.html" class="index">Memcached::deleteMulti</a> - Delete multiple items</li>
+<li><a href="memcached.deletemultibykey.html" class="index">Memcached::deleteMultiByKey</a> - Delete multiple items from a specific server</li>
 <li><a href="memcached.fetch.html" class="index">Memcached::fetch</a> - Fetch the next result</li>
 <li><a href="memcached.fetchall.html" class="index">Memcached::fetchAll</a> - Fetch all the remaining results</li>
 <li><a href="memcached.flush.html" class="index">Memcached::flush</a> - Invalidate all items in the cache</li>
 <li><a href="memcached.get.html" class="index">Memcached::get</a> - Retrieve an item</li>
+<li><a href="memcached.getallkeys.html" class="index">Memcached::getAllKeys</a> - Gets the keys stored on all the servers</li>
 <li><a href="memcached.getbykey.html" class="index">Memcached::getByKey</a> - Retrieve an item from a specific server</li>
 <li><a href="memcached.getdelayed.html" class="index">Memcached::getDelayed</a> - Request multiple items</li>
 <li><a href="memcached.getdelayedbykey.html" class="index">Memcached::getDelayedByKey</a> - Request multiple items from a specific server</li>
@@ -4036,15 +4458,24 @@
 <li><a href="memcached.getstats.html" class="index">Memcached::getStats</a> - Get server pool statistics</li>
 <li><a href="memcached.getversion.html" class="index">Memcached::getVersion</a> - Get server pool version info</li>
 <li><a href="memcached.increment.html" class="index">Memcached::increment</a> - Increment numeric item's value</li>
+<li><a href="memcached.incrementbykey.html" class="index">Memcached::incrementByKey</a> - Increment numeric item's value, stored on a specific server</li>
+<li><a href="memcached.ispersistent.html" class="index">Memcached::isPersistent</a> - Check if a persitent connection to memcache is being used</li>
+<li><a href="memcached.ispristine.html" class="index">Memcached::isPristine</a> - Check if the instance was recently created</li>
 <li><a href="memcached.prepend.html" class="index">Memcached::prepend</a> - Prepend data to an existing item</li>
 <li><a href="memcached.prependbykey.html" class="index">Memcached::prependByKey</a> - Prepend data to an existing item on a specific server</li>
+<li><a href="memcached.quit.html" class="index">Memcached::quit</a> - Close any open connections</li>
 <li><a href="memcached.replace.html" class="index">Memcached::replace</a> - Replace the item under an existing key</li>
 <li><a href="memcached.replacebykey.html" class="index">Memcached::replaceByKey</a> - Replace the item under an existing key on a specific server</li>
+<li><a href="memcached.resetserverlist.html" class="index">Memcached::resetServerList</a> - Clears all servers from the server list</li>
 <li><a href="memcached.set.html" class="index">Memcached::set</a> - Store an item</li>
 <li><a href="memcached.setbykey.html" class="index">Memcached::setByKey</a> - Store an item on a specific server</li>
 <li><a href="memcached.setmulti.html" class="index">Memcached::setMulti</a> - Store multiple items</li>
 <li><a href="memcached.setmultibykey.html" class="index">Memcached::setMultiByKey</a> - Store multiple items on a specific server</li>
 <li><a href="memcached.setoption.html" class="index">Memcached::setOption</a> - Set a Memcached option</li>
+<li><a href="memcached.setoptions.html" class="index">Memcached::setOptions</a> - Set Memcached options</li>
+<li><a href="memcached.setsaslauthdata.html" class="index">Memcached::setSaslAuthData</a> - Set the credentials to use for authentication</li>
+<li><a href="memcached.touch.html" class="index">Memcached::touch</a> - Set a new expiration on an item</li>
+<li><a href="memcached.touchbykey.html" class="index">Memcached::touchByKey</a> - Set a new expiration on an item on a specific server</li>
 <li><a href="memcached.construct.html" class="index">Memcached::__construct</a> - Create a Memcached instance</li>
 <li><a href="function.memcache-debug.html" class="index">memcache_debug</a> - Turn debug output on/off</li>
 <li><a href="function.memory-get-peak-usage.html" class="index">memory_get_peak_usage</a> - Returns the peak of memory allocated by PHP</li>
@@ -4078,28 +4509,31 @@
 <li><a href="function.mkdir.html" class="index">mkdir</a> - Makes directory</li>
 <li><a href="function.mktime.html" class="index">mktime</a> - Get Unix timestamp for a date</li>
 <li><a href="function.money-format.html" class="index">money_format</a> - Formats a number as a currency string</li>
-<li><a href="mongo.close.html" class="index">Mongo::close</a> - Closes this connection</li>
-<li><a href="mongo.connect.html" class="index">Mongo::connect</a> - Connects to a database server</li>
 <li><a href="mongo.connectutil.html" class="index">Mongo::connectUtil</a> - Connects with a database server</li>
-<li><a href="mongo.dropdb.html" class="index">Mongo::dropDB</a> - Drops a database [deprecated]</li>
-<li><a href="mongo.gethosts.html" class="index">Mongo::getHosts</a> - Updates status for all hosts associated with this</li>
 <li><a href="mongo.getpoolsize.html" class="index">Mongo::getPoolSize</a> - Get pool size for connection pools</li>
-<li><a href="mongo.getreadpreference.html" class="index">Mongo::getReadPreference</a> - Get the read preference for this connection</li>
 <li><a href="mongo.getslave.html" class="index">Mongo::getSlave</a> - Returns the address being used by this for slaveOkay reads</li>
 <li><a href="mongo.getslaveokay.html" class="index">Mongo::getSlaveOkay</a> - Get slaveOkay setting for this connection</li>
-<li><a href="mongo.listdbs.html" class="index">Mongo::listDBs</a> - Lists all of the databases available.</li>
 <li><a href="mongo.pooldebug.html" class="index">Mongo::poolDebug</a> - Returns information about all connection pools.</li>
-<li><a href="mongo.selectcollection.html" class="index">Mongo::selectCollection</a> - Gets a database collection</li>
-<li><a href="mongo.selectdb.html" class="index">Mongo::selectDB</a> - Gets a database</li>
 <li><a href="mongo.setpoolsize.html" class="index">Mongo::setPoolSize</a> - Set the size for future connection pools.</li>
-<li><a href="mongo.setreadpreference.html" class="index">Mongo::setReadPreference</a> - Set the read preference for this connection</li>
 <li><a href="mongo.setslaveokay.html" class="index">Mongo::setSlaveOkay</a> - Change slaveOkay setting for this connection</li>
-<li><a href="mongo.switchslave.html" class="index">Mongo::switchSlave</a> - Choose a new slave for slaveOkay reads</li>
-<li><a href="mongo.construct.html" class="index">Mongo::__construct</a> - Creates a new database connection object</li>
-<li><a href="mongo.get.html" class="index">Mongo::__get</a> - Gets a database</li>
-<li><a href="mongo.tostring.html" class="index">Mongo::__toString</a> - String representation of this connection</li>
+<li><a href="mongo.switchslave.html" class="index">Mongo::switchSlave</a> - Choose a new secondary for slaveOkay reads</li>
+<li><a href="mongo.construct.html" class="index">Mongo::__construct</a> - The __construct purpose</li>
 <li><a href="mongobindata.construct.html" class="index">MongoBinData::__construct</a> - Creates a new binary data object.</li>
 <li><a href="mongobindata.tostring.html" class="index">MongoBinData::__toString</a> - The string representation of this binary data object.</li>
+<li><a href="mongoclient.close.html" class="index">MongoClient::close</a> - Closes this connection</li>
+<li><a href="mongoclient.connect.html" class="index">MongoClient::connect</a> - Connects to a database server</li>
+<li><a href="mongoclient.dropdb.html" class="index">MongoClient::dropDB</a> - Drops a database [deprecated]</li>
+<li><a href="mongoclient.getconnections.html" class="index">MongoClient::getConnections</a> - Return info about all open connections</li>
+<li><a href="mongoclient.gethosts.html" class="index">MongoClient::getHosts</a> - Updates status for all associated hosts</li>
+<li><a href="mongoclient.getreadpreference.html" class="index">MongoClient::getReadPreference</a> - Get the read preference for this connection</li>
+<li><a href="mongoclient.killcursor.html" class="index">MongoClient::killCursor</a> - Kills a specific cursor on the server</li>
+<li><a href="mongoclient.listdbs.html" class="index">MongoClient::listDBs</a> - Lists all of the databases available.</li>
+<li><a href="mongoclient.selectcollection.html" class="index">MongoClient::selectCollection</a> - Gets a database collection</li>
+<li><a href="mongoclient.selectdb.html" class="index">MongoClient::selectDB</a> - Gets a database</li>
+<li><a href="mongoclient.setreadpreference.html" class="index">MongoClient::setReadPreference</a> - Set the read preference for this connection</li>
+<li><a href="mongoclient.construct.html" class="index">MongoClient::__construct</a> - Creates a new database connection object</li>
+<li><a href="mongoclient.get.html" class="index">MongoClient::__get</a> - Gets a database</li>
+<li><a href="mongoclient.tostring.html" class="index">MongoClient::__toString</a> - String representation of this connection</li>
 <li><a href="mongocode.construct.html" class="index">MongoCode::__construct</a> - Creates a new code object</li>
 <li><a href="mongocode.tostring.html" class="index">MongoCode::__toString</a> - Returns this code as a string</li>
 <li><a href="mongocollection.aggregate.html" class="index">MongoCollection::aggregate</a> - Perform an aggregation using the aggregation framework</li>
@@ -4114,6 +4548,7 @@
    already exists</li>
 <li><a href="mongocollection.find.html" class="index">MongoCollection::find</a> - Querys this collection, returning a MongoCursor
   for the result set</li>
+<li><a href="mongocollection.findandmodify.html" class="index">MongoCollection::findAndModify</a> - Update a document and return it</li>
 <li><a href="mongocollection.findone.html" class="index">MongoCollection::findOne</a> - Querys this collection, returning a single element</li>
 <li><a href="mongocollection.getdbref.html" class="index">MongoCollection::getDBRef</a> - Fetches the document pointed to by a database reference</li>
 <li><a href="mongocollection.getindexinfo.html" class="index">MongoCollection::getIndexInfo</a> - Returns information about indexes on this collection</li>
@@ -4121,9 +4556,9 @@
 <li><a href="mongocollection.getreadpreference.html" class="index">MongoCollection::getReadPreference</a> - Get the read preference for this collection</li>
 <li><a href="mongocollection.getslaveokay.html" class="index">MongoCollection::getSlaveOkay</a> - Get slaveOkay setting for this collection</li>
 <li><a href="mongocollection.group.html" class="index">MongoCollection::group</a> - Performs an operation similar to SQL's GROUP BY command</li>
-<li><a href="mongocollection.insert.html" class="index">MongoCollection::insert</a> - Inserts an array into the collection</li>
+<li><a href="mongocollection.insert.html" class="index">MongoCollection::insert</a> - Inserts a document into the collection</li>
 <li><a href="mongocollection.remove.html" class="index">MongoCollection::remove</a> - Remove records from this collection</li>
-<li><a href="mongocollection.save.html" class="index">MongoCollection::save</a> - Saves an object to this collection</li>
+<li><a href="mongocollection.save.html" class="index">MongoCollection::save</a> - Saves a document to this collection</li>
 <li><a href="mongocollection.setreadpreference.html" class="index">MongoCollection::setReadPreference</a> - Set the read preference for this collection</li>
 <li><a href="mongocollection.setslaveokay.html" class="index">MongoCollection::setSlaveOkay</a> - Change slaveOkay setting for this collection</li>
 <li><a href="mongocollection.toindexstring.html" class="index">MongoCollection::toIndexString</a> - Converts keys specifying an index to its identifying string</li>
@@ -4156,7 +4591,7 @@
 <li><a href="mongocursor.setflag.html" class="index">MongoCursor::setFlag</a> - Sets arbitrary flags in case there is no method available the specific flag</li>
 <li><a href="mongocursor.setreadpreference.html" class="index">MongoCursor::setReadPreference</a> - Set the read preference for this query</li>
 <li><a href="mongocursor.skip.html" class="index">MongoCursor::skip</a> - Skips a number of results</li>
-<li><a href="mongocursor.slaveokay.html" class="index">MongoCursor::slaveOkay</a> - Sets whether this query can be done on a slave</li>
+<li><a href="mongocursor.slaveokay.html" class="index">MongoCursor::slaveOkay</a> - Sets whether this query can be done on a secondary</li>
 <li><a href="mongocursor.snapshot.html" class="index">MongoCursor::snapshot</a> - Use snapshot mode for the query</li>
 <li><a href="mongocursor.sort.html" class="index">MongoCursor::sort</a> - Sorts the results by given fields</li>
 <li><a href="mongocursor.tailable.html" class="index">MongoCursor::tailable</a> - Sets whether this cursor will be left open after fetching the last results</li>
@@ -4181,7 +4616,7 @@
 <li><a href="mongodb.getreadpreference.html" class="index">MongoDB::getReadPreference</a> - Get the read preference for this database</li>
 <li><a href="mongodb.getslaveokay.html" class="index">MongoDB::getSlaveOkay</a> - Get slaveOkay setting for this database</li>
 <li><a href="mongodb.lasterror.html" class="index">MongoDB::lastError</a> - Check if there was an error on the most recent db operation performed</li>
-<li><a href="mongodb.listcollections.html" class="index">MongoDB::listCollections</a> - Get an of MongoCollection for this database</li>
+<li><a href="mongodb.listcollections.html" class="index">MongoDB::listCollections</a> - Gets an array of all MongoCollections for this database</li>
 <li><a href="mongodb.preverror.html" class="index">MongoDB::prevError</a> - Checks for the last error thrown during a database operation</li>
 <li><a href="mongodb.repair.html" class="index">MongoDB::repair</a> - Repairs and compacts this database</li>
 <li><a href="mongodb.reseterror.html" class="index">MongoDB::resetError</a> - Clears any flagged errors on the database</li>
@@ -4202,9 +4637,9 @@
 <li><a href="mongogridfs.get.html" class="index">MongoGridFS::get</a> - Retrieve a file from the database</li>
 <li><a href="mongogridfs.put.html" class="index">MongoGridFS::put</a> - Stores a file in the database</li>
 <li><a href="mongogridfs.remove.html" class="index">MongoGridFS::remove</a> - Removes files from the collections</li>
-<li><a href="mongogridfs.storebytes.html" class="index">MongoGridFS::storeBytes</a> - Chunkifies and stores bytes in the database</li>
+<li><a href="mongogridfs.storebytes.html" class="index">MongoGridFS::storeBytes</a> - Stores a string of bytes in the database</li>
 <li><a href="mongogridfs.storefile.html" class="index">MongoGridFS::storeFile</a> - Stores a file in the database</li>
-<li><a href="mongogridfs.storeupload.html" class="index">MongoGridFS::storeUpload</a> - Saves an uploaded file to the database</li>
+<li><a href="mongogridfs.storeupload.html" class="index">MongoGridFS::storeUpload</a> - Stores an uploaded file in the database</li>
 <li><a href="mongogridfs.construct.html" class="index">MongoGridFS::__construct</a> - Creates new file collections</li>
 <li><a href="mongogridfscursor.current.html" class="index">MongoGridFSCursor::current</a> - Returns the current file</li>
 <li><a href="mongogridfscursor.getnext.html" class="index">MongoGridFSCursor::getNext</a> - Return the next file to which this cursor points, and advance the cursor</li>
@@ -4227,8 +4662,10 @@
 <li><a href="mongoint32.tostring.html" class="index">MongoInt32::__toString</a> - Returns the string representation of this 32-bit integer.</li>
 <li><a href="mongoint64.construct.html" class="index">MongoInt64::__construct</a> - Creates a new 64-bit integer.</li>
 <li><a href="mongoint64.tostring.html" class="index">MongoInt64::__toString</a> - Returns the string representation of this 64-bit integer.</li>
+<li><a href="mongolog.getcallback.html" class="index">MongoLog::getCallback</a> - Retrieve the previously set callback function name</li>
 <li><a href="mongolog.getlevel.html" class="index">MongoLog::getLevel</a> - Gets the log level</li>
 <li><a href="mongolog.getmodule.html" class="index">MongoLog::getModule</a> - Gets the modules currently being logged</li>
+<li><a href="mongolog.setcallback.html" class="index">MongoLog::setCallback</a> - Set a callback function to be called on events</li>
 <li><a href="mongolog.setlevel.html" class="index">MongoLog::setLevel</a> - Sets logging level</li>
 <li><a href="mongolog.setmodule.html" class="index">MongoLog::setModule</a> - Sets driver functionality to log</li>
 <li><a href="mongopool.getsize.html" class="index">MongoPool::getSize</a> - Get pool size for connection pools</li>
@@ -4236,6 +4673,7 @@
 <li><a href="mongopool.setsize.html" class="index">MongoPool::setSize</a> - Set the size for future connection pools.</li>
 <li><a href="mongoregex.construct.html" class="index">MongoRegex::__construct</a> - Creates a new regular expression</li>
 <li><a href="mongoregex.tostring.html" class="index">MongoRegex::__toString</a> - A string representation of this regular expression</li>
+<li><a href="mongoresultexception.getdocument.html" class="index">MongoResultException::getDocument</a> - Retrieve the full result document</li>
 <li><a href="mongotimestamp.construct.html" class="index">MongoTimestamp::__construct</a> - Creates a new timestamp.</li>
 <li><a href="mongotimestamp.tostring.html" class="index">MongoTimestamp::__toString</a> - Returns a string representation of this timestamp</li>
 <li><a href="function.move-uploaded-file.html" class="index">move_uploaded_file</a> - Moves an uploaded file to a new location</li>
@@ -4366,11 +4804,11 @@
 <li><a href="multipleiterator.setflags.html" class="index">MultipleIterator::setFlags</a> - Sets flags</li>
 <li><a href="multipleiterator.valid.html" class="index">MultipleIterator::valid</a> - Checks the validity of sub iterators</li>
 <li><a href="multipleiterator.construct.html" class="index">MultipleIterator::__construct</a> - Constructs a new MultipleIterator</li>
-<li><a href="mutex.create.html" class="index">Mutex::create</a> - Create a new Mutex</li>
-<li><a href="mutex.destroy.html" class="index">Mutex::destroy</a> - To destroy a handle to a Mutex and free the associated resources</li>
-<li><a href="mutex.lock.html" class="index">Mutex::lock</a> - The lock purpose</li>
-<li><a href="mutex.trylock.html" class="index">Mutex::trylock</a> - To attempt to lock a Mutex without blocking.</li>
-<li><a href="mutex.unlock.html" class="index">Mutex::unlock</a> - Attempts to unlock a Mutex</li>
+<li><a href="mutex.create.html" class="index">Mutex::create</a> - Create a Mutex</li>
+<li><a href="mutex.destroy.html" class="index">Mutex::destroy</a> - Destroy Mutex</li>
+<li><a href="mutex.lock.html" class="index">Mutex::lock</a> - Acquire Mutex</li>
+<li><a href="mutex.trylock.html" class="index">Mutex::trylock</a> - Attempt to Acquire Mutex</li>
+<li><a href="mutex.unlock.html" class="index">Mutex::unlock</a> - Release Mutex</li>
 <li><a href="mysqli.affected-rows.html" class="index">mysqli::$affected_rows</a> - Gets the number of affected rows in a previous MySQL operation</li>
 <li><a href="mysqli.client-info.html" class="index">mysqli::$client_info</a> - Get MySQL client info</li>
 <li><a href="mysqli.connect-errno.html" class="index">mysqli::$connect_errno</a> - Returns the error code from last connect call</li>
@@ -4389,12 +4827,13 @@
 <li><a href="mysqli.thread-id.html" class="index">mysqli::$thread_id</a> - Returns the thread ID for the current connection</li>
 <li><a href="mysqli.warning-count.html" class="index">mysqli::$warning_count</a> - Returns the number of warnings from the last query for the given link</li>
 <li><a href="mysqli.autocommit.html" class="index">mysqli::autocommit</a> - Turns on or off auto-committing database modifications</li>
+<li><a href="mysqli.begin-transaction.html" class="index">mysqli::begin_transaction</a> - Starts a transaction</li>
 <li><a href="mysqli.change-user.html" class="index">mysqli::change_user</a> - Changes the user of the specified database connection</li>
 <li><a href="mysqli.character-set-name.html" class="index">mysqli::character_set_name</a> - Returns the default character set for the database connection</li>
 <li><a href="mysqli.close.html" class="index">mysqli::close</a> - Closes a previously opened database connection</li>
 <li><a href="mysqli.commit.html" class="index">mysqli::commit</a> - Commits the current transaction</li>
 <li><a href="mysqli.debug.html" class="index">mysqli::debug</a> - Performs debugging operations</li>
-<li><a href="mysqli.disable-reads-from-master.html" class="index">mysqli::disable_reads_from_master</a> - Disable reads from master</li>
+<li><a href="function.mysqli-disable-reads-from-master.html" class="index">mysqli::disable_reads_from_master</a> - Disable reads from master</li>
 <li><a href="mysqli.dump-debug-info.html" class="index">mysqli::dump_debug_info</a> - Dump debugging information into the log</li>
 <li><a href="mysqli.get-charset.html" class="index">mysqli::get_charset</a> - Returns a character set object</li>
 <li><a href="mysqli.get-client-info.html" class="index">mysqli::get_client_info</a> - Get MySQL client info</li>
@@ -4415,13 +4854,16 @@
 <li><a href="mysqli.real-query.html" class="index">mysqli::real_query</a> - Execute an SQL query</li>
 <li><a href="mysqli.reap-async-query.html" class="index">mysqli::reap_async_query</a> - Get result from async query</li>
 <li><a href="mysqli.refresh.html" class="index">mysqli::refresh</a> - Refreshes</li>
+<li><a href="mysqli.release-savepoint.html" class="index">mysqli::release_savepoint</a> - Rolls back a transaction to the named savepoint</li>
 <li><a href="mysqli.rollback.html" class="index">mysqli::rollback</a> - Rolls back current transaction</li>
 <li><a href="mysqli.rpl-query-type.html" class="index">mysqli::rpl_query_type</a> - Returns RPL query type</li>
+<li><a href="mysqli.savepoint.html" class="index">mysqli::savepoint</a> - Set a named transaction savepoint</li>
 <li><a href="mysqli.select-db.html" class="index">mysqli::select_db</a> - Selects the default database for database queries</li>
 <li><a href="mysqli.send-query.html" class="index">mysqli::send_query</a> - Send the query and return</li>
 <li><a href="mysqli.set-charset.html" class="index">mysqli::set_charset</a> - Sets the default client character set</li>
 <li><a href="mysqli.set-local-infile-default.html" class="index">mysqli::set_local_infile_default</a> - Unsets user defined handler for load local infile command</li>
 <li><a href="mysqli.set-local-infile-handler.html" class="index">mysqli::set_local_infile_handler</a> - Set callback function for LOAD DATA LOCAL INFILE command</li>
+<li><a href="function.mysqli-set-opt.html" class="index">mysqli::set_opt</a> - Alias of mysqli_options</li>
 <li><a href="mysqli.ssl-set.html" class="index">mysqli::ssl_set</a> - Used for establishing secure connections using SSL</li>
 <li><a href="mysqli.stat.html" class="index">mysqli::stat</a> - Gets the current system status</li>
 <li><a href="mysqli.stmt-init.html" class="index">mysqli::stmt_init</a> - Initializes a statement and returns an object for use with mysqli_stmt_prepare</li>
@@ -4434,6 +4876,7 @@
 <li><a href="function.mysqli-client-encoding.html" class="index">mysqli_client_encoding</a> - Alias of mysqli_character_set_name</li>
 <li><a href="function.mysqli-connect.html" class="index">mysqli_connect</a> - Alias of mysqli::__construct</li>
 <li><a href="function.mysqli-disable-rpl-parse.html" class="index">mysqli_disable_rpl_parse</a> - Disable RPL parse</li>
+<li><a href="mysqli-driver.report-mode.html" class="index">mysqli_driver::$report_mode</a> - Enables or disables internal report functions</li>
 <li><a href="mysqli-driver.embedded-server-end.html" class="index">mysqli_driver::embedded_server_end</a> - Stop embedded server</li>
 <li><a href="mysqli-driver.embedded-server-start.html" class="index">mysqli_driver::embedded_server_start</a> - Initialize and start embedded server</li>
 <li><a href="function.mysqli-enable-reads-from-master.html" class="index">mysqli_enable_reads_from_master</a> - Enable reads from master</li>
@@ -4443,11 +4886,11 @@
 <li><a href="function.mysqli-fetch.html" class="index">mysqli_fetch</a> - Alias for mysqli_stmt_fetch</li>
 <li><a href="function.mysqli-get-cache-stats.html" class="index">mysqli_get_cache_stats</a> - Returns client Zval cache statistics</li>
 <li><a href="mysqli.get-client-stats.html" class="index">mysqli_get_client_stats</a> - Returns client per-process statistics</li>
-<li><a href="mysqli.get-client-version.html" class="index">mysqli_get_client_version</a> - Returns the MySQL client version as a string</li>
+<li><a href="mysqli.get-client-version.html" class="index">mysqli_get_client_version</a> - Returns the MySQL client version as an integer</li>
 <li><a href="function.mysqli-get-metadata.html" class="index">mysqli_get_metadata</a> - Alias for mysqli_stmt_result_metadata</li>
 <li><a href="function.mysqli-master-query.html" class="index">mysqli_master_query</a> - Enforce execution of a query on the master in a master/slave setup</li>
 <li><a href="function.mysqli-param-count.html" class="index">mysqli_param_count</a> - Alias for mysqli_stmt_param_count</li>
-<li><a href="function.mysqli-report.html" class="index">mysqli_report</a> - Enables or disables internal report functions</li>
+<li><a href="function.mysqli-report.html" class="index">mysqli_report</a> - Alias of of mysqli_driver-&gt;report_mode</li>
 <li><a href="mysqli-result.current-field.html" class="index">mysqli_result::$current_field</a> - Get current field offset of a result pointer</li>
 <li><a href="mysqli-result.field-count.html" class="index">mysqli_result::$field_count</a> - Get the number of fields in a result</li>
 <li><a href="mysqli-result.lengths.html" class="index">mysqli_result::$lengths</a> - Returns the lengths of the columns of the current row in the result set</li>
@@ -4466,7 +4909,6 @@
 <li><a href="function.mysqli-rpl-parse-enabled.html" class="index">mysqli_rpl_parse_enabled</a> - Check if RPL parse is enabled</li>
 <li><a href="function.mysqli-rpl-probe.html" class="index">mysqli_rpl_probe</a> - RPL probe</li>
 <li><a href="function.mysqli-send-long-data.html" class="index">mysqli_send_long_data</a> - Alias for mysqli_stmt_send_long_data</li>
-<li><a href="function.mysqli-set-opt.html" class="index">mysqli_set_opt</a> - Alias of mysqli_options</li>
 <li><a href="function.mysqli-slave-query.html" class="index">mysqli_slave_query</a> - Force execution of a query on a slave in a master/slave setup</li>
 <li><a href="mysqli-stmt.affected-rows.html" class="index">mysqli_stmt::$affected_rows</a> - Returns the total number of rows changed, deleted, or
   inserted by the last executed statement</li>
@@ -4553,6 +4995,8 @@
 <li><a href="mysqlnduhpreparedstatement.execute.html" class="index">MysqlndUhPreparedStatement::execute</a> - Executes a prepared Query</li>
 <li><a href="mysqlnduhpreparedstatement.prepare.html" class="index">MysqlndUhPreparedStatement::prepare</a> - Prepare an SQL statement for execution</li>
 <li><a href="mysqlnduhpreparedstatement.construct.html" class="index">MysqlndUhPreparedStatement::__construct</a> - The __construct purpose</li>
+<li><a href="function.mysqlnd-memcache-get-config.html" class="index">mysqlnd_memcache_get_config</a> - Returns information about the plugin configuration</li>
+<li><a href="function.mysqlnd-memcache-set.html" class="index">mysqlnd_memcache_set</a> - Associate a MySQL connection with a Memcache connection</li>
 <li><a href="function.mysqlnd-ms-get-last-gtid.html" class="index">mysqlnd_ms_get_last_gtid</a> - Returns the latest global transaction ID</li>
 <li><a href="function.mysqlnd-ms-get-last-used-connection.html" class="index">mysqlnd_ms_get_last_used_connection</a> - Returns an array which describes the last used connection</li>
 <li><a href="function.mysqlnd-ms-get-stats.html" class="index">mysqlnd_ms_get_stats</a> - Returns query distribution and connection statistics</li>
@@ -5163,6 +5607,7 @@
 <li><a href="function.oci-field-size.html" class="index">oci_field_size</a> - Returns field's size</li>
 <li><a href="function.oci-field-type.html" class="index">oci_field_type</a> - Returns field's data type</li>
 <li><a href="function.oci-field-type-raw.html" class="index">oci_field_type_raw</a> - Tell the raw Oracle data type of the field</li>
+<li><a href="function.oci-free-descriptor.html" class="index">oci_free_descriptor</a> - Frees a descriptor</li>
 <li><a href="function.oci-free-statement.html" class="index">oci_free_statement</a> - Frees all resources associated with statement or cursor</li>
 <li><a href="function.oci-internal-debug.html" class="index">oci_internal_debug</a> - Enables or disables internal debug output</li>
 <li><a href="function.oci-lob-copy.html" class="index">oci_lob_copy</a> - Copies large object</li>
@@ -5233,6 +5678,8 @@
 <li><a href="function.odbc-tableprivileges.html" class="index">odbc_tableprivileges</a> - Lists tables and the privileges associated with each table</li>
 <li><a href="function.odbc-tables.html" class="index">odbc_tables</a> - Get the list of table names stored in a specific data source</li>
 <li><a href="wrappers.audio.html" class="index">ogg://</a> - Audio streams</li>
+<li><a href="function.opcache-invalidate.html" class="index">opcache_invalidate</a> - Invalidates a cached script</li>
+<li><a href="function.opcache-reset.html" class="index">opcache_reset</a> - Resets the contents of the opcode cache</li>
 <li><a href="function.openal-buffer-create.html" class="index">openal_buffer_create</a> - Generate OpenAL buffer</li>
 <li><a href="function.openal-buffer-data.html" class="index">openal_buffer_data</a> - Load a buffer with data</li>
 <li><a href="function.openal-buffer-destroy.html" class="index">openal_buffer_destroy</a> - Destroys an OpenAL buffer</li>
@@ -5276,6 +5723,7 @@
 <li><a href="function.openssl-get-privatekey.html" class="index">openssl_get_privatekey</a> - Alias of openssl_pkey_get_private</li>
 <li><a href="function.openssl-get-publickey.html" class="index">openssl_get_publickey</a> - Alias of openssl_pkey_get_public</li>
 <li><a href="function.openssl-open.html" class="index">openssl_open</a> - Open sealed data</li>
+<li><a href="function.openssl-pbkdf2.html" class="index">openssl_pbkdf2</a> - Generates a PKCS5 v2 PBKDF2 string, defaults to SHA-1</li>
 <li><a href="function.openssl-pkcs7-decrypt.html" class="index">openssl_pkcs7_decrypt</a> - Decrypts an S/MIME encrypted message</li>
 <li><a href="function.openssl-pkcs7-encrypt.html" class="index">openssl_pkcs7_encrypt</a> - Encrypt an S/MIME message</li>
 <li><a href="function.openssl-pkcs7-sign.html" class="index">openssl_pkcs7_sign</a> - Sign an S/MIME message</li>
@@ -5348,18 +5796,25 @@
 <li><a href="function.parse-str.html" class="index">parse_str</a> - Parses the string into variables</li>
 <li><a href="function.parse-url.html" class="index">parse_url</a> - Parse a URL and return its components</li>
 <li><a href="function.passthru.html" class="index">passthru</a> - Execute an external program and display raw output</li>
+<li><a href="function.password-get-info.html" class="index">password_get_info</a> - Returns information about the given hash</li>
+<li><a href="function.password-hash.html" class="index">password_hash</a> - Creates a password hash</li>
+<li><a href="function.password-needs-rehash.html" class="index">password_needs_rehash</a> - Checks if the given hash matches the given options</li>
+<li><a href="function.password-verify.html" class="index">password_verify</a> - Verifies that a password matches a hash</li>
 <li><a href="function.pathinfo.html" class="index">pathinfo</a> - Returns information about a file path</li>
 <li><a href="function.pclose.html" class="index">pclose</a> - Closes process file pointer</li>
 <li><a href="function.pcntl-alarm.html" class="index">pcntl_alarm</a> - Set an alarm clock for delivery of a signal</li>
+<li><a href="function.pcntl-errno.html" class="index">pcntl_errno</a> - Alias of pcntl_strerror</li>
 <li><a href="function.pcntl-exec.html" class="index">pcntl_exec</a> - Executes specified program in current process space</li>
 <li><a href="function.pcntl-fork.html" class="index">pcntl_fork</a> - Forks the currently running process</li>
 <li><a href="function.pcntl-getpriority.html" class="index">pcntl_getpriority</a> - Get the priority of any process</li>
+<li><a href="function.pcntl-get-last-error.html" class="index">pcntl_get_last_error</a> - Retrieve the error number set by the last pcntl function which failed</li>
 <li><a href="function.pcntl-setpriority.html" class="index">pcntl_setpriority</a> - Change the priority of any process</li>
 <li><a href="function.pcntl-signal.html" class="index">pcntl_signal</a> - Installs a signal handler</li>
 <li><a href="function.pcntl-signal-dispatch.html" class="index">pcntl_signal_dispatch</a> - Calls signal handlers for pending signals</li>
 <li><a href="function.pcntl-sigprocmask.html" class="index">pcntl_sigprocmask</a> - Sets and retrieves blocked signals</li>
 <li><a href="function.pcntl-sigtimedwait.html" class="index">pcntl_sigtimedwait</a> - Waits for signals, with a timeout</li>
 <li><a href="function.pcntl-sigwaitinfo.html" class="index">pcntl_sigwaitinfo</a> - Waits for signals</li>
+<li><a href="function.pcntl-strerror.html" class="index">pcntl_strerror</a> - Retrieve the system error message associated with the given errno</li>
 <li><a href="function.pcntl-wait.html" class="index">pcntl_wait</a> - Waits on or returns the status of a forked child</li>
 <li><a href="function.pcntl-waitpid.html" class="index">pcntl_waitpid</a> - Waits on or returns the status of a forked child</li>
 <li><a href="function.pcntl-wexitstatus.html" class="index">pcntl_wexitstatus</a> - Returns the return code of a terminated child</li>
@@ -6085,16 +6540,19 @@
 <li><a href="function.radius-demangle.html" class="index">radius_demangle</a> - Demangles data</li>
 <li><a href="function.radius-demangle-mppe-key.html" class="index">radius_demangle_mppe_key</a> - Derives mppe-keys from mangled data</li>
 <li><a href="function.radius-get-attr.html" class="index">radius_get_attr</a> - Extracts an attribute</li>
+<li><a href="function.radius-get-tagged-attr-data.html" class="index">radius_get_tagged_attr_data</a> - Extracts the data from a tagged attribute</li>
+<li><a href="function.radius-get-tagged-attr-tag.html" class="index">radius_get_tagged_attr_tag</a> - Extracts the tag from a tagged attribute</li>
 <li><a href="function.radius-get-vendor-attr.html" class="index">radius_get_vendor_attr</a> - Extracts a vendor specific attribute</li>
-<li><a href="function.radius-put-addr.html" class="index">radius_put_addr</a> - Attaches an IP-Address attribute</li>
+<li><a href="function.radius-put-addr.html" class="index">radius_put_addr</a> - Attaches an IP address attribute</li>
 <li><a href="function.radius-put-attr.html" class="index">radius_put_attr</a> - Attaches a binary attribute</li>
 <li><a href="function.radius-put-int.html" class="index">radius_put_int</a> - Attaches an integer attribute</li>
 <li><a href="function.radius-put-string.html" class="index">radius_put_string</a> - Attaches a string attribute</li>
-<li><a href="function.radius-put-vendor-addr.html" class="index">radius_put_vendor_addr</a> - Attaches a vendor specific IP-Address attribute</li>
+<li><a href="function.radius-put-vendor-addr.html" class="index">radius_put_vendor_addr</a> - Attaches a vendor specific IP address attribute</li>
 <li><a href="function.radius-put-vendor-attr.html" class="index">radius_put_vendor_attr</a> - Attaches a vendor specific binary attribute</li>
 <li><a href="function.radius-put-vendor-int.html" class="index">radius_put_vendor_int</a> - Attaches a vendor specific integer attribute</li>
 <li><a href="function.radius-put-vendor-string.html" class="index">radius_put_vendor_string</a> - Attaches a vendor specific string attribute</li>
 <li><a href="function.radius-request-authenticator.html" class="index">radius_request_authenticator</a> - Returns the request authenticator</li>
+<li><a href="function.radius-salt-encrypt-attr.html" class="index">radius_salt_encrypt_attr</a> - Salt-encrypts a value</li>
 <li><a href="function.radius-send-request.html" class="index">radius_send_request</a> - Sends the request and waites for a reply</li>
 <li><a href="function.radius-server-secret.html" class="index">radius_server_secret</a> - Returns the shared secret</li>
 <li><a href="function.radius-strerror.html" class="index">radius_strerror</a> - Returns an error message</li>
@@ -6285,6 +6743,7 @@
 <li><a href="reflectionfunction.isdisabled.html" class="index">ReflectionFunction::isDisabled</a> - Checks if function is disabled</li>
 <li><a href="reflectionfunction.construct.html" class="index">ReflectionFunction::__construct</a> - Constructs a ReflectionFunction object</li>
 <li><a href="reflectionfunction.tostring.html" class="index">ReflectionFunction::__toString</a> - To string</li>
+<li><a href="reflectionfunctionabstract.getclosurescopeclass.html" class="index">ReflectionFunctionAbstract::getClosureScopeClass</a> - Returns the scope associated to the closure</li>
 <li><a href="reflectionfunctionabstract.getclosurethis.html" class="index">ReflectionFunctionAbstract::getClosureThis</a> - Returns this pointer bound to closure</li>
 <li><a href="reflectionfunctionabstract.getdoccomment.html" class="index">ReflectionFunctionAbstract::getDocComment</a> - Gets doc comment</li>
 <li><a href="reflectionfunctionabstract.getendline.html" class="index">ReflectionFunctionAbstract::getEndLine</a> - Gets end line number</li>
@@ -6302,6 +6761,7 @@
 <li><a href="reflectionfunctionabstract.innamespace.html" class="index">ReflectionFunctionAbstract::inNamespace</a> - Checks if function in namespace</li>
 <li><a href="reflectionfunctionabstract.isclosure.html" class="index">ReflectionFunctionAbstract::isClosure</a> - Checks if closure</li>
 <li><a href="reflectionfunctionabstract.isdeprecated.html" class="index">ReflectionFunctionAbstract::isDeprecated</a> - Checks if deprecated</li>
+<li><a href="reflectionfunctionabstract.isgenerator.html" class="index">ReflectionFunctionAbstract::isGenerator</a> - Returns whether this function is a generator</li>
 <li><a href="reflectionfunctionabstract.isinternal.html" class="index">ReflectionFunctionAbstract::isInternal</a> - Checks if is internal</li>
 <li><a href="reflectionfunctionabstract.isuserdefined.html" class="index">ReflectionFunctionAbstract::isUserDefined</a> - Checks if user defined</li>
 <li><a href="reflectionfunctionabstract.returnsreference.html" class="index">ReflectionFunctionAbstract::returnsReference</a> - Checks if returns reference</li>
@@ -6334,10 +6794,13 @@
 <li><a href="reflectionparameter.getdeclaringclass.html" class="index">ReflectionParameter::getDeclaringClass</a> - Gets declaring class</li>
 <li><a href="reflectionparameter.getdeclaringfunction.html" class="index">ReflectionParameter::getDeclaringFunction</a> - Gets declaring function</li>
 <li><a href="reflectionparameter.getdefaultvalue.html" class="index">ReflectionParameter::getDefaultValue</a> - Gets default parameter value</li>
+<li><a href="reflectionparameter.getdefaultvalueconstantname.html" class="index">ReflectionParameter::getDefaultValueConstantName</a> - Returns the default value's constant name if default value is constant or null</li>
 <li><a href="reflectionparameter.getname.html" class="index">ReflectionParameter::getName</a> - Gets parameter name</li>
 <li><a href="reflectionparameter.getposition.html" class="index">ReflectionParameter::getPosition</a> - Gets parameter position</li>
 <li><a href="reflectionparameter.isarray.html" class="index">ReflectionParameter::isArray</a> - Checks if parameter expects an array</li>
+<li><a href="reflectionparameter.iscallable.html" class="index">ReflectionParameter::isCallable</a> - Returns whether parameter MUST be callable</li>
 <li><a href="reflectionparameter.isdefaultvalueavailable.html" class="index">ReflectionParameter::isDefaultValueAvailable</a> - Checks if a default value is available</li>
+<li><a href="reflectionparameter.isdefaultvalueconstant.html" class="index">ReflectionParameter::isDefaultValueConstant</a> - Returns whether the default value of this parameter is constant</li>
 <li><a href="reflectionparameter.isoptional.html" class="index">ReflectionParameter::isOptional</a> - Checks if optional</li>
 <li><a href="reflectionparameter.ispassedbyreference.html" class="index">ReflectionParameter::isPassedByReference</a> - Checks if passed by reference</li>
 <li><a href="reflectionparameter.clone.html" class="index">ReflectionParameter::__clone</a> - Clone</li>
@@ -6730,6 +7193,7 @@
 <li><a href="function.socket-bind.html" class="index">socket_bind</a> - Binds a name to a socket</li>
 <li><a href="function.socket-clear-error.html" class="index">socket_clear_error</a> - Clears the error on the socket or the last error code</li>
 <li><a href="function.socket-close.html" class="index">socket_close</a> - Closes a socket resource</li>
+<li><a href="function.socket-cmsg-space.html" class="index">socket_cmsg_space</a> - Calculate message buffer size</li>
 <li><a href="function.socket-connect.html" class="index">socket_connect</a> - Initiates a connection on a socket</li>
 <li><a href="function.socket-create.html" class="index">socket_create</a> - Create a socket (endpoint for communication)</li>
 <li><a href="function.socket-create-listen.html" class="index">socket_create_listen</a> - Opens a socket on port to accept connections</li>
@@ -6744,8 +7208,10 @@
 <li><a href="function.socket-read.html" class="index">socket_read</a> - Reads a maximum of length bytes from a socket</li>
 <li><a href="function.socket-recv.html" class="index">socket_recv</a> - Receives data from a connected socket</li>
 <li><a href="function.socket-recvfrom.html" class="index">socket_recvfrom</a> - Receives data from a socket whether or not it is connection-oriented</li>
+<li><a href="function.socket-recvmsg.html" class="index">socket_recvmsg</a> - Read a message</li>
 <li><a href="function.socket-select.html" class="index">socket_select</a> - Runs the select() system call on the given arrays of sockets with a specified timeout</li>
 <li><a href="function.socket-send.html" class="index">socket_send</a> - Sends data to a connected socket</li>
+<li><a href="function.socket-sendmsg.html" class="index">socket_sendmsg</a> - Send a message</li>
 <li><a href="function.socket-sendto.html" class="index">socket_sendto</a> - Sends a message to a socket, whether it is connected or not</li>
 <li><a href="function.socket-set-block.html" class="index">socket_set_block</a> - Sets blocking mode on a socket resource</li>
 <li><a href="function.socket-set-blocking.html" class="index">socket_set_blocking</a> - Alias of stream_set_blocking</li>
@@ -7165,6 +7631,7 @@
 <li><a href="splfixedarray.toarray.html" class="index">SplFixedArray::toArray</a> - Returns a PHP array from the fixed array</li>
 <li><a href="splfixedarray.valid.html" class="index">SplFixedArray::valid</a> - Check whether the array contains more elements</li>
 <li><a href="splfixedarray.construct.html" class="index">SplFixedArray::__construct</a> - Constructs a new fixed array</li>
+<li><a href="splfixedarray.wakeup.html" class="index">SplFixedArray::__wakeup</a> - Reinitialises the array after being unserialised</li>
 <li><a href="splheap.compare.html" class="index">SplHeap::compare</a> - Compare elements in order to place them correctly in the heap while sifting up.</li>
 <li><a href="splheap.count.html" class="index">SplHeap::count</a> - Counts the number of elements in the heap.</li>
 <li><a href="splheap.current.html" class="index">SplHeap::current</a> - Return current node pointed by the iterator</li>
@@ -7354,6 +7821,7 @@
 <li><a href="function.ssdeep-fuzzy-hash.html" class="index">ssdeep_fuzzy_hash</a> - Create a fuzzy hash from a string</li>
 <li><a href="function.ssdeep-fuzzy-hash-filename.html" class="index">ssdeep_fuzzy_hash_filename</a> - Create a fuzzy hash from a file</li>
 <li><a href="wrappers.ssh2.html" class="index">ssh2://</a> - Secure Shell 2</li>
+<li><a href="function.ssh2-auth-agent.html" class="index">ssh2_auth_agent</a> - Authenticate over SSH using the ssh agent</li>
 <li><a href="function.ssh2-auth-hostbased-file.html" class="index">ssh2_auth_hostbased_file</a> - Authenticate using a public hostkey</li>
 <li><a href="function.ssh2-auth-none.html" class="index">ssh2_auth_none</a> - Authenticate as &quot;none&quot;</li>
 <li><a href="function.ssh2-auth-password.html" class="index">ssh2_auth_password</a> - Authenticate over SSH using a plain password</li>
@@ -7370,6 +7838,7 @@
 <li><a href="function.ssh2-scp-recv.html" class="index">ssh2_scp_recv</a> - Request a file via SCP</li>
 <li><a href="function.ssh2-scp-send.html" class="index">ssh2_scp_send</a> - Send a file via SCP</li>
 <li><a href="function.ssh2-sftp.html" class="index">ssh2_sftp</a> - Initialize SFTP subsystem</li>
+<li><a href="function.ssh2-sftp-chmod.html" class="index">ssh2_sftp_chmod</a> - Changes file mode</li>
 <li><a href="function.ssh2-sftp-lstat.html" class="index">ssh2_sftp_lstat</a> - Stat a symbolic link</li>
 <li><a href="function.ssh2-sftp-mkdir.html" class="index">ssh2_sftp_mkdir</a> - Create a directory</li>
 <li><a href="function.ssh2-sftp-readlink.html" class="index">ssh2_sftp_readlink</a> - Return the target of a symbolic link</li>
@@ -7382,6 +7851,15 @@
 <li><a href="function.ssh2-shell.html" class="index">ssh2_shell</a> - Request an interactive shell</li>
 <li><a href="function.ssh2-tunnel.html" class="index">ssh2_tunnel</a> - Open a tunnel through a remote server</li>
 <li><a href="context.ssl.html" class="index">SSL context options</a> - SSL context option listing</li>
+<li><a href="stackable.isrunning.html" class="index">Stackable::isRunning</a> - State Detection</li>
+<li><a href="stackable.isterminated.html" class="index">Stackable::isTerminated</a> - State Detection</li>
+<li><a href="stackable.iswaiting.html" class="index">Stackable::isWaiting</a> - State Detection</li>
+<li><a href="stackable.lock.html" class="index">Stackable::lock</a> - Synchronization</li>
+<li><a href="stackable.notify.html" class="index">Stackable::notify</a> - Synchronization</li>
+<li><a href="stackable.run.html" class="index">Stackable::run</a> - Execution</li>
+<li><a href="stackable.synchronized.html" class="index">Stackable::synchronized</a> - Synchronization</li>
+<li><a href="stackable.unlock.html" class="index">Stackable::unlock</a> - Synchronization</li>
+<li><a href="stackable.wait.html" class="index">Stackable::wait</a> - Synchronization</li>
 <li><a href="function.stat.html" class="index">stat</a> - Gives information about a file</li>
 <li><a href="function.stats-absolute-deviation.html" class="index">stats_absolute_deviation</a> - Returns the absolute deviation of an array of values</li>
 <li><a href="function.stats-cdf-beta.html" class="index">stats_cdf_beta</a> - CDF function for BETA Distribution. Calculates any one parameter of the beta distribution given values for the others.</li>
@@ -7914,24 +8392,21 @@
 <li><a href="function.tcpwrap-check.html" class="index">tcpwrap_check</a> - Performs a tcpwrap check</li>
 <li><a href="function.tempnam.html" class="index">tempnam</a> - Create file with unique file name</li>
 <li><a href="function.textdomain.html" class="index">textdomain</a> - Sets the default domain</li>
-<li><a href="thread.getcount.html" class="index">Thread::getCount</a> - Return the number of currently executing Threads.</li>
-<li><a href="thread.getmax.html" class="index">Thread::getMax</a> - Return the maximum number of Threads an instance of PHP may create.</li>
-<li><a href="thread.getpeak.html" class="index">Thread::getPeak</a> - Return the peak number of Threads.</li>
-<li><a href="thread.getstacked.html" class="index">Thread::getStacked</a> - Return the number of items on the referenced Threads stack.</li>
-<li><a href="thread.getthread.html" class="index">Thread::getThread</a> - Import a Thread created in another context.</li>
-<li><a href="thread.getthreadid.html" class="index">Thread::getThreadId</a> - Get the identifer for a Thread</li>
-<li><a href="thread.isbusy.html" class="index">Thread::isBusy</a> - Tell if a Thread is busy executing</li>
-<li><a href="thread.isjoined.html" class="index">Thread::isJoined</a> - Tell if the referenced Thread has been joined.</li>
-<li><a href="thread.isrunning.html" class="index">Thread::isRunning</a> - Tell if the referenced Thread is running.</li>
-<li><a href="thread.isstarted.html" class="index">Thread::isStarted</a> - Tell if the referenced Thread has been started.</li>
-<li><a href="thread.iswaiting.html" class="index">Thread::isWaiting</a> - Tell if the referenced Thread is waiting.</li>
-<li><a href="thread.join.html" class="index">Thread::join</a> - Join with the referenced Thread.</li>
-<li><a href="thread.notify.html" class="index">Thread::notify</a> - Notify all Threads waiting for the referenced Thread.</li>
-<li><a href="thread.run.html" class="index">Thread::run</a> - This is the method that pthreads runs asynchronously for the programmer.</li>
-<li><a href="thread.stack.html" class="index">Thread::stack</a> - Push work onto the stack for execution by the referenced Thread</li>
-<li><a href="thread.start.html" class="index">Thread::start</a> - Start executing the referenced Thread</li>
-<li><a href="thread.unstack.html" class="index">Thread::unstack</a> - Remove items from the referenced Threads stack.</li>
-<li><a href="thread.wait.html" class="index">Thread::wait</a> - Wait for Notification from the referenced Thread.</li>
+<li><a href="thread.getcreatorid.html" class="index">Thread::getCreatorId</a> - Identification</li>
+<li><a href="thread.getthreadid.html" class="index">Thread::getThreadId</a> - Identification</li>
+<li><a href="thread.isjoined.html" class="index">Thread::isJoined</a> - State Detection</li>
+<li><a href="thread.isrunning.html" class="index">Thread::isRunning</a> - State Detection</li>
+<li><a href="thread.isstarted.html" class="index">Thread::isStarted</a> - State Detection</li>
+<li><a href="thread.isterminated.html" class="index">Thread::isTerminated</a> - State Detection</li>
+<li><a href="thread.iswaiting.html" class="index">Thread::isWaiting</a> - State Detection</li>
+<li><a href="thread.join.html" class="index">Thread::join</a> - Synchronization</li>
+<li><a href="thread.lock.html" class="index">Thread::lock</a> - Synchronization</li>
+<li><a href="thread.notify.html" class="index">Thread::notify</a> - Synchronization</li>
+<li><a href="thread.run.html" class="index">Thread::run</a> - Execution</li>
+<li><a href="thread.start.html" class="index">Thread::start</a> - Execution</li>
+<li><a href="thread.synchronized.html" class="index">Thread::synchronized</a> - Synchronization</li>
+<li><a href="thread.unlock.html" class="index">Thread::unlock</a> - Synchronization</li>
+<li><a href="thread.wait.html" class="index">Thread::wait</a> - Synchronization</li>
 <li><a href="tidy.props.errorbuffer.html" class="index">tidy::$errorBuffer</a> - Return warnings and errors which occurred parsing the specified document</li>
 <li><a href="tidy.body.html" class="index">tidy::body</a> - Returns a tidyNode object starting from the &lt;body&gt; tag of the tidy parse tree</li>
 <li><a href="tidy.cleanrepair.html" class="index">tidy::cleanRepair</a> - Execute configured cleanup and repair operations on parsed markup</li>
@@ -8189,7 +8664,7 @@
 <li><a href="function.trader-stoch.html" class="index">trader_stoch</a> - Stochastic</li>
 <li><a href="function.trader-stochf.html" class="index">trader_stochf</a> - Stochastic Fast</li>
 <li><a href="function.trader-stochrsi.html" class="index">trader_stochrsi</a> - Stochastic Relative Strength Index</li>
-<li><a href="function.trader-sub.html" class="index">trader_sub</a> - Vector Arithmetic Substraction</li>
+<li><a href="function.trader-sub.html" class="index">trader_sub</a> - Vector Arithmetic Subtraction</li>
 <li><a href="function.trader-sum.html" class="index">trader_sum</a> - Summation</li>
 <li><a href="function.trader-t3.html" class="index">trader_t3</a> - Triple Exponential Moving Average (T3)</li>
 <li><a href="function.trader-tan.html" class="index">trader_tan</a> - Vector Trigonometric Tan</li>
@@ -8220,6 +8695,25 @@
 <li class='gen-index index-for-u'>u<ul id='refentry-index-for-u'>
 <li><a href="function.uasort.html" class="index">uasort</a> - Sort an array with a user-defined comparison function and maintain index association</li>
 <li><a href="function.ucfirst.html" class="index">ucfirst</a> - Make a string's first character uppercase</li>
+<li><a href="uconverter.convert.html" class="index">UConverter::convert</a> - Convert string from one charset to another</li>
+<li><a href="uconverter.fromucallback.html" class="index">UConverter::fromUCallback</a> - Default &quot;from&quot; callback function</li>
+<li><a href="uconverter.getaliases.html" class="index">UConverter::getAliases</a> - Get the aliases of the given name</li>
+<li><a href="uconverter.getavailable.html" class="index">UConverter::getAvailable</a> - Get the available canonical converter names</li>
+<li><a href="uconverter.getdestinationencoding.html" class="index">UConverter::getDestinationEncoding</a> - Get the destination encoding</li>
+<li><a href="uconverter.getdestinationtype.html" class="index">UConverter::getDestinationType</a> - Get the destination converter type</li>
+<li><a href="uconverter.geterrorcode.html" class="index">UConverter::getErrorCode</a> - Get last error code on the object</li>
+<li><a href="uconverter.geterrormessage.html" class="index">UConverter::getErrorMessage</a> - Get last error message on the object</li>
+<li><a href="uconverter.getsourceencoding.html" class="index">UConverter::getSourceEncoding</a> - Get the source encoding</li>
+<li><a href="uconverter.getsourcetype.html" class="index">UConverter::getSourceType</a> - Get the source convertor type</li>
+<li><a href="uconverter.getstandards.html" class="index">UConverter::getStandards</a> - Get standards associated to converter names</li>
+<li><a href="uconverter.getsubstchars.html" class="index">UConverter::getSubstChars</a> - Get substitution chars</li>
+<li><a href="uconverter.reasontext.html" class="index">UConverter::reasonText</a> - Get string representation of the callback reason</li>
+<li><a href="uconverter.setdestinationencoding.html" class="index">UConverter::setDestinationEncoding</a> - Set the destination encoding</li>
+<li><a href="uconverter.setsourceencoding.html" class="index">UConverter::setSourceEncoding</a> - Set the source encoding</li>
+<li><a href="uconverter.setsubstchars.html" class="index">UConverter::setSubstChars</a> - Set the substitution chars</li>
+<li><a href="uconverter.toucallback.html" class="index">UConverter::toUCallback</a> - Default &quot;to&quot; callback function</li>
+<li><a href="uconverter.transcode.html" class="index">UConverter::transcode</a> - Convert string from one charset to another</li>
+<li><a href="uconverter.construct.html" class="index">UConverter::__construct</a> - Create UConverter object</li>
 <li><a href="function.ucwords.html" class="index">ucwords</a> - Uppercase the first character of each word in a string</li>
 <li><a href="function.udm-add-search-limit.html" class="index">udm_add_search_limit</a> - Add various search limits</li>
 <li><a href="function.udm-alloc-agent.html" class="index">udm_alloc_agent</a> - Allocate mnoGoSearch session</li>
@@ -8306,6 +8800,7 @@
 <li><a href="varnishadmin.banurl.html" class="index">VarnishAdmin::banUrl</a> - Ban an URL using a VCL expression</li>
 <li><a href="varnishadmin.clearpanic.html" class="index">VarnishAdmin::clearPanic</a> - Clear varnish instance panic messages</li>
 <li><a href="varnishadmin.connect.html" class="index">VarnishAdmin::connect</a> - Connect to a varnish instance administration interface</li>
+<li><a href="varnishadmin.disconnect.html" class="index">VarnishAdmin::disconnect</a> - Disconnect from a varnish instance administration interface</li>
 <li><a href="varnishadmin.getpanic.html" class="index">VarnishAdmin::getPanic</a> - Get the last panic message on a varnish instance</li>
 <li><a href="varnishadmin.getparams.html" class="index">VarnishAdmin::getParams</a> - Fetch current varnish instance configuration parameters</li>
 <li><a href="varnishadmin.isrunning.html" class="index">VarnishAdmin::isRunning</a> - Check if the varnish slave process is currently running</li>
@@ -8413,6 +8908,16 @@
 <li><a href="function.wincache-ucache-set.html" class="index">wincache_ucache_set</a> - Adds a variable in user cache and overwrites a variable if it already exists in the cache</li>
 <li><a href="function.wincache-unlock.html" class="index">wincache_unlock</a> - Releases an exclusive lock on a given key</li>
 <li><a href="function.wordwrap.html" class="index">wordwrap</a> - Wraps a string to a given number of characters</li>
+<li><a href="worker.getcreatorid.html" class="index">Worker::getCreatorId</a> - Identification</li>
+<li><a href="worker.getstacked.html" class="index">Worker::getStacked</a> - Stack Analysis</li>
+<li><a href="worker.getthreadid.html" class="index">Worker::getThreadId</a> - Identification</li>
+<li><a href="worker.isshutdown.html" class="index">Worker::isShutdown</a> - State Detection</li>
+<li><a href="worker.isworking.html" class="index">Worker::isWorking</a> - State Detection</li>
+<li><a href="worker.run.html" class="index">Worker::run</a> - Execution</li>
+<li><a href="worker.shutdown.html" class="index">Worker::shutdown</a> - Synchronization</li>
+<li><a href="worker.stack.html" class="index">Worker::stack</a> - Stacking</li>
+<li><a href="worker.start.html" class="index">Worker::start</a> - Execution</li>
+<li><a href="worker.unstack.html" class="index">Worker::unstack</a> - Stacking</li>
 </ul></li>
 <li class='gen-index index-for-x'>x<ul id='refentry-index-for-x'>
 <li><a href="function.xattr-get.html" class="index">xattr_get</a> - Get an extended attribute</li>
@@ -8420,15 +8925,6 @@
 <li><a href="function.xattr-remove.html" class="index">xattr_remove</a> - Remove an extended attribute</li>
 <li><a href="function.xattr-set.html" class="index">xattr_set</a> - Set an extended attribute</li>
 <li><a href="function.xattr-supported.html" class="index">xattr_supported</a> - Check if filesystem supports extended attributes</li>
-<li><a href="xcom.decode.html" class="index">Xcom::decode</a> - Decodes an avro message</li>
-<li><a href="xcom.encode.html" class="index">Xcom::encode</a> - Encode an avro message</li>
-<li><a href="xcom.getdebugoutput.html" class="index">Xcom::getDebugOutput</a> - Get the debug output</li>
-<li><a href="xcom.getlastresponse.html" class="index">Xcom::getLastResponse</a> - Get the last response body</li>
-<li><a href="xcom.getlastresponseinfo.html" class="index">Xcom::getLastResponseInfo</a> - Gets the last response HTTP information</li>
-<li><a href="xcom.getonboardingurl.html" class="index">Xcom::getOnboardingURL</a> - Generate an onboarding URL</li>
-<li><a href="xcom.send.html" class="index">Xcom::send</a> - Send a message</li>
-<li><a href="xcom.sendasync.html" class="index">Xcom::sendAsync</a> - Send a message asynchronously</li>
-<li><a href="xcom.construct.html" class="index">Xcom::__construct</a> - Create a new Xcom object</li>
 <li><a href="function.xdiff-file-bdiff.html" class="index">xdiff_file_bdiff</a> - Make binary diff of two files</li>
 <li><a href="function.xdiff-file-bdiff-size.html" class="index">xdiff_file_bdiff_size</a> - Read a size of file created by applying a binary diff</li>
 <li><a href="function.xdiff-file-bpatch.html" class="index">xdiff_file_bpatch</a> - Patch a file with a binary diff</li>
@@ -8450,7 +8946,7 @@
 <li><a href="function.xhprof-disable.html" class="index">xhprof_disable</a> - Stops xhprof profiler</li>
 <li><a href="function.xhprof-enable.html" class="index">xhprof_enable</a> - Start xhprof profiler</li>
 <li><a href="function.xhprof-sample-disable.html" class="index">xhprof_sample_disable</a> - Stops xhprof sample profiler</li>
-<li><a href="function.xhprof-sample-enable.html" class="index">xhprof_sample_enable</a> - Description</li>
+<li><a href="function.xhprof-sample-enable.html" class="index">xhprof_sample_enable</a> - Start XHProf profiling in sampling mode</li>
 <li><a href="xmlreader.close.html" class="index">XMLReader::close</a> - Close the XMLReader input</li>
 <li><a href="xmlreader.expand.html" class="index">XMLReader::expand</a> - Returns a copy of the current node as a DOM object</li>
 <li><a href="xmlreader.getattribute.html" class="index">XMLReader::getAttribute</a> - Get the value of a named attribute</li>
@@ -8588,8 +9084,8 @@
 <li><a href="function.xslt-set-scheme-handlers.html" class="index">xslt_set_scheme_handlers</a> - Set the scheme handlers for the XSLT processor</li>
 </ul></li>
 <li class='gen-index index-for-y'>y<ul id='refentry-index-for-y'>
-<li><a href="yaf-action-abstract.execute.html" class="index">Yaf_Action_Abstract::execute</a> - Execute the action</li>
-<li><a href="yaf-action-abstract.getcontroller.html" class="index">Yaf_Action_Abstract::getController</a> - get controller instance</li>
+<li><a href="yaf-action-abstract.execute.html" class="index">Yaf_Action_Abstract::execute</a> - Action entry point</li>
+<li><a href="yaf-action-abstract.getcontroller.html" class="index">Yaf_Action_Abstract::getController</a> - Retrieve controller object</li>
 <li><a href="yaf-application.app.html" class="index">Yaf_Application::app</a> - Retrive an Application instance</li>
 <li><a href="yaf-application.bootstrap.html" class="index">Yaf_Application::bootstrap</a> - Call bootstrap</li>
 <li><a href="yaf-application.clearlasterror.html" class="index">Yaf_Application::clearLastError</a> - Clear the last error info</li>
@@ -8622,9 +9118,9 @@
 <li><a href="yaf-config-ini.offsetunset.html" class="index">Yaf_Config_Ini::offsetUnset</a> - The offsetUnset purpose</li>
 <li><a href="yaf-config-ini.readonly.html" class="index">Yaf_Config_Ini::readonly</a> - The readonly purpose</li>
 <li><a href="yaf-config-ini.rewind.html" class="index">Yaf_Config_Ini::rewind</a> - The rewind purpose</li>
-<li><a href="yaf-config-ini.toarray.html" class="index">Yaf_Config_Ini::toArray</a> - The toArray purpose</li>
+<li><a href="yaf-config-ini.toarray.html" class="index">Yaf_Config_Ini::toArray</a> - Returns a PHP array</li>
 <li><a href="yaf-config-ini.valid.html" class="index">Yaf_Config_Ini::valid</a> - The valid purpose</li>
-<li><a href="yaf-config-ini.construct.html" class="index">Yaf_Config_Ini::__construct</a> - The __construct purpose</li>
+<li><a href="yaf-config-ini.construct.html" class="index">Yaf_Config_Ini::__construct</a> - Yaf_Config_Ini constructor</li>
 <li><a href="yaf-config-ini.get.html" class="index">Yaf_Config_Ini::__get</a> - The __get purpose</li>
 <li><a href="yaf-config-ini.isset.html" class="index">Yaf_Config_Ini::__isset</a> - The __isset purpose</li>
 <li><a href="yaf-config-ini.set.html" class="index">Yaf_Config_Ini::__set</a> - The __set purpose</li>
@@ -8638,23 +9134,24 @@
 <li><a href="yaf-config-simple.offsetunset.html" class="index">Yaf_Config_Simple::offsetUnset</a> - The offsetUnset purpose</li>
 <li><a href="yaf-config-simple.readonly.html" class="index">Yaf_Config_Simple::readonly</a> - The readonly purpose</li>
 <li><a href="yaf-config-simple.rewind.html" class="index">Yaf_Config_Simple::rewind</a> - The rewind purpose</li>
-<li><a href="yaf-config-simple.toarray.html" class="index">Yaf_Config_Simple::toArray</a> - The toArray purpose</li>
+<li><a href="yaf-config-simple.toarray.html" class="index">Yaf_Config_Simple::toArray</a> - Returns a PHP array</li>
 <li><a href="yaf-config-simple.valid.html" class="index">Yaf_Config_Simple::valid</a> - The valid purpose</li>
 <li><a href="yaf-config-simple.construct.html" class="index">Yaf_Config_Simple::__construct</a> - The __construct purpose</li>
 <li><a href="yaf-config-simple.get.html" class="index">Yaf_Config_Simple::__get</a> - The __get purpose</li>
 <li><a href="yaf-config-simple.isset.html" class="index">Yaf_Config_Simple::__isset</a> - The __isset purpose</li>
 <li><a href="yaf-config-simple.set.html" class="index">Yaf_Config_Simple::__set</a> - The __set purpose</li>
 <li><a href="yaf-controller-abstract.display.html" class="index">Yaf_Controller_Abstract::display</a> - The display purpose</li>
-<li><a href="yaf-controller-abstract.forward.html" class="index">Yaf_Controller_Abstract::forward</a> - The forward purpose</li>
+<li><a href="yaf-controller-abstract.forward.html" class="index">Yaf_Controller_Abstract::forward</a> - foward to another action</li>
 <li><a href="yaf-controller-abstract.getinvokearg.html" class="index">Yaf_Controller_Abstract::getInvokeArg</a> - The getInvokeArg purpose</li>
 <li><a href="yaf-controller-abstract.getinvokeargs.html" class="index">Yaf_Controller_Abstract::getInvokeArgs</a> - The getInvokeArgs purpose</li>
 <li><a href="yaf-controller-abstract.getmodulename.html" class="index">Yaf_Controller_Abstract::getModuleName</a> - Get module name</li>
-<li><a href="yaf-controller-abstract.getrequest.html" class="index">Yaf_Controller_Abstract::getRequest</a> - The getRequest purpose</li>
-<li><a href="yaf-controller-abstract.getresponse.html" class="index">Yaf_Controller_Abstract::getResponse</a> - The getResponse purpose</li>
+<li><a href="yaf-controller-abstract.getrequest.html" class="index">Yaf_Controller_Abstract::getRequest</a> - Retrieve current request object</li>
+<li><a href="yaf-controller-abstract.getresponse.html" class="index">Yaf_Controller_Abstract::getResponse</a> - Retrieve current response object</li>
 <li><a href="yaf-controller-abstract.getview.html" class="index">Yaf_Controller_Abstract::getView</a> - Retrieve the view engine</li>
 <li><a href="yaf-controller-abstract.getviewpath.html" class="index">Yaf_Controller_Abstract::getViewpath</a> - The getViewpath purpose</li>
+<li><a href="yaf-controller-abstract.init.html" class="index">Yaf_Controller_Abstract::init</a> - Controller initializer</li>
 <li><a href="yaf-controller-abstract.initview.html" class="index">Yaf_Controller_Abstract::initView</a> - The initView purpose</li>
-<li><a href="yaf-controller-abstract.redirect.html" class="index">Yaf_Controller_Abstract::redirect</a> - The redirect purpose</li>
+<li><a href="yaf-controller-abstract.redirect.html" class="index">Yaf_Controller_Abstract::redirect</a> - Redirect to a URL</li>
 <li><a href="yaf-controller-abstract.render.html" class="index">Yaf_Controller_Abstract::render</a> - Render view template</li>
 <li><a href="yaf-controller-abstract.setviewpath.html" class="index">Yaf_Controller_Abstract::setViewpath</a> - The setViewpath purpose</li>
 <li><a href="yaf-controller-abstract.clone.html" class="index">Yaf_Controller_Abstract::__clone</a> - Yaf_Controller_Abstract can not be cloned</li>
@@ -8733,7 +9230,7 @@
 <li><a href="yaf-request-abstract.isrouted.html" class="index">Yaf_Request_Abstract::isRouted</a> - The isRouted purpose</li>
 <li><a href="yaf-request-abstract.isxmlhttprequest.html" class="index">Yaf_Request_Abstract::isXmlHttpRequest</a> - The isXmlHttpRequest purpose</li>
 <li><a href="yaf-request-abstract.setactionname.html" class="index">Yaf_Request_Abstract::setActionName</a> - The setActionName purpose</li>
-<li><a href="yaf-request-abstract.setbaseuri.html" class="index">Yaf_Request_Abstract::setBaseUri</a> - The setBaseUri purpose</li>
+<li><a href="yaf-request-abstract.setbaseuri.html" class="index">Yaf_Request_Abstract::setBaseUri</a> - set base URI</li>
 <li><a href="yaf-request-abstract.setcontrollername.html" class="index">Yaf_Request_Abstract::setControllerName</a> - The setControllerName purpose</li>
 <li><a href="yaf-request-abstract.setdispatched.html" class="index">Yaf_Request_Abstract::setDispatched</a> - The setDispatched purpose</li>
 <li><a href="yaf-request-abstract.setmodulename.html" class="index">Yaf_Request_Abstract::setModuleName</a> - The setModuleName purpose</li>
@@ -8744,7 +9241,7 @@
 <li><a href="yaf-request-http.getcookie.html" class="index">Yaf_Request_Http::getCookie</a> - Retrieve Cookie varialbe</li>
 <li><a href="yaf-request-http.getfiles.html" class="index">Yaf_Request_Http::getFiles</a> - The getFiles purpose</li>
 <li><a href="yaf-request-http.getpost.html" class="index">Yaf_Request_Http::getPost</a> - Retrieve POST variable</li>
-<li><a href="yaf-request-http.getquery.html" class="index">Yaf_Request_Http::getQuery</a> - fetch a query parameter</li>
+<li><a href="yaf-request-http.getquery.html" class="index">Yaf_Request_Http::getQuery</a> - Fetch a query parameter</li>
 <li><a href="yaf-request-http.getrequest.html" class="index">Yaf_Request_Http::getRequest</a> - The getRequest purpose</li>
 <li><a href="yaf-request-http.isxmlhttprequest.html" class="index">Yaf_Request_Http::isXmlHttpRequest</a> - Whether a Ajax Request</li>
 <li><a href="yaf-request-http.clone.html" class="index">Yaf_Request_Http::__clone</a> - The __clone purpose</li>
@@ -8786,7 +9283,7 @@
 <li><a href="yaf-route-regex.route.html" class="index">Yaf_Route_Regex::route</a> - The route purpose</li>
 <li><a href="yaf-route-regex.construct.html" class="index">Yaf_Route_Regex::__construct</a> - The __construct purpose</li>
 <li><a href="yaf-route-rewrite.route.html" class="index">Yaf_Route_Rewrite::route</a> - The route purpose</li>
-<li><a href="yaf-route-rewrite.construct.html" class="index">Yaf_Route_Rewrite::__construct</a> - The __construct purpose</li>
+<li><a href="yaf-route-rewrite.construct.html" class="index">Yaf_Route_Rewrite::__construct</a> - Yaf_Route_Rewrite constructor</li>
 <li><a href="yaf-route-simple.route.html" class="index">Yaf_Route_Simple::route</a> - Route a request</li>
 <li><a href="yaf-route-simple.construct.html" class="index">Yaf_Route_Simple::__construct</a> - Yaf_Route_Simple constructor</li>
 <li><a href="yaf-route-static.match.html" class="index">Yaf_Route_Static::match</a> - The match purpose</li>

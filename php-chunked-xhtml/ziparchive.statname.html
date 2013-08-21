@@ -19,8 +19,8 @@
  <div class="refsect1 description" id="refsect1-ziparchive.statname-description">
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>ZipArchive::statName</strong></span>
-    ( <span class="methodparam"><span class="type"><span class="type name">name</span></span> <code class="parameter">$name</code></span>
+   <span class="type">array</span> <span class="methodname"><strong>ZipArchive::statName</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
   ] )</div>
 
@@ -54,23 +54,23 @@
 
       <p class="para">
        The flags argument specifies how the name lookup should be done.
-       Also, <strong><code>ZIPARCHIVE::FL_UNCHANGED</code></strong> may be ORed to it to request
+       Also, <strong><code>ZipArchive::FL_UNCHANGED</code></strong> may be ORed to it to request
        information  about  the  original  file  in  the archive,
        ignoring any changes made.
        <ul class="itemizedlist">
         <li class="listitem">
          <p class="para">
-          <strong><code>ZIPARCHIVE::FL_NOCASE</code></strong>
+          <strong><code>ZipArchive::FL_NOCASE</code></strong>
          </p>
         </li>
         <li class="listitem">
          <p class="para">
-          <strong><code>ZIPARCHIVE::FL_NODIR</code></strong>
+          <strong><code>ZipArchive::FL_NODIR</code></strong>
          </p>
         </li>
         <li class="listitem">
          <p class="para">
-          <strong><code>ZIPARCHIVE::FL_UNCHANGED</code></strong>
+          <strong><code>ZipArchive::FL_UNCHANGED</code></strong>
          </p>
         </li>
        </ul>
@@ -93,7 +93,7 @@
 
  <div class="refsect1 examples" id="refsect1-ziparchive.statname-examples">
   <h3 class="title">Examples</h3>
-    <div class="example" id="example-868">
+    <div class="example" id="example-886">
      <p><strong>Example #1 Dump the stat info of an entry</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

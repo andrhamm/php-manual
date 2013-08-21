@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd.install.html">Installation</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mysqlnd.persist.html">Persistent Connections</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysqlnd.incompatibilities.html">Incompatibilities</a></div>
  <div class="up"><a href="book.mysqlnd.html">Mysqlnd</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="mysqlnd.config" class="chapter">
@@ -34,59 +34,66 @@ The behaviour of these functions is affected by settings in <var class="filename
 
     <tbody class="tbody">
      <tr>
-      <td><a href="mysqlnd.config.html#mysqlnd.collect-statistics" class="link">mysqlnd.collect_statistics</a></td>
+      <td><a href="mysqlnd.config.html#ini.mysqlnd.collect-statistics" class="link">mysqlnd.collect_statistics</a></td>
       <td>&quot;1&quot;</td>
       <td>PHP_INI_SYSTEM</td>
       <td>Available since PHP 5.3.0.</td>
      </tr>
 
      <tr>
-      <td><a href="mysqlnd.config.html#mysqlnd.collect-memory-statistics" class="link">mysqlnd.collect_memory_statistics</a></td>
+      <td><a href="mysqlnd.config.html#ini.mysqlnd.collect-memory-statistics" class="link">mysqlnd.collect_memory_statistics</a></td>
       <td>&quot;0&quot;</td>
       <td>PHP_INI_SYSTEM</td>
       <td>Available since PHP 5.3.0.</td>
      </tr>
 
      <tr>
-      <td><a href="mysqlnd.config.html#mysqlnd.debug" class="link">mysqlnd.debug</a></td>
+      <td><a href="mysqlnd.config.html#ini.mysqlnd.debug" class="link">mysqlnd.debug</a></td>
       <td>&quot;0&quot;</td>
       <td>PHP_INI_SYSTEM</td>
       <td>Available since PHP 5.3.0.</td>
      </tr>
 
      <tr>
-      <td><a href="mysqlnd.config.html#ini.mysqlnd.log-mask" class="link">mysqlnd.log_mask</a></td>
+      <td><a href="mysqlnd.config.html#ini.ini.mysqlnd.log-mask" class="link">mysqlnd.log_mask</a></td>
       <td>0</td>
       <td>PHP_INI_ALL</td>
       <td>Available since PHP 5.3.0</td>
      </tr>
 
      <tr>
-      <td><a href="mysqlnd.config.html#ini.mysqlnd.mempool-default-size" class="link">mysqlnd.mempool_default_size</a></td>
+      <td><a href="mysqlnd.config.html#ini.ini.mysqlnd.mempool-default-size" class="link">mysqlnd.mempool_default_size</a></td>
       <td>16000</td>
       <td>PHP_INI_ALL</td>
       <td>Available since PHP 5.3.3</td>
      </tr>
 
      <tr>
-      <td><a href="mysqlnd.config.html#mysqlnd.net-read-timeout" class="link">mysqlnd.net_read_timeout</a></td>
+      <td><a href="mysqlnd.config.html#ini.mysqlnd.net-read-timeout" class="link">mysqlnd.net_read_timeout</a></td>
       <td>&quot;31536000&quot;</td>
       <td>PHP_INI_SYSTEM</td>
       <td>Available since PHP 5.3.0.</td>
      </tr>
 
      <tr>
-      <td><a href="mysqlnd.config.html#mysqlnd.net-cmd-buffer-size" class="link">mysqlnd.net_cmd_buffer_size</a></td>
+      <td><a href="mysqlnd.config.html#ini.mysqlnd.net-cmd-buffer-size" class="link">mysqlnd.net_cmd_buffer_size</a></td>
       <td>5.3.0 - &quot;2048&quot;, 5.3.1 - &quot;4096&quot;</td>
       <td>PHP_INI_SYSTEM</td>
       <td>Available since PHP 5.3.0.</td>
      </tr>
 
      <tr>
-      <td><a href="mysqlnd.config.html#mysqlnd.net-read-buffer-size" class="link">mysqlnd.net_read_buffer_size</a></td>
+      <td><a href="mysqlnd.config.html#ini.mysqlnd.net-read-buffer-size" class="link">mysqlnd.net_read_buffer_size</a></td>
       <td>&quot;32768&quot;</td>
       <td>PHP_INI_SYSTEM</td>
       <td>Available since PHP 5.3.0.</td>
+     </tr>
+
+     <tr>
+      <td><a href="mysqlnd.config.html#ini.mysqlnd.sha256-server-public-key" class="link">mysqlnd.sha256_server_public_key</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_PERDIR</td>
+      <td>Available since PHP 5.5.0.</td>
      </tr>
 
     </tbody>
@@ -103,7 +110,7 @@ the configuration directives.</p>
   <p class="para">
   <dl>
 
-   <dt id="mysqlnd.collect-statistics">
+   <dt id="ini.mysqlnd.collect-statistics">
     <span class="term">
      <em><code class="parameter">mysqlnd.collect_statistics</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
@@ -127,7 +134,7 @@ the configuration directives.</p>
 
    </dt>
 
-   <dt id="mysqlnd.collect-memory-statistics">
+   <dt id="ini.mysqlnd.collect-memory-statistics">
     <span class="term">
      <em><code class="parameter">mysqlnd.collect_memory_statistics</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
@@ -152,7 +159,7 @@ the configuration directives.</p>
 
    </dt>
 
-   <dt id="mysqlnd.debug">
+   <dt id="ini.mysqlnd.debug">
     <span class="term">
      <em><code class="parameter">mysqlnd.debug</code></em> <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
     </span>
@@ -267,7 +274,7 @@ d:t:x:O,/tmp/mysqlnd.trace
 
    </dt>
 
-   <dt id="ini.mysqlnd.log-mask">
+   <dt id="ini.ini.mysqlnd.log-mask">
     <span class="term">
      <em><code class="parameter">mysqlnd.log_mask</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
@@ -277,8 +284,8 @@ d:t:x:O,/tmp/mysqlnd.trace
      <p class="para">
       Defines which queries will be logged. The default 0, which disables logging.
       Define using an integer, and not with PHP constants. For example, a value of
-      48 (16 + 32) will log slow queries which either use &#039;no good index&#039; 
-      (SERVER_QUERY_NO_GOOD_INDEX_USED = 16) or no index at all (SERVER_QUERY_NO_INDEX_USED = 32). 
+      48 (16 + 32) will log slow queries which either use &#039;no good index&#039;
+      (SERVER_QUERY_NO_GOOD_INDEX_USED = 16) or no index at all (SERVER_QUERY_NO_INDEX_USED = 32).
       A value of 2043 (1 + 2 + 8 + ... + 1024) will log all slow query types.
      </p>
      <p class="para">
@@ -291,7 +298,7 @@ d:t:x:O,/tmp/mysqlnd.trace
 
    </dt>
 
-   <dt id="ini.mysqlnd.mempool-default-size">
+   <dt id="ini.ini.mysqlnd.mempool-default-size">
     <span class="term">
      <em><code class="parameter">mysqlnd.mempool_default_size</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
@@ -305,7 +312,7 @@ d:t:x:O,/tmp/mysqlnd.trace
 
    </dt>
 
-   <dt id="mysqlnd.net-read-timeout">
+   <dt id="ini.mysqlnd.net-read-timeout">
     <span class="term">
      <em><code class="parameter">mysqlnd.net_read_timeout</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
@@ -314,9 +321,9 @@ d:t:x:O,/tmp/mysqlnd.trace
 
      <p class="para">
       <em>mysqlnd</em> and the MySQL Client Library,
-      <em>libmysql</em> use different networking APIs.
+      <em>libmysqlclient</em> use different networking APIs.
       <em>mysqlnd</em> uses PHP streams, whereas
-      <em>libmysql</em> uses its own wrapper around the
+      <em>libmysqlclient</em> uses its own wrapper around the
       operating level network calls. PHP, by default, sets a read
       timeout of 60s for streams. This is set via
       <var class="filename">php.ini</var>,
@@ -349,7 +356,7 @@ d:t:x:O,/tmp/mysqlnd.trace
 
    </dt>
 
-   <dt id="mysqlnd.net-cmd-buffer-size">
+   <dt id="ini.mysqlnd.net-cmd-buffer-size">
     <span class="term">
      <em><code class="parameter">mysqlnd.net_cmd_buffer_size</code></em>
      <span class="type"><span class="type long">long</span></span>
@@ -410,7 +417,7 @@ d:t:x:O,/tmp/mysqlnd.trace
 
    </dt>
 
-   <dt id="mysqlnd.net-read-buffer-size">
+   <dt id="ini.mysqlnd.net-read-buffer-size">
     <span class="term">
      <em><code class="parameter">mysqlnd.net_read_buffer_size</code></em>
      <span class="type"><span class="type long">long</span></span>
@@ -437,13 +444,35 @@ d:t:x:O,/tmp/mysqlnd.trace
 
    </dt>
 
+   <dt id="ini.mysqlnd.sha256-server-public-key">
+    <span class="term">
+     <em><code class="parameter">mysqlnd.sha256_server_public_key</code></em>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </span>
+    <dd>
+
+     <p class="para">
+      SHA-256 Authentication Plugin related. File with the MySQL server
+      public RSA key.
+     </p>
+     <p class="para">
+      Clients can either omit setting a public RSA key, specify the key through
+      this PHP configuration setting or set the key at runtime using
+       <span class="function"><a href="mysqli.options.html" class="function">mysqli_options()</a></span>. If not public RSA key file is
+      given by the client, then the key will be exchanged as part of the
+      standard SHA-256 Authentication Plugin authentication procedure.
+     </p>
+    </dd>
+
+   </dt>
+
   </dl>
 
  </p>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd.install.html">Installation</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mysqlnd.persist.html">Persistent Connections</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysqlnd.incompatibilities.html">Incompatibilities</a></div>
  <div class="up"><a href="book.mysqlnd.html">Mysqlnd</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

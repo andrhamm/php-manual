@@ -82,16 +82,12 @@
      <dd>
 
       <p class="para">
-       The user function needs to accept two parameters: the error code, and a
-       string describing the error. Then there are three optional parameters 
-       that may be supplied: the filename in which the error occurred, the
-       line number in which the error occurred, and the context in which the
-       error occurred (an array that points to the active symbol table at the
-       point the error occurred).  The function can be shown as:
+       A callback with the following signature.
+       <strong><code>NULL</code></strong> may be passed instead, to reset this handler to its default state.
       </p>
       <p class="para">
        <div class="methodsynopsis dc-description">
-         <span class="methodname"><span class="replaceable">handler</span></span>
+        <span class="type">bool</span> <span class="methodname"><span class="replaceable">handler</span></span>
          ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$errno</code></span>
         , <span class="methodparam"><span class="type">string</span> <code class="parameter">$errstr</code></span>
         [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$errfile</code></span>
@@ -229,6 +225,13 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.5.0</td>
+       <td>
+        <em><code class="parameter">error_handler</code></em> now accepts <strong><code>NULL</code></strong>.
+       </td>
+      </tr>
+
+      <tr>
        <td>5.2.0</td>
        <td>
         The error handler must return <strong><code>FALSE</code></strong> to populate
@@ -272,7 +275,7 @@
  <div class="refsect1 examples" id="refsect1-function.set-error-handler-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-439">
+   <div class="example" id="example-451">
     <p><strong>Example #1 Error handling with  <span class="function"><strong>set_error_handler()</strong></span> and  <span class="function"><a href="function.trigger-error.html" class="function">trigger_error()</a></span></strong></p>
     <div class="example-contents"><p>
      The example below shows the handling of internal exceptions by

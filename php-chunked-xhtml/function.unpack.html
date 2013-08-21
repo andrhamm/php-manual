@@ -83,10 +83,52 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-function.unpack-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        <p class="para">
+         Changes were made to bring this function into line with Perl:
+        </p>
+        <p class="para">
+         The &quot;a&quot; code now retains trailing NULL bytes.
+        </p>
+        <p class="para">
+         The &quot;A&quot; code now strips all trailing ASCII whitespace (spaces, tabs,
+         newlines, carriage returns, and NULL bytes).
+        </p>
+        <p class="para">
+         The &quot;Z&quot; code was added for NULL-padded strings, and removes trailing
+         NULL bytes.
+        </p>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-function.unpack-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3526">
+   <div class="example" id="example-3749">
     <p><strong>Example #1  <span class="function"><strong>unpack()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -103,7 +145,7 @@
   </p>
 
   <p class="para">
-   <div class="example" id="example-3527">
+   <div class="example" id="example-3750">
     <p><strong>Example #2  <span class="function"><strong>unpack()</strong></span> example with a repeater</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -138,7 +180,7 @@
     that some data is overwritten as the keys are the same such as in:
    </p>
    <p class="para">
-    <div class="example" id="example-3528">
+    <div class="example" id="example-3751">
      <p><strong>Example #3  <span class="function"><strong>unpack()</strong></span> example with unnamed keys</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

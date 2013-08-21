@@ -15,7 +15,7 @@
  <h1 class="title">The MongoConnectionException class</h1>
  
 
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(PECL mongo &gt;= 1.0.0)</p>
 
   
   <div class="section" id="mongoconnectionexception.intro">
@@ -30,6 +30,16 @@
    </p>
 
    <ul class="itemizedlist">
+    <li class="listitem">
+     <p class="para">
+      <em>No candidate servers found</em>
+     </p>
+     <p class="para">
+     Thrown when the driver cannot establish a connection to MongoDB
+     (fulfilling the ReadPreferences, if specified).
+     </p>
+    </li>
+
     <li class="listitem">
      <p class="para">
       <em>No server name given.</em>
@@ -75,7 +85,7 @@
       <em>couldn&#039;t determine master</em>
      </p>
      <p class="para">
-      Neither server in a paired connection appeared to be master.
+      No server in a replica set connection was identified as the primary.
      </p>
     </li>
     <li class="listitem">
@@ -134,6 +144,9 @@ $ /usr/sbin/setsebool -P httpd_can_network_connect 1
 
     
     <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <strong class="classname">MongoConnectionException</strong>
+     </span>
      <span class="ooclass">
       <span class="modifier">extends</span>
       <a href="class.mongoexception.html" class="classname">MongoException</a>

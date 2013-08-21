@@ -14,7 +14,7 @@
  <h1 class="title">The <a href="class.ziparchive.html" class="classname">ZipArchive</a> class</h1>
  
  
- <div class="partintro"><p class="verinfo">(No version information available, might only be in SVN)</p>
+ <div class="partintro"><p class="verinfo">(PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.1.0)</p>
  
 
   <div class="section" id="ziparchive.intro">
@@ -40,6 +40,16 @@
      {</div>
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Properties */</div>
+    <div class="fieldsynopsis"><span class="type">int</span> <var class="varname"><a href="class.ziparchive.html#ziparchive.props.status">$<var class="varname">status</var></a></var>;</div>
+
+    <div class="fieldsynopsis"><span class="type">int</span> <var class="varname"><a href="class.ziparchive.html#ziparchive.props.statussys">$<var class="varname">statusSys</var></a></var>;</div>
+
+    <div class="fieldsynopsis"><span class="type">int</span> <var class="varname"><a href="class.ziparchive.html#ziparchive.props.numfiles">$<var class="varname">numFiles</var></a></var>;</div>
+
+    <div class="fieldsynopsis"><span class="type">string</span> <var class="varname"><a href="class.ziparchive.html#ziparchive.props.filename">$<var class="varname">filename</var></a></var>;</div>
+
+    <div class="fieldsynopsis"><span class="type">string</span> <var class="varname"><a href="class.ziparchive.html#ziparchive.props.comment">$<var class="varname">comment</var></a></var>;</div>
+
 
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
@@ -91,13 +101,13 @@
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.getfromindex.html" class="methodname">getFromIndex</a></span>
+   <span class="type">string</span> <span class="methodname"><a href="ziparchive.getfromindex.html" class="methodname">getFromIndex</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$index</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = 0</span></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.getfromname.html" class="methodname">getFromName</a></span>
+   <span class="type">string</span> <span class="methodname"><a href="ziparchive.getfromname.html" class="methodname">getFromName</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = 0</span></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
@@ -116,7 +126,7 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.locatename.html" class="methodname">locateName</a></span>
+   <span class="type">int</span> <span class="methodname"><a href="ziparchive.locatename.html" class="methodname">locateName</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
   ] )</div>
@@ -136,43 +146,43 @@
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$newname</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.setarchivecomment.html" class="methodname">setArchiveComment</a></span>
+   <span class="type">bool</span> <span class="methodname"><a href="ziparchive.setarchivecomment.html" class="methodname">setArchiveComment</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$comment</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.setcommentindex.html" class="methodname">setCommentIndex</a></span>
+   <span class="type">bool</span> <span class="methodname"><a href="ziparchive.setcommentindex.html" class="methodname">setCommentIndex</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$index</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$comment</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.setcommentname.html" class="methodname">setCommentName</a></span>
+   <span class="type">bool</span> <span class="methodname"><a href="ziparchive.setcommentname.html" class="methodname">setCommentName</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$comment</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.statindex.html" class="methodname">statIndex</a></span>
+   <span class="type">array</span> <span class="methodname"><a href="ziparchive.statindex.html" class="methodname">statIndex</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$index</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.statname.html" class="methodname">statName</a></span>
-    ( <span class="methodparam"><span class="type"><span class="type name">name</span></span> <code class="parameter">$name</code></span>
+   <span class="type">array</span> <span class="methodname"><a href="ziparchive.statname.html" class="methodname">statName</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.unchangeall.html" class="methodname">unchangeAll</a></span>
+   <span class="type">bool</span> <span class="methodname"><a href="ziparchive.unchangeall.html" class="methodname">unchangeAll</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.unchangearchive.html" class="methodname">unchangeArchive</a></span>
+   <span class="type">bool</span> <span class="methodname"><a href="ziparchive.unchangearchive.html" class="methodname">unchangeArchive</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.unchangeindex.html" class="methodname">unchangeIndex</a></span>
+   <span class="type">bool</span> <span class="methodname"><a href="ziparchive.unchangeindex.html" class="methodname">unchangeIndex</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$index</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="type">mixed</span> <span class="methodname"><a href="ziparchive.unchangename.html" class="methodname">unchangeName</a></span>
+   <span class="type">bool</span> <span class="methodname"><a href="ziparchive.unchangename.html" class="methodname">unchangeName</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    )</div>
 

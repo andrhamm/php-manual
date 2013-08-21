@@ -103,24 +103,29 @@
  <div class="refsect1 examples" id="refsect1-function.array-reverse-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4652">
+   <div class="example" id="example-4928">
     <p><strong>Example #1  <span class="function"><strong>array_reverse()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$input&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"php"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4.0</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"red"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reverse</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$result_keyed&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reverse</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$input&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"php"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4.0</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"red"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$reversed&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reverse</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$preserved&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reverse</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$reversed</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$preserved</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
 
-    <div class="example-contents"><p>
-     This makes both <var class="varname"><var class="varname">$result</var></var> and
-     <var class="varname"><var class="varname">$result_keyed</var></var> have the same elements, but
-     note the difference between the keys. The printout of
-     <var class="varname"><var class="varname">$result</var></var> and
-     <var class="varname"><var class="varname">$result_keyed</var></var> will be:
-    </p></div>
+    <div class="example-contents"><p>The above example will output:</p></div>
     <div class="example-contents screen">
 <div class="cdata"><pre>
+Array
+(
+    [0] =&gt; php
+    [1] =&gt; 4
+    [2] =&gt; Array
+        (
+            [0] =&gt; green
+            [1] =&gt; red
+        )
+
+)
 Array
 (
     [0] =&gt; Array

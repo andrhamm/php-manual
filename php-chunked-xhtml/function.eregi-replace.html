@@ -102,7 +102,7 @@ highly discouraged.</p></div>
  <div class="refsect1 examples" id="refsect1-function.eregi-replace-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4485">
+   <div class="example" id="example-4759">
     <p><strong>Example #1 Highlight search results</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -123,6 +123,12 @@ regex extension is deprecated in favor of the
 <a href="book.pcre.html" class="link">PCRE extension</a>. Calling this function
 will issue an <strong><code>E_DEPRECATED</code></strong> notice. See <a href="reference.pcre.pattern.posix.html" class="link">the list of
 differences</a> for help on converting to PCRE.</p></p></blockquote>
+  <div class="tip"><strong class="tip">Tip</strong>
+   <p class="para">
+     <span class="function"><strong>eregi_replace()</strong></span> is deprecated as of PHP 5.3.0.  <span class="function"><a href="function.preg-replace.html" class="function">preg_replace()</a></span> 
+    with the <em>i</em> (<strong><code>PCRE_CASELESS</code></strong>) modifier is the suggested alternative.
+   </p>
+  </div>
  </div>
 
 
@@ -134,6 +140,7 @@ differences</a> for help on converting to PCRE.</p></p></blockquote>
     <li class="member"> <span class="function"><a href="function.eregi.html" class="function" rel="rdfs-seeAlso">eregi()</a> - Case insensitive regular expression match</span></li>
     <li class="member"> <span class="function"><a href="function.ereg-replace.html" class="function" rel="rdfs-seeAlso">ereg_replace()</a> - Replace regular expression</span></li>
     <li class="member"> <span class="function"><a href="function.preg-replace.html" class="function" rel="rdfs-seeAlso">preg_replace()</a> - Perform a regular expression search and replace</span></li>
+    <li class="member"> <span class="function"><a href="function.quotemeta.html" class="function" rel="rdfs-seeAlso">quotemeta()</a> - Quote meta characters</span></li>
    </ul>
   </p>
  </div>

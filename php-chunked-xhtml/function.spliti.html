@@ -122,7 +122,7 @@ highly discouraged.</p></div>
   <h3 class="title">Examples</h3>
   <p class="para">
    This example splits a string using &#039;a&#039; as the separator :
-   <div class="example" id="example-4489">
+   <div class="example" id="example-4763">
     <p><strong>Example #1  <span class="function"><strong>spliti()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -156,6 +156,12 @@ regex extension is deprecated in favor of the
 <a href="book.pcre.html" class="link">PCRE extension</a>. Calling this function
 will issue an <strong><code>E_DEPRECATED</code></strong> notice. See <a href="reference.pcre.pattern.posix.html" class="link">the list of
 differences</a> for help on converting to PCRE.</p></p></blockquote>
+  <div class="tip"><strong class="tip">Tip</strong>
+   <p class="para">
+     <span class="function"><strong>spliti()</strong></span> is deprecated as of PHP 5.3.0.  <span class="function"><a href="function.preg-split.html" class="function">preg_split()</a></span> 
+    with the <em>i</em> (<strong><code>PCRE_CASELESS</code></strong>) modifier is the suggested alternative.
+   </p>
+  </div>
  </div>
 
 

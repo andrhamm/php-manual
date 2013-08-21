@@ -8,13 +8,15 @@
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="datetime.getoffset.html">DateTime::getOffset</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="datetime.gettimezone.html">DateTime::getTimezone</a></div>
- <div class="up"><a href="class.datetime.html">DateTime</a></div>
+ <div class="up"><a href="class.datetimeinterface.html">DateTimeInterface</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="datetime.gettimestamp" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">DateTime::getTimestamp</h1>
+  <h1 class="refname">DateTimeImmutable::getTimestamp</h1>
+  <h1 class="refname">DateTimeInterface::getTimestamp</h1>
   <h1 class="refname">date_timestamp_get</h1>
-  <p class="verinfo">(PHP 5 &gt;= 5.3.0)</p><p class="refpurpose"><span class="refname">DateTime::getTimestamp</span> -- <span class="refname">date_timestamp_get</span> &mdash; <span class="dc-title">Gets the Unix timestamp</span></p>
+  <p class="verinfo">(PHP 5 &gt;= 5.3.0)</p><p class="refpurpose"><span class="refname">DateTime::getTimestamp</span> -- <span class="refname">DateTimeImmutable::getTimestamp</span> -- <span class="refname">DateTimeInterface::getTimestamp</span> -- <span class="refname">date_timestamp_get</span> &mdash; <span class="dc-title">Gets the Unix timestamp</span></p>
 
  </div>
 
@@ -26,10 +28,20 @@
     ( <span class="methodparam">void</span>
    )</div>
 
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><strong>DateTimeImmutable::getTimestamp</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><strong>DateTimeInterface::getTimestamp</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
   <p class="para rdfs-comment">Procedural style</p>
   <div class="methodsynopsis dc-description">
    <span class="type">int</span> <span class="methodname"><a href="function.date-timestamp-get.html" class="methodname">date_timestamp_get</a></span>
-    ( <span class="methodparam"><span class="type"><a href="class.datetime.html" class="type DateTime">DateTime</a></span> <code class="parameter">$object</code></span>
+    ( <span class="methodparam"><span class="type"><a href="class.datetimeinterface.html" class="type DateTimeInterface">DateTimeInterface</a></span> <code class="parameter">$object</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -54,7 +66,7 @@
 
  <div class="refsect1 examples" id="refsect1-datetime.gettimestamp-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-624">
+  <div class="example" id="example-656">
    <p><strong>Example #1  <span class="function"><strong>DateTime::getTimestamp()</strong></span> example</strong></p>
    <div class="example-contents"><p>Object oriented style</p></div>
    <div class="example-contents">
@@ -105,6 +117,6 @@ something similar to:</p></div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="datetime.getoffset.html">DateTime::getOffset</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="datetime.gettimezone.html">DateTime::getTimezone</a></div>
- <div class="up"><a href="class.datetime.html">DateTime</a></div>
+ <div class="up"><a href="class.datetimeinterface.html">DateTimeInterface</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

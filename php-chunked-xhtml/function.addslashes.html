@@ -25,34 +25,44 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Returns a string with backslashes before characters that need
-   to be quoted in database queries etc.  These characters are
-   single quote (<em>&#039;</em>), double quote
-   (<em>&quot;</em>), backslash (<em>\</em>)
-   and NUL (the <strong><code>NULL</code></strong> byte).
+   Returns a string with backslashes before characters that need to be
+   quoted.  These characters are single quote (<em>&#039;</em>),
+   double quote (<em>&quot;</em>), backslash
+   (<em>\</em>) and NUL (the <strong><code>NULL</code></strong> byte).
   </p>
   <p class="para">
    An example use of  <span class="function"><strong>addslashes()</strong></span> is when you&#039;re
-   entering data into a database.  For example, to insert the name
-   <em>O&#039;reilly</em> into a database, you will need to escape
-   it. It&#039;s highly recommended to use DBMS specific escape function
+   entering data into string that is evaluated by PHP. For example,
+   <em>O&#039;reilly</em> is stored in $str, you need to escape
+   $str. (e.g.  eval(&quot;echo &#039;&quot;.addslashes($str).&quot;&#039;;&quot;); )
+  </p>
+  <p class="para">
+   To escape database parameters, DBMS specific escape function
    (e.g.  <span class="function"><a href="mysqli.real-escape-string.html" class="function">mysqli_real_escape_string()</a></span> for MySQL or
-    <span class="function"><a href="function.pg-escape-string.html" class="function">pg_escape_string()</a></span> for PostgreSQL), but
-   if the DBMS you&#039;re using doesn&#039;t have an escape function
-   and the DBMS uses <em>\</em> to escape special chars,
-   you can use this function. This would only be to get the data
-   into the database, the extra <em>\</em> will not be inserted.
-   Having the PHP directive <a href="sybase.configuration.html#ini.magic-quotes-sybase" class="link">
-   magic_quotes_sybase</a> set to <em>on</em> will mean
-   <em>&#039;</em> is instead escaped with another
-   <em>&#039;</em>.
+    <span class="function"><a href="function.pg-escape-literal.html" class="function">pg_escape_literal()</a></span>,  <span class="function"><a href="function.pg-escape-string.html" class="function">pg_escape_string()</a></span>
+   for PostgreSQL) should be used for security reasons.  DBMSes have
+   differect escape specification for identifiers (e.g. Table name,
+   field name) than parameters. Some DBMS such as PostgreSQL provides
+   identifier escape
+   function,  <span class="function"><strong>pg_escape_indentifier()</strong></span>, but not all
+   DBMS provides identifier escape API. If this is the case, refer to
+   your database system manual for proper escaping method.
+  </p>
+  <p class="para">
+   If your DBMS doesn&#039;t have an escape function and the DBMS
+   uses <em>\</em> to escape special chars, you might be
+   able to use this function only when this escape method is adequate for
+   your database. Please note that use
+   of  <span class="function"><strong>addslashes()</strong></span> for database parameter escaping
+   can be cause of security issues on most databases.
   </p>
   <p class="para">
    The PHP directive <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">
-   magic_quotes_gpc</a> was <em>on</em> by default before PHP 5.4, and it
-   essentially ran  <span class="function"><strong>addslashes()</strong></span> on all GET, POST,
-   and COOKIE data.  Do not use  <span class="function"><strong>addslashes()</strong></span> on
-   strings that have already been escaped with
+   magic_quotes_gpc</a> was <em>on</em> by default before
+   PHP 5.4, and it essentially ran  <span class="function"><strong>addslashes()</strong></span> on
+   all GET, POST, and COOKIE data.  Do not
+   use  <span class="function"><strong>addslashes()</strong></span> on strings that have already
+   been escaped with
    <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a> as you&#039;ll
    then do double escaping.  The function
     <span class="function"><a href="function.get-magic-quotes-gpc.html" class="function">get_magic_quotes_gpc()</a></span> may come in handy for
@@ -95,7 +105,7 @@
  <div class="refsect1 examples" id="refsect1-function.addslashes-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4492">
+   <div class="example" id="example-4766">
     <p><strong>Example #1 An  <span class="function"><strong>addslashes()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -108,7 +118,7 @@
   </p>
  </div>
 
- 
+
  <div class="refsect1 seealso" id="refsect1-function.addslashes-seealso">
   <h3 class="title">See Also</h3>
   <p class="para">

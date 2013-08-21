@@ -63,7 +63,7 @@ array(
     <em>array()</em> with <em>[]</em>.
    </p>
    
-   <div class="example" id="example-81">
+   <div class="example" id="example-82">
     <p><strong>Example #1 A simple array</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -125,7 +125,7 @@ array(
     will be used as all others are overwritten.
    </p>
    
-   <div class="example" id="example-82">
+   <div class="example" id="example-83">
     <p><strong>Example #2 Type Casting and Overwriting example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -154,7 +154,7 @@ array(1) {
     as PHP does not distinguish between indexed and associative arrays.
    </p>
    
-   <div class="example" id="example-83">
+   <div class="example" id="example-84">
     <p><strong>Example #3 Mixed <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> and <span class="type"><a href="language.types.string.html" class="type string">string</a></span> keys</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -185,7 +185,7 @@ array(4) {
     use the increment of the largest previously used <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> key.
    </p>
    
-   <div class="example" id="example-84">
+   <div class="example" id="example-85">
     <p><strong>Example #4 Indexed arrays without key</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -215,7 +215,7 @@ array(4) {
     It is possible to specify the key only for some elements and leave it out for others:
    </p>
    
-   <div class="example" id="example-85">
+   <div class="example" id="example-86">
     <p><strong>Example #5 Keys not on all elements</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -254,7 +254,7 @@ array(4) {
     Array elements can be accessed using the <em>array[key]</em> syntax.
    </p>
    
-   <div class="example" id="example-86">
+   <div class="example" id="example-87">
     <p><strong>Example #6 Accessing array elements</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -273,12 +273,25 @@ string(3) &quot;foo&quot;
     </div>
    </div>
    
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <p class="para">
+     Both square brackets and curly braces can be used interchangeably
+     for accessing array elements (e.g. $array[42] and $array{42} will
+     both do the same thing in the example above).
+    </p>
+   </p></blockquote>
+
    <p class="para">
-    As of PHP 5.4 it is possible to array dereference the result of a function or method
-    call directly. Before it was only possible using a temporary variable.
+    As of PHP 5.4 it is possible to array dereference the result of a function
+    or method call directly. Before it was only possible using a temporary
+    variable.
    </p>
    
-   <div class="example" id="example-87">
+   <p class="para">
+    As of PHP 5.5 it is possible to array dereference an array literal.
+   </p>
+   
+   <div class="example" id="example-88">
     <p><strong>Example #7 Array dereferencing</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -558,7 +571,7 @@ Good: 2
    <div class="informalexample">
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">E_ERROR</span><span style="color: #007700">]&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #DD0000">"A&nbsp;fatal&nbsp;error&nbsp;has&nbsp;occured"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">E_WARNING</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;issued&nbsp;a&nbsp;warning"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">E_NOTICE</span><span style="color: #007700">]&nbsp;&nbsp;=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;just&nbsp;an&nbsp;informal&nbsp;notice"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">E_ERROR</span><span style="color: #007700">]&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #DD0000">"A&nbsp;fatal&nbsp;error&nbsp;has&nbsp;occurred"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">E_WARNING</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;issued&nbsp;a&nbsp;warning"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">E_NOTICE</span><span style="color: #007700">]&nbsp;&nbsp;=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;just&nbsp;an&nbsp;informal&nbsp;notice"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -574,7 +587,7 @@ Good: 2
    <div class="informalexample">
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"A&nbsp;fatal&nbsp;error&nbsp;has&nbsp;occured"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;issued&nbsp;a&nbsp;warning"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">8</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;just&nbsp;an&nbsp;informal&nbsp;notice"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"A&nbsp;fatal&nbsp;error&nbsp;has&nbsp;occurred"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;issued&nbsp;a&nbsp;warning"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">8</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;just&nbsp;an&nbsp;informal&nbsp;notice"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -681,7 +694,7 @@ Good: 2
 
   </div>
 
-  <div class="example" id="example-88">
+  <div class="example" id="example-89">
    <p><strong>Example #8 Using array()</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -745,7 +758,7 @@ Array
    This example creates a one-based array.
   </p>
 
-  <div class="example" id="example-91">
+  <div class="example" id="example-92">
    <p><strong>Example #11 One-based index</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -767,7 +780,7 @@ Array
    </div>
   </div>
 
-  <div class="example" id="example-92">
+  <div class="example" id="example-93">
    <p><strong>Example #12 Filling an array</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -785,7 +798,7 @@ Array
    used to count the number of items in an <span class="type"><a href="language.types.array.html" class="type array">array</a></span>.
   </p>
 
-  <div class="example" id="example-93">
+  <div class="example" id="example-94">
    <p><strong>Example #13 Sorting an array</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -802,7 +815,7 @@ Array
    multi-dimensional <span class="type"><a href="language.types.array.html" class="type array">array</a></span>s.
   </p>
 
-  <div class="example" id="example-94">
+  <div class="example" id="example-95">
    <p><strong>Example #14 Recursive and multi-dimensional arrays</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

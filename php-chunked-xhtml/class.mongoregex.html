@@ -26,55 +26,52 @@
     More unusually, they can be saved to the database and retrieved.
    </p>
    <p class="para">
-    Mongo recognizes six regular expression flags:
+    Regular expressions consist of four parts. First a <em>/</em>
+    as starting delimiter, then then pattern, another <em>/</em> 
+    and finally a string containing flags.
+   </p>
+   <p class="para">
+    <div class="example" id="example-1570">
+     <p><strong>Example #1 Regular expression pattern</strong></p>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+/pattern/flags
+</pre></div>
+      </div>
+    </div>
+   </p>
+   <p class="para">
+    MongoDB recognizes six regular expression flags:
    </p>
    <ul class="itemizedlist">
     <li class="listitem">
      <p class="para">
-      <em>i</em>
-     </p>
-     <p class="para">
-      Case insensitive
+      <em>i</em>: Case insensitive
      </p>
     </li>
     <li class="listitem">
      <p class="para">
-      <em>m</em>
-     </p>
-     <p class="para">
-      Multiline
+      <em>m</em>: Multiline
      </p>
     </li>
     <li class="listitem">
      <p class="para">
-      <em>x</em>
-     </p>
-     <p class="para">
-      Can contain comments
+      <em>x</em>: Can contain comments
      </p>
     </li>
     <li class="listitem">
      <p class="para">
-      <em>l</em>
-     </p>
-     <p class="para">
-      locale
+      <em>l</em>: locale
      </p>
     </li>
     <li class="listitem">
      <p class="para">
-      <em>s</em>
-     </p>
-     <p class="para">
-      dotall, &quot;.&quot; matches everything, including newlines
+      <em>s</em>: dotall, &quot;.&quot; matches everything, including newlines
      </p>
     </li>
     <li class="listitem">
      <p class="para">
-      <em>u</em>
-     </p>
-     <p class="para">
-      match unicode
+      <em>u</em>: match unicode
      </p>
     </li>
    </ul>

@@ -24,13 +24,16 @@
     Represent date objects for the database.  This class should be used to save
     dates to the database and to query for dates.  For example:
    </p>
-   <div class="example-contents">
+   <div class="example" id="example-1568">
+    <p><strong>Example #1 Storing dates with <strong class="classname">MongoDate</strong></strong></p>
+    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;save&nbsp;a&nbsp;date&nbsp;to&nbsp;the&nbsp;database<br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"ts"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDate</span><span style="color: #007700">()));<br /><br /></span><span style="color: #0000BB">$start&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDate</span><span style="color: #007700">(</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #DD0000">"2010-01-15&nbsp;00:00:00"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$end&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDate</span><span style="color: #007700">(</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #DD0000">"2010-01-30&nbsp;00:00:00"</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;find&nbsp;dates&nbsp;between&nbsp;1/15/2010&nbsp;and&nbsp;1/30/2010<br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"ts"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">'$gt'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$start</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'$lte'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$end</span><span style="color: #007700">)));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
-   </div>
+    </div>
 
+   </div>
    <p class="para">
     MongoDB stores dates as milliseconds past the epoch.  This means that dates 
     <em class="emphasis">do not</em> contain timezone information.  Timezones must be

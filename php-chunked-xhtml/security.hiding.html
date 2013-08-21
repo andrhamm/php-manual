@@ -28,7 +28,7 @@
     parse different filetypes through <acronym title="PHP: Hypertext Preprocessor">PHP</acronym>, either with an <var class="filename">.htaccess</var>
     directive, or in the apache configuration file itself. You can
     then use misleading file extensions:
-    <div class="example" id="example-334">
+    <div class="example" id="example-345">
      <p><strong>Example #1 Hiding PHP as another language</strong></p>
      <div class="example-contents">
 <div class="apache-confcode"><pre class="apache-confcode"># Make PHP code look like other code types
@@ -38,7 +38,7 @@ AddType application/x-httpd-php .asp .py .pl</pre>
 
     </div>
     Or obscure it completely:
-    <div class="example" id="example-335">
+    <div class="example" id="example-346">
      <p><strong>Example #2 Using unknown types for PHP extensions</strong></p>
      <div class="example-contents">
 <div class="apache-confcode"><pre class="apache-confcode"># Make PHP code look like unknown types
@@ -49,7 +49,7 @@ AddType application/x-httpd-php .bop .foo .133t</pre>
     </div>
     Or hide it as <acronym title="Hyper Text Markup Language">HTML</acronym> code, which has a slight performance hit because
     all <acronym title="Hyper Text Markup Language">HTML</acronym> will be parsed through the <acronym title="PHP: Hypertext Preprocessor">PHP</acronym> engine:
-    <div class="example" id="example-336">
+    <div class="example" id="example-347">
      <p><strong>Example #3 Using <acronym title="Hyper Text Markup Language">HTML</acronym> types for PHP extensions</strong></p>
      <div class="example-contents">
 <div class="apache-confcode"><pre class="apache-confcode"># Make all PHP code look like HTML

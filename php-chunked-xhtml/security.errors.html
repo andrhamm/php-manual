@@ -25,7 +25,7 @@
     For example, if an attacker had gleaned information about a page
     based on a prior form submission, they may attempt to override
     variables, or modify them:
-    <div class="example" id="example-325">
+    <div class="example" id="example-336">
      <p><strong>Example #1 Attacking Variables with a custom HTML page</strong></p>
      <div class="example-contents">
 <div class="htmlcode"><pre class="htmlcode">&lt;form method=&quot;post&quot; action=&quot;attacktarget?username=badfoo&amp;amp;password=badfoo&quot;&gt;
@@ -52,7 +52,7 @@
     common debugging techniques. If the attacker can determine what
     general technique you are using, they may try to brute-force a page,
     by sending various common debugging strings:
-    <div class="example" id="example-326">
+    <div class="example" id="example-337">
      <p><strong>Example #2 Exploiting common debugging variables</strong></p>
      <div class="example-contents">
 <div class="htmlcode"><pre class="htmlcode">&lt;form method=&quot;post&quot; action=&quot;attacktarget?errors=Y&amp;amp;showerrors=1&amp;amp;debug=1&quot;&gt;
@@ -117,7 +117,7 @@
     you should also define the path to your log file using the
     <em>error_log</em> ini directive, and turn
     <em>log_errors</em> on.
-    <div class="example" id="example-327">
+    <div class="example" id="example-338">
      <p><strong>Example #3 Finding dangerous variables with E_ALL</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

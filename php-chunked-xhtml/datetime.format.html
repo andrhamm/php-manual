@@ -7,14 +7,16 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="datetime.diff.html">DateTime::diff</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="datetime.getlasterrors.html">DateTime::getLastErrors</a></div>
- <div class="up"><a href="class.datetime.html">DateTime</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="datetime.getoffset.html">DateTime::getOffset</a></div>
+ <div class="up"><a href="class.datetimeinterface.html">DateTimeInterface</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="datetime.format" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">DateTime::format</h1>
+  <h1 class="refname">DateTimeImmutable::format</h1>
+  <h1 class="refname">DateTimeInterface::format</h1>
   <h1 class="refname">date_format</h1>
-  <p class="verinfo">(PHP 5 &gt;= 5.2.0)</p><p class="refpurpose"><span class="refname">DateTime::format</span> -- <span class="refname">date_format</span> &mdash; <span class="dc-title">Returns date formatted according to given format</span></p>
+  <p class="verinfo">(PHP 5 &gt;= 5.2.0)</p><p class="refpurpose"><span class="refname">DateTime::format</span> -- <span class="refname">DateTimeImmutable::format</span> -- <span class="refname">DateTimeInterface::format</span> -- <span class="refname">date_format</span> &mdash; <span class="dc-title">Returns date formatted according to given format</span></p>
 
  </div>
 
@@ -26,10 +28,20 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
    )</div>
 
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><strong>DateTimeImmutable::format</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><strong>DateTimeInterface::format</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
+   )</div>
+
   <p class="para rdfs-comment">Procedural style</p>
   <div class="methodsynopsis dc-description">
    <span class="type">string</span> <span class="methodname"><a href="function.date-format.html" class="methodname">date_format</a></span>
-    ( <span class="methodparam"><span class="type"><a href="class.datetime.html" class="type DateTime">DateTime</a></span> <code class="parameter">$object</code></span>
+    ( <span class="methodparam"><span class="type"><a href="class.datetimeinterface.html" class="type DateTimeInterface">DateTimeInterface</a></span> <code class="parameter">$object</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
    )</div>
 
@@ -77,7 +89,7 @@ returned by  <span class="function"><a href="function.date-create.html" class="f
 
  <div class="refsect1 examples" id="refsect1-datetime.format-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-621">
+  <div class="example" id="example-654">
    <p><strong>Example #1  <span class="function"><strong>DateTime::format()</strong></span> example</strong></p>
    <div class="example-contents"><p>Object oriented style</p></div>
    <div class="example-contents">
@@ -123,7 +135,7 @@ returned by  <span class="function"><a href="function.date-create.html" class="f
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="datetime.diff.html">DateTime::diff</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="datetime.getlasterrors.html">DateTime::getLastErrors</a></div>
- <div class="up"><a href="class.datetime.html">DateTime</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="datetime.getoffset.html">DateTime::getOffset</a></div>
+ <div class="up"><a href="class.datetimeinterface.html">DateTimeInterface</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

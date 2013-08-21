@@ -2,18 +2,18 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Notify all Threads waiting for the referenced Thread.</title>
+  <title>Synchronization</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="thread.join.html">Thread::join</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="thread.lock.html">Thread::lock</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="thread.run.html">Thread::run</a></div>
  <div class="up"><a href="class.thread.html">Thread</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="thread.notify" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Thread::notify</h1>
-  <p class="verinfo">(PECL pthreads &gt;= 0.0.33)</p><p class="refpurpose"><span class="refname">Thread::notify</span> &mdash; <span class="dc-title">Notify all Threads waiting for the referenced Thread.</span></p>
+  <p class="verinfo">(PECL pthreads &gt;= 0.34)</p><p class="refpurpose"><span class="refname">Thread::notify</span> &mdash; <span class="dc-title">Synchronization</span></p>
 
  </div>
 
@@ -25,8 +25,7 @@
    )</div>
 
   <p class="para rdfs-comment">
- Notify all Threads waiting for the referenced Thread causing the waiting Threads to continue executing.
- A call to notify when no Threads are waiting results in blocking until another context calls Thread::wait on the referenced Thread.
+  Send notification to the referenced Thread
   </p>
  </div>
 
@@ -39,13 +38,36 @@
 
  <div class="refsect1 returnvalues" id="refsect1-thread.notify-returnvalues">
   <h3 class="title">Return Values</h3>
-  <p class="para">A boolean indication of success.</p>
+  <p class="para">
+  A boolean indication of success
+  </p>
  </div>
 
 
+ <div class="refsect1 examples" id="refsect1-thread.notify-examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   <div class="example" id="example-3653">
+    <p><strong>Example #1 Notifications and Waiting</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">My&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Thread&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">run</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/**&nbsp;cause&nbsp;this&nbsp;thread&nbsp;to&nbsp;wait&nbsp;**/<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">synchronized</span><span style="color: #007700">(function(</span><span style="color: #0000BB">$thread</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$thread</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">wait</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">$my&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$my</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">start</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">/**&nbsp;send&nbsp;notification&nbsp;to&nbsp;the&nbsp;waiting&nbsp;thread&nbsp;**/<br /></span><span style="color: #0000BB">$my</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">synchronized</span><span style="color: #007700">(function(</span><span style="color: #0000BB">$thread</span><span style="color: #007700">){<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$thread</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">notify</span><span style="color: #007700">();<br />},&nbsp;</span><span style="color: #0000BB">$my</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$my</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">join</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="thread.join.html">Thread::join</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="thread.lock.html">Thread::lock</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="thread.run.html">Thread::run</a></div>
  <div class="up"><a href="class.thread.html">Thread</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

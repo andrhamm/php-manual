@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.curl-setopt-array.html">curl_setopt_array</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-version.html">curl_version</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.curl-share-close.html">curl_share_close</a></div>
  <div class="up"><a href="ref.curl.html">cURL Functions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="function.curl-setopt" class="refentry">
@@ -96,6 +96,9 @@
             <strong><code>CURLOPT_RETURNTRANSFER</code></strong> is used.
            </td>
            <td style="vertical-align: top;">
+            From PHP 5.1.3, this option has no effect: the raw output will
+            always be returned when
+            <strong><code>CURLOPT_RETURNTRANSFER</code></strong> is used.
            </td>
           </tr>
 
@@ -120,8 +123,9 @@
             on secure transfers.
            </td>
            <td style="vertical-align: top;">
-            Available since PHP 5.3.2. Requires <strong><code>CURLOPT_VERBOSE</code></strong> to be 
-            on to have an effect.
+            Added in cURL 7.19.1. 
+            Available since PHP 5.3.2. 
+            Requires <strong><code>CURLOPT_VERBOSE</code></strong> to be on to have an effect.
            </td>
           </tr>
 
@@ -310,6 +314,7 @@
             the cURL functions.
            </td>
            <td style="vertical-align: top;">
+            Removed in cURL 7.15.5 (You can use CURLOPT_RETURNTRANSFER instead)
            </td>
           </tr>
 
@@ -757,6 +762,7 @@
             should be kept at 2 (default value).
            </td>
            <td style="vertical-align: top;">
+            Support for value 1 removed in cURL 7.28.1
            </td>
           </tr>
 
@@ -1058,6 +1064,10 @@
             <span class="simpara">
              As of PHP 5.2.0, <em><code class="parameter">value</code></em> must be an array if
              files are passed to this option with the <em>@</em> prefix.
+            </span>
+            <span class="simpara">
+             As of PHP 5.5.0, the <em>@</em> prefix is deprecated and
+             files can be sent using <a href="class.curlfile.html" class="classname">CURLFile</a>.
             </span>
            </td>
            <td style="vertical-align: top;">
@@ -1403,9 +1413,8 @@
 
       </p>
       <p class="para">
-       <em><code class="parameter">value</code></em> should be a string that is the name of a valid
-       callback function for the following values of the
-       <em><code class="parameter">option</code></em> parameter:
+       <em><code class="parameter">value</code></em> should be the name of a valid function or a Closure 
+       for the following values of the <em><code class="parameter">option</code></em> parameter:
        <table class="doctable informaltable">
         
          <thead>
@@ -1420,10 +1429,10 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_HEADERFUNCTION</code></strong></td>
            <td style="vertical-align: top;">
-            The name of a callback function where the callback function takes
-            two parameters. The first is the cURL resource, the second is a
+            A callback accepting two parameters.
+            The first is the cURL resource, the second is a
             string with the header data to be written. The header data must
-            be written when using this callback function. Return the number of 
+            be written when by this callback. Return the number of 
             bytes written.
            </td>
           </tr>
@@ -1431,8 +1440,8 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_PASSWDFUNCTION</code></strong></td>
            <td style="vertical-align: top;">
-            The name of a callback function where the callback function takes
-            three parameters. The first is the cURL resource, the second is a
+            A callback accepting three parameters. 
+            The first is the cURL resource, the second is a
             string containing a password prompt, and the third is the maximum
             password length. Return the string containing the password.
            </td>
@@ -1441,21 +1450,36 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_PROGRESSFUNCTION</code></strong></td>
            <td style="vertical-align: top;">
-            The name of a callback function where the callback function takes
-            three parameters. The first is the cURL resource, the second is a
-            file-descriptor resource, and the third is length. Return the
-            string containing the data.
+            <p class="para">
+             A callback accepting five parameters.
+             The first is the cURL resource, the second is the total number of
+             bytes expected to be downloaded in this transfer, the third is
+             the number of bytes downloaded so far, the fourth is the total
+             number of bytes expected to be uploaded in this transfer, and the
+             fifth is the number of bytes uploaded so far.
+            </p>
+            <blockquote class="note"><p><strong class="note">Note</strong>: 
+             <p class="para">
+              The callback is only called when the <strong><code>CURLOPT_NOPROGRESS</code></strong>
+              option is set to <strong><code>FALSE</code></strong>.
+             </p>
+            </p></blockquote>
+            <p class="para">
+             Return a non-zero value to abort the transfer. In which case, the
+             transfer will set a <strong><code>CURLE_ABORTED_BY_CALLBACK</code></strong>
+             error.
+            </p>
            </td>
           </tr>
 
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_READFUNCTION</code></strong></td>
            <td style="vertical-align: top;">
-            The name of a callback function where the callback function takes
-            three parameters. The first is the cURL resource, the second is a
+            A callback accepting three parameters. 
+            The first is the cURL resource, the second is a
             stream resource provided to cURL through the option
             <strong><code>CURLOPT_INFILE</code></strong>, and the third is the maximum
-            amount of data to be read. The callback function must return a string
+            amount of data to be read. The callback must return a string
             with a length equal or smaller than the amount of data requested,
             typically by reading it from the passed stream resource. It should
             return an empty string to signal <em>EOF</em>.
@@ -1465,11 +1489,37 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_WRITEFUNCTION</code></strong></td>
            <td style="vertical-align: top;">
-            The name of a callback function where the callback function takes
-            two parameters. The first is the cURL resource, and the second is a
-            string with the data to be written. The data must be saved by using
-            this callback function. It must return the exact number of bytes written 
+            A callback accepting two parameters. 
+            The first is the cURL resource, and the second is a
+            string with the data to be written. The data must be saved by
+            this callback. It must return the exact number of bytes written 
             or the transfer will be aborted with an error.
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      </p>
+      <p class="para">
+       Other values:
+       <table class="doctable informaltable">
+        
+         <thead>
+          <tr>
+           <th>Option</th>
+           <th>Set <em><code class="parameter">value</code></em> to</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td style="vertical-align: top;"><strong><code>CURLOPT_SHARE</code></strong></td>
+           <td style="vertical-align: top;">
+            A result of  <span class="function"><a href="function.curl-share-init.html" class="function">curl_share_init()</a></span>. Makes the cURL
+            handle to use the data from the shared handle.
            </td>
           </tr>
 
@@ -1510,6 +1560,28 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        Added the cURL resource as the first argument to the
+        <strong><code>CURLOPT_PROGRESSFUNCTION</code></strong> callback.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        Introduced <strong><code>CURLOPT_SHARE</code></strong>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Introduced <strong><code>CURLOPT_PROGRESSFUNCTION</code></strong>.
+       </td>
+      </tr>
+
       <tr>
        <td>5.2.10</td>
        <td>
@@ -1555,7 +1627,7 @@
  <div class="refsect1 examples" id="refsect1-function.curl-setopt-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3955">
+   <div class="example" id="example-4184">
     <p><strong>Example #1 Initializing a new cURL session and fetching a web page</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -1567,7 +1639,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-3956">
+   <div class="example" id="example-4185">
     <p><strong>Example #2 Uploading file</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -1628,7 +1700,7 @@ Array
  
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.curl-setopt-array.html">curl_setopt_array</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-version.html">curl_version</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.curl-share-close.html">curl_share_close</a></div>
  <div class="up"><a href="ref.curl.html">cURL Functions</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

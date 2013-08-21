@@ -27,7 +27,7 @@
   <div class="methodsynopsis dc-description">
    <span class="type">int</span> <span class="methodname"><strong>mcrypt_get_block_size</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$cipher</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$module</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -57,22 +57,17 @@
      <span class="term"><em><code class="parameter">cipher</code></em></span>
      <dd>
 
-      <p class="para">
-       One of the <em>MCRYPT_ciphername</em> constants or the name
-       of the algorithm as string.
-      </p>
+      <p class="para">One of the <strong><code>MCRYPT_ciphername</code></strong> constants, or the name of the algorithm as string.</p>
      </dd>
 
     </dt>
 
     <dt>
 
-     <span class="term"><em><code class="parameter">module</code></em></span>
+     <span class="term"><em><code class="parameter">mode</code></em></span>
      <dd>
 
-      <p class="para">
-       The module.
-      </p>
+      <p class="para">One of the <strong><code>MCRYPT_MODE_modename</code></strong> constants, or one of the following strings: &quot;ecb&quot;, &quot;cbc&quot;, &quot;cfb&quot;, &quot;ofb&quot;, &quot;nofb&quot; or &quot;stream&quot;.</p>
      </dd>
 
     </dt>
@@ -94,7 +89,7 @@
  <div class="refsect1 examples" id="refsect1-function.mcrypt-get-block-size-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-903">
+   <div class="example" id="example-921">
     <p><strong>Example #1  <span class="function"><strong>mcrypt_get_block_size()</strong></span> example</strong></p>
     <div class="example-contents"><p>
      This example shows how to use this function when linked against libmcrypt

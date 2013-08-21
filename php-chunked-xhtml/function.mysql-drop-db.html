@@ -17,17 +17,17 @@
 
  </div>
 
- <div id="function.mysql-drop-db-soft-deprecation-notice" class="soft-deprecation-notice">
-  <blockquote class="sidebar">
-   <h1 class="title">Suggested alternatives</h1>
-<p class="para">Use of this extension is discouraged. Instead, the <a href="book.mysqli.html" class="link">MySQLi</a> or 
-<a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> extension should be used. See also <a href="mysqlinfo.api.choosing.html" class="link">MySQL: 
-choosing an API</a> guide and <a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">related FAQ</a> for more information. 
+ <div id="function.mysql-drop-db-refsynopsisdiv">
+  <div class="warning"><strong class="warning">Warning</strong>
+   <p class="para">This extension is deprecated as of PHP 5.5.0, and will be removed in the future.
+Instead, the <a href="book.mysqli.html" class="link">MySQLi</a> or <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> extension should be used.
+See also <a href="mysqlinfo.api.choosing.html" class="link">MySQL: choosing an API</a> guide and
+<a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">related FAQ</a> for more information. 
 Alternatives to this function include:</p>
    <ul class="simplelist">
     <li class="member">Execute a <em>DROP DATABASE</em> query</li>
    </ul>
-  </blockquote>
+  </div>
  </div>
 
  <div class="refsect1 description" id="refsect1-function.mysql-drop-db-description">
@@ -94,7 +94,7 @@ with no arguments. If no connection is found or established, an
  <div class="refsect1 examples" id="refsect1-function.mysql-drop-db-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-1561">
+   <div class="example" id="example-1648">
     <p><strong>Example #1  <span class="function"><strong>mysql_drop_db()</strong></span> alternative example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

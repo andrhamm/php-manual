@@ -65,14 +65,14 @@ returned by  <span class="function"><a href="function.mysqli-connect.html" class
   <p class="para">
    An integer greater than zero indicates the number of rows affected or
    retrieved.
-   Zero indicates that no records where updated for an UPDATE statement, no
+   Zero indicates that no records were updated for an UPDATE statement, no
    rows matched the <em>WHERE</em> clause in the query or that no
    query has yet been executed. -1 indicates that the query returned an
    error.
   </p>
   <blockquote class="note"><p><strong class="note">Note</strong>: 
    <p class="para">
-    If the number of affected rows is greater than maximal int value, the
+    If the number of affected rows is greater than the maximum integer value(<strong><code> PHP_INT_MAX </code></strong>), the
     number of affected rows will be returned as a string.
    </p>
   </p></blockquote>
@@ -81,7 +81,7 @@ returned by  <span class="function"><a href="function.mysqli-connect.html" class
 
  <div class="refsect1 examples" id="refsect1-mysqli.affected-rows-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-1633">
+  <div class="example" id="example-1720">
    <p><strong>Example #1 <var class="varname"><var class="varname">$mysqli->affected_rows</var></var> example</strong></p>
    <div class="example-contents"><p>Object oriented style</p></div>
    <div class="example-contents">

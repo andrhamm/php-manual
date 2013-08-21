@@ -21,7 +21,7 @@
  <div class="refsect1 description" id="refsect1-pdo.lastinsertid-description">
   <h3 class="title">Description</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>PDO::lastInsertId</strong></span>
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><strong>PDO::lastInsertId</strong></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
   ] )</div>
 
@@ -29,7 +29,7 @@
   <p class="para rdfs-comment">
    Returns the ID of the last inserted row, or the last value from a
    sequence object, depending on the underlying driver. For example,
-    <span class="function"><strong>PDO_PGSQL()</strong></span> requires you to specify the name of
+   <a href="ref.pdo-pgsql.html" class="link">PDO_PGSQL</a> requires you to specify the name of
    a sequence object for the <em><code class="parameter">name</code></em> parameter.
   </p>
   <blockquote class="note"><p><strong class="note">Note</strong>: 

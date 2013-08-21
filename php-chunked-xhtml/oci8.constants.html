@@ -69,12 +69,7 @@ been compiled into PHP or dynamically loaded at runtime.
        <tr id="constant.oci-default">
          <td><strong><code>OCI_DEFAULT</code></strong></td>
          <td>
-           Statement execution mode
-           for  <span class="function"><a href="function.oci-execute.html" class="function">oci_execute()</a></span>.  The transaction is
-           not automatically committed when using this mode.  From PHP
-           5.3.2 (PECL OCI8 1.4) onwards,
-           <strong><code>OCI_NO_AUTO_COMMIT</code></strong> is preferred instead
-           of <strong><code>OCI_DEFAULT</code></strong>.
+           See <strong><code>OCI_NO_AUTO_COMMIT</code></strong>.
          </td>
        </tr>
 
@@ -126,10 +121,10 @@ been compiled into PHP or dynamically loaded at runtime.
          <td><strong><code>OCI_NO_AUTO_COMMIT</code></strong></td>
          <td>
            Statement execution mode
-           for  <span class="function"><a href="function.oci-execute.html" class="function">oci_execute()</a></span>. The statement is not
-           committed automatically when using this mode.  For
+           for  <span class="function"><a href="function.oci-execute.html" class="function">oci_execute()</a></span>. The transaction is not
+           automatically committed when using this mode.  For
            readability in new code, use this value instead of the
-           obsolete <strong><code>OCI_DEFAULT</code></strong> constant.
+           older, equivalent <strong><code>OCI_DEFAULT</code></strong> constant.
            Introduced in PHP 5.3.2 (PECL OCI8 1.4).
          </td>
        </tr>

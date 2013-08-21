@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Prepare an SQL statement for execution</title>
+  <title>Prepare a SQL statement for execution</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.cubrid-prepare" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">cubrid_prepare</h1>
-  <p class="verinfo">(PECL CUBRID &gt;= 8.3.0)</p><p class="refpurpose"><span class="refname">cubrid_prepare</span> &mdash; <span class="dc-title">Prepare an SQL statement for execution</span></p>
+  <p class="verinfo">(PECL CUBRID &gt;= 8.3.0)</p><p class="refpurpose"><span class="refname">cubrid_prepare</span> &mdash; <span class="dc-title">Prepare a SQL statement for execution</span></p>
 
  </div>
 
@@ -27,10 +27,16 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-      The  <span class="function"><strong>cubrid_prepare()</strong></span> function is a sort of API which represents SQL statements compiled previously to a given connection handle. This pre-compiled SQL statement will be included in the  <span class="function"><strong>cubrid_prepare()</strong></span>. 
+      The  <span class="function"><strong>cubrid_prepare()</strong></span> function is a sort of API which represents SQL statements 
+      compiled previously to a given connection handle. This pre-compiled SQL statement will be included 
+      in the  <span class="function"><strong>cubrid_prepare()</strong></span>. 
   </p>
   <p class="para">
-      Accordingly, you can use this statement effectively to execute several times repeatedly or to process long data. Only a single statement can be used and a parameter may put a question mark (?) to appropriate area in the SQL statement. Add a parameter when you bind a value in the VALUES clause of INSERT statement or in the WHERE clause. Note that it is allowed to bind a value to a MARK(?) by the  <span class="function"><a href="function.cubrid-bind.html" class="function">cubrid_bind()</a></span> only. 
+      Accordingly, you can use this statement effectively to execute several times repeatedly or to 
+      process long data. Only a single statement can be used and a parameter may put a question mark (?) 
+      to appropriate area in the SQL statement. Add a parameter when you bind a value in the VALUES 
+      clause of INSERT statement or in the WHERE clause. Note that it is allowed to bind a value to a 
+      MARK(?) by using the  <span class="function"><a href="function.cubrid-bind.html" class="function">cubrid_bind()</a></span> function only. 
   </p>
  </div>
 
@@ -83,7 +89,7 @@
 
  <div class="refsect1 examples" id="refsect1-function.cubrid-prepare-examples">
   <h3 class="title">Examples</h3>
-  <div class="example" id="example-1101">
+  <div class="example" id="example-1127">
    <p><strong>Example #1  <span class="function"><strong>cubrid_prepare()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

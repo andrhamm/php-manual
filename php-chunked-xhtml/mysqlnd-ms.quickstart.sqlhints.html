@@ -24,11 +24,12 @@
    or a firewall.
   </p>
   <p class="para">
-   Three SQL hints are supported by the plugin:
-   The <strong><code>MYSQLND_MS_MASTER_SWITCH</code></strong> hint makes the plugin run a statement
-   on the master, <strong><code>MYSQLND_MS_SLAVE_SWITCH</code></strong> enforces the use
-   of the slave, and <strong><code>MYSQLND_MS_MASTER_SWITCH</code></strong> will run a
-   statement on the same server that was used for the previous statement.
+   Three SQL hints are supported by the plugin: The
+   <strong><code>MYSQLND_MS_MASTER_SWITCH</code></strong> hint makes the plugin run a
+   statement on the master, <strong><code>MYSQLND_MS_SLAVE_SWITCH</code></strong>
+   enforces the use of the slave, and
+   <strong><code>MYSQLND_MS_LAST_USED_SWITCH</code></strong> will run a statement on
+   the same server that was used for the previous statement.
   </p>
   <p class="para">
    The plugin scans the beginning of a statement for the existence of an SQL
@@ -36,7 +37,7 @@
    the statement.
   </p>
    <p class="para">
-   <div class="example" id="example-1747">
+   <div class="example" id="example-1835">
     <p><strong>Example #1 Plugin config with one slave and one master</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -61,7 +62,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1748">
+   <div class="example" id="example-1836">
     <p><strong>Example #2 SQL hints to prevent connection switches</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -95,7 +96,7 @@
    information below in the service level and consistency section.
   </p>
   <p class="para">
-   <div class="example" id="example-1749">
+   <div class="example" id="example-1837">
     <p><strong>Example #3 Fighting replication lag</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -115,7 +116,7 @@
    reporting tables.
   </p>
   <p class="para">
-   <div class="example" id="example-1750">
+   <div class="example" id="example-1838">
     <p><strong>Example #4 Table creation on a slave</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

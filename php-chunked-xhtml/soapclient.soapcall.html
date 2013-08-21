@@ -68,7 +68,9 @@
 
       <p class="para">
        An array of the arguments to pass to the function. This can be either
-       an ordered or an associative array.
+       an ordered or an associative array. Note that most SOAP servers require
+       parameter names to be provided, in which case this must be an
+       associative array.
       </p>
      </dd>
 
@@ -135,7 +137,7 @@
    an associative array of named output parameters.
   </p>
   <p class="para">
-   On error, if the SoapClient object was constructed with the <em>trace</em>
+   On error, if the SoapClient object was constructed with the <em>exceptions</em>
    option set to <strong><code>FALSE</code></strong>, a SoapFault object will be returned.
   </p>
  </div>
@@ -144,7 +146,7 @@
  <div class="refsect1 examples" id="refsect1-soapclient.soapcall-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4991">
+   <div class="example" id="example-5269">
     <p><strong>Example #1  <span class="function"><strong>SoapClient::__soapCall()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

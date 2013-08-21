@@ -80,9 +80,14 @@
        or <strong><code>FORCE_DEFLATE</code></strong>. 
       </p>
       <p class="para">
-       If you use <strong><code>FORCE_DEFLATE</code></strong>, you get a standard zlib
-       deflated string (inclusive zlib headers) after the gzip file header but
-       without the trailing crc32 checksum.
+       Prior to PHP 5.4.0, using <strong><code>FORCE_DEFLATE</code></strong> results in
+       a standard zlib deflated string (inclusive zlib headers) after a gzip
+       file header but without the trailing crc32 checksum.
+      </p>
+      <p class="para">
+       In PHP 5.4.0 and later, <strong><code>FORCE_DEFLATE</code></strong> generates
+       RFC 1950 compliant output, consisting of a zlib header, the deflated
+       data, and an Adler checksum.
       </p>
      </dd>
 
@@ -117,6 +122,14 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.4.0</td>
+       <td>
+        <strong><code>FORCE_DEFLATE</code></strong> now generates RFC 1950 compliant
+        output.
+       </td>
+      </tr>
+
+      <tr>
        <td>4.2.0</td>
        <td>
         The <em><code class="parameter">encoding_mode</code></em> parameter was added
@@ -136,7 +149,7 @@
   <p class="para">
    The resulting data contains the appropriate headers and data
    structure to make a standard .gz file, e.g.:
-   <div class="example" id="example-873">
+   <div class="example" id="example-891">
     <p><strong>Example #1 Creating a gzip file</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -159,6 +172,11 @@
     <li class="member"> <span class="function"><a href="function.gzinflate.html" class="function" rel="rdfs-seeAlso">gzinflate()</a> - Inflate a deflated string</span></li>
     <li class="member"> <span class="function"><a href="function.gzuncompress.html" class="function" rel="rdfs-seeAlso">gzuncompress()</a> - Uncompress a compressed string</span></li>
     <li class="member"> <span class="function"><a href="function.gzcompress.html" class="function" rel="rdfs-seeAlso">gzcompress()</a> - Compress a string</span></li>
+    <li class="member">
+     <a href="http://www.faqs.org/rfcs/rfc1950" class="link external">&raquo;&nbsp;
+      ZLIB Compressed Data Format Specification (RFC 1950)
+     </a>
+    </li>
    </ul>
   </p>
  </div>

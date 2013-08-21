@@ -164,7 +164,14 @@
       <p class="para">
        The <em>keep_alive</em> option is a boolean value defining whether
        to send the <em>Connection: Keep-Alive</em> header or 
-       <em>Connection: close</em>    .
+       <em>Connection: close</em>.
+      </p>
+      <p class="para">
+       The <em>ssl_method</em> option is one of
+       <strong><code>SOAP_SSL_METHOD_TLS</code></strong>,
+       <strong><code>SOAP_SSL_METHOD_SSLv2</code></strong>,
+       <strong><code>SOAP_SSL_METHOD_SSLv3</code></strong> or
+       <strong><code>SOAP_SSL_METHOD_SSLv23</code></strong>.
       </p>
      </dd>
 
@@ -172,6 +179,20 @@
 
    </dl>
 
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-soapclient.soapclient-errors">
+  <h3 class="title">Errors/Exceptions</h3>
+  <p class="para">
+    <span class="methodname"><strong>SoapClient::SoapClient()</strong></span> will generate an
+   <strong><code>E_ERROR</code></strong> error if the <em>location</em> and
+   <em>uri</em> options aren&#039;t provided in non-WSDL mode.
+  </p>
+  <p class="para">
+   A <a href="class.soapfault.html" class="classname">SoapFault</a> exception will be thrown if the
+   <em><code class="parameter">wsdl</code></em> URI cannot be loaded.
   </p>
  </div>
 
@@ -191,6 +212,13 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.5.0</td>
+       <td>
+        New <em>ssl_method</em> option.
+       </td>
+      </tr>
+
+      <tr>
        <td>5.4.0</td>
        <td>
         New <em>keep_alive</em> option.
@@ -208,7 +236,7 @@
  <div class="refsect1 examples" id="refsect1-soapclient.soapclient-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4992">
+   <div class="example" id="example-5270">
     <p><strong>Example #1  <span class="function"><strong>SoapClient::SoapClient()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

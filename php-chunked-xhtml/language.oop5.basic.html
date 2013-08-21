@@ -22,7 +22,7 @@
     of the properties and methods belonging to the class.
    </p>
    <p class="para">
-    The class name can be any valid label which is a not a
+    The class name can be any valid label which is not a
     PHP <a href="reserved.html" class="link">reserved word</a>. A valid class
     name starts with a letter or underscore, followed by any number of
     letters, numbers, or underscores. As a regular expression, it
@@ -34,7 +34,7 @@
     own <a href="language.oop5.constants.html" class="link">constants</a>, <a href="language.oop5.properties.html" class="link">variables</a>
     (called &quot;properties&quot;), and functions (called &quot;methods&quot;).
    </p>
-   <div class="example" id="example-165">
+   <div class="example" id="example-166">
     <p><strong>Example #1 Simple Class definition</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -92,7 +92,7 @@ $this is not defined.
     the class is in a namespace, its fully qualified name must be used when
     doing this.
    </p>
-   <div class="example" id="example-167">
+   <div class="example" id="example-168">
     <p><strong>Example #3 Creating an instance</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -113,7 +113,7 @@ $this is not defined.
     of an already created object can be made by
     <a href="language.oop5.cloning.html" class="link">cloning</a> it.
    </p>
-   <div class="example" id="example-168">
+   <div class="example" id="example-169">
     <p><strong>Example #4 Object Assignment</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -138,7 +138,7 @@ object(SimpleClass)#1 (1) {
     PHP 5.3.0 introduced a couple of new ways to create instances of an
     object:
    </p>
-   <div class="example" id="example-169">
+   <div class="example" id="example-170">
     <p><strong>Example #5 Creating new objects</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -181,7 +181,7 @@ bool(true)
     not apply to the constructor, which allows overriding with different
     parameters.
    </p>
-   <div class="example" id="example-170">
+   <div class="example" id="example-171">
     <p><strong>Example #6 Simple Class Inheritance</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -200,6 +200,35 @@ a default value
    </div>
   </div>
 
+  <div class="sect2" id="language.oop5.basic.class.class">
+   <h3 class="title">::class</h3>
+
+   <p class="para">
+    Since PHP 5.5, the <em>class</em> keyword is also used for class
+    name resolution. You can get a string containing the fully qualified name
+    of the <em>ClassName</em> class by using
+    <em>ClassName::class</em>. This is particularly useful with
+    <a href="language.namespaces.html" class="link">namespaced</a> classes.
+   </p>
+   <p class="para">
+    <div class="example" id="language.oop5.basic.class.class.name">
+     <p><strong>Example #7 Class name resolution</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">NS&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;</span><span style="color: #0000BB">ClassName&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">ClassName</span><span style="color: #007700">::class;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>The above example will output:</p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+NS\ClassName
+</pre></div>
+     </div>
+    </div>
+   </p>
+  </div>
  </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="oop5.intro.html">Introduction</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="language.oop5.properties.html">Properties</a></div>

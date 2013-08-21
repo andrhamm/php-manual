@@ -49,14 +49,18 @@
        This function must be defined before calling
         <span class="function"><strong>set_exception_handler()</strong></span>. This handler function
        needs to accept one parameter, which will be the exception object that
-       was thrown.
+       was thrown. This is the handler signature:
       </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        <strong><code>NULL</code></strong> may be passed instead, to reset this handler to its 
-        default state.
-       </p>
-      </p></blockquote>
+      <p class="para">
+       <div class="methodsynopsis dc-description">
+        <span class="type"><span class="type void">void</span></span> <span class="methodname"><span class="replaceable">handler</span></span>
+         ( <span class="methodparam"><span class="type"><a href="class.exception.html" class="type Exception">Exception</a></span> <code class="parameter">$$ex</code></span>
+        )</div>
+
+      </p>
+      <p class="para">
+       <strong><code>NULL</code></strong> may be passed instead, to reset this handler to its default state.
+      </p>
      </dd>
 
     </dt>
@@ -71,8 +75,37 @@
   <h3 class="title">Return Values</h3>
   <p class="para">
    Returns the name of the previously defined exception handler, or <strong><code>NULL</code></strong> on error. If
-   no previous handler was defined, <strong><code>NULL</code></strong> is also returned. If <strong><code>NULL</code></strong> is passed,
-   resetting the handler to its default state, <strong><code>TRUE</code></strong> is returned.
+   no previous handler was defined, <strong><code>NULL</code></strong> is also returned.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.set-exception-handler-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        Previously, if <strong><code>NULL</code></strong> was passed then this function returned <strong><code>TRUE</code></strong>.
+        It returns the previous handler since PHP 5.5.0.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 
@@ -80,7 +113,7 @@
  <div class="refsect1 examples" id="refsect1-function.set-exception-handler-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-440">
+   <div class="example" id="example-452">
     <p><strong>Example #1  <span class="function"><strong>set_exception_handler()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

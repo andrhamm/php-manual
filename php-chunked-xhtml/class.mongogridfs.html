@@ -265,7 +265,7 @@
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongogridfs.put.html" class="methodname">put</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$extra</code><span class="initializer"> = array()</span></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$metadata</code><span class="initializer"> = array()</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongogridfs.remove.html" class="methodname">remove</a></span>
@@ -275,13 +275,13 @@
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongogridfs.storebytes.html" class="methodname">storeBytes</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$bytes</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$extra</code><span class="initializer"> = array()</span></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$metadata</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongogridfs.storefile.html" class="methodname">storeFile</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$extra</code><span class="initializer"> = array()</span></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$metadata</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
@@ -297,13 +297,11 @@
 
   <div class="section">
    <h2 class="title">See Also</h2>
-   <p class="para">
-    MongoDB core docs on 
-    <a href="http://dochub.mongodb.org/core/gridfs" class="link external">&raquo;&nbsp;GridFS</a>.  There&#039;s also 
-    a nice intro to <a href="http://www.lightcubesolutions.com/blog/?p=209" class="link external">&raquo;&nbsp;saving 
-    user uploads</a> and <a href="http://www.lightcubesolutions.com/blog/?p=228" class="link external">&raquo;&nbsp;
-    adding metadata</a> at LightCubeSolutions.com.
-   </p>
+   <ul class="simplelist">
+    <li class="member">MongoDB core docs on <a href="http://docs.mongodb.org/manual/applications/gridfs/" class="link external">&raquo;&nbsp;GridFS</a></li>
+    <li class="member">LightCube Solutions blog post on <a href="http://www.lightcubesolutions.com/blog/?p=209" class="link external">&raquo;&nbsp;saving user uploads</a></li>
+    <li class="member">LightCube Solutions blog post on <a href="http://www.lightcubesolutions.com/blog/?p=228" class="link external">&raquo;&nbsp;adding metadata to files</a></li>
+   </ul>
   </div>
  </div>
 
@@ -359,13 +357,6 @@
 
 
 
- 
-
-
-
-
-
- 
 
 
 
@@ -375,7 +366,14 @@
 
 
 
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="mongogridfs.construct.html">MongoGridFS::__construct</a> — Creates new file collections</li><li><a href="mongogridfs.delete.html">MongoGridFS::delete</a> — Delete a file from the database</li><li><a href="mongogridfs.drop.html">MongoGridFS::drop</a> — Drops the files and chunks collections</li><li><a href="mongogridfs.find.html">MongoGridFS::find</a> — Queries for files</li><li><a href="mongogridfs.findone.html">MongoGridFS::findOne</a> — Returns a single file matching the criteria</li><li><a href="mongogridfs.get.html">MongoGridFS::get</a> — Retrieve a file from the database</li><li><a href="mongogridfs.put.html">MongoGridFS::put</a> — Stores a file in the database</li><li><a href="mongogridfs.remove.html">MongoGridFS::remove</a> — Removes files from the collections</li><li><a href="mongogridfs.storebytes.html">MongoGridFS::storeBytes</a> — Chunkifies and stores bytes in the database</li><li><a href="mongogridfs.storefile.html">MongoGridFS::storeFile</a> — Stores a file in the database</li><li><a href="mongogridfs.storeupload.html">MongoGridFS::storeUpload</a> — Saves an uploaded file to the database</li></ul>
+
+
+
+
+
+
+
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="mongogridfs.construct.html">MongoGridFS::__construct</a> — Creates new file collections</li><li><a href="mongogridfs.delete.html">MongoGridFS::delete</a> — Delete a file from the database</li><li><a href="mongogridfs.drop.html">MongoGridFS::drop</a> — Drops the files and chunks collections</li><li><a href="mongogridfs.find.html">MongoGridFS::find</a> — Queries for files</li><li><a href="mongogridfs.findone.html">MongoGridFS::findOne</a> — Returns a single file matching the criteria</li><li><a href="mongogridfs.get.html">MongoGridFS::get</a> — Retrieve a file from the database</li><li><a href="mongogridfs.put.html">MongoGridFS::put</a> — Stores a file in the database</li><li><a href="mongogridfs.remove.html">MongoGridFS::remove</a> — Removes files from the collections</li><li><a href="mongogridfs.storebytes.html">MongoGridFS::storeBytes</a> — Stores a string of bytes in the database</li><li><a href="mongogridfs.storefile.html">MongoGridFS::storeFile</a> — Stores a file in the database</li><li><a href="mongogridfs.storeupload.html">MongoGridFS::storeUpload</a> — Stores an uploaded file in the database</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongo.gridfs.html">GridFS Classes</a></div>

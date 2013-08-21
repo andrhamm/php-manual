@@ -144,8 +144,9 @@
        The two images will be merged according to <em><code class="parameter">pct</code></em>
        which can range from 0 to 100.  When <em><code class="parameter">pct</code></em> = 0,
        no action is taken, when 100 this function behaves identically
-       to  <span class="function"><a href="function.imagecopy.html" class="function">imagecopy()</a></span> for pallete images, while it
-       implements alpha transparency for true colour images.
+       to  <span class="function"><a href="function.imagecopy.html" class="function">imagecopy()</a></span> for pallete images, except for
+       ignoring alpha components, while it implements alpha transparency
+       for true colour images.
       </p>
      </dd>
 
@@ -166,7 +167,7 @@
  <div class="refsect1 examples" id="refsect1-function.imagecopymerge-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-3028">
+   <div class="example" id="example-3178">
     <p><strong>Example #1 Merging two copies of the PHP.net logo with 75% transparency</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

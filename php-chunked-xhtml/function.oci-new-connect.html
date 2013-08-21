@@ -92,7 +92,7 @@ and <strong><code>ORACLE_SID</code></strong> to determine the
 To use the Easy Connect naming method, PHP must be linked with Oracle
 10g or greater Client libraries. The Easy Connect string for Oracle
 10g is of the form:
-<em class="emphasis">[//]host_name[:port][/service_name]</em>. With Oracle
+<em class="emphasis">[//]host_name[:port][/service_name]</em>. From Oracle
 11g, the syntax is:
 <em class="emphasis">[//]host_name[:port][/service_name][:server_type][/instance_name]</em>.
 Service names can be found by running the Oracle
@@ -129,7 +129,7 @@ Oracle Client libraries determine a character set from
 the <strong><code>NLS_LANG</code></strong> environment variable.
 </p>
 <p class="para">Passing this parameter can
-reduce connection time.
+reduce the time taken to connect.
 </p>
      </dd>
 
@@ -191,7 +191,7 @@ security reasons.
   <h3 class="title">Examples</h3>
   <p class="para">
    The following demonstrates how you can separate connections.
-   <div class="example" id="example-1962">
+   <div class="example" id="example-2071">
     <p><strong>Example #1  <span class="function"><strong>oci_new_connect()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

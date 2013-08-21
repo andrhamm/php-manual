@@ -134,7 +134,9 @@
   <p class="para">
    If <em><code class="parameter">replace_pairs</code></em> contains a key which
    is an empty <span class="type"><a href="language.types.string.html" class="type string">string</a></span> (<em>&quot;&quot;</em>),
-   <strong><code>FALSE</code></strong> will be returned.
+   <strong><code>FALSE</code></strong> will be returned. If the <em><code class="parameter">str</code></em> is not a scalar
+   then it is not typecasted into a string, instead a warning is raised and 
+   <strong><code>NULL</code></strong> is returned. 
   </p>
  </div>
 
@@ -142,7 +144,7 @@
  <div class="refsect1 examples" id="refsect1-function.strtr-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-4585">
+   <div class="example" id="example-4859">
     <p><strong>Example #1  <span class="function"><strong>strtr()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -159,7 +161,7 @@
    (<em>&quot;h&quot;</em> is not picked because there are longer matches)
    and how replaced text was not searched again.
   </p>
-  <div class="example" id="example-4586">
+  <div class="example" id="example-4860">
    <p><strong>Example #2  <span class="function"><strong>strtr()</strong></span> example with two arguments</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -180,7 +182,7 @@ hello all, I said hi
     <span class="function"><strong>strtr()</strong></span> will replace bytes; with two, it may replace
    longer substrings.
   </p>
-  <div class="example" id="example-4587">
+  <div class="example" id="example-4861">
    <p><strong>Example #3  <span class="function"><strong>strtr()</strong></span> behavior comparison</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

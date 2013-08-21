@@ -21,7 +21,7 @@
  <div class="refsect1 description" id="refsect1-pdostatement.bindcolumn-description">
   <h3 class="title">Description</h3>
    <div class="methodsynopsis dc-description">
-    <span class="type">bool</span> <span class="methodname"><strong>PDOStatement::bindColumn</strong></span>
+    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><strong>PDOStatement::bindColumn</strong></span>
      ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$column</code></span>
     , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter reference">&$param</code></span>
     [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code></span>
@@ -90,7 +90,8 @@
      <dd>
 
       <p class="para">
-       Data type of the parameter, specified by the PDO::PARAM_* constants.
+       Data type of the parameter, specified by the <a href="pdo.constants.html" class="link"><em>PDO::PARAM_*</em>
+       constants</a>.
       </p>
      </dd>
 
@@ -137,7 +138,7 @@
  <div class="refsect1 examples" id="refsect1-pdostatement.bindcolumn-examples">
   <h3 class="title">Examples</h3>
   <p class="para">
-   <div class="example" id="example-986">
+   <div class="example" id="example-1010">
     <p><strong>Example #1 Binding result set output to PHP variables</strong></p>
     <div class="example-contents"><p>
      Binding columns in the result set to PHP variables is an effective

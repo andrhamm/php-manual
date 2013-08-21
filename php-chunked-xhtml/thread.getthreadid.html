@@ -2,18 +2,18 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get the identifer for a Thread</title>
+  <title>Identification</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="thread.getthread.html">Thread::getThread</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="thread.isbusy.html">Thread::isBusy</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="thread.getcreatorid.html">Thread::getCreatorId</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="thread.isjoined.html">Thread::isJoined</a></div>
  <div class="up"><a href="class.thread.html">Thread</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="thread.getthreadid" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Thread::getThreadId</h1>
-  <p class="verinfo">(PECL pthreads &gt;= 0.0.33)</p><p class="refpurpose"><span class="refname">Thread::getThreadId</span> &mdash; <span class="dc-title">Get the identifer for a Thread</span></p>
+  <p class="verinfo">(PECL pthreads &gt;= 0.34)</p><p class="refpurpose"><span class="refname">Thread::getThreadId</span> &mdash; <span class="dc-title">Identification</span></p>
 
  </div>
 
@@ -24,7 +24,9 @@
     ( <span class="methodparam">void</span>
    )</div>
 
-  <p class="para rdfs-comment">Get the identifier for the refeerenced Thread</p>
+  <p class="para rdfs-comment">
+  Will return the identity of the referenced Thread
+  </p>
  </div>
 
 
@@ -36,12 +38,38 @@
 
  <div class="refsect1 returnvalues" id="refsect1-thread.getthreadid-returnvalues">
   <h3 class="title">Return Values</h3>
-  <p class="para">The return value can subsequently be used in a call to  <span class="function"><a href="thread.getthread.html" class="function">Thread::getThread()</a></span> for the purposes of importing into another context.</p>
+  <p class="para">
+  A numeric identity
+  </p>
  </div>
 
+
+ <div class="refsect1 examples" id="refsect1-thread.getthreadid-examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   <div class="example" id="example-3645">
+    <p><strong>Example #1 Return the identity of the referenced Thread</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">My&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Thread&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">run</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%s&nbsp;is&nbsp;Thread&nbsp;#%lu\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">__CLASS__</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getThreadId</span><span style="color: #007700">());<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">$my&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$my</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">start</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+My is Thread #123456778899
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="thread.getthread.html">Thread::getThread</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="thread.isbusy.html">Thread::isBusy</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="thread.getcreatorid.html">Thread::getCreatorId</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="thread.isjoined.html">Thread::isJoined</a></div>
  <div class="up"><a href="class.thread.html">Thread</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>
